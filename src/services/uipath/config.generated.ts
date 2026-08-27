@@ -1,15 +1,13 @@
 /* ============================================================================
- * AUTO-GENERATED — DO NOT EDIT BY HAND.
+ * Resolved UiPath resource ids — the only file in `src/` with a UUID literal.
  * ----------------------------------------------------------------------------
- * Source : uipath/preflight/last-probe.json
- * Probed : 2026-08-21T17:47:16.705Z
- * Regen  : npm run sync:uipath -w apps/expenseflow
+ * Ships with PLACEHOLDERS. Point the app at your own tenant by replacing
+ * `entityId` and `folderKey` below with the real GUIDs (see the README,
+ * "Point it at your own UiPath tenant"). Everything else is resolved by NAME
+ * at runtime, so those two are all a fresh tenant needs.
  *
- * These are RESOLVED ids, not authored ones. Every resource is created and
- * looked up by NAME by the scripts under `uipath/`; this file is only the
- * cached answer so the browser does not have to resolve them on every load.
- *
- * This is the only file in `src/` permitted to contain a UUID literal.
+ * In the workshop this file was regenerated from a probe run
+ * (`npm run sync:uipath`); that harness is not part of this repo.
  * ========================================================================== */
 
 export interface ResolvedUiPathConfig {
@@ -37,16 +35,16 @@ export interface ResolvedUiPathConfig {
 }
 
 export const RESOLVED: ResolvedUiPathConfig = {
-  probedAt: "2026-08-21T17:47:16.705Z",
-  org: "uipathlabsunifiedmix",
-  tenant: "Testing",
-  baseUrl: "https://staging.api.uipath.com",
-  folderKey: "711a27d3-cc8a-4327-891e-f8646047151d",
+  probedAt: "",
+  org: "your-org",
+  tenant: "your-tenant",
+  baseUrl: "https://cloud.api.uipath.com",
+  folderKey: "00000000-0000-0000-0000-000000000000",
   folderPath: "Shared",
-  entityId: "44edfba2-769d-f111-9b33-6045bdd6658d",
+  entityId: "00000000-0000-0000-0000-000000000000",
   entityName: "ExpenseFlow_Expense",
-  statusChoiceSetId: "d9397c17-769d-f111-9b33-6045bdd6658d",
-  categoryChoiceSetId: "671244cd-759d-f111-9b33-6045bdd6658d",
+  statusChoiceSetId: "",
+  categoryChoiceSetId: "",
   assetName: "ExpenseFlow_PolicyThreshold",
   bucketName: "ExpenseFlow_Receipts",
 };

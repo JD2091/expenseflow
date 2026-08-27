@@ -60,7 +60,7 @@ const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 // Defaults to the local `vite preview`. Point it at a DEPLOYED app to prove the
 // hosted URL actually renders — the one thing a 200 from curl cannot tell you:
 //
-//   $env:SMOKE_BASE = 'https://<org>.staging.uipath.host/expenseflow'
+//   $env:SMOKE_BASE = 'https://<org>.cloud.uipath.host/expenseflow'
 //   npm run smoke -w apps/expenseflow
 //
 // Every step runs in ?mock=1, so this needs no sign-in and touches no tenant.
