@@ -1,0 +1,33 @@
+{
+  "name": "expenseflow",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "sync:uipath": "node scripts/sync-uipath-config.mjs",
+    "test": "node --import ./scripts/ts-register.mjs --test scripts/*.test.ts",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@expenseflow/design-tokens": "0.1.0",
+    "@uipath/uipath-typescript": "1.6.2",
+    "lucide-react": "1.33.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router-dom": "6.30.6"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@uipath/coded-apps-dev": "1.0.0-beta.1",
+    "@vitejs/plugin-react": "6.1.0",
+    "oxlint": "1.79.0",
+    "typescript": "6.0.3",
+    "vite": "8.2.2"
+  }
+}

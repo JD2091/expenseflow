@@ -1,0 +1,8 @@
+{
+  "clientId": "<Non confidential app client ID>",
+  "scope": "DataFabric.Schema.Read DataFabric.Data.Read DataFabric.Data.Write OR.Assets.Read OR.Buckets OR.Tasks OR.Folders.Read",
+  "orgName": "<Org name>",
+  "tenantName": "<Tenant name>",
+  "baseUrl": "https://cloud.api.uipath.com",
+  "redirectUri": "http://localhost:5173"
+}
