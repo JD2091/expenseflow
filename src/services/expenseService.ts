@@ -115,13 +115,13 @@ export async function createExpense(input: NewExpenseInput): Promise<Expense> {
     // LIVE read, not the cached one the form hint uses. A stale hint is
     // cosmetic; a stale decision is written to the record for good.
     const threshold = await readPolicyThresholdNow();
-    const decision = applyPolicy(input.amount, threshold);
+    const hasReceipt = input.receiptFile !== undefined && input.receiptFile !== null;
+    const decision = applyPolicy(input.amount, threshold, hasReceipt);
     const expenseCode = await entityClient.nextExpenseCode();
 
-    const receiptPath =
-      input.receiptFile === undefined || input.receiptFile === null
-        ? null
-        : await uploadReceipt(expenseCode, input.receiptFile);
+    const receiptPath = hasReceipt
+      ? await uploadReceipt(expenseCode, input.receiptFile as File)
+      : null;
 
     const created = await entityClient.insertExpense({
       expenseCode,
@@ -251,14 +251,26 @@ export interface PolicyDecision {
 }
 
 /**
- * The whole business rule, in five lines, with the number supplied from
- * outside.
+ * The whole business rule, with the number supplied from outside.
  *
- * The note is built from the threshold that was actually read, so flipping the
- * Asset to 5,000 makes the app say "Above ₹5,000 policy threshold" without
- * anybody editing a string.
+ * No receipt always wins: a missing receipt sends it to a manager regardless
+ * of amount, even one that would otherwise auto-approve under threshold.
+ *
+ * The threshold note is built from the value that was actually read, so
+ * flipping the Asset to 5,000 makes the app say "Above ₹5,000 policy
+ * threshold" without anybody editing a string.
  */
-export function applyPolicy(amount: number, threshold: number): PolicyDecision {
+export function applyPolicy(
+  amount: number,
+  threshold: number,
+  hasReceipt: boolean,
+): PolicyDecision {
+  if (!hasReceipt) {
+    return {
+      status: 'PendingApproval',
+      policyNote: 'No receipt attached — manager approval required',
+    };
+  }
   if (amount > threshold) {
     return {
       status: 'PendingApproval',
