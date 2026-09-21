@@ -35,16 +35,16 @@ export interface ResolvedUiPathConfig {
 }
 
 export const RESOLVED: ResolvedUiPathConfig = {
-  probedAt: "",
-  org: "your-org",
-  tenant: "your-tenant",
-  baseUrl: "https://cloud.api.uipath.com",
-  folderKey: "00000000-0000-0000-0000-000000000000",
+  probedAt: "2026-09-21T10:38:00.000Z",
+  org: "uiparth",
+  tenant: "DefaultTenant",
+  baseUrl: "https://api.uipath.com",
+  folderKey: "dd035dc0-098f-4111-8158-df2d3c312dc9",
   folderPath: "Shared",
-  entityId: "00000000-0000-0000-0000-000000000000",
+  entityId: "8ecee9a6-a8b5-f111-a6a7-000d3ab24594",
   entityName: "ExpenseFlow_Expense",
-  statusChoiceSetId: "",
-  categoryChoiceSetId: "",
+  statusChoiceSetId: "28d3687d-a8b5-f111-a6a7-000d3ab24594",
+  categoryChoiceSetId: "80df4b84-a8b5-f111-a6a7-000d3ab24594",
   assetName: "ExpenseFlow_PolicyThreshold",
   bucketName: "ExpenseFlow_Receipts",
 };

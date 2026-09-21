@@ -3,6 +3,6 @@
   "scope": "DataFabric.Schema.Read DataFabric.Data.Read DataFabric.Data.Write OR.Assets.Read OR.Buckets OR.Tasks OR.Folders.Read",
   "orgName": "uiparth",
   "tenantName": "DefaultTenant",
-  "baseUrl": "https://cloud.api.uipath.com",
+  "baseUrl": "https://api.uipath.com",
   "redirectUri": "http://localhost:5173"
 }

@@ -94,12 +94,12 @@ OR.Assets.Read OR.Buckets OR.Tasks OR.Folders.Read
   "scope":       "DataFabric.Schema.Read DataFabric.Data.Read DataFabric.Data.Write OR.Assets.Read OR.Buckets OR.Tasks OR.Folders.Read",
   "orgName":     "<your org>",
   "tenantName":  "<your tenant>",
-  "baseUrl":     "https://cloud.api.uipath.com",
+  "baseUrl":     "https://api.uipath.com",
   "redirectUri": "http://localhost:5173"
 }
 ```
 
-`baseUrl` must be the **API** subdomain (`cloud.api.uipath.com`), never `cloud.uipath.com` — the
+`baseUrl` must be the **API** host (`api.uipath.com`), never `cloud.uipath.com` — the
 portal host fails CORS. `@uipath/coded-apps-dev` reads this file locally to inject the
 `<meta name="uipath:*">` tags the SDK needs; in production the platform injects them. It holds no
 secrets (a public client ID plus org / tenant / base URL / redirect URI), which is why it is
