@@ -1,0 +1,166 @@
+/* ============================================================================
+ * @expenseflow/design-tokens — reset.css
+ * ----------------------------------------------------------------------------
+ * Minimal and opinionated. Import AFTER tokens.css — it consumes the tokens.
+ *
+ *   import '@expenseflow/design-tokens/tokens.css';
+ *   import '@expenseflow/design-tokens/reset.css';
+ *
+ * There is deliberately NO `body { min-width: 1024px }` here. The old Day 1 CSS
+ * had one, which made the whole page horizontally scrollable to hide a table
+ * that was too wide. Wide content gets its own `overflow-x: auto` container
+ * instead — see `.overflow-guard` at the bottom.
+ * ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-heading);
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* --- Media ---------------------------------------------------------------- */
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* --- Form controls -------------------------------------------------------- */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* --- Tables --------------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: var(--weight-black);
+}
+
+/* --- Overflow guard (Critical Rule 12) ------------------------------------ */
+/* Flex and grid children default to `min-width: auto`, i.e. their intrinsic
+ * content width. That is what makes one long description blow a layout wide
+ * and makes `text-overflow: ellipsis` silently do nothing. Resetting it to 0
+ * here is the structural fix; `.truncate` is then the opt-in presentation. */
+
+:where(.app-shell, .main, .content-stack, [class*="-grid"], [class*="-row"]) > * {
+  min-width: 0;
+}
+
+.truncate {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Wide content — data tables above all — scrolls inside its own box.
+ * The page itself must never scroll horizontally. */
+.overflow-guard {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* --- Focus ---------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-subtle);
+}
+
+/* Mouse users do not get the ring; keyboard users always do. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --- Motion --------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

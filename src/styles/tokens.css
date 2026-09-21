@@ -1,0 +1,147 @@
+/* ============================================================================
+ * @expenseflow/design-tokens — tokens.css
+ * ----------------------------------------------------------------------------
+ * The single source of visual truth for Day 1 and Day 2 (decision D3).
+ *
+ * Every value below was ported verbatim from
+ *   Day1/expenseflow-day1/src/styles/app.css
+ * except the two status pairs marked ADDED and the small set of scale entries
+ * marked EXTENDED — see docs/design-system.md for why each one exists.
+ *
+ * Names deliberately mirror Apollo's semantic token names (--color-background,
+ * --color-foreground, --color-card, --color-primary, --color-muted-foreground,
+ * --color-border, --color-destructive) so that the Day 3 switch to
+ * @uipath/apollo-wind reads as a swap, not a rewrite.
+ * ========================================================================== */
+
+:root {
+  /* --- Surfaces ---------------------------------------------------------- */
+  --color-background: #f6f8fb;
+  --color-card: #ffffff;
+  --color-surface-muted: #f8fafc;      /* table header row, inert fills */
+  --color-sidebar: #0f172a;
+
+  /* --- Text -------------------------------------------------------------- */
+  --color-foreground: #0f172a;
+  --color-secondary-foreground: #334155; /* table cells, field labels */
+  --color-muted-foreground: #64748b;     /* helper text, kickers, eyebrows */
+  --color-subtle-foreground: #94a3b8;    /* the quietest readable text */
+  --color-sidebar-foreground: #e2e8f0;
+  --color-sidebar-nav-foreground: #cbd5e1;
+
+  /* --- Primary ----------------------------------------------------------- */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-foreground: #ffffff;
+  --color-primary-soft: #dbeafe;         /* avatar chip, tinted primary fill */
+  --color-info-bg: #eff6ff;              /* inline form/info message ground */
+  --color-info-foreground: #1d4ed8;
+
+  /* --- Feedback ---------------------------------------------------------- */
+  --color-success-foreground: #16a34a;   /* positive stat-card delta */
+  --color-destructive: #991b1b;          /* Apollo-aligned name */
+  --color-destructive-bg: #fee2e2;
+
+  /* --- Borders ----------------------------------------------------------- */
+  --color-border: #e2e8f0;               /* card + panel outlines */
+  --color-border-subtle: #edf2f7;        /* panel header divider */
+  --color-border-faint: #f1f5f9;         /* row separators inside a table */
+  --color-input-border: #cbd5e1;         /* form controls at rest */
+  --color-sidebar-border: #243044;       /* dividers on the dark ground */
+  --color-sidebar-hover: #162238;        /* nav item hover on the dark ground */
+
+  /* --- Focus ------------------------------------------------------------- */
+  --color-focus-ring: #60a5fa;
+  --shadow-focus-ring: 0 0 0 3px rgba(96, 165, 250, 0.15);
+
+  /* --- Status: approved -------------------------------------------------- */
+  --color-status-approved-bg: #dcfce7;
+  --color-status-approved-fg: #166534;
+
+  /* --- Status: pending --------------------------------------------------- */
+  --color-status-pending-bg: #fef3c7;
+  --color-status-pending-fg: #92400e;
+
+  /* --- Status: draft ----------------------------------------------------- */
+  --color-status-draft-bg: #e0e7ff;
+  --color-status-draft-fg: #3730a3;
+
+  /* --- Status: rejected -------------------------------------------------- */
+  --color-status-rejected-bg: #fee2e2;
+  --color-status-rejected-fg: #991b1b;
+
+  /* --- Status: review — ADDED (Day 2 "Policy Review") -------------------- */
+  --color-status-review-bg: #e0f2fe;
+  --color-status-review-fg: #075985;
+
+  /* --- Status: blocked — ADDED (Day 2 "Missing Receipt") ----------------- */
+  --color-status-blocked-bg: #ffedd5;
+  --color-status-blocked-fg: #9a3412;
+
+  /* --- Radius ------------------------------------------------------------ */
+  --radius-card: 14px;
+  --radius-control: 9px;
+  --radius-brand: 11px;
+  --radius-subtle: 8px;                  /* EXTENDED — inline message chips */
+  --radius-pill: 999px;
+  --radius-round: 50%;                   /* EXTENDED — avatars */
+
+  /* --- Spacing (4px scale) ----------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+
+  /* --- Layout ------------------------------------------------------------ */
+  --layout-sidebar-width: 250px;
+  --layout-main-padding: 28px 34px 48px;
+  --layout-form-max-width: 760px;        /* EXTENDED — was .form-panel */
+
+  /* --- Type: families ---------------------------------------------------- */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* --- Type: size scale --------------------------------------------------- */
+  --text-2xs: 10px;                      /* demo label, panel kicker */
+  --text-xs: 11px;                       /* table head, expense id, pill */
+  --text-sm: 12px;                       /* meta, captions, counts */
+  --text-base: 13px;                     /* table body, stat label */
+  --text-md: 15px;                       /* EXTENDED — body copy */
+  --text-lg: 18px;                       /* panel h2 */
+  --text-xl: 24px;                       /* page title */
+  --text-2xl: 29px;                      /* stat value */
+  --text-3xl: 30px;                      /* topbar h1 */
+
+  /* --- Type: weight ------------------------------------------------------- */
+  --weight-normal: 400;
+  --weight-medium: 600;
+  --weight-semibold: 650;
+  --weight-bold: 700;
+  --weight-heavy: 750;
+  --weight-black: 800;
+
+  /* --- Type: tracking ----------------------------------------------------- */
+  --tracking-tight: -0.01em;
+  --tracking-tighter: -0.02em;
+  --tracking-heading: -0.03em;
+  --tracking-display: -0.04em;
+  --tracking-wide: 0.08em;               /* uppercase table headers */
+  --tracking-wider: 0.15em;
+  --tracking-widest: 0.16em;             /* eyebrow / demo label */
+
+  /* --- Type: leading ------------------------------------------------------ */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+
+  /* --- Elevation ---------------------------------------------------------- */
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-panel: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --shadow-overlay: 0 24px 48px rgba(15, 23, 42, 0.18);
+  --shadow-primary: 0 4px 12px rgba(37, 99, 235, 0.15); /* primary button lift */
+}
