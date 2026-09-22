@@ -1,8 +1,8 @@
 {
-  "clientId": "a9cf8cb4-d5cf-461f-aa6c-5f0252524373",
+  "clientId": "3718bf07-52f3-4eac-b716-fffe0eec6c1a",
   "scope": "DataFabric.Schema.Read DataFabric.Data.Read DataFabric.Data.Write OR.Assets.Read OR.Buckets OR.Tasks OR.Folders.Read",
-  "orgName": "uiparth",
-  "tenantName": "DefaultTenant",
-  "baseUrl": "https://api.uipath.com",
+  "orgName": "testcloud_team",
+  "tenantName": "TAM",
+  "baseUrl": "https://staging.api.uipath.com",
   "redirectUri": "http://localhost:5173"
 }
