@@ -332,6 +332,12 @@ export interface FinanceSummary {
  * submits today. `MAX(ExpenseDate)` gets that from the server too — verified
  * live, a MAX on a DATE column comes back as `2026-08-22` with no rows fetched.
  */
+/** The last calendar day of a `YYYY-MM` month, computed in UTC to dodge local-TZ drift. */
+function lastDayOfMonth(month: string): number {
+  const [year, monthNum] = month.split('-').map(Number);
+  return new Date(Date.UTC(year, monthNum, 0)).getUTCDate();
+}
+
 export async function getFinanceSummary(): Promise<FinanceSummary> {
   const notDraft = statusFilter(QueryFilterOperator.NotIn, ['Draft']);
 
@@ -356,9 +362,10 @@ export async function getFinanceSummary(): Promise<FinanceSummary> {
       ? Promise.resolve({ count: 0, total: 0 })
       : aggregate([
           notDraft,
-          // Inclusive string bounds. ISO dates compare correctly as text, and
-          // `-31` is a safe upper bound for every month: no date string in a
-          // 30-day month can exceed it.
+          // Inclusive bounds. Data Fabric parses a DATE filter value as a real
+          // calendar date rather than comparing it as text, so a fixed `-31`
+          // upper bound 400s on any 28/29/30-day month ("2026-09-31" does not
+          // parse) — the actual last day of the month is required.
           {
             fieldName: FIELD.expenseDate,
             operator: QueryFilterOperator.GreaterThanOrEqual,
@@ -367,7 +374,7 @@ export async function getFinanceSummary(): Promise<FinanceSummary> {
           {
             fieldName: FIELD.expenseDate,
             operator: QueryFilterOperator.LessThanOrEqual,
-            value: `${month}-31`,
+            value: `${month}-${String(lastDayOfMonth(month)).padStart(2, '0')}`,
           },
         ]),
   ]);
