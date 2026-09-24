@@ -1,14 +1,16 @@
 {
   "schemaVersion": 1,
   "lastSuccessfulBaselineSha": null,
-  "currentSha": "571c2192d3d786a03eb7f57d89bec70998ef1d57",
+  "currentSha": "8300fa5ce4532daa873fb8cd5a73b660d866278b",
   "currentBranch": "main",
-  "lastRunId": "expenseflow-qa-20260923T160000",
-  "lastRunAt": "2026-09-23T11:03:35.337Z",
+  "lastRunId": "expenseflow-qa-six-case-20260924T124500",
+  "lastRunAt": "2026-09-24T07:43:06.058Z",
   "baselineAdvanced": false,
-  "baselineDecision": "preserved-not-advanced-due-to-confirmed-product-failures",
+  "baselineDecision": "preserved-not-advanced-due-to-new-confirmed-product-failure-and-restricted-or-blocked-rerun-coverage",
   "smokeExecutionId": "cb776125-ebc2-0d00-2da6-0b4a2881d0d9",
   "regressionExecutionId": "618057ff-ecc2-0d00-fa65-0b4a2881d4ef",
+  "rerunExecutionId": "08f1f869-86cd-0d00-0f01-0b4a2980d487",
+  "rerunTestCaseLogId": "0dfc8735-47ef-6f00-bde8-0b4a2980d4bf",
   "smokeTotals": {
     "passed": 8,
     "failed": 2,
@@ -19,17 +21,72 @@
     "failed": 1,
     "none": 7
   },
+  "rerunTestManagerTotals": {
+    "passed": 1,
+    "failed": 0,
+    "none": 0
+  },
   "coverage": {
-    "approvedCases": 24,
-    "approvedSteps": 63,
-    "passedSteps": 44,
-    "failedSteps": 3,
-    "blockedSteps": 16,
+    "approvedCases": 30,
+    "approvedSteps": 93,
+    "passedSteps": 50,
+    "failedSteps": 4,
+    "blockedSteps": 37,
+    "restrictedSteps": 2,
     "caseClassifications": {
       "Passed": 14,
-      "Failed": 3,
-      "Blocked": 7
+      "Failed": 4,
+      "Blocked": 10,
+      "Restricted": 2
     }
   },
-  "retainedSyntheticData": true
+  "latestRerun": {
+    "runId": "expenseflow-qa-rerun-20260923T205500",
+    "manifest": "qa-artifacts/state/rerun-manifest-20260923T205500.json",
+    "reportMarkdown": "qa-artifacts/reports/expenseflow-qa-rerun-20260923T205500.md",
+    "reportHtml": "qa-artifacts/reports/expenseflow-qa-rerun-20260923T205500.html",
+    "targetCases": 7,
+    "rerunCases": 1,
+    "fullyPassedCases": 0,
+    "restrictedPartialCases": 1,
+    "stillBlockedCases": 6,
+    "newProductFailures": 0,
+    "publishedStepResults": {
+      "passed": 2,
+      "failed": 0,
+      "restricted": 1
+    },
+    "retainedSyntheticRecords": 5,
+    "executionLink": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/08f1f869-86cd-0d00-0f01-0b4a2980d487"
+  },
+  "latestSixCaseRun": {
+    "runId": "expenseflow-qa-six-case-20260924T124500",
+    "manifest": "qa-artifacts/state/execution-manifest-20260924T124500-six-cases.json",
+    "reportMarkdown": "qa-artifacts/reports/expenseflow-qa-six-case-20260924T124500.md",
+    "reportHtml": "qa-artifacts/reports/expenseflow-qa-six-case-20260924T124500.html",
+    "targetCases": 6,
+    "canonicalSteps": 30,
+    "publishedCases": 2,
+    "notRunCases": 4,
+    "failedCases": 1,
+    "restrictedCases": 1,
+    "passedSteps": 4,
+    "failedSteps": 1,
+    "blockedSteps": 24,
+    "restrictedSteps": 1,
+    "uploadedTraceAttachments": 6,
+    "checklistStatus": "not-found; no checklist file was created or changed",
+    "executionLinks": {
+      "EF-REG-015": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/8e0c48b5-3012-0e00-a4d4-0b4a2a3a23e3",
+      "EF-REG-018": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/48211cc8-7b12-0e00-28cd-0b4a2a3ec74a"
+    }
+  },
+  "retainedSyntheticData": true,
+  "notes": [
+    "Historical manifests and reports were preserved.",
+    "EF-REG-015 existing execution was reconciled without creating a duplicate.",
+    "EF-REG-017, EF-REG-022, EF-REG-023, and EF-REG-024 have no execution history and were not run.",
+    "All published trace attachments succeeded for the two published cases.",
+    "The project ChecklistPath was absent on disk; no checklist rows were invented or modified."
+  ]
 }
