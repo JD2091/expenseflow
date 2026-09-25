@@ -3,10 +3,14 @@
   "lastSuccessfulBaselineSha": null,
   "currentSha": "8ccbb1c11d36088a36900e737ea0951854a72b65",
   "currentBranch": "main",
-  "lastRunId": "expenseflow-qa-manual-full-20260924T113204",
-  "lastRunAt": "2026-09-24T11:32:04.268395+00:00",
+  "lastRunId": "expenseflow-qa-isolated-disposition-20260925T200409+0530",
+  "lastRunAt": "2026-09-25T20:04:09.360+05:30",
+  "latestExecutionId": "2d18a3e1-652d-0e00-8a19-0b4a2b76dce4",
+  "latestReportPath": "reports/expenseflow-qa-20260925T200409+0530-8ccbb1c-2d18a3e1-652d-0e00-8a19-0b4a2b76dce4.md",
+  "latestReportHtmlPath": "reports/expenseflow-qa-20260925T200409+0530-8ccbb1c-2d18a3e1-652d-0e00-8a19-0b4a2b76dce4.html",
+  "latestEvidenceManifestPath": "traces/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4/evidence-manifest.json",
   "baselineAdvanced": false,
-  "baselineDecision": "preserved-not-advanced-confirmed-product-failures-and-restricted-or-blocked-cases-remain",
+  "baselineDecision": "preserved-not-advanced-hosted-scope-mismatch-and-restricted-or-blocked-cases-remain",
   "smokeExecutionId": "cb776125-ebc2-0d00-2da6-0b4a2881d0d9",
   "regressionExecutionId": "618057ff-ecc2-0d00-fa65-0b4a2881d4ef",
   "rerunExecutionId": "08f1f869-86cd-0d00-0f01-0b4a2980d487",
@@ -27,17 +31,15 @@
     "none": 0
   },
   "coverage": {
-    "approvedCases": 30,
-    "approvedSteps": 93,
-    "passedSteps": 50,
-    "failedSteps": 4,
-    "blockedSteps": 37,
-    "restrictedSteps": 2,
+    "approvedCases": 11,
+    "approvedSteps": 35,
+    "passedSteps": 0,
+    "failedSteps": 0,
+    "blockedSteps": 30,
+    "restrictedSteps": 5,
     "caseClassifications": {
-      "Passed": 14,
-      "Failed": 4,
-      "Blocked": 10,
-      "Restricted": 2
+      "BLOCKED": 9,
+      "RESTRICTED": 2
     }
   },
   "latestRerun": {
@@ -87,7 +89,10 @@
     "EF-REG-015 existing execution was reconciled without creating a duplicate.",
     "EF-REG-017, EF-REG-022, EF-REG-023, and EF-REG-024 have no execution history and were not run.",
     "All published trace attachments succeeded for the two published cases.",
-    "The project ChecklistPath was absent on disk; no checklist rows were invented or modified."
+    "The project ChecklistPath was absent on disk; no checklist rows were invented or modified.",
+    "Final isolated/shared platform readback saved and verified at qa-artifacts/state/disposition-20260925/final-platform-readback-20260925T200409+0530.json.",
+    "Fresh Test Manager readback reconciled 11 case logs and 35 step logs; all 35 Restricted; 2 attachment flags; 0 upload failures.",
+    "Shared EXP-1040 record/task retained as evidence; no retry, completion, deletion, or cleanup performed."
   ],
   "latestFullManualRun": {
     "runId": "expenseflow-qa-manual-full-20260924T113204",
@@ -140,5 +145,40 @@
       "EF-REG-023": "1bf1ff18-1214-0e00-dc5f-0b4a2a5fdc73",
       "EF-REG-024": "817bf195-1614-0e00-82fd-0b4a2a5fedd4"
     }
-  }
+  },
+  "testManagerProjectKey": "EXPENSEFLOW",
+  "testManagerProjectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "changeRegressionTestSetKey": "EXPENSEFLOW:2",
+  "changeRegressionTestSetId": "5c3301fd-4ec4-0400-57d9-0b4a2b76dcd4",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "finalReadbackPath": "state/disposition-20260925/final-platform-readback-20260925T200409+0530.json",
+  "latestRunReconciliationPath": "state/disposition-20260925/testmanager-reconciliation.json",
+  "evidence": {
+    "capturedStepAttachments": 2,
+    "notCapturedStepEvidence": 33,
+    "uploadFailures": 0,
+    "screenshotsCaptured": 0,
+    "stagedTraceFiles": 2
+  },
+  "sharedEvidencePreserved": {
+    "entityId": "65e0d30d-79b6-f111-a6a9-6045bddc9767",
+    "recordId": "DB470F2F-E1B8-F111-A6A9-6045BDDBB45C",
+    "taskId": 101665521,
+    "taskStatus": "Unassigned"
+  },
+  "isolatedReadiness": {
+    "folderKey": "8a0e5b85-291c-4fd4-b53c-648950c57716",
+    "folderId": 1245402,
+    "entityId": "e6990e77-cdb8-f111-a6a9-6045bddc9767",
+    "recordCount": 17,
+    "policyValue": 25000,
+    "pendingTaskIds": [
+      101664502,
+      101664529,
+      101664538,
+      101664542
+    ]
+  },
+  "reportTotalsReconciled": true
 }
