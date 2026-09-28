@@ -21,8 +21,9 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { Loader2, PlugZap, TriangleAlert } from 'lucide-react';
+import { Loader2, TriangleAlert } from 'lucide-react';
 
+import { LoginPage } from '../../components/LoginPage';
 import { useAuth } from '../../hooks/useAuth';
 import { USE_MOCK } from '../expenseService.mock';
 import { createClients, registerClients } from './client';
@@ -66,17 +67,7 @@ export function UiPathRuntime({ children }: { children: ReactNode }) {
   // being flipped there by an effect.
   const [phase, setPhase] = useState<Phase>(() => (USE_MOCK ? 'ready' : 'signing-in'));
   const [failure, setFailure] = useState<string | null>(null);
-  const didStartLogin = useRef(false);
   const didWarmUp = useRef(false);
-
-  // Nudge the user through OAuth exactly once. `useAuth` already guards
-  // `completeOAuth()` against Strict Mode's double effect; this guards the
-  // redirect that precedes it.
-  useEffect(() => {
-    if (USE_MOCK || isLoading || isAuthenticated || didStartLogin.current) return;
-    didStartLogin.current = true;
-    void login();
-  }, [isAuthenticated, isLoading, login]);
 
   useEffect(() => {
     if (USE_MOCK || !isAuthenticated || didWarmUp.current) return;
@@ -110,32 +101,14 @@ export function UiPathRuntime({ children }: { children: ReactNode }) {
     );
   }
 
-  if (authError !== null && !isAuthenticated) {
-    return (
-      <Splash
-        icon={<TriangleAlert size={20} aria-hidden />}
-        title="Sign-in failed"
-        message={authError}
-        action={
-          <button type="button" className="primary-button" onClick={() => void login()}>
-            Try signing in again
-          </button>
-        }
-      />
-    );
-  }
-
   if (!isAuthenticated) {
     return (
-      <Splash
-        icon={<PlugZap size={20} aria-hidden />}
-        title="Signing in to UiPath"
-        message={`Redirecting to ${UIPATH.org} / ${UIPATH.tenant} to authorise ExpenseFlow.`}
-        action={
-          <button type="button" className="secondary-button" onClick={() => void login()}>
-            Sign in
-          </button>
-        }
+      <LoginPage
+        isLoading={isLoading}
+        error={authError}
+        org={UIPATH.org}
+        tenant={UIPATH.tenant}
+        onSignIn={() => void login()}
       />
     );
   }
