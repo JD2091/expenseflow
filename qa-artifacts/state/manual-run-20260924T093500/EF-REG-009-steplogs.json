@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "1e6cfbc6-737a-0e00-1577-0b4a287ea9ed",
+  "result": "Passed",
+  "comment": "Expected: The app presents a friendly error state or inline form error with a retry path; no raw provider exception is shown.\nActual: ✔ friendly inline form error shown with retry guidance | ✔ no raw provider exception | ✔ no record written during the failed attempt (0 records in Data Fabric) | failure injected with the app-documented rehearsed switch ?demo=fail-submit against the connected runtime (no real provider outage was created)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "951a6de9-cd78-4853-68fa-08df19d7ace6",
+  "orderNo": 0,
+  "testCaseLogId": "c995c286-5482-7300-af9a-0b4a2a5f63c7",
+  "description": "Trigger the approved safe connected read or write failure condition.",
+  "expectedResult": "The app presents a friendly error state or inline form error with a retry path; no raw provider exception is shown."
+ },
+ {
+  "testStepId": "5e855ca4-757a-0e00-09b8-0b4a287eab38",
+  "result": "Restricted",
+  "comment": "Expected: The page or operation recovers without requiring a full app reset and without duplicate writes.\nActual: ✔ after removing the switch, re-submitting succeeds without an app reset: EXP-1031 submitted for ₹3,300. See it on your dashboard or open the expense. | EXP-1031 su | ✔ exactly one record after recovery (no duplicate writes): 1 | RESTRICTED: a genuine connected READ failure could not be triggered safely (simulateError is mock-only, and network/credential fault injection was not attempted); only the write-failure path was exercised through the app-documented demo switch.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "ec48f3d0-4311-4a3d-68fb-08df19d7ace6",
+  "orderNo": 1,
+  "testCaseLogId": "c995c286-5482-7300-af9a-0b4a2a5f63c7",
+  "description": "Restore the normal condition and use Retry or re-submit.",
+  "expectedResult": "The page or operation recovers without requiring a full app reset and without duplicate writes."
+ }
+]

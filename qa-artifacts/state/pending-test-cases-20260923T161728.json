@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-23T16:17:28Z",
+  "generatedBy": "Cowork QA delegate (change scan + coverage review)",
+  "note": "Proposed cases not yet synchronized to Test Manager. Before creating any of these, resolve the ExpenseFlow project and both regression sets, and check for an exact-match existing case by stable ID / behavior / steps — never create a duplicate.",
+  "cases": [
+    {
+      "stableId": "EF-REG-015",
+      "name": "EF-REG-015 - Connected Finance \"This month\" total computes correctly for non-31-day months",
+      "set": "ExpenseFlow Change Regression",
+      "rationale": "Regression for a confirmed fix: getFinanceSummary()'s month-bounded aggregate used a hardcoded '-31' upper bound, which Data Fabric 400'd on any month with fewer than 31 days.",
+      "objective": "Verify getFinanceSummary's month-bounded aggregate query succeeds and returns correct figures when the newest data month has 28, 29, or 30 days.",
+      "preconditions": [
+        "Connected environment (no ?mock=1)",
+        "Verified reachable app URL",
+        "Test Manager project and Change Regression set resolved"
+      ],
+      "syntheticData": "Uniquely-tagged records in ExpenseFlow_Expense with ExpenseDate values spanning a 30-day month (e.g. September, matching current calendar month), including one dated on the month's actual last day (-30). One control record in a 31-day month for contrast.",
+      "steps": [
+        {
+          "description": "Seed the synthetic dataset; confirm retrievable via a fresh Data Fabric query.",
+          "expectedResult": "All seeded records, including the last-day-of-month record, are retrievable."
+        },
+        {
+          "description": "Open Finance (connected) and let it load/refresh.",
+          "expectedResult": "No 400/error state on the summary call; page loads cleanly."
+        },
+        {
+          "description": "Verify the \"This month\" count and total match the expected sum of seeded records for that month.",
+          "expectedResult": "Count and total are accurate for the 30-day month, including the last-day record."
+        }
+      ],
+      "negativeChecks": [
+        "Confirm the 31-day-month control record is correctly excluded/included per its own date.",
+        "Confirm no prior '-31' upper-bound error resurfaces (check network/console for a 400 on the aggregate call)."
+      ],
+      "affectedComponents": ["src/services/uipath/entityClient.ts (getFinanceSummary, lastDayOfMonth)", "src/hooks/useFinance.tsx", "src/pages/FinancePage.tsx"],
+      "changedFiles": ["src/services/uipath/entityClient.ts"],
+      "traceability": { "fixCommit": "8300fa5ce4532daa873fb8cd5a73b660d866278b", "baselineCommit": "571c2192d3d786a03eb7f57d89bec70998ef1d57" }
+    },
+    {
+      "stableId": "EF-REG-016",
+      "name": "EF-REG-016 - Connected policy routing at the exact threshold boundary",
+      "set": "ExpenseFlow Change Regression",
+      "rationale": "EF-REG-001 only tests below- and above-threshold amounts. policy.ts/NewExpenseForm.tsx route on strict '>', so an amount exactly equal to the threshold must stay auto-approved; an off-by-one regression here is untested.",
+      "objective": "Verify an expense amount exactly equal to the live policy threshold is auto-approved (not routed to manager approval).",
+      "preconditions": ["Connected environment", "Known current policy threshold value read live before the test"],
+      "syntheticData": "One synthetic expense with amount set to the exact current policy threshold value.",
+      "steps": [
+        { "description": "Read the current policy threshold live (readPolicyThresholdNow equivalent) immediately before submission.", "expectedResult": "Threshold value is recorded for the assertion." },
+        { "description": "Submit the synthetic expense with amount == threshold in connected mode.", "expectedResult": "Record is created with the below-threshold (auto-approved) outcome, not the approval-routing outcome." },
+        { "description": "Read the created record through the app after refresh.", "expectedResult": "Status and persisted policy note agree with the auto-approved path." }
+      ],
+      "negativeChecks": ["Submit a second expense at threshold + smallest currency unit and confirm it DOES route to approval, confirming the boundary is exercised on both sides."],
+      "affectedComponents": ["src/services/uipath/policy.ts", "src/components/NewExpenseForm.tsx"],
+      "changedFiles": [],
+      "traceability": { "note": "Coverage gap, not tied to a specific commit; extends EF-REG-001." }
+    },
+    {
+      "stableId": "EF-REG-017",
+      "name": "EF-REG-017 - Policy threshold is read live at decision time, not from the display cache",
+      "set": "ExpenseFlow Change Regression",
+      "rationale": "policy.ts documents a shipped bug (EXP-1014): the threshold Asset changed mid-session and a submission used the stale cached display value, writing a permanently wrong record. getPolicyThreshold() (cached, display-only) vs readPolicyThresholdNow() (live, decision-only) is the fix, but nothing regresses this by changing the Asset between page load and submit.",
+      "objective": "Verify that changing the policy threshold Asset after the New Expense form has loaded (and displayed the old threshold) still causes the submission decision to use the NEW value.",
+      "preconditions": ["Connected environment", "Ability to change the ExpenseFlow_PolicyThreshold Orchestrator Asset for the test and restore it afterward"],
+      "syntheticData": "One synthetic expense with an amount that is below the OLD threshold but above the NEW (lowered) threshold.",
+      "steps": [
+        { "description": "Load New Expense with the current threshold; note the displayed threshold hint.", "expectedResult": "Form shows the original threshold value." },
+        { "description": "Without reloading the page, change the ExpenseFlow_PolicyThreshold Asset to a lower value.", "expectedResult": "Displayed hint on the still-open form remains the old value (expected — it is cached for display)." },
+        { "description": "Submit the synthetic expense (amount between old and new threshold).", "expectedResult": "The DECISION uses the new (live) threshold: the expense routes to approval, not auto-approved, even though the display still showed the old threshold." },
+        { "description": "Restore the original Asset value.", "expectedResult": "Threshold returns to baseline for subsequent tests." }
+      ],
+      "negativeChecks": ["Confirm the persisted record's policy note reflects the threshold value actually used for the decision, not the one displayed at load."],
+      "affectedComponents": ["src/services/uipath/policy.ts (getPolicyThreshold vs readPolicyThresholdNow)"],
+      "changedFiles": [],
+      "traceability": { "note": "Regression for historical bug EXP-1014, documented in policy.ts comments." }
+    },
+    {
+      "stableId": "EF-REG-018",
+      "name": "EF-REG-018 - Sticky switches survive in-app navigation but not a hard reload",
+      "set": "ExpenseFlow Change Regression",
+      "rationale": "StickySwitches.tsx exists because React Router's <Link> silently drops query params. No existing case exercises this component; EF-REG-012 only covers switches surviving OAuth-callback cleanup, a different code path.",
+      "objective": "Verify ?mock, ?demo, and ?simulateError persist across in-app (client-side) navigation via sidebar links, but do NOT survive a hard page reload.",
+      "preconditions": ["App reachable at verified local URL"],
+      "syntheticData": "None (behavioral/navigation test).",
+      "steps": [
+        { "description": "Load the app with a switch in the URL, e.g. ?demo=fail.", "expectedResult": "Switch is active and present in the address bar." },
+        { "description": "Click through several sidebar links (Dashboard -> My Expenses -> Approvals -> Finance) using in-app navigation only.", "expectedResult": "The ?demo=fail param (or equivalent) reappears in the address bar after each navigation, and the switch remains behaviorally active." },
+        { "description": "Use the browser Back button after several navigations.", "expectedResult": "Back navigation works normally (no extra history entries were introduced by the switch being re-added)." },
+        { "description": "Manually remove the switch from the address bar and press Enter (hard load).", "expectedResult": "The switch is now OFF — a hard reload does not resurrect a removed switch." }
+      ],
+      "negativeChecks": ["Confirm a switch NOT present at initial load and never added does not spontaneously appear during navigation."],
+      "affectedComponents": ["src/components/StickySwitches.tsx"],
+      "changedFiles": [],
+      "traceability": { "note": "New coverage; component predates this scan but had no case." }
+    },
+    {
+      "stableId": "EF-REG-019",
+      "name": "EF-REG-019 - Receipt upload sanitizes unsafe filenames",
+      "set": "ExpenseFlow Change Regression",
+      "rationale": "receipts.ts's safeFileName() strips path separators and non-word characters (handles browser quirks like 'C:\\fakepath\\bill.pdf', spaces, '#'). EF-REG-004 uses a generic synthetic receipt filename and doesn't exercise this.",
+      "objective": "Verify a receipt uploaded with an awkward filename (spaces, '#', backslash-style segments, non-ASCII) is sanitized on upload and remains openable afterward.",
+      "preconditions": ["Connected environment", "A synthetic receipt file with a deliberately awkward name, e.g. \"Q3 Bill #4 (draft).pdf\""],
+      "syntheticData": "One synthetic expense; receipt file named with spaces, a '#', and parentheses.",
+      "steps": [
+        { "description": "Attach the awkwardly-named receipt to a valid connected expense and submit.", "expectedResult": "Submission succeeds; the created record retains a receipt path that is a sanitized, bucket-safe name (no raw spaces/#/backslashes)." },
+        { "description": "Open the created expense detail and use its receipt link.", "expectedResult": "Receipt opens correctly through authorized bucket access despite the original filename's unsafe characters." }
+      ],
+      "negativeChecks": ["Confirm the stored path is still prefixed with the expense code (browsable in Orchestrator by code, per receipts.ts's documented intent)."],
+      "affectedComponents": ["src/services/uipath/receipts.ts (safeFileName, uploadReceipt)"],
+      "changedFiles": [],
+      "traceability": { "note": "Extends EF-REG-004 with an edge-case filename." }
+    },
+    {
+      "stableId": "EF-REG-020",
+      "name": "EF-REG-020 - Error category maps to the correct recovery affordance",
+      "set": "ExpenseFlow Change Regression",
+      "rationale": "errors.ts defines distinct UI affordances per error type (Authentication -> sign-in prompt, Authorization -> no action, Validation -> server-detail message, RateLimit/Server -> Retry button). EF-REG-009 only exercises one generic failure condition; a wrong-affordance regression (e.g. showing Retry for an expired session) is currently invisible.",
+      "objective": "Verify at least two distinct error categories each render their documented recovery affordance, not a generic error.",
+      "preconditions": ["Connected environment", "Approved safe methods to trigger an authentication-expired condition and a validation-rejected condition without corrupting data"],
+      "syntheticData": "One synthetic expense submission with a payload that trips server-side validation (e.g. a field Data Fabric rejects).",
+      "steps": [
+        { "description": "Trigger an authentication-expired condition (session invalidated) and attempt an action.", "expectedResult": "UI shows the 'session expired, sign in again' message with a Sign In affordance -- not a Retry button." },
+        { "description": "Restore a valid session; trigger a validation-rejected submission.", "expectedResult": "UI shows a message quoting the server's field-level detail, with no retry affordance offered (per errors.ts, Validation -> 'none')." },
+        { "description": "Restore normal conditions and confirm both flows recover cleanly.", "expectedResult": "No raw provider exception is shown at any point in either flow." }
+      ],
+      "negativeChecks": ["Confirm neither error path silently falls back to a generic 'something went wrong' message that loses the category-specific affordance."],
+      "affectedComponents": ["src/services/uipath/errors.ts (describeError)"],
+      "changedFiles": [],
+      "traceability": { "note": "Extends EF-REG-009 to assert on affordance correctness, not just presence of a friendly message." }
+    },
+    {
+      "stableId": "EF-REG-021",
+      "name": "EF-REG-021 - Sign-out clears the session and returns to sign-in",
+      "set": "ExpenseFlow Change Regression",
+      "rationale": "useAuth.tsx exposes logout() (calls sdk.logout()); no existing case touches sign-out -- every other case assumes an authenticated session throughout.",
+      "objective": "Verify using the sign-out affordance clears the authenticated session and returns the user to the sign-in/splash state, and that a protected route is no longer accessible without re-authenticating.",
+      "preconditions": ["Connected environment with an authenticated session established"],
+      "syntheticData": "None (session/auth behavioral test).",
+      "steps": [
+        { "description": "From an authenticated session, use the sign-out affordance.", "expectedResult": "App returns to the sign-in/splash state; no application route renders." },
+        { "description": "Attempt to navigate directly to a protected route (e.g. /finance) after sign-out.", "expectedResult": "Route does not render authenticated content; user is prompted to sign in again." },
+        { "description": "Sign in again.", "expectedResult": "Session re-establishes and the app functions normally." }
+      ],
+      "negativeChecks": ["Confirm no stale data from the prior session (e.g. cached Finance totals) is shown before the new session's data loads."],
+      "affectedComponents": ["src/hooks/useAuth.tsx (logout)"],
+      "changedFiles": [],
+      "traceability": { "note": "New coverage; no prior case touches sign-out." }
+    }
+  ]
+}

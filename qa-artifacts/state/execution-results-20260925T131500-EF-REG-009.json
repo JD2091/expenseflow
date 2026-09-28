@@ -1,0 +1,20 @@
+[
+  {
+    "testStepId": "1e6cfbc6-737a-0e00-1577-0b4a287ea9ed",
+    "result": "Restricted",
+    "comment": "Observed: the connected Approval queue contained 24 cards, but the approved safe target EFREG009-Recovery was absent. The repository-approved ?demo=fail-decide hook is available only as a controlled pre-write demo route and cannot prove a real connected provider failure for the missing target. Restricted: no unrelated approval or unsafe fault injection was used.",
+    "hasError": false,
+    "actionType": "Navigate/Read/FixtureSearch",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "5e855ca4-757a-0e00-09b8-0b4a287eab38",
+    "result": "Restricted",
+    "comment": "BLOCKED: because EFREG009-Recovery was absent and no safe connected fault target was available, normal-condition restoration and Retry/re-submit recovery were not executed. No unrelated record was retried or changed.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

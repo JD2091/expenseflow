@@ -1,0 +1,33 @@
+{
+ "id": "EF-REG-014",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:11:45.263Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ page 2 footer \"Showing 26–50 of 59\", Page 2 indicated, rows start at 26",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step1-page2.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ Status=Rejected from page 2 → page 1 results, footer \"Showing 1–2 of 2\", 2 rows | ✔ Category=Meals → valid page 1: Showing 1–7 of 7 | ✔ date filter From 2026-09-24 → valid page 1: Showing 1–25 of 25",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step2-status-clamp.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step2-date-clamp.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "Finance attention initially: Showing 1–25 of 43 | ✔ attention set exceeds one page (43 rows) | ✔ Finance attention on last page 2: Showing 26–43 of 43  (Next disabled) | reduced the attention set from a second tab by approving 18 retained synthetic EFREG003-Pending fixtures (Data-Fabric-only, no Action Center task) | after Refresh on the same tab: Showing 1–25 of 25 | ✔ Finance pagination clamped to a valid page 1 after reduction (Showing 1–25 of 25, 25 rows, no phantom page) | ✔ pager boundaries valid (no navigable page 2)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step3-finance-page2.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step3-finance-clamped.png"
+   ]
+  }
+ ]
+}

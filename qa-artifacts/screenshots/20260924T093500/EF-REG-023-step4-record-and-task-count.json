@@ -1,0 +1,14 @@
+{
+ "source": "uip df records query + uip tasks list (read-only)",
+ "dataFabricRecord": [
+  {
+   "ExpenseCode": "EXP-1030",
+   "Description": "EFREG023-ExternalComplete-EFQA-20260924T1400",
+   "Status": 3,
+   "ApprovalTaskId": "101647510"
+  }
+ ],
+ "tasksWithTitleContainingEXP-1030": [
+  "Approve EXP-1030 — Rahul Mehta — ₹35,000"
+ ]
+}

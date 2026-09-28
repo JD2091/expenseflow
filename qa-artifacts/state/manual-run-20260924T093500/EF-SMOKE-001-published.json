@@ -1,0 +1,54 @@
+{
+ "stableId": "EF-SMOKE-001",
+ "testCaseId": "ca0c4af6-10be-0d00-2313-0b4a286fb1d7",
+ "executionId": "a5286adb-2a13-0e00-afde-0b4a2a51c3a4",
+ "testCaseLogId": "26880590-3c7e-7300-0ef1-0b4a2a51c3be",
+ "result": "Passed",
+ "stepLogCount": 3,
+ "stepResults": [
+  "Passed",
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-SMOKE-001-step1-dashboard.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-001-step1-dashboard.png",
+    "ObjectId": "b5808efd-5133-4647-a062-08df19cd16a8",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-001-step2-kpi-cards.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-001-step2-kpi-cards.png",
+    "ObjectId": "dbc180de-06ce-4203-a063-08df19cd16a8",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-SMOKE-001-step3-recent-expenses.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-001-step3-recent-expenses.png",
+    "ObjectId": "e7742f0d-72b1-4c6d-a064-08df19cd16a8",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/a5286adb-2a13-0e00-afde-0b4a2a51c3a4",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

@@ -1,0 +1,41 @@
+{
+ "id": "EF-REG-006",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:50:08.503Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ EXP-1025 is now Rejected (toast) | DF: {\"Status\":5,\"Comments\":\"QA reject comment EFQA-20260924T1300\"} | ✔ record saved the reject comment",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-006-step1-rejected.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ EXP-1026 is now Needs Rework (toast) | DF: {\"Status\":6,\"Comments\":\"QA rework comment EFQA-20260924T1300\"} | ✔ record saved the rework comment",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-006-step2-reworked.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ neither decided item remains in the active queue after refresh | ✔ EXP-1025 detail retains Rejected + comment | ✔ EXP-1026 detail retains Needs Rework + comment",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-006-step3-queue-after.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-006-step3-detail-Reject.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-006-step3-detail-Rework.png"
+   ]
+  },
+  {
+   "n": 4,
+   "result": "Passed",
+   "actual": "write requests inspected: 13; requests containing a Comments field: 1 | ✔ whitespace-only comment is not sent in any request payload | DF: {\"Status\":4} | ✔ record does not store meaningless whitespace comment (Comments=undefined) | ✔ controls usable; decided item left queue",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-006-step4-blank-comment.png"
+   ]
+  }
+ ]
+}

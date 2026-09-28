@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "212fdd47-1f7a-0e00-aaac-0b4a287d76c0",
+  "result": "Passed",
+  "comment": "Expected: Decision-eligible expenses appear in amount-descending queue order with comments and three actions.\nActual: ✔ queue order (amount desc 82,000 / 37,550 / 11,650): EXP-1008,EXP-1009,EXP-1007 | ✔ each card has a Comments box | ✔ 3 × Approve buttons | ✔ 3 × Reject buttons | ✔ 3 × Request rework buttons",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "694a8d89-4a9e-4a5e-0c6e-08df19cef660",
+  "orderNo": 0,
+  "testCaseLogId": "2eee131f-517e-7300-f70b-0b4a2a52ef81",
+  "description": "Open Approval queue and inspect seeded cards.",
+  "expectedResult": "Decision-eligible expenses appear in amount-descending queue order with comments and three actions."
+ },
+ {
+  "testStepId": "3ef55f8d-207a-0e00-a4c3-0b4a287d7816",
+  "result": "Passed",
+  "comment": "Expected: Success feedback appears and the decided row leaves the queue after refresh.\nActual: ✔ success feedback: \"EXP-1008 is now Approved.\" | ✔ EXP-1008 left the queue after refresh; remaining EXP-1009,EXP-1007",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "6f752e4e-83cd-4b74-0c6f-08df19cef660",
+  "orderNo": 1,
+  "testCaseLogId": "2eee131f-517e-7300-f70b-0b4a2a52ef81",
+  "description": "Enter a comment and approve one eligible expense.",
+  "expectedResult": "Success feedback appears and the decided row leaves the queue after refresh."
+ },
+ {
+  "testStepId": "5dea137c-217a-0e00-3135-0b4a287d7960",
+  "result": "Passed",
+  "comment": "Expected: Each action records its distinct resulting status and removes the card from the decision queue.\nActual: ✔ Reject: EXP-1008 card removed from decision queue | ✔ Reject: Finance shows EXP-1008 settled (not in attention list) — distinct resulting status Rejected | ✔ Request rework: EXP-1008 card removed from decision queue | ✔ Request rework: Finance shows EXP-1008 as Needs Rework — distinct resulting status Needs Rework",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "7fb76a9e-bd09-40ac-0c70-08df19cef660",
+  "orderNo": 2,
+  "testCaseLogId": "2eee131f-517e-7300-f70b-0b4a2a52ef81",
+  "description": "On fresh mock sessions, exercise Reject and Request rework on eligible rows.",
+  "expectedResult": "Each action records its distinct resulting status and removes the card from the decision queue."
+ }
+]

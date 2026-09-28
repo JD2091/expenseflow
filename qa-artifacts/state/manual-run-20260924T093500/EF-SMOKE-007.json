@@ -1,0 +1,23 @@
+{
+ "id": "EF-SMOKE-007",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:34:26.529Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ Expense not found state names EXP-9999 | ✔ Back to my expenses offered | body text length 312 (prior run observed empty root)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-007-step1-not-found.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ Not Found page renders | ✔ route back to application offered | ✔ Back to dashboard works",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-007-step2-unknown-route.png"
+   ]
+  }
+ ]
+}

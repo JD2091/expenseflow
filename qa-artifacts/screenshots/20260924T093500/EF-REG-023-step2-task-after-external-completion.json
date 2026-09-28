@@ -1,0 +1,16 @@
+{
+ "source": "uip tasks get 101647510 (read-only)",
+ "task": {
+  "Title": "Approve EXP-1030 — Rahul Mehta — ₹35,000",
+  "Type": "ExternalTask",
+  "Status": "Completed",
+  "Action": "Approve",
+  "Priority": "Medium",
+  "CompletedTime": "2026-09-24T10:54:48.7650757Z",
+  "CreatedTime": "2026-09-24T10:54:37.4374299Z",
+  "OrganizationUnitFullyQualifiedName": "Shared",
+  "Data": {
+   "Comments": "Completed externally for regression"
+  }
+ }
+}

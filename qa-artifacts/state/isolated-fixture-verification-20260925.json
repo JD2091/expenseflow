@@ -1,0 +1,50 @@
+{
+  "capturedAt": "2026-09-25T16:40:52+05:30",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "uipath": {
+    "baseUrl": "https://staging.uipath.com",
+    "organization": "testcloud_team",
+    "tenant": "TAM",
+    "folderPath": "ExpenseFlow-QA-Isolated-20260925",
+    "folderKey": "8a0e5b85-291c-4fd4-b53c-648950c57716",
+    "folderId": 1245402,
+    "entityId": "e6990e77-cdb8-f111-a6a9-6045bddc9767",
+    "bucketKey": "936f8d11-5240-47b2-85d3-60f27ce38d16",
+    "assetKey": "e9f05dc0-4474-4226-96a1-102a6fada8a1",
+    "assetValueAtProvisioning": 25000
+  },
+  "preSeedCheckpoint": {
+    "draftControlRecordId": "A8F19C5A-CEB8-F111-A6A9-6045BDDBB45C",
+    "draftControlStatus": 0,
+    "nonDraftAggregateBeforeSeeding": 0,
+    "evidenceFile": "isolated-draft-empty-finance-checkpoint-20260925.json"
+  },
+  "recordVerification": {
+    "totalEntityRows": 17,
+    "newApprovalReceiptRows": 5,
+    "newFormattingDateRows": 5,
+    "newBoundaryRows": 6,
+    "allBoundaryRowsVerified": true,
+    "allFormattingRowsVerified": true,
+    "allApprovalReceiptRowsVerified": true,
+    "draftControlStillPresent": true,
+    "sharedResourcesMutated": false
+  },
+  "receiptVerification": {
+    "bucketPrefix": "receipts/",
+    "approvalReceiptObjects": 5,
+    "formattingReceiptObjects": 5,
+    "boundaryReceiptObjects": 6,
+    "allObjectsContentType": "text/plain",
+    "allObjectsSizeBytes": 228,
+    "bucketContinuationToken": ""
+  },
+  "efReg015RangeAggregates": [
+    {"label":"February 2026","start":"2026-02-01","end":"2026-02-28","count":1,"total":2800,"expectedCount":1,"expectedTotal":2800},
+    {"label":"Leap February 2028","start":"2028-02-01","end":"2028-02-29","count":1,"total":3000,"expectedCount":1,"expectedTotal":3000},
+    {"label":"April 2026","start":"2026-04-01","end":"2026-04-30","count":1,"total":3200,"expectedCount":1,"expectedTotal":3200}
+  ],
+  "timestampReadbackNote": "DATETIME_WITH_TZ values were verified by typed components after the platform returned localized MM/dd/yyyy HH:mm:ss text; DATE values were compared exactly as YYYY-MM-DD.",
+  "uiLimitation": "The current Finance UI derives the latest month present rather than exposing a month selector; older boundary months are verified through fresh server-side range aggregates and remain part of the fixture evidence."
+}

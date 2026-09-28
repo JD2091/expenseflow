@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "0974e52e-707a-0e00-41ab-0b4a287e8b06",
+  "result": "Passed",
+  "comment": "Expected: All records are retrievable through Finance's unsettled query path.\nActual: ✔ EFREG008-PolicyReview-203800 retrievable in Data Fabric (Status=2, receipt=yes) | ✔ EFREG008-PendingApproval-203800 retrievable in Data Fabric (Status=3, receipt=yes) | ✔ EFREG008-Reworked-203800 retrievable in Data Fabric (Status=6, receipt=yes) | ✔ EFREG008-MissingReceipt-203800 retrievable in Data Fabric (Status=1, receipt=none) | ✔ EFREG008-SubmittedWithReceipt-203800 retrievable in Data Fabric (Status=1, receipt=yes) | ✔ Finance unsettled query path loads",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "13863c21-e574-4571-68f7-08df19d7ace6",
+  "orderNo": 0,
+  "testCaseLogId": "b3f8856f-5382-7300-b299-0b4a2a5f4f73",
+  "description": "Seed or locate the five synthetic records in connected Data Fabric.",
+  "expectedResult": "All records are retrievable through Finance's unsettled query path."
+ },
+ {
+  "testStepId": "fa5b0d88-717a-0e00-ba18-0b4a287e8c6b",
+  "result": "Passed",
+  "comment": "Expected: Each first four record appears once with the correct attention reason; the control is excluded.\nActual: attention footer: Showing 1–25 of 43 | ✔ EFREG008-PolicyReview-203800 listed once with reason \"Policy Review\" → \"QA-20260923T203800 ₹82,000 Policy Review\" | ✔ EFREG008-PendingApproval-203800 listed once with reason \"Pending Approval\" → \"20260923T203800 ₹37,550 Pending Approval\" | ✔ EFREG008-Reworked-203800 listed once with reason \"Needs Rework\" → \"EFQA-20260923T203800 ₹5,900 Needs Rework\" | ✔ EFREG008-MissingReceipt-203800 listed once with reason \"Missing Receipt\" → \"A-20260923T203800 ₹2,500 Missing Receipt\" | ✔ EFREG008-SubmittedWithReceipt-203800 (submitted-with-receipt control) is excluded from attention | attention rows scanned across pages: 43",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "956ff624-04ac-4ed3-68f8-08df19d7ace6",
+  "orderNo": 1,
+  "testCaseLogId": "b3f8856f-5382-7300-b299-0b4a2a5f4f73",
+  "description": "Open Finance and inspect the attention list.",
+  "expectedResult": "Each first four record appears once with the correct attention reason; the control is excluded."
+ },
+ {
+  "testStepId": "43f5e293-727a-0e00-0790-0b4a287e9920",
+  "result": "Passed",
+  "comment": "Expected: Each row navigates to the matching expense detail.\nActual: ✔ attention row for PolicyReview located | ✔ PolicyReview row navigated to its own detail (/expenses/EFREG008-PolicyReview-203800) | ✔ attention row for PendingApproval located | ✔ PendingApproval row navigated to its own detail (/expenses/EFREG008-PendingApproval-203800) | ✔ attention row for Reworked located | ✔ Reworked row navigated to its own detail (/expenses/EFREG008-Reworked-203800) | ✔ attention row for MissingReceipt located | ✔ MissingReceipt row navigated to its own detail (/expenses/EFREG008-MissingReceipt-203800)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "f45ac96d-72e0-4858-68f9-08df19d7ace6",
+  "orderNo": 2,
+  "testCaseLogId": "b3f8856f-5382-7300-b299-0b4a2a5f4f73",
+  "description": "Open each attention row.",
+  "expectedResult": "Each row navigates to the matching expense detail."
+ }
+]

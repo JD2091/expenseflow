@@ -1,0 +1,93 @@
+{
+  "executionId": "13ecfea8-591d-0e00-db4b-0b4a2b2adfd6",
+  "projectKey": "EXPENSEFLOW",
+  "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "testSetKey": "EXPENSEFLOW:2",
+  "testCaseKey": "EXPENSEFLOW:18",
+  "testCaseId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd",
+  "testCaseName": "EF-REG-018 - URL switches persist across navigation and disable cleanly after removal",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "traceId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd-20260925T120000",
+  "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-full-trace.json",
+  "executionTraceManifestRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-execution-traces.json",
+  "capturedAt": "2026-09-25T12:00:00+05:30",
+  "freshFixture": {
+    "mode": "mock",
+    "syntheticDescription": "EFREG018-Mock-Retry",
+    "syntheticAmount": 3300,
+    "failureSwitches": ["?mock=1&demo=fail", "?mock=1&simulateError=1"]
+  },
+  "steps": [
+    {
+      "stepNumber": 1,
+      "stepId": "bde52cbd-21c4-0e00-fe32-0b4a2a2c2064",
+      "expectedResult": "The mock=1 switch remains present after each client-side navigation and every screen renders from the mock service without an OAuth or connected-mode dependency.",
+      "actualResult": "Dashboard, My Expenses, New Expense, Approvals, and Finance rendered from mock mode with mock=1 preserved and no OAuth keys present.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-step01-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh screenshot evidence is embedded in the finalized per-step trace; no standalone PNG was generated."
+    },
+    {
+      "stepNumber": 2,
+      "stepId": "c714fd72-22c4-0e00-a394-0b4a2a2c215a",
+      "expectedResult": "The two-segment route is reached by clicking, the switch is preserved, and navigation does not create an extra duplicate history entry for the same transition.",
+      "actualResult": "The route /expenseflow/expenses/new?mock=1 was reached and returned to /expenseflow/expenses?mock=1; one history entry was added per transition and mock=1 remained present.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-step02-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh screenshot evidence is embedded in the finalized per-step trace; no standalone PNG was generated."
+    },
+    {
+      "stepNumber": 3,
+      "stepId": "337e7d05-23c4-0e00-d931-0b4a2a2c222b",
+      "expectedResult": "The first submit shows the translated recoverable failure and preserves form data; the failure is consumed and the retry succeeds without a false success on the first attempt.",
+      "actualResult": "The first submit correctly showed the translated failure and preserved form data, but retrying with demo=fail still in the URL failed again and did not create a success result.",
+      "result": "Failed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-step03-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh failure evidence is embedded in the finalized per-step trace. Source review confirmed the flag remains armed until removed from the URL."
+    },
+    {
+      "stepNumber": 4,
+      "stepId": "1d8cf55b-24c4-0e00-12d6-0b4a2a2c230a",
+      "expectedResult": "The simulated read failure remains active across client-side navigation, shows the translated error/retry state without a raw exception, and does not create a connected request.",
+      "actualResult": "The translated read error and retry state persisted at /expenseflow/finance?mock=1&simulateError=1 after navigation; no raw exception terms were exposed.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-step04-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh screenshot evidence is embedded in the finalized per-step trace; no standalone PNG was generated."
+    },
+    {
+      "stepNumber": 5,
+      "stepId": "a141a5ca-25c4-0e00-cba5-0b4a2a2c23d5",
+      "expectedResult": "The simulated failure and demo switch are no longer active after hard load; normal mock data renders, the URL contains only the intended remaining query state, and history remains coherent.",
+      "actualResult": "After hard-loading /expenseflow/?mock=1 and navigating to Finance, normal mock aggregates and five attention rows rendered; demo and simulateError were absent and no error panel was present.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-step05-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh screenshot evidence is embedded in the finalized per-step trace; no standalone PNG was generated."
+    }
+  ],
+  "caseOutcome": "Failed",
+  "evidenceLimitations": [
+    "No standalone PNG screenshots were generated; fresh screenshots are embedded in finalized trace artifacts.",
+    "The approved demo failure remained armed while the demo query parameter stayed in the URL, so the expected retry-success branch was not observed under the exact canonical step wording."
+  ],
+  "publication": {
+    "testCaseLogId": null,
+    "stepAttachmentReferences": [],
+    "status": "pending"
+  }
+}

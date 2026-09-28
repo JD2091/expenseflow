@@ -1,0 +1,27 @@
+{
+ "id": "EF-REG-011",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:38:32.723Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ Dashboard shows Indian-grouped full values (₹1,28,88,250, ₹1,28,56,450, ₹1,20,00,000, ₹8,40,000) | ✔ 840000 renders ₹8.4L in Finance \"This month\" tile | ✔ Finance full totals use Indian grouping: ₹10,24,450 ₹9,78,500 ₹8 ₹8,40,000 ₹82,000 ₹37,550 | ✔ 12000000 renders ₹1.2Cr in Finance \"This month\" tile | ✔ Detail EXP-1001 shows ₹12,450",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-011-step1-dashboard-full.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-011-step1-finance-8.4L.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-011-step1-finance-1.2Cr.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-011-step1-detail-full.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Restricted",
+   "actual": "browser tz/locale: Pacific/Honolulu / en-US | ✔ EXP-1001 date-only 2026-08-18 displays \"18 Aug 2026\" under Pacific/Honolulu (no previous-day shift) | ✔ timestamp-derived decision date (2026-08-19T11:40+05:30) shows 19 Aug 2026 (calendar date from ISO string, not shifted to 18 Aug) | ✔ Indian grouping retained under en-US locale | ✔ list dates unshifted: 18 Aug / 17 Aug | RESTRICTED: the \"invalid date text remains unchanged\" sub-check cannot be produced through the UI (dates come from typed <input type=date> or seeded data); it was verified only by the format unit test (npm test: \"an unparseable date is returned as-is rather than as NaN undefined\" — 32/32 pass), not by manual UI observation.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-011-step2-detail-honolulu.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-011-step2-list-honolulu.png"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "95353d79-157a-0e00-dbe9-0b4a287d0ffa",
+  "result": "Passed",
+  "comment": "Expected: Required-description and amount validation errors appear; no expense is created.\nActual: ✔ empty description → validation error: Description / Give the expense a description so your manager knows what it is. | ✔ amount 0 → validation error: Amount / Enter an amount greater than ₹0. | non-numeric typed into number input → input value \"\" (browser rejects letters) | ✔ non-numeric/empty amount → validation error | ✔ no expense created (still 6 records)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "14b0a963-d31a-4c59-8a95-08df1a19787e",
+  "orderNo": 0,
+  "testCaseLogId": "f775cc55-4b7e-7300-2f7d-0b4a2a52b626",
+  "description": "Submit with no description, then with 0 and nonnumeric amounts.",
+  "expectedResult": "Required-description and amount validation errors appear; no expense is created."
+ },
+ {
+  "testStepId": "b7fa9a03-167a-0e00-208f-0b4a287d118c",
+  "result": "Passed",
+  "comment": "Expected: A required-date validation error appears; no expense is created.\nActual: ✔ cleared date → required-date error: Date / Pick the date the expense was incurred. | ✔ no expense created (6 records)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "e83aeb1d-30c9-4c37-8a96-08df1a19787e",
+  "orderNo": 1,
+  "testCaseLogId": "f775cc55-4b7e-7300-2f7d-0b4a2a52b626",
+  "description": "Clear the date and submit.",
+  "expectedResult": "A required-date validation error appears; no expense is created."
+ },
+ {
+  "testStepId": "5f1d4f21-177a-0e00-8f90-0b4a287d139b",
+  "result": "Passed",
+  "comment": "Expected: My Expenses opens without success confirmation or a new row.\nActual: ✔ Cancel opened My Expenses: http://localhost:5173/expenses?mock=1 | ✔ no new row; still 6 records | ✔ no success confirmation displayed",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "a696c132-6939-47c9-8a97-08df1a19787e",
+  "orderNo": 2,
+  "testCaseLogId": "f775cc55-4b7e-7300-2f7d-0b4a2a52b626",
+  "description": "Enter valid control data and select Cancel.",
+  "expectedResult": "My Expenses opens without success confirmation or a new row."
+ }
+]

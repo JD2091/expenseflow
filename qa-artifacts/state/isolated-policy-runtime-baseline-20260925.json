@@ -1,0 +1,55 @@
+{
+  "capturedAt": "2026-09-25T18:20:27.562+05:30",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "uipath": {
+    "baseUrl": "https://staging.uipath.com",
+    "organization": "testcloud_team",
+    "tenant": "TAM",
+    "folderPath": "ExpenseFlow-QA-Isolated-20260925",
+    "folderKey": "8a0e5b85-291c-4fd4-b53c-648950c57716"
+  },
+  "policyAsset": {
+    "name": "ExpenseFlow_PolicyThreshold",
+    "key": "e9f05dc0-4474-4226-96a1-102a6fada8a1",
+    "numericId": 188441,
+    "type": "Integer",
+    "scope": "Global",
+    "foldersCount": 1,
+    "description": "Auto-approval threshold for isolated synthetic ExpenseFlow QA fixtures",
+    "originalValue": 25000,
+    "readback": {
+      "value": "25000",
+      "intValue": 25000
+    }
+  },
+  "runtimeConfiguration": {
+    "generatedConfigPath": "src/services/uipath/config.generated.ts",
+    "configuredFolderPath": "ExpenseFlow-QA-Isolated-20260925",
+    "configuredFolderKey": "8a0e5b85-291c-4fd4-b53c-648950c57716",
+    "configuredEntityId": "e6990e77-cdb8-f111-a6a9-6045bddc9767",
+    "configuredEntityName": "ExpenseFlow_Expense",
+    "configuredAssetName": "ExpenseFlow_PolicyThreshold",
+    "oauthBehavior": "UiPath SDK OAuth initialization and callback completion are required when mock mode is off; callback cleanup preserves non-OAuth query parameters.",
+    "supportedIsolatedFailureSwitches": [
+      "?demo=fail",
+      "?demo=fail-submit",
+      "?demo=fail-decide"
+    ],
+    "failureSwitchBehavior": "The demo failure switch throws before the corresponding UiPath write and is suitable for the application error/recovery path.",
+    "invalidResourceOAuthConfiguration": "Not available in the current source/configuration without mutating shared runtime or OAuth settings; no shared runtime mutation is authorized.",
+    "mockModeLimitation": "?mock=1 bypasses UiPath authentication, Data Fabric warmup, assets, buckets, and Action Center; it is not connected-validation evidence."
+  },
+  "temporaryChangePlan": {
+    "targetAsset": "e9f05dc0-4474-4226-96a1-102a6fada8a1",
+    "temporaryValue": 30000,
+    "testAmount": 27500,
+    "restoreValue": 25000,
+    "restorationRequired": true,
+    "sharedResourcesChanged": false
+  },
+  "limitations": [
+    "EF-REG-012 true invalid/missing OAuth or backend-resource configuration remains Restricted because isolated runtime configuration is not available and shared mutation is prohibited.",
+    "EF-REG-013 remains Restricted because identity provisioning and permission mutation are prohibited."
+  ]
+}

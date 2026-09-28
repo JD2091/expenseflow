@@ -1,0 +1,23 @@
+{
+ "id": "EF-REG-013",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:15:33.890Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Blocked",
+   "actual": "single authenticated identity in this environment (jeet.doshi); the app header shows the persona label \"Rahul Mehta / Manager\" on /approvals and \"Finance\" on /finance with no role check | BLOCKED: a least-privilege employee identity and a separate authorized manager/Finance identity are not available in this environment; only one authenticated user exists, so the negative authorization check (deny without mutation) cannot be performed truthfully.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-013-step1-approvals-as-current-user.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Blocked",
+   "actual": "BLOCKED: no second identity to attempt or compare decisions on EFREG013-pending; no decision was attempted to avoid mutating state without an authorization contrast.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-013-step2-finance-as-current-user.png"
+   ]
+  }
+ ]
+}

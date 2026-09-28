@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "209bb1de-30c4-0e00-46c7-0b4a2a2c7567",
+    "result": "Restricted",
+    "comment": "RESTRICTED: An isolated Finance scope with no non-Draft ExpenseFlow_Expense records was unavailable. No connected records were deleted, reclassified, or otherwise changed to manufacture an empty dataset.",
+    "hasError": false,
+    "actionType": "Restricted/PrerequisiteUnavailable",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "9a161eaa-31c4-0e00-f09f-0b4a2a2c76c7",
+    "result": "Restricted",
+    "comment": "RESTRICTED: Finance initial-load behavior for an approved empty scope was not exercised because the isolated no-data dataset was unavailable; existing connected rows were not treated as empty-state evidence.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "f6c7aa29-32c4-0e00-7e65-0b4a2a2c77ec",
+    "result": "Restricted",
+    "comment": "RESTRICTED: Empty-month summary and date-range behavior could not be verified without the isolated Finance scope. No invalid query or empty-state claim is made.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "492160f6-33c4-0e00-42ff-0b4a2a2c792b",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The empty needs-attention queue and table/pager behavior were not exercised because the required isolated empty dataset was unavailable. No unrelated Finance records were filtered or changed.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "36311f0e-34c4-0e00-a5d4-0b4a2a2c7a2a",
+    "result": "Restricted",
+    "comment": "RESTRICTED: Refresh, range-change, and navigation stability for an empty Finance dataset was not run without the isolated scope. No stale-data conclusion is claimed.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

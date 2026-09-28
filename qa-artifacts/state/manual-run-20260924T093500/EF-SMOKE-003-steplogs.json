@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "f024d9cf-107a-0e00-bc9c-0b4a287cf95a",
+  "result": "Passed",
+  "comment": "Expected: The New Expense form renders.\nActual: ✔ New Expense form rendered at http://localhost:5173/expenses/new?mock=1",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "9bd1ca15-b48c-4e34-a065-08df19cd16a8",
+  "orderNo": 0,
+  "testCaseLogId": "c371a15f-4a7e-7300-63e8-0b4a2a52a5be",
+  "description": "Navigate with the visible New Expense action.",
+  "expectedResult": "The New Expense form renders."
+ },
+ {
+  "testStepId": "a98457d9-117a-0e00-be6c-0b4a287cfb7c",
+  "result": "Passed",
+  "comment": "Expected: A success confirmation identifies a generated EXP-* code; a fresh mock session starts new codes at EXP-1013.\nActual: ✔ success confirmation identifies EXP-1013: \"EXP-1013 submitted for ₹4,800. See it on your dashboard or open the expense. EXP-1013 submitted for ₹4,800 — Submitted.\"",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "b6c3fecb-274d-43cd-a066-08df19cd16a8",
+  "orderNo": 1,
+  "testCaseLogId": "c371a15f-4a7e-7300-63e8-0b4a2a52a5be",
+  "description": "Enter the synthetic data and submit.",
+  "expectedResult": "A success confirmation identifies a generated EXP-* code; a fresh mock session starts new codes at EXP-1013."
+ },
+ {
+  "testStepId": "f40b47aa-127a-0e00-5f06-0b4a287cfdee",
+  "result": "Passed",
+  "comment": "Expected: The new row is Submitted and shared dashboard/list state reflects it.\nActual: ✔ confirmation exposes a link to the new expense | ✔ opened detail http://localhost:5173/expenses/EXP-1013?mock=1 | ✔ My Expenses lists EXP-1013 as Submitted | ✔ record count is now 7 | ✔ dashboard Submitted total now ₹53,050 / 5 expenses (48,250 + 4,800)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "9d130410-1629-41f7-a067-08df19cd16a8",
+  "orderNo": 2,
+  "testCaseLogId": "c371a15f-4a7e-7300-63e8-0b4a2a52a5be",
+  "description": "Open the new expense from the confirmation and return to dashboard or My Expenses.",
+  "expectedResult": "The new row is Submitted and shared dashboard/list state reflects it."
+ }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "6518c3c6-26c4-0e00-9b5a-0b4a2a2c342a",
+    "result": "Restricted",
+    "comment": "Observed: the live policy threshold was ₹25,000, and the existing queue showed a different prior EFREG022-ApprovalLink record/task. A fresh timestamped description was prepared at ₹35,000; the exact pre-submit absence check for the new description and the intended Action Center folder/task facts were not directly available. Restricted: no existing record was reused or mutated.",
+    "hasError": false,
+    "actionType": "Navigate/Read/Prepare",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "5790454b-27c4-0e00-7c72-0b4a2a2c3511",
+    "result": "Passed",
+    "comment": "Observed: the fresh synthetic expense EFREG022-ApprovalLink-EFQA-20260925T1245 was submitted once for ₹35,000. The form reset and displayed the confirmation EXP-1039 submitted for ₹35,000; no duplicate submit was issued.",
+    "hasError": false,
+    "actionType": "Type/Submit",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "25a4d568-28c4-0e00-3346-0b4a2a2c35fe",
+    "result": "Restricted",
+    "comment": "Observed: the approvals queue displayed exactly one fresh EXP-1039 card with ₹35,000, threshold ₹25,000, date 25 Sep 2026, no receipt, the manager-approval reason, and one visible linked task #101661275. Restricted: Action Center task-form inspection required an unresolved organization-unit/folder id, and the cross-folder read-only lookup failed; priority and hidden task payload fields were not claimed.",
+    "hasError": false,
+    "actionType": "Navigate/Read/TaskDiscovery",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "dc7d1e93-29c4-0e00-a55e-0b4a2a2c36e4",
+    "result": "Restricted",
+    "comment": "Observed: the fresh detail route for EXP-1039 showed Pending Approval, ₹35,000, Submitted and Policy validation completed, Manager approval active, Finance processing pending, and Waiting on a manager in Action Center. Restricted: ApprovalTaskId was not rendered on the detail route, so its persisted text value was not independently verified.",
+    "hasError": false,
+    "actionType": "Navigate/Read/DetailVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "33de6264-2ac4-0e00-c03c-0b4a2a2c37b8",
+    "result": "Passed",
+    "comment": "Observed after refresh: exactly one EFREG022-ApprovalLink-EFQA-20260925T1245 card and one occurrence of task #101661275 remained in the approvals queue. Revisiting the detail showed the same EXP-1039 record still Pending Approval with no second decision or task; no duplicate submission was issued.",
+    "hasError": false,
+    "actionType": "Refresh/Read/Idempotency",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

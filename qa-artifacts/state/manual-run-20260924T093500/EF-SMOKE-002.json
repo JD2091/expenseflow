@@ -1,0 +1,43 @@
+{
+ "id": "EF-SMOKE-002",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:34:03.970Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ My Expenses opened: http://localhost:5173/expenses?mock=1 | ✔ first row is newest (EXP-1001, 18 Aug 2026); order EXP-1001,EXP-1002,EXP-1003,EXP-1004,EXP-1007,EXP-1005",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step1-list-default.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ Draft → EXP-1003,EXP-1004 | ✔ Draft+Office → EXP-1004",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step2-status-draft.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step2-draft-office.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ no rows for 2027-01-01..2027-01-31 | main text after exclusion: L EXPENSES My expenses 0 records No expenses match these filters Widen the date range or clear a filter to see more. Clear filters | ✔ after Clear, full list of 6 returns",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step3-empty-state.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step3-cleared.png"
+   ]
+  },
+  {
+   "n": 4,
+   "result": "Passed",
+   "actual": "✔ Expense toggles ascending → descending and reorders rows | ✔ Category toggles ascending → descending and reorders rows | ✔ Date toggles descending → ascending and reorders rows | ✔ Amount toggles descending → ascending and reorders rows | ✔ Status toggles ascending → descending and reorders rows | aria-sort: Expense:ascending/descending; Category:ascending/descending; Date:descending/ascending; Amount:descending/ascending; Status:ascending/descending | ✔ seeded list shows \"Showing 1–25 of 26\" | ✔ page 2 footer: Showing 26–26 of 26, Page 2 of 2 | ✔ filter to Drafts from page 2 clamps to page 1: footer \"Showing 1–2 of 2\", 2 visible rows, no pager (single page)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step4-sorted.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step4-page2.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-002-step4-clamped.png"
+   ]
+  }
+ ]
+}

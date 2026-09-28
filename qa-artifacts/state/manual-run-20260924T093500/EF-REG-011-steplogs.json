@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "b89e59de-8d7a-0e00-dbf0-0b4a287ef6b7",
+  "result": "Passed",
+  "comment": "Expected: Indian grouping is used; 840000 renders ₹8.4L and 12000000 renders ₹1.2Cr.\nActual: ✔ Dashboard shows Indian-grouped full values (₹1,28,88,250, ₹1,28,56,450, ₹1,20,00,000, ₹8,40,000) | ✔ 840000 renders ₹8.4L in Finance \"This month\" tile | ✔ Finance full totals use Indian grouping: ₹10,24,450 ₹9,78,500 ₹8 ₹8,40,000 ₹82,000 ₹37,550 | ✔ 12000000 renders ₹1.2Cr in Finance \"This month\" tile | ✔ Detail EXP-1001 shows ₹12,450",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "e11cf13d-0a43-4fe4-8a9a-08df1a19787e",
+  "orderNo": 0,
+  "testCaseLogId": "b048f2f6-557e-7300-4b57-0b4a2a53356c",
+  "description": "Render full and compact financial values on Dashboard, detail, and Finance views.",
+  "expectedResult": "Indian grouping is used; 840000 renders ₹8.4L and 12000000 renders ₹1.2Cr."
+ },
+ {
+  "testStepId": "d42fac0a-8e7a-0e00-567a-0b4a287efaab",
+  "result": "Restricted",
+  "comment": "Expected: 2026-08-18 displays 18 Aug 2026 without a previous-day shift; invalid date text remains unchanged.\nActual: browser tz/locale: Pacific/Honolulu / en-US | ✔ EXP-1001 date-only 2026-08-18 displays \"18 Aug 2026\" under Pacific/Honolulu (no previous-day shift) | ✔ timestamp-derived decision date (2026-08-19T11:40+05:30) shows 19 Aug 2026 (calendar date from ISO string, not shifted to 18 Aug) | ✔ Indian grouping retained under en-US locale | ✔ list dates unshifted: 18 Aug / 17 Aug | RESTRICTED: the \"invalid date text remains unchanged\" sub-check cannot be produced through the UI (dates come from typed <input type=date> or seeded data); it was verified only by the format unit test (npm test: \"an unparseable date is returned as-is rather than as NaN undefined\" — 32/32 pass), not by manual UI observation.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "5d0b553a-67de-4484-8a9b-08df1a19787e",
+  "orderNo": 1,
+  "testCaseLogId": "b048f2f6-557e-7300-4b57-0b4a2a53356c",
+  "description": "Render date-only and timestamp-derived values under an alternate timezone.",
+  "expectedResult": "2026-08-18 displays 18 Aug 2026 without a previous-day shift; invalid date text remains unchanged."
+ }
+]

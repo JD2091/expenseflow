@@ -1,0 +1,23 @@
+{
+ "id": "EF-REG-009",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:55:42.692Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ friendly inline form error shown with retry guidance | ✔ no raw provider exception | ✔ no record written during the failed attempt (0 records in Data Fabric) | failure injected with the app-documented rehearsed switch ?demo=fail-submit against the connected runtime (no real provider outage was created)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-009-step1-write-failure.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Restricted",
+   "actual": "✔ after removing the switch, re-submitting succeeds without an app reset: EXP-1031 submitted for ₹3,300. See it on your dashboard or open the expense. | EXP-1031 su | ✔ exactly one record after recovery (no duplicate writes): 1 | RESTRICTED: a genuine connected READ failure could not be triggered safely (simulateError is mock-only, and network/credential fault injection was not attempted); only the write-failure path was exercised through the app-documented demo switch.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-009-step2-recovered.png"
+   ]
+  }
+ ]
+}

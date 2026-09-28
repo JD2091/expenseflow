@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "9f02a511-357a-0e00-167e-0b4a287dc9cd",
+    "result": "Restricted",
+    "comment": "Observed: connected submission created EXP-1033 for EFREG001-Low at INR 24,000 on 2026-08-22. The record persisted as Pending Approval because this run intentionally did not attach a receipt, so the below-threshold routing cannot be isolated from the missing-receipt rule.",
+    "hasError": false,
+    "actionType": "Navigate/Type/Submit",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "567ba738-367a-0e00-5d08-0b4a287dcb3d",
+    "result": "Restricted",
+    "comment": "Observed: connected submission created EXP-1034 for EFREG001-High at INR 25,001 on 2026-08-22. The record persisted as Pending Approval; approval-required behavior was observed, but the missing receipt is an additional approval trigger in this run.",
+    "hasError": false,
+    "actionType": "Type/Submit",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "36d840e8-377a-0e00-ca0b-0b4a287dcc93",
+    "result": "Restricted",
+    "comment": "Observed: after navigating to My expenses and paging to page 2, EXP-1033 was present at INR 24,000 Pending Approval and EXP-1034 was present at INR 25,001 Pending Approval. Both records were readable, but persisted policy-note attribution was not isolated because both submissions lacked receipts.",
+    "hasError": false,
+    "actionType": "Navigate/Read/Paginate",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "d0f273a5-13c4-0e00-9157-0b4a2a2b99fb",
+    "result": "Restricted",
+    "comment": "Observed: exact-threshold submission created EXP-1035 at INR 25,000 and the persisted list status was Pending Approval. The amount equality was exercised, but the missing receipt prevents isolating the strict threshold branch from receipt-driven approval routing.",
+    "hasError": false,
+    "actionType": "Navigate/Type/Submit/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "d5243dde-14c4-0e00-cac1-0b4a2a2b9ad4",
+    "result": "Passed",
+    "comment": "Observed: below-threshold synthetic expense EFREG001-NoReceipt-20260925T1046 created EXP-1036 at INR 9,000 with no receipt selected. The persisted My expenses row showed Pending Approval, matching the expected missing-receipt approval route.",
+    "hasError": false,
+    "actionType": "Navigate/Type/Submit/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

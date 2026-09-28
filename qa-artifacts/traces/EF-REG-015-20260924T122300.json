@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "traceId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797-20260924T122300",
+  "metadata": {
+    "traceId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797-20260924T122300",
+    "title": "EF-REG-015 - Finance month-end bounds include actual last days for 28, 29, and 30-day months",
+    "sessionId": "9a4654a5-135f-4d83-b3e0-e8f72a7cb9d8",
+    "startedAt": "2026-09-24T07:14:59.666Z",
+    "titlePath": [
+      "EXPENSEFLOW",
+      "EF-REG-015 - Finance month-end bounds include actual last days for 28, 29, and 30-day months"
+    ],
+    "properties": {
+      "kind": "testmanager",
+      "source": "autonomousExecution",
+      "testcaseId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797",
+      "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+      "orgId": "testcloud_team",
+      "tenantId": "TAM"
+    },
+    "endedAt": "2026-09-24T07:15:19.198Z"
+  },
+  "actions": [
+    {
+      "timestamp": "2026-09-24T07:14:59.531Z",
+      "appActCallId": "c635ef99-0df1-4af5-9ebd-e36c3311707d",
+      "description": "Attach Chrome test browser",
+      "irreversible": false,
+      "app": {
+        "identifier": "win:chrome:2e0b4c",
+        "url": ""
+      },
+      "actions": [
+        {
+          "type": "open",
+          "payload": {
+            "reason": "attach"
+          }
+        }
+      ],
+      "screenshots": {
+        "beforeBase64": "",
+        "afterBase64": ""
+      },
+      "result": "success",
+      "index": 1
+    }
+  ]
+}

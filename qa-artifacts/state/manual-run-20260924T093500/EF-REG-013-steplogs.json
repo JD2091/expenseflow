@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "73677f85-9f7a-0e00-4c15-0b4a287f86ac",
+  "result": "Restricted",
+  "comment": "Expected: The employee does not gain successful approval or Finance actions merely by entering a route.\nActual: single authenticated identity in this environment (jeet.doshi); the app header shows the persona label \"Rahul Mehta / Manager\" on /approvals and \"Finance\" on /finance with no role check | BLOCKED: a least-privilege employee identity and a separate authorized manager/Finance identity are not available in this environment; only one authenticated user exists, so the negative authorization check (deny without mutation) cannot be performed truthfully.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "325cec87-9f86-4e1f-a077-08df19cd16a8",
+  "orderNo": 0,
+  "testCaseLogId": "ec850661-5982-7300-7f41-0b4a2a5f8bcd",
+  "description": "Authenticate as least-privilege employee and open /approvals and /finance.",
+  "expectedResult": "The employee does not gain successful approval or Finance actions merely by entering a route."
+ },
+ {
+  "testStepId": "aa28e2c5-a07a-0e00-eab4-0b4a287f897a",
+  "result": "Restricted",
+  "comment": "Expected: Unauthorized attempt is unavailable or denied without mutation; authorized identity receives required queue/data and decisions.\nActual: BLOCKED: no second identity to attempt or compare decisions on EFREG013-pending; no decision was attempted to avoid mutating state without an authorization contrast.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "9734f158-d659-43a3-a078-08df19cd16a8",
+  "orderNo": 1,
+  "testCaseLogId": "ec850661-5982-7300-7f41-0b4a2a5f8bcd",
+  "description": "Attempt a decision on EFREG013-pending, then authenticate as authorized manager or Finance identity and repeat.",
+  "expectedResult": "Unauthorized attempt is unavailable or denied without mutation; authorized identity receives required queue/data and decisions."
+ }
+]

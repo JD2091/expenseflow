@@ -1,0 +1,34 @@
+{
+ "stableId": "EF-SMOKE-007",
+ "testCaseId": "a893de25-8cc3-0d00-1361-0b4a287d5a26",
+ "executionId": "79131249-3313-0e00-a9c3-0b4a2a52e27c",
+ "testCaseLogId": "6c00fcff-507e-7300-3c6a-0b4a2a52e370",
+ "result": "Passed",
+ "stepLogCount": 2,
+ "stepResults": [
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-SMOKE-007-step1-not-found.png",
+   "status": "uploaded"
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-007-step2-unknown-route.png",
+   "status": "uploaded"
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/79131249-3313-0e00-a9c3-0b4a2a52e27c",
+ "note": "reconciled after the publisher's final get-stats call returned no output once; TM confirms 2 attachments downloaded, stats 1/0/0 Finished",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

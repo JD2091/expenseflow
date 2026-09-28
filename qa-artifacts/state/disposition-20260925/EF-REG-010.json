@@ -1,0 +1,4 @@
+[
+  {"testStepId":"2531f50a-7b7a-0e00-d7e7-0b4a287ebd87","result":"Restricted","comment":"BLOCKED: Isolated receipt objects are present, but the hosted build is not bound to the isolated entity/bucket scope. Receipt failure access was not attempted against shared data.","hasError":false,"actionType":"Blocked/IsolationGate","hasAttachment":false,"clipboardData":""},
+  {"testStepId":"f1f48af1-7d7a-0e00-8499-0b4a287ebff5","result":"Restricted","comment":"BLOCKED: Normal receipt recovery was not exercised because the deployed app scope does not match the approved isolated fixture scope. No receipt or record mutation was attempted.","hasError":false,"actionType":"Blocked/NotExecuted","hasAttachment":false,"clipboardData":""}
+]

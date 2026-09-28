@@ -1,0 +1,24 @@
+{
+ "id": "EF-REG-003",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:44:25.341Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "list header: 51 records; footer: Showing 1–25 of 51 | Data Fabric independent aggregate (uip df): total=56, non-draft=55 (₹615428), drafts=1 | ✔ dataset exceeds one UI page (51 > 25) | DF employee-scoped count (Rahul Mehta): 51 | ✔ UI total (51) equals Data Fabric employee-scoped count (51) — all matching records exposed, none truncated at page size 100/25",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-003-step1-list-page1.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ last page footer consistent: Showing 51–51 of 51  | ✔ Next disabled on last page | Finance summary: Expenses 55 ₹6,15,428 submitted across the company Pending 39 ₹4,37,113 in flight This month ₹3.4L 20 expenses in Sep 2026 NEEDS ATTENTION Blocked or waiting 39 records EMPLOYEE EXPENSE AMOUNT WAITING | ✔ Finance \"Expenses\" card equals Data Fabric aggregate (55, ₹6,15,428) | Finance attention footer: Showing 1–25 of 39 | ✔ Finance attention paging crosses page boundary",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-003-step2-list-last-page.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-003-step2-finance.png"
+   ]
+  }
+ ]
+}

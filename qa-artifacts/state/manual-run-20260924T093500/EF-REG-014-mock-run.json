@@ -1,0 +1,33 @@
+{
+ "id": "EF-REG-014",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:44:53.175Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ page 2 footer: Showing 26–28 of 28, Page 2 of 2 (rows 26 and later) | ✔ 3 rows shown on page 2",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step1-page2.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ Status=Draft from page 2 → auto page 1, Showing 1–2 of 2, 2 rows (single-page footer; no \"Page 1 of 1\" pager is drawn) | ✔ Category=Meals from page 2 → Showing 1–12 of 12, 12 rows (11 seeded + EXP-1002) | ✔ date filter from page 2 → valid page-1 results: Showing 6 of 28 expenses. + ",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step2-status-clamp.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step2-category-clamp.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step2-date-clamp.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Restricted",
+   "actual": "Finance attention table in seeded mock session: Showing 1–25 of 27 | ✔ Previous disabled on page 1 | ✔ Finance page 2: Showing 26–27 of 27  | ✔ Next disabled on last page | RESTRICTED: the mock service cannot reduce the Finance attention dataset while the Finance screen is open (decisions happen on another screen and Finance remounts to page 1), so \"clamp after reduction\" on Finance could only be exercised against the connected dataset; only Finance paging boundaries were observed here.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-014-step3-finance-page2.png"
+   ]
+  }
+ ]
+}

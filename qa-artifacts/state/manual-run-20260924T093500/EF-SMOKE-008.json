@@ -1,0 +1,35 @@
+{
+ "id": "EF-SMOKE-008",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:36:00.453Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ queue order (amount desc 82,000 / 37,550 / 11,650): EXP-1008,EXP-1009,EXP-1007 | ✔ each card has a Comments box | ✔ 3 × Approve buttons | ✔ 3 × Reject buttons | ✔ 3 × Request rework buttons",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-008-step1-queue.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ success feedback: \"EXP-1008 is now Approved.\" | ✔ EXP-1008 left the queue after refresh; remaining EXP-1009,EXP-1007",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-008-step2-approved-feedback.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-008-step2-queue-after-approve.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ Reject: EXP-1008 card removed from decision queue | ✔ Reject: Finance shows EXP-1008 settled (not in attention list) — distinct resulting status Rejected | ✔ Request rework: EXP-1008 card removed from decision queue | ✔ Request rework: Finance shows EXP-1008 as Needs Rework — distinct resulting status Needs Rework",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-008-step3-Reject-queue.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-008-step3-Reject-finance.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-008-step3-Requestrework-queue.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-008-step3-Requestrework-finance.png"
+   ]
+  }
+ ]
+}

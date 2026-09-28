@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "bde52cbd-21c4-0e00-fe32-0b4a2a2c2064",
+    "result": "Passed",
+    "comment": "Observed: Loaded https://testcloud-team.staging.uipath.host/expenseflow/?mock=1 and verified Dashboard, My Expenses, New Expense, Approvals, and Finance rendered from the mock service. The mock=1 switch remained present across the observed routes, and no OAuth callback keys were present.",
+    "hasError": false,
+    "actionType": "Navigate/Read/MockNavigation",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "c714fd72-22c4-0e00-a394-0b4a2a2c215a",
+    "result": "Passed",
+    "comment": "Observed: From /expenseflow/finance?mock=1, in-app navigation reached /expenseflow/expenses/new?mock=1 and returned to /expenseflow/expenses?mock=1. The mock switch remained present, the two-segment route rendered, and browser history advanced by one entry per transition without a duplicate same-route entry.",
+    "hasError": false,
+    "actionType": "Navigate/Read/HistoryVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "337e7d05-23c4-0e00-d931-0b4a2a2c222b",
+    "result": "Failed",
+    "comment": "Observed: In a fresh mock tab at /expenseflow/expenses/new?mock=1&demo=fail, the first synthetic submit (EFREG018-Mock-Retry, Travel, 3300) showed the translated recoverable failure and preserved the description, amount, and date. Retrying with the same URL showed the same failure again; no success state or created-record confirmation appeared. The approved source implementation reads the demo flag on every call, so the failure remains armed until the demo query parameter is removed. Expected one-shot consumption and retry success were not observed.",
+    "hasError": true,
+    "actionType": "Fill/Click/Read/Retry",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "1d8cf55b-24c4-0e00-12d6-0b4a2a2c230a",
+    "result": "Passed",
+    "comment": "Observed: Loaded /expenseflow/?mock=1&simulateError=1 and navigated to /expenseflow/finance?mock=1&simulateError=1. The translated read-failure state showed 'Something went wrong', 'Could not reach the expense service', and 'Try again'; the simulated-error switch persisted and no raw exception, stack trace, token, credential, or secret terms were exposed.",
+    "hasError": false,
+    "actionType": "Navigate/Read/ErrorRecovery",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "a141a5ca-25c4-0e00-cba5-0b4a2a2c23d5",
+    "result": "Passed",
+    "comment": "Observed: Hard-loaded /expenseflow/?mock=1 after removing the demo and simulateError switches, then navigated to /expenseflow/finance?mock=1. Normal mock aggregates and five attention rows rendered; demo and simulateError were absent from the URL, no error panel was present, and the mock state remained healthy after navigation.",
+    "hasError": false,
+    "actionType": "Navigate/Read/CleanRecovery",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

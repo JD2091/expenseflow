@@ -1,0 +1,72 @@
+[
+ {
+  "testStepId": "53c4b9de-35c4-0e00-f014-0b4a2a2c8f98",
+  "result": "Passed",
+  "comment": "Expected: Normal seeded mock data, aggregates, and attention content render without a connected dependency.\nActual: ✔ Dashboard normal: KPI ₹48,250 + recent rows | ✔ Finance normal: aggregates + attention",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "5001a1a9-ae00-4995-0c74-08df19cef660",
+  "orderNo": 0,
+  "testCaseLogId": "6e5674a6-547e-7300-79fb-0b4a2a532363",
+  "description": "Open the verified local app with ?mock=1 and record the normal Dashboard and Finance mock state before arming a read failure.",
+  "expectedResult": "Normal seeded mock data, aggregates, and attention content render without a connected dependency."
+ },
+ {
+  "testStepId": "ee9ae0a8-36c4-0e00-8574-0b4a2a2c90a9",
+  "result": "Passed",
+  "comment": "Expected: The screen renders the translated read-failure message and the intended retry/recovery affordance instead of raw exception text, a stack trace, or a blank unhandled state.\nActual: ✔ translated read-failure message shown | ✔ retry affordance visible | ✔ no raw exception/stack | ✔ Finance also shows failure (simulate persists across in-app nav)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "51d3ae07-dc02-44e0-0c75-08df19cef660",
+  "orderNo": 1,
+  "testCaseLogId": "6e5674a6-547e-7300-79fb-0b4a2a532363",
+  "description": "Open Dashboard or Finance with ?mock=1&simulateError=1 and wait for the read operation to complete.",
+  "expectedResult": "The screen renders the translated read-failure message and the intended retry/recovery affordance instead of raw exception text, a stack trace, or a blank unhandled state."
+ },
+ {
+  "testStepId": "8a1d7ba2-37c4-0e00-bd4a-0b4a2a2c91c4",
+  "result": "Passed",
+  "comment": "Expected: No token, credential, raw request body, stack trace, or connected-service internals are exposed; stale rows and misleading aggregates are not presented as current data.\nActual: ✔ no stale rows or aggregates shown on the failed screen | ✔ no token/credential terms exposed | console errors: none",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "435f5541-2824-4ae2-0c76-08df19cef660",
+  "orderNo": 2,
+  "testCaseLogId": "6e5674a6-547e-7300-79fb-0b4a2a532363",
+  "description": "Inspect the failed screen, browser console-visible UI surface, and any displayed request/error details.",
+  "expectedResult": "No token, credential, raw request body, stack trace, or connected-service internals are exposed; stale rows and misleading aggregates are not presented as current data."
+ },
+ {
+  "testStepId": "3b62d57f-38c4-0e00-b5ce-0b4a2a2c92d5",
+  "result": "Passed",
+  "comment": "Expected: Normal mock reads succeed, the expected seeded data/aggregates return, and no duplicate or partial read-side effect is created.\nActual: ✔ normal reads succeed after removing simulateError; seeded KPI + rows return",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "19a33180-747c-42a1-0c77-08df19cef660",
+  "orderNo": 3,
+  "testCaseLogId": "6e5674a6-547e-7300-79fb-0b4a2a532363",
+  "description": "Remove simulateError=1, retain ?mock=1, and use the visible retry/reload affordance or revisit the same screen.",
+  "expectedResult": "Normal mock reads succeed, the expected seeded data/aggregates return, and no duplicate or partial read-side effect is created."
+ },
+ {
+  "testStepId": "194222aa-39c4-0e00-9ffb-0b4a2a2c93f8",
+  "result": "Passed",
+  "comment": "Expected: Both screens remain healthy after recovery, the error state is cleared, and no stale failure switch or stale error content reappears.\nActual: ✔ Finance healthy | ✔ Dashboard healthy | ✔ after refresh: healthy, no stale error | ✔ no stale failure switch in URL: http://localhost:5173/?mock=1",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "e83d522b-9480-4549-0c78-08df19cef660",
+  "orderNo": 4,
+  "testCaseLogId": "6e5674a6-547e-7300-79fb-0b4a2a532363",
+  "description": "Navigate between Dashboard and Finance and refresh once on the normal mock URL.",
+  "expectedResult": "Both screens remain healthy after recovery, the error state is cleared, and no stale failure switch or stale error content reappears."
+ }
+]

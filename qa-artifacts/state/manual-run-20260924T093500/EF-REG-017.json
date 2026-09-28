@@ -1,0 +1,39 @@
+{
+ "id": "EF-REG-017",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:15:37.818Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Blocked",
+   "actual": "live policy threshold read from the app: Policy threshold ₹25,000 | BLOCKED: the case requires changing the shared Orchestrator asset ExpenseFlow_PolicyThreshold from 25000 to 30000 while a form is open, then restoring it. That is a mutation of shared tenant configuration and needs explicit authorization plus an isolated restoration window; neither was available.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-017-step1-threshold-25000.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Blocked",
+   "actual": "BLOCKED: depends on step 1 (asset change not authorized).",
+   "shots": []
+  },
+  {
+   "n": 3,
+   "result": "Blocked",
+   "actual": "BLOCKED: depends on step 2 (no live threshold change). Unit coverage exists (npm test: \"a submit sees an Asset that changed after the page loaded\" passes) but is not a manual UI verification.",
+   "shots": []
+  },
+  {
+   "n": 4,
+   "result": "Blocked",
+   "actual": "BLOCKED: depends on step 3.",
+   "shots": []
+  },
+  {
+   "n": 5,
+   "result": "Blocked",
+   "actual": "BLOCKED: nothing to restore because the threshold was not changed.",
+   "shots": []
+  }
+ ]
+}

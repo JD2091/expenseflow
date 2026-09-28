@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "dc75856e-227a-0e00-fcde-0b4a287d8612",
+  "result": "Passed",
+  "comment": "Expected: Expenses, Pending, and This month cards render company-level values.\nActual: ✔ Expenses card 10 / ₹1,84,450 (company level) | ✔ Pending card 5 / ₹1,38,500 | ✔ This month ₹1.8L, 10 expenses in Aug 2026",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "ef9d4619-94c4-48cb-0c71-08df19cef660",
+  "orderNo": 0,
+  "testCaseLogId": "5cda53f1-527e-7300-0757-0b4a2a5300ad",
+  "description": "Open the Finance page and inspect the summary cards.",
+  "expectedResult": "Expenses, Pending, and This month cards render company-level values."
+ },
+ {
+  "testStepId": "59b6d81d-247a-0e00-b7f2-0b4a287d8736",
+  "result": "Passed",
+  "comment": "Expected: Rows classify Policy Review, Pending Approval, Needs Rework, and Missing Receipt according to seed data.\nActual: ✔ EXP-1008 classified Policy Review | ✔ EXP-1009 classified Pending Approval | ✔ EXP-1007 classified Pending Approval | ✔ EXP-1011 classified Needs Rework | ✔ EXP-1006 classified Missing Receipt | ✔ 5 attention rows",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "1b8e730c-330e-48b2-0c72-08df19cef660",
+  "orderNo": 1,
+  "testCaseLogId": "5cda53f1-527e-7300-0757-0b4a2a5300ad",
+  "description": "Inspect Needs Attention rows.",
+  "expectedResult": "Rows classify Policy Review, Pending Approval, Needs Rework, and Missing Receipt according to seed data."
+ },
+ {
+  "testStepId": "fd25a5f7-287a-0e00-7de6-0b4a287d885f",
+  "result": "Passed",
+  "comment": "Expected: Both supported row interactions navigate to the corresponding expense detail.\nActual: ✔ click → http://localhost:5173/expenses/EXP-1008?mock=1 | ✔ keyboard Enter → http://localhost:5173/expenses/EXP-1009?mock=1 | keyboard Space → http://localhost:5173/expenses/EXP-1007?mock=1",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "0ed28290-0f49-4551-0c73-08df19cef660",
+  "orderNo": 2,
+  "testCaseLogId": "5cda53f1-527e-7300-0757-0b4a2a5300ad",
+  "description": "Open a Finance attention row with click and keyboard activation.",
+  "expectedResult": "Both supported row interactions navigate to the corresponding expense detail."
+ }
+]

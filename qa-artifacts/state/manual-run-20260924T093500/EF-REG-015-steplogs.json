@@ -1,0 +1,72 @@
+[
+ {
+  "testStepId": "f80b429e-17c4-0e00-b112-0b4a2a2bd9e9",
+  "result": "Restricted",
+  "comment": "Expected: The isolated dataset contains the planned last-day and outside-range records with recorded expected counts and totals.\nActual: Finance month tile before seeding: This month ₹5.4L 28 expenses in Sep 2026 | ✔ Finance in this tenant derives its month from the latest submitted record (no date-range selector exists in the UI); the active month is Sep 2026 | seeded record dated 2026-09-30 (last day of a 30-day month): EXP-1032 submitted for ₹1,111. See it on your dashboard or open the expense. | EXP-1032 su | ✔ boundary record dated 2026-09-30 created | RESTRICTED: only the 30-day-month boundary (2026-09-30) could be seeded: 2026-02-28, 2028-02-29, 2026-04-30 and the next-day controls would make older months non-latest in a shared tenant, and the app has no month selector, so the planned Feb/Feb-leap/Apr datasets cannot be queried.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "15082791-c1de-42c0-8a76-08df19d74366",
+  "orderNo": 0,
+  "testCaseLogId": "286ecab1-5b82-7300-235e-0b4a2a5fad67",
+  "description": "Seed unique non-Draft records on 2026-02-28, 2028-02-29, and 2026-04-30, plus a next-day control record for each selected month.",
+  "expectedResult": "The isolated dataset contains the planned last-day and outside-range records with recorded expected counts and totals."
+ },
+ {
+  "testStepId": "3171814b-18c4-0e00-63c4-0b4a2a2bdafe",
+  "result": "Restricted",
+  "comment": "Expected: Each query completes without a Data Fabric 400 or invalid-date error, and the selected range is shown correctly.\nActual: ✔ Finance loads for the 30-day month (Sep 2026) with no Data Fabric 400 / invalid-date / error text | month tile: This month ₹5.4L 29 expenses in Sep 2026 | RESTRICTED: the app offers no date-range selector, so February 2026 / 2028 / April 2026 could not be selected; only the latest month (Sep 2026, 30 days) was queried.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "c62aef6d-a33a-48a2-8a77-08df19d74366",
+  "orderNo": 1,
+  "testCaseLogId": "286ecab1-5b82-7300-235e-0b4a2a5fad67",
+  "description": "Open Finance and select the date range for February 2026, then repeat for February 2028 and April 2026.",
+  "expectedResult": "Each query completes without a Data Fabric 400 or invalid-date error, and the selected range is shown correctly."
+ },
+ {
+  "testStepId": "c3232ec6-19c4-0e00-b256-0b4a2a2bdbf1",
+  "result": "Restricted",
+  "comment": "Expected: The 28th and 29th day records are included exactly once, the next-day controls are excluded, and no stale month rows remain.\nActual: BLOCKED: February 2026 and leap-year February 2028 cannot be queried: Finance has no month selector and always uses the latest month with data; older months are not reachable without deleting or dating-out newer shared records.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "e89dab6e-c3e4-410e-8a78-08df19d74366",
+  "orderNo": 2,
+  "testCaseLogId": "286ecab1-5b82-7300-235e-0b4a2a5fad67",
+  "description": "Inspect the February 2026 and leap-year February 2028 results.",
+  "expectedResult": "The 28th and 29th day records are included exactly once, the next-day controls are excluded, and no stale month rows remain."
+ },
+ {
+  "testStepId": "e0aa6f54-1ac4-0e00-f162-0b4a2a2bdcd5",
+  "result": "Restricted",
+  "comment": "Expected: The April 30th record is included, April 31st is never queried, and the Finance count and total equal the expected boundary-inclusive values.\nActual: Finance month tile now: This month ₹5.4L 29 expenses in Sep 2026; DF record: {\"ExpenseCode\":\"EXP-1032\",\"ExpenseDate\":\"2026-09-30\",\"Amount\":1111} | ✔ the 2026-09-30 record exists in Data Fabric with the correct date | ✔ the 30-day month is queried through its actual last day (Sep 2026 tile renders; the previous hard-coded -31 bound would have caused an invalid-date 400) | RESTRICTED: April 2026 (30-day) was not the latest month, so its aggregate could not be compared; the equivalent 30-day boundary was verified for Sep 2026 only. Count/total precomputed comparison for the whole month was not performed.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "a73ed329-f265-49d3-8a79-08df19d74366",
+  "orderNo": 3,
+  "testCaseLogId": "286ecab1-5b82-7300-235e-0b4a2a5fad67",
+  "description": "Inspect the April 2026 results and compare the displayed aggregate count and total with the precomputed values.",
+  "expectedResult": "The April 30th record is included, April 31st is never queried, and the Finance count and total equal the expected boundary-inclusive values."
+ },
+ {
+  "testStepId": "bda566be-1bc4-0e00-1298-0b4a2a2bddd8",
+  "result": "Restricted",
+  "comment": "Expected: Boundary records remain stable after refresh and range changes; no off-by-one, duplicate, timezone-shifted, or stale aggregate appears.\nActual: ✔ Finance stable after refresh (Sep 2026 tile): This month ₹5.4L 29 expenses in Sep 2026 | RESTRICTED: switching among three month ranges is not possible (no range control).",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "091414fc-7331-4d5e-8a7a-08df19d74366",
+  "orderNo": 4,
+  "testCaseLogId": "286ecab1-5b82-7300-235e-0b4a2a5fad67",
+  "description": "Refresh Finance and switch among the three month ranges again.",
+  "expectedResult": "Boundary records remain stable after refresh and range changes; no off-by-one, duplicate, timezone-shifted, or stale aggregate appears."
+ }
+]

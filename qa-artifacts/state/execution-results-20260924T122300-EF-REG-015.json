@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "f80b429e-17c4-0e00-b112-0b4a2a2bd9e9",
+    "result": "Restricted",
+    "comment": "Blocked before connected fixture seeding: Edge remained on the verified ExpenseFlow URL, but the attached screen was masked and both accessibility extraction and DOM inspection returned the same COM transport error. No connected data was submitted or mutated. The trace contains only the attempted navigation/inspection actions; per-step coverage is partial because one browser-attach action occurred before the step checkpoint.",
+    "hasError": false,
+    "actionType": "Navigate",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "3171814b-18c4-0e00-63c4-0b4a2a2bdafe",
+    "result": "None",
+    "comment": "Not run because the connected browser transport was unavailable before fixture seeding could be verified.",
+    "hasError": false,
+    "actionType": "",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "c3232ec6-19c4-0e00-b256-0b4a2a2bdbf1",
+    "result": "None",
+    "comment": "Not run because the connected browser transport was unavailable before fixture seeding could be verified.",
+    "hasError": false,
+    "actionType": "",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "e0aa6f54-1ac4-0e00-f162-0b4a2a2bdcd5",
+    "result": "None",
+    "comment": "Not run because the connected browser transport was unavailable before fixture seeding could be verified.",
+    "hasError": false,
+    "actionType": "",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "bda566be-1bc4-0e00-1298-0b4a2a2bddd8",
+    "result": "None",
+    "comment": "Not run because the connected browser transport was unavailable before fixture seeding could be verified.",
+    "hasError": false,
+    "actionType": "",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

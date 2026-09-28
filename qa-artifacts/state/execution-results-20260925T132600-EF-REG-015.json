@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "f80b429e-17c4-0e00-b112-0b4a2a2bd9e9",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The isolated month-end synthetic data scope for 2026-02-28, 2028-02-29, 2026-04-30, and next-day controls was unavailable. No shared Finance data was seeded or changed.",
+    "hasError": false,
+    "actionType": "Restricted/PrerequisiteUnavailable",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "3171814b-18c4-0e00-63c4-0b4a2a2bdafe",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The required isolated boundary dataset was unavailable, so the three month-range queries were not executed against unrelated Finance records.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "c3232ec6-19c4-0e00-b256-0b4a2a2bdbf1",
+    "result": "Restricted",
+    "comment": "RESTRICTED: February 2026 and leap-year February 2028 boundary verification was dependent on the unavailable isolated dataset; no inclusion or exclusion result is claimed.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "e0aa6f54-1ac4-0e00-f162-0b4a2a2bdcd5",
+    "result": "Restricted",
+    "comment": "RESTRICTED: April 2026 boundary aggregation could not be verified without the approved isolated dataset. No shared Finance aggregate was treated as equivalent evidence.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "bda566be-1bc4-0e00-1298-0b4a2a2bddd8",
+    "result": "Restricted",
+    "comment": "RESTRICTED: Refresh and range-change stability was not run because the required isolated month-end records were unavailable and unrelated data could not be substituted safely.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

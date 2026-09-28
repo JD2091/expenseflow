@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "2531f50a-7b7a-0e00-d7e7-0b4a287ebd87",
+  "result": "Failed",
+  "comment": "Expected: The detail page remains usable and receipt access failure is handled without leaking implementation details.\nActual: ✔ detail renders with an interactive receipt chip for a record whose bucket object was never uploaded | after opening the unavailable receipt: alert=\"ExpenseFlow could not open the receipt from UiPath: BlobFileInfo does not exist.\"; new tab opened=false | ✔ detail page remains usable | ✔ the failure is surfaced (inline alert or blob 404 tab) rather than silently ignored | failure condition: natural (bucket object absent for the seeded fixture); no fault injection, no credential or network manipulation | ✘ no implementation details (storage host, signature, stack, provider type names such as BlobFileInfo) leaked in the page",
+  "hasError": true,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "d020c9c9-f816-4b18-68fc-08df19d7ace6",
+  "orderNo": 0,
+  "testCaseLogId": "790332a6-5582-7300-4061-0b4a2a5f706d",
+  "description": "Open the synthetic expense detail and attempt receipt access under the approved safe failure condition.",
+  "expectedResult": "The detail page remains usable and receipt access failure is handled without leaking implementation details."
+ },
+ {
+  "testStepId": "f1f48af1-7d7a-0e00-8499-0b4a287ebff5",
+  "result": "Restricted",
+  "comment": "Expected: Receipt access succeeds through the configured bucket path.\nActual: ✔ receipt with an existing bucket object opens through authorized bucket access | RESTRICTED: the step is about restoring access after a failure induced on the SAME receipt; the induced failure was a missing object on a different fixture, so \"restore then reopen\" was shown as a successful open of a healthy receipt, not recovery of the failed one.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "0b3c5ede-59e1-47e6-68fd-08df19d7ace6",
+  "orderNo": 1,
+  "testCaseLogId": "790332a6-5582-7300-4061-0b4a2a5f706d",
+  "description": "Restore normal authorized access and open the receipt again.",
+  "expectedResult": "Receipt access succeeds through the configured bucket path."
+ }
+]

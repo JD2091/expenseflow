@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "5e682e32-187a-0e00-15fe-0b4a287d217b",
+  "result": "Passed",
+  "comment": "Expected: A friendly submission error appears; no raw exception or success state is shown.\nActual: ✔ friendly submission error shown | ✔ no raw exception text | ✔ no success state",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "ad2a4e33-6a23-47a6-a068-08df19cd16a8",
+  "orderNo": 0,
+  "testCaseLogId": "624f891d-4c7e-7300-e3ce-0b4a2a52c9a5",
+  "description": "Complete the valid form and submit while demo=fail-submit is armed.",
+  "expectedResult": "A friendly submission error appears; no raw exception or success state is shown."
+ },
+ {
+  "testStepId": "e5d44262-197a-0e00-8e60-0b4a287d22f8",
+  "result": "Passed",
+  "comment": "Expected: Entered values remain, Submit is re-enabled, and inline/toast error feedback is available.\nActual: ✔ description preserved | ✔ amount preserved | ✔ Submit re-enabled | ✔ inline alert/toast error feedback present",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "8a265444-aaeb-4c71-a069-08df19cd16a8",
+  "orderNo": 1,
+  "testCaseLogId": "624f891d-4c7e-7300-e3ce-0b4a2a52c9a5",
+  "description": "Inspect the form and error presentation after the failure.",
+  "expectedResult": "Entered values remain, Submit is re-enabled, and inline/toast error feedback is available."
+ },
+ {
+  "testStepId": "689d8f99-1a7a-0e00-bb43-0b4a287d2435",
+  "result": "Passed",
+  "comment": "Expected: Submission succeeds normally.\nActual: ✔ submission succeeds normally (EXP-1013 confirmation)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "45bdcc9c-87cf-489e-a06a-08df19cd16a8",
+  "orderNo": 2,
+  "testCaseLogId": "624f891d-4c7e-7300-e3ce-0b4a2a52c9a5",
+  "description": "Open a fresh ?mock=1 URL without the demo flag and submit the same data.",
+  "expectedResult": "Submission succeeds normally."
+ }
+]

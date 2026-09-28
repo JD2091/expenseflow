@@ -1,0 +1,3120 @@
+{
+ "schemaVersion": 1,
+ "runId": "expenseflow-qa-manual-full-20260924T113204",
+ "generatedAt": "2026-09-24T11:32:04.268395+00:00",
+ "resultsDir": "qa-artifacts/state/manual-run-20260924T093500",
+ "project": {
+  "key": "EXPENSEFLOW",
+  "id": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "currentSha": "8ccbb1c11d36088a36900e737ea0951854a72b65",
+  "branch": "main"
+ },
+ "environment": {
+  "appUrl": "http://localhost:5173",
+  "mockRoutes": "?mock=1 (+ demo=fail-submit, demo=fail-decide, simulateError=1)",
+  "connected": "staging.uipath.com / testcloud_team / TAM, folder Shared",
+  "browser": "Microsoft Edge (Playwright, headless) with the user's staging SSO session (temporary copy, deleted after the run)"
+ },
+ "totals": {
+  "cases": 31,
+  "Passed": 19,
+  "Failed": 4,
+  "Restricted": 5,
+  "Blocked": 3,
+  "steps": {
+   "Passed": 75,
+   "Failed": 4,
+   "Restricted": 9,
+   "Blocked": 14
+  },
+  "attachmentsUploaded": 140,
+  "attachmentsAttempted": 140
+ },
+ "cases": [
+  {
+   "stableId": "EF-SMOKE-001",
+   "testCaseKey": "EXPENSEFLOW:3",
+   "testCaseId": "ca0c4af6-10be-0d00-2313-0b4a286fb1d7",
+   "name": "EF-SMOKE-001 - Mock dashboard renders deterministic employee totals",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open the approved ExpenseFlow application with ?mock=1.",
+     "expected": "No OAuth prompt appears and the dashboard loads successfully.",
+     "result": "Passed",
+     "actual": "✔ URL stayed on http://localhost:5173/?mock=1 (no OAuth redirect) | ✔ Dashboard greeting rendered",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-001-step1-dashboard.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Inspect the Submitted, Approved, and Pending KPI cards.",
+     "expected": "Submitted is ₹48,250 / 4 expenses; Approved is ₹31,800 / 2 expenses; Pending is ₹16,450 / 2 expenses.",
+     "result": "Passed",
+     "actual": "✔ Submitted ₹48,250 / 4 expenses | ✔ Approved ₹31,800 / 2 expenses | ✔ Pending ₹16,450 / 2 expenses",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-001-step2-kpi-cards.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Inspect Recent Expenses and the primary dashboard actions.",
+     "expected": "Recent employee rows render; New Expense and View all actions are available; drafts EXP-1003 and EXP-1004 do not contribute to KPI totals.",
+     "result": "Passed",
+     "actual": "✔ Recent expense rows render | ✔ Drafts EXP-1003/EXP-1004 listed as Draft | ✔ New Expense action visible | ✔ View all action visible | ✔ KPI total still excludes draft amounts (₹18,500 + ₹2,500)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-001-step3-recent-expenses.png"
+     ]
+    }
+   ],
+   "executionId": "a5286adb-2a13-0e00-afde-0b4a2a51c3a4",
+   "testCaseLogId": "26880590-3c7e-7300-0ef1-0b4a2a51c3be",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-001-step1-dashboard.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-001-step1-dashboard.png",
+      "ObjectId": "b5808efd-5133-4647-a062-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-001-step2-kpi-cards.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-001-step2-kpi-cards.png",
+      "ObjectId": "dbc180de-06ce-4203-a063-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-001-step3-recent-expenses.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-001-step3-recent-expenses.png",
+      "ObjectId": "e7742f0d-72b1-4c6d-a064-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/a5286adb-2a13-0e00-afde-0b4a2a51c3a4"
+  },
+  {
+   "stableId": "EF-SMOKE-002",
+   "testCaseKey": "EXPENSEFLOW:4",
+   "testCaseId": "0676fb3b-62c3-0d00-37cb-0b4a287cab8b",
+   "name": "EF-SMOKE-002 - Employee list filtering, sorting, clearing, and pagination",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "From Dashboard, select View all.",
+     "expected": "My Expenses loads with Rahul's expenses initially ordered newest first.",
+     "result": "Passed",
+     "actual": "✔ My Expenses opened: http://localhost:5173/expenses?mock=1 | ✔ first row is newest (EXP-1001, 18 Aug 2026); order EXP-1001,EXP-1002,EXP-1003,EXP-1004,EXP-1007,EXP-1005",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-002-step1-list-default.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Set Status to Draft, then Category to Office.",
+     "expected": "Draft returns EXP-1003 and EXP-1004; adding Office leaves EXP-1004 only.",
+     "result": "Passed",
+     "actual": "✔ Draft → EXP-1003,EXP-1004 | ✔ Draft+Office → EXP-1004",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-002-step2-status-draft.png",
+      "screenshots/20260924T093500/EF-SMOKE-002-step2-draft-office.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Set a date range that excludes all rows, then select Clear filters.",
+     "expected": "An empty filtered state appears, then the full employee list returns after clearing.",
+     "result": "Passed",
+     "actual": "✔ no rows for 2027-01-01..2027-01-31 | main text after exclusion: L EXPENSES My expenses 0 records No expenses match these filters Widen the date range or clear a filter to see more. Clear filters | ✔ after Clear, full list of 6 returns",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-002-step3-empty-state.png",
+      "screenshots/20260924T093500/EF-SMOKE-002-step3-cleared.png"
+     ]
+    },
+    {
+     "n": 4,
+     "description": "Sort supported columns and filter page 2 down to fewer than 25 rows.",
+     "expected": "Sort directions and indicators are correct; pagination clamps to page 1 with visible results.",
+     "result": "Passed",
+     "actual": "✔ Expense toggles ascending → descending and reorders rows | ✔ Category toggles ascending → descending and reorders rows | ✔ Date toggles descending → ascending and reorders rows | ✔ Amount toggles descending → ascending and reorders rows | ✔ Status toggles ascending → descending and reorders rows | aria-sort: Expense:ascending/descending; Category:ascending/descending; Date:descending/ascending; Amount:descending/ascending; Status:ascending/descending | ✔ seeded list shows \"Showing 1–25 of 26\" | ✔ page 2 footer: Showing 26–26 of 26, Page 2 of 2 | ✔ filter to Drafts from page 2 clamps to page 1: footer \"Showing 1–2 of 2\", 2 visible rows, no pager (single page)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-002-step4-sorted.png",
+      "screenshots/20260924T093500/EF-SMOKE-002-step4-page2.png",
+      "screenshots/20260924T093500/EF-SMOKE-002-step4-clamped.png"
+     ]
+    }
+   ],
+   "executionId": "8b628bc4-2d13-0e00-066e-0b4a2a5293fa",
+   "testCaseLogId": "69b11b41-497e-7300-1d56-0b4a2a529412",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step1-list-default.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step1-list-default.png",
+      "ObjectId": "83c8cf2b-dd68-4a1f-68d5-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step2-status-draft.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step2-status-draft.png",
+      "ObjectId": "6669dae5-0791-44a0-68d6-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step2-draft-office.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step2-draft-office.png",
+      "ObjectId": "6669dae5-0791-44a0-68d6-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step3-empty-state.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step3-empty-state.png",
+      "ObjectId": "debb0921-d953-4921-68d7-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step3-cleared.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step3-cleared.png",
+      "ObjectId": "debb0921-d953-4921-68d7-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step4-sorted.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step4-sorted.png",
+      "ObjectId": "45f0d489-1102-4136-68d8-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step4-page2.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step4-page2.png",
+      "ObjectId": "45f0d489-1102-4136-68d8-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-SMOKE-002-step4-clamped.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-002-step4-clamped.png",
+      "ObjectId": "45f0d489-1102-4136-68d8-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/8b628bc4-2d13-0e00-066e-0b4a2a5293fa"
+  },
+  {
+   "stableId": "EF-SMOKE-003",
+   "testCaseKey": "EXPENSEFLOW:5",
+   "testCaseId": "f6477695-68c3-0d00-532b-0b4a287cf231",
+   "name": "EF-SMOKE-003 - Valid mock expense submission updates shared UI state",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Navigate with the visible New Expense action.",
+     "expected": "The New Expense form renders.",
+     "result": "Passed",
+     "actual": "✔ New Expense form rendered at http://localhost:5173/expenses/new?mock=1",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-003-step1-form.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Enter the synthetic data and submit.",
+     "expected": "A success confirmation identifies a generated EXP-* code; a fresh mock session starts new codes at EXP-1013.",
+     "result": "Passed",
+     "actual": "✔ success confirmation identifies EXP-1013: \"EXP-1013 submitted for ₹4,800. See it on your dashboard or open the expense. EXP-1013 submitted for ₹4,800 — Submitted.\"",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-003-step2-form-filled.png",
+      "screenshots/20260924T093500/EF-SMOKE-003-step2-confirmation.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Open the new expense from the confirmation and return to dashboard or My Expenses.",
+     "expected": "The new row is Submitted and shared dashboard/list state reflects it.",
+     "result": "Passed",
+     "actual": "✔ confirmation exposes a link to the new expense | ✔ opened detail http://localhost:5173/expenses/EXP-1013?mock=1 | ✔ My Expenses lists EXP-1013 as Submitted | ✔ record count is now 7 | ✔ dashboard Submitted total now ₹53,050 / 5 expenses (48,250 + 4,800)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-003-step3-detail.png",
+      "screenshots/20260924T093500/EF-SMOKE-003-step3-list.png",
+      "screenshots/20260924T093500/EF-SMOKE-003-step3-dashboard.png"
+     ]
+    }
+   ],
+   "executionId": "79f7a082-2e13-0e00-0fc0-0b4a2a52a586",
+   "testCaseLogId": "c371a15f-4a7e-7300-63e8-0b4a2a52a5be",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-003-step1-form.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-003-step1-form.png",
+      "ObjectId": "9bd1ca15-b48c-4e34-a065-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-003-step2-form-filled.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-003-step2-form-filled.png",
+      "ObjectId": "b6c3fecb-274d-43cd-a066-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-003-step2-confirmation.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-003-step2-confirmation.png",
+      "ObjectId": "b6c3fecb-274d-43cd-a066-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-003-step3-detail.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-003-step3-detail.png",
+      "ObjectId": "9d130410-1629-41f7-a067-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-003-step3-list.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-003-step3-list.png",
+      "ObjectId": "9d130410-1629-41f7-a067-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-003-step3-dashboard.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-003-step3-dashboard.png",
+      "ObjectId": "9d130410-1629-41f7-a067-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/79f7a082-2e13-0e00-0fc0-0b4a2a52a586"
+  },
+  {
+   "stableId": "EF-SMOKE-004",
+   "testCaseKey": "EXPENSEFLOW:6",
+   "testCaseId": "ab50c67b-6fc3-0d00-f4c5-0b4a287d08ce",
+   "name": "EF-SMOKE-004 - Local form validation and cancellation preserve data integrity",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Submit with no description, then with 0 and nonnumeric amounts.",
+     "expected": "Required-description and amount validation errors appear; no expense is created.",
+     "result": "Passed",
+     "actual": "✔ empty description → validation error: Description / Give the expense a description so your manager knows what it is. | ✔ amount 0 → validation error: Amount / Enter an amount greater than ₹0. | non-numeric typed into number input → input value \"\" (browser rejects letters) | ✔ non-numeric/empty amount → validation error | ✔ no expense created (still 6 records)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-004-step1-no-description.png",
+      "screenshots/20260924T093500/EF-SMOKE-004-step1-zero-amount.png",
+      "screenshots/20260924T093500/EF-SMOKE-004-step1-nonnumeric-amount.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Clear the date and submit.",
+     "expected": "A required-date validation error appears; no expense is created.",
+     "result": "Passed",
+     "actual": "✔ cleared date → required-date error: Date / Pick the date the expense was incurred. | ✔ no expense created (6 records)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-004-step2-no-date.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Enter valid control data and select Cancel.",
+     "expected": "My Expenses opens without success confirmation or a new row.",
+     "result": "Passed",
+     "actual": "✔ Cancel opened My Expenses: http://localhost:5173/expenses?mock=1 | ✔ no new row; still 6 records | ✔ no success confirmation displayed",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-004-step3-valid-before-cancel.png",
+      "screenshots/20260924T093500/EF-SMOKE-004-step3-after-cancel.png"
+     ]
+    }
+   ],
+   "executionId": "0c41f171-2f13-0e00-25b5-0b4a2a52b60d",
+   "testCaseLogId": "f775cc55-4b7e-7300-2f7d-0b4a2a52b626",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-004-step1-no-description.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-004-step1-no-description.png",
+      "ObjectId": "14b0a963-d31a-4c59-8a95-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-004-step1-zero-amount.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-004-step1-zero-amount.png",
+      "ObjectId": "14b0a963-d31a-4c59-8a95-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-004-step1-nonnumeric-amount.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-004-step1-nonnumeric-amount.png",
+      "ObjectId": "14b0a963-d31a-4c59-8a95-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-004-step2-no-date.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-004-step2-no-date.png",
+      "ObjectId": "e83aeb1d-30c9-4c37-8a96-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-004-step3-valid-before-cancel.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-004-step3-valid-before-cancel.png",
+      "ObjectId": "a696c132-6939-47c9-8a97-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-004-step3-after-cancel.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-004-step3-after-cancel.png",
+      "ObjectId": "a696c132-6939-47c9-8a97-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/0c41f171-2f13-0e00-25b5-0b4a2a52b60d"
+  },
+  {
+   "stableId": "EF-SMOKE-005",
+   "testCaseKey": "EXPENSEFLOW:7",
+   "testCaseId": "44698ffd-77c3-0d00-0408-0b4a287d1c8a",
+   "name": "EF-SMOKE-005 - Mock submit failure preserves form data and supports recovery",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Complete the valid form and submit while demo=fail-submit is armed.",
+     "expected": "A friendly submission error appears; no raw exception or success state is shown.",
+     "result": "Passed",
+     "actual": "✔ friendly submission error shown | ✔ no raw exception text | ✔ no success state",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-005-step1-error.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Inspect the form and error presentation after the failure.",
+     "expected": "Entered values remain, Submit is re-enabled, and inline/toast error feedback is available.",
+     "result": "Passed",
+     "actual": "✔ description preserved | ✔ amount preserved | ✔ Submit re-enabled | ✔ inline alert/toast error feedback present",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-005-step2-form-after-failure.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Open a fresh ?mock=1 URL without the demo flag and submit the same data.",
+     "expected": "Submission succeeds normally.",
+     "result": "Passed",
+     "actual": "✔ submission succeeds normally (EXP-1013 confirmation)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-005-step3-success.png"
+     ]
+    }
+   ],
+   "executionId": "8ff3ad9b-3013-0e00-1897-0b4a2a52c98e",
+   "testCaseLogId": "624f891d-4c7e-7300-e3ce-0b4a2a52c9a5",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-005-step1-error.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-005-step1-error.png",
+      "ObjectId": "ad2a4e33-6a23-47a6-a068-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-005-step2-form-after-failure.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-005-step2-form-after-failure.png",
+      "ObjectId": "8a265444-aaeb-4c71-a069-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-005-step3-success.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-005-step3-success.png",
+      "ObjectId": "45bdcc9c-87cf-489e-a06a-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/8ff3ad9b-3013-0e00-1897-0b4a2a52c98e"
+  },
+  {
+   "stableId": "EF-SMOKE-006",
+   "testCaseKey": "EXPENSEFLOW:8",
+   "testCaseId": "e075752e-86c3-0d00-1830-0b4a287d45cc",
+   "name": "EF-SMOKE-006 - Expense detail renders status, policy, receipt, and timeline",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open EXP-1007 from an expense table row or direct expense URL.",
+     "expected": "Detail page shows code, description, Submitted/Pending status, amount, category, date, employee, receipt, policy, and submitted timeline data.",
+     "result": "Passed",
+     "actual": "✔ opened via table row: http://localhost:5173/expenses/EXP-1007?mock=1 | ✔ detail shows \"EXP-1007\" | ✔ detail shows \"Customer conference travel\" | ✔ detail shows \"Pending Approval\" | ✔ detail shows \"₹11,650\" | ✔ detail shows \"Travel\" | ✔ detail shows \"12 Aug 2026\" | ✔ detail shows \"Rahul Mehta\" | ✔ detail shows \"mumbai-trip.pdf\" | ✔ detail shows \"Within the ₹25,000 threshold\" | ✔ detail shows \"Submitted 12 Aug 2026\"",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-006-step1-detail.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Use the receipt link and Back to my expenses action.",
+     "expected": "Receipt affordance is available and the back action returns to the list.",
+     "result": "Passed",
+     "actual": "✔ receipt affordance (mumbai-trip.pdf) visible | receipt element: SPAN(text) | ✔ Back to my expenses returned to list",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-006-step2-back-to-list.png"
+     ]
+    }
+   ],
+   "executionId": "c1635629-3213-0e00-692e-0b4a2a52d6da",
+   "testCaseLogId": "111bc5f7-4f7e-7300-887c-0b4a2a52d713",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-006-step1-detail.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-006-step1-detail.png",
+      "ObjectId": "0f64e529-1a36-47ab-8a66-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-006-step2-back-to-list.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-006-step2-back-to-list.png",
+      "ObjectId": "515b8037-dd66-4554-8a67-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/c1635629-3213-0e00-692e-0b4a2a52d6da"
+  },
+  {
+   "stableId": "EF-SMOKE-007",
+   "testCaseKey": "EXPENSEFLOW:9",
+   "testCaseId": "a893de25-8cc3-0d00-1361-0b4a287d5a26",
+   "name": "EF-SMOKE-007 - Unknown expense and unknown route render recovery states",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open /expenses/EXP-9999 directly.",
+     "expected": "Expense not found state names the unknown code and offers Back to my expenses.",
+     "result": "Passed",
+     "actual": "✔ Expense not found state names EXP-9999 | ✔ Back to my expenses offered | body text length 312 (prior run observed empty root)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-007-step1-not-found.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Open an unknown application route directly.",
+     "expected": "Not Found page renders with a route back to the application.",
+     "result": "Passed",
+     "actual": "✔ Not Found page renders | ✔ route back to application offered | ✔ Back to dashboard works",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-007-step2-unknown-route.png"
+     ]
+    }
+   ],
+   "executionId": "79131249-3313-0e00-a9c3-0b4a2a52e27c",
+   "testCaseLogId": "6c00fcff-507e-7300-3c6a-0b4a2a52e370",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-007-step1-not-found.png",
+     "status": "uploaded"
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-007-step2-unknown-route.png",
+     "status": "uploaded"
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/79131249-3313-0e00-a9c3-0b4a2a52e27c"
+  },
+  {
+   "stableId": "EF-SMOKE-008",
+   "testCaseKey": "EXPENSEFLOW:10",
+   "testCaseId": "a9b7a4c2-8fc3-0d00-3a35-0b4a287d7041",
+   "name": "EF-SMOKE-008 - Mock approval queue supports approve, reject, and rework decisions",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open Approval queue and inspect seeded cards.",
+     "expected": "Decision-eligible expenses appear in amount-descending queue order with comments and three actions.",
+     "result": "Passed",
+     "actual": "✔ queue order (amount desc 82,000 / 37,550 / 11,650): EXP-1008,EXP-1009,EXP-1007 | ✔ each card has a Comments box | ✔ 3 × Approve buttons | ✔ 3 × Reject buttons | ✔ 3 × Request rework buttons",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-008-step1-queue.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Enter a comment and approve one eligible expense.",
+     "expected": "Success feedback appears and the decided row leaves the queue after refresh.",
+     "result": "Passed",
+     "actual": "✔ success feedback: \"EXP-1008 is now Approved.\" | ✔ EXP-1008 left the queue after refresh; remaining EXP-1009,EXP-1007",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-008-step2-approved-feedback.png",
+      "screenshots/20260924T093500/EF-SMOKE-008-step2-queue-after-approve.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "On fresh mock sessions, exercise Reject and Request rework on eligible rows.",
+     "expected": "Each action records its distinct resulting status and removes the card from the decision queue.",
+     "result": "Passed",
+     "actual": "✔ Reject: EXP-1008 card removed from decision queue | ✔ Reject: Finance shows EXP-1008 settled (not in attention list) — distinct resulting status Rejected | ✔ Request rework: EXP-1008 card removed from decision queue | ✔ Request rework: Finance shows EXP-1008 as Needs Rework — distinct resulting status Needs Rework",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-008-step3-Reject-queue.png",
+      "screenshots/20260924T093500/EF-SMOKE-008-step3-Reject-finance.png",
+      "screenshots/20260924T093500/EF-SMOKE-008-step3-Requestrework-queue.png",
+      "screenshots/20260924T093500/EF-SMOKE-008-step3-Requestrework-finance.png"
+     ]
+    }
+   ],
+   "executionId": "f971f2aa-3413-0e00-5a41-0b4a2a52ef4a",
+   "testCaseLogId": "2eee131f-517e-7300-f70b-0b4a2a52ef81",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-008-step1-queue.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-008-step1-queue.png",
+      "ObjectId": "694a8d89-4a9e-4a5e-0c6e-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-008-step2-approved-feedback.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-008-step2-approved-feedback.png",
+      "ObjectId": "6f752e4e-83cd-4b74-0c6f-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-008-step2-queue-after-approve.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-008-step2-queue-after-approve.png",
+      "ObjectId": "6f752e4e-83cd-4b74-0c6f-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-008-step3-Reject-queue.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-008-step3-Reject-queue.png",
+      "ObjectId": "7fb76a9e-bd09-40ac-0c70-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-008-step3-Reject-finance.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-008-step3-Reject-finance.png",
+      "ObjectId": "7fb76a9e-bd09-40ac-0c70-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-008-step3-Requestrework-queue.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-008-step3-Requestrework-queue.png",
+      "ObjectId": "7fb76a9e-bd09-40ac-0c70-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-008-step3-Requestrework-finance.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-008-step3-Requestrework-finance.png",
+      "ObjectId": "7fb76a9e-bd09-40ac-0c70-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/f971f2aa-3413-0e00-5a41-0b4a2a52ef4a"
+  },
+  {
+   "stableId": "EF-SMOKE-009",
+   "testCaseKey": "EXPENSEFLOW:11",
+   "testCaseId": "bc5a20e6-93c3-0d00-ff15-0b4a287d8105",
+   "name": "EF-SMOKE-009 - Finance dashboard classifies seeded attention records",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open the Finance page and inspect the summary cards.",
+     "expected": "Expenses, Pending, and This month cards render company-level values.",
+     "result": "Passed",
+     "actual": "✔ Expenses card 10 / ₹1,84,450 (company level) | ✔ Pending card 5 / ₹1,38,500 | ✔ This month ₹1.8L, 10 expenses in Aug 2026",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-009-step1-summary.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Inspect Needs Attention rows.",
+     "expected": "Rows classify Policy Review, Pending Approval, Needs Rework, and Missing Receipt according to seed data.",
+     "result": "Passed",
+     "actual": "✔ EXP-1008 classified Policy Review | ✔ EXP-1009 classified Pending Approval | ✔ EXP-1007 classified Pending Approval | ✔ EXP-1011 classified Needs Rework | ✔ EXP-1006 classified Missing Receipt | ✔ 5 attention rows",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-009-step2-attention.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Open a Finance attention row with click and keyboard activation.",
+     "expected": "Both supported row interactions navigate to the corresponding expense detail.",
+     "result": "Passed",
+     "actual": "✔ click → http://localhost:5173/expenses/EXP-1008?mock=1 | ✔ keyboard Enter → http://localhost:5173/expenses/EXP-1009?mock=1 | keyboard Space → http://localhost:5173/expenses/EXP-1007?mock=1",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-009-step3-click-nav.png",
+      "screenshots/20260924T093500/EF-SMOKE-009-step3-keyboard-nav.png"
+     ]
+    }
+   ],
+   "executionId": "acf0c20e-3513-0e00-5691-0b4a2a530075",
+   "testCaseLogId": "5cda53f1-527e-7300-0757-0b4a2a5300ad",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-009-step1-summary.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-009-step1-summary.png",
+      "ObjectId": "ef9d4619-94c4-48cb-0c71-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-009-step2-attention.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-009-step2-attention.png",
+      "ObjectId": "1b8e730c-330e-48b2-0c72-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-009-step3-click-nav.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-009-step3-click-nav.png",
+      "ObjectId": "0ed28290-0f49-4551-0c73-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-009-step3-keyboard-nav.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-009-step3-keyboard-nav.png",
+      "ObjectId": "0ed28290-0f49-4551-0c73-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/acf0c20e-3513-0e00-5691-0b4a2a530075"
+  },
+  {
+   "stableId": "EF-SMOKE-010",
+   "testCaseKey": "EXPENSEFLOW:12",
+   "testCaseId": "594873f3-9cc3-0d00-9d2f-0b4a287d90a5",
+   "name": "EF-SMOKE-010 - Core navigation, accessible labels, and narrow-screen overflow remain usable",
+   "classification": "Failed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Navigate to Dashboard, My Expenses, New Expense, Approvals, and Finance using visible app navigation.",
+     "expected": "Each route renders its expected page title and active navigation state.",
+     "result": "Passed",
+     "actual": "✔ Dashboard: h1 \"Dashboard\", active nav \"Dashboard\" | ✔ My Expenses: h1 \"My expenses\", active nav \"My Expenses\" | ✔ New Expense: h1 \"New expense\", active nav \"New Expense\" | ✔ Approvals: h1 \"Manager approval\", active nav \"Approvals\" | ✔ Finance: h1 \"Finance overview\", active nav \"Finance\"",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-010-step1-Dashboard.png",
+      "screenshots/20260924T093500/EF-SMOKE-010-step1-MyExpenses.png",
+      "screenshots/20260924T093500/EF-SMOKE-010-step1-NewExpense.png",
+      "screenshots/20260924T093500/EF-SMOKE-010-step1-Approvals.png",
+      "screenshots/20260924T093500/EF-SMOKE-010-step1-Finance.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Inspect form labels, table labels, status text, and toast/error live regions.",
+     "expected": "Interactive controls have discernible labels and feedback is exposed through appropriate status or alert semantics.",
+     "result": "Passed",
+     "actual": "✔ form controls all have accessible names | ✔ validation errors exposed via role=alert | ✔ table has an accessible name (aria-label/caption) | ✔ status/live regions present (toast region) | ✔ filter controls labelled",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-010-step2-form-alert.png",
+      "screenshots/20260924T093500/EF-SMOKE-010-step2-list-a11y.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Repeat representative list, approval, and Finance views at narrow width.",
+     "expected": "Tables use their guarded overflow container; controls remain reachable without page-level horizontal breakage.",
+     "result": "Failed",
+     "actual": "✘ MyExpenses @375px: page scrollWidth 447 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW | ✘ Approvals @375px: page scrollWidth 449 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW | ✘ Finance @375px: page scrollWidth 448 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-010-step3-MyExpenses-375.png",
+      "screenshots/20260924T093500/EF-SMOKE-010-step3-Approvals-375.png",
+      "screenshots/20260924T093500/EF-SMOKE-010-step3-Finance-375.png"
+     ]
+    }
+   ],
+   "executionId": "d686ac26-3613-0e00-6eaa-0b4a2a530f99",
+   "testCaseLogId": "066f429f-537e-7300-0e17-0b4a2a530fe1",
+   "tmResult": "Failed",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 1,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step1-Dashboard.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step1-Dashboard.png",
+      "ObjectId": "e3d79fd7-e6f0-451d-68d9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step1-MyExpenses.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step1-MyExpenses.png",
+      "ObjectId": "e3d79fd7-e6f0-451d-68d9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step1-NewExpense.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step1-NewExpense.png",
+      "ObjectId": "e3d79fd7-e6f0-451d-68d9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step1-Approvals.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step1-Approvals.png",
+      "ObjectId": "e3d79fd7-e6f0-451d-68d9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step1-Finance.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step1-Finance.png",
+      "ObjectId": "e3d79fd7-e6f0-451d-68d9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step2-form-alert.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step2-form-alert.png",
+      "ObjectId": "be4390d1-a089-4f52-68da-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step2-list-a11y.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step2-list-a11y.png",
+      "ObjectId": "be4390d1-a089-4f52-68da-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step3-MyExpenses-375.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step3-MyExpenses-375.png",
+      "ObjectId": "d3759332-b314-4094-68db-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step3-Approvals-375.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step3-Approvals-375.png",
+      "ObjectId": "d3759332-b314-4094-68db-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-010-step3-Finance-375.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-010-step3-Finance-375.png",
+      "ObjectId": "d3759332-b314-4094-68db-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/d686ac26-3613-0e00-6eaa-0b4a2a530f99"
+  },
+  {
+   "stableId": "EF-SMOKE-011",
+   "testCaseKey": "EXPENSEFLOW:83",
+   "testCaseId": "1f8650f0-d2ed-0d00-64fc-0b4a2a2c8d01",
+   "name": "EF-SMOKE-011 - Mock read failure renders recovery state and recovers",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open the verified local app with ?mock=1 and record the normal Dashboard and Finance mock state before arming a read failure.",
+     "expected": "Normal seeded mock data, aggregates, and attention content render without a connected dependency.",
+     "result": "Passed",
+     "actual": "✔ Dashboard normal: KPI ₹48,250 + recent rows | ✔ Finance normal: aggregates + attention",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-011-step1-dashboard-normal.png",
+      "screenshots/20260924T093500/EF-SMOKE-011-step1-finance-normal.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Open Dashboard or Finance with ?mock=1&simulateError=1 and wait for the read operation to complete.",
+     "expected": "The screen renders the translated read-failure message and the intended retry/recovery affordance instead of raw exception text, a stack trace, or a blank unhandled state.",
+     "result": "Passed",
+     "actual": "✔ translated read-failure message shown | ✔ retry affordance visible | ✔ no raw exception/stack | ✔ Finance also shows failure (simulate persists across in-app nav)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-011-step2-dashboard-error.png",
+      "screenshots/20260924T093500/EF-SMOKE-011-step2-finance-error.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Inspect the failed screen, browser console-visible UI surface, and any displayed request/error details.",
+     "expected": "No token, credential, raw request body, stack trace, or connected-service internals are exposed; stale rows and misleading aggregates are not presented as current data.",
+     "result": "Passed",
+     "actual": "✔ no stale rows or aggregates shown on the failed screen | ✔ no token/credential terms exposed | console errors: none",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-011-step3-failed-screen-inspect.png"
+     ]
+    },
+    {
+     "n": 4,
+     "description": "Remove simulateError=1, retain ?mock=1, and use the visible retry/reload affordance or revisit the same screen.",
+     "expected": "Normal mock reads succeed, the expected seeded data/aggregates return, and no duplicate or partial read-side effect is created.",
+     "result": "Passed",
+     "actual": "✔ normal reads succeed after removing simulateError; seeded KPI + rows return",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-011-step4-recovered.png"
+     ]
+    },
+    {
+     "n": 5,
+     "description": "Navigate between Dashboard and Finance and refresh once on the normal mock URL.",
+     "expected": "Both screens remain healthy after recovery, the error state is cleared, and no stale failure switch or stale error content reappears.",
+     "result": "Passed",
+     "actual": "✔ Finance healthy | ✔ Dashboard healthy | ✔ after refresh: healthy, no stale error | ✔ no stale failure switch in URL: http://localhost:5173/?mock=1",
+     "evidence": [
+      "screenshots/20260924T093500/EF-SMOKE-011-step5-healthy-after-refresh.png"
+     ]
+    }
+   ],
+   "executionId": "b4d16f2e-3713-0e00-ad28-0b4a2a53234d",
+   "testCaseLogId": "6e5674a6-547e-7300-79fb-0b4a2a532363",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-011-step1-dashboard-normal.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-011-step1-dashboard-normal.png",
+      "ObjectId": "5001a1a9-ae00-4995-0c74-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-SMOKE-011-step1-finance-normal.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-011-step1-finance-normal.png",
+      "ObjectId": "5001a1a9-ae00-4995-0c74-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-011-step2-dashboard-error.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-011-step2-dashboard-error.png",
+      "ObjectId": "51d3ae07-dc02-44e0-0c75-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-SMOKE-011-step2-finance-error.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-011-step2-finance-error.png",
+      "ObjectId": "51d3ae07-dc02-44e0-0c75-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-SMOKE-011-step3-failed-screen-inspect.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-011-step3-failed-screen-inspect.png",
+      "ObjectId": "435f5541-2824-4ae2-0c76-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-SMOKE-011-step4-recovered.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-011-step4-recovered.png",
+      "ObjectId": "19a33180-747c-42a1-0c77-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-SMOKE-011-step5-healthy-after-refresh.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-SMOKE-011-step5-healthy-after-refresh.png",
+      "ObjectId": "e83d522b-9480-4549-0c78-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/b4d16f2e-3713-0e00-ad28-0b4a2a53234d"
+  },
+  {
+   "stableId": "EF-REG-001",
+   "testCaseKey": "EXPENSEFLOW:13",
+   "testCaseId": "d76a671e-a3c3-0d00-e6a4-0b4a287dc1ae",
+   "name": "EF-REG-001 - Connected submission applies policy threshold routing",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Submit the below-threshold synthetic expense in connected mode.",
+     "expected": "A connected Data Fabric record is created with the below-threshold outcome defined by the policy service.",
+     "result": "Passed",
+     "actual": "confirmation: EXP-1017 submitted for ₹12,000. See it on your dashboard or open the expense. | EXP-1017 submitted for ₹12,000 — Approved. | ✔ below-threshold (₹12,000, receipt attached) created EXP-1017 without approval requirement",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-001-step1-below-threshold.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Submit the above-threshold synthetic expense in connected mode.",
+     "expected": "The policy warning/routing behavior indicates manager approval is required and the record reflects the above-threshold path.",
+     "result": "Passed",
+     "actual": "confirmation: EXP-1018 submitted for ₹35,000. See it on your dashboard or open the expense. | EXP-1018 submitted for ₹35,000 — Pending Approval. | ✔ above-threshold (₹35,000) created EXP-1018; approval-required routing indicated",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-001-step2-above-threshold.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Read both created records through the app after refresh.",
+     "expected": "Amounts, status, and persisted policy notes/routing agree with the current threshold.",
+     "result": "Passed",
+     "actual": "✔ EXP-1017 (low) present in My Expenses after refresh | ✔ EXP-1018 (high) present in My Expenses after refresh | EXP-1017 detail: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1017 EFREG001-Low-EFQA-20260924T1130 Approved Amount ₹12,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt qa-receipt.pdf Policy Auto-approved under policy threshold STATUS ✓ Submitted ✓ Policy validation ✓ Manager approval ● Finance processing Submitted 24 Sep 2026 | ✔ EXP-1017 status/policy note consistent with threshold | EXP-1018 detail: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1018 EFREG001-High-EFQA-20260924T1130 Pending Approval Amount ₹35,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt qa-receipt.pdf Policy Above ₹25,000 policy threshold STATUS ✓ Submitted ✓ Policy validation ● Manager approval ○ Finance processing Waiting on a manager in Action Center. Submitted 24 Sep 2026 | ✔ EXP-1018 status/policy note consistent with threshold",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-001-step3-list-after-refresh.png",
+      "screenshots/20260924T093500/EF-REG-001-step3-detail-low.png",
+      "screenshots/20260924T093500/EF-REG-001-step3-detail-high.png"
+     ]
+    },
+    {
+     "n": 4,
+     "description": "Read the current ExpenseFlow_PolicyThreshold value and submit a synthetic expense whose amount is exactly equal to that live value.",
+     "expected": "The exact-equality expense follows the non-above-threshold branch; it is not routed as above-threshold solely due to rounding, and the persisted status and policy note agree with the strict amount > threshold rule.",
+     "result": "Passed",
+     "actual": "live policy threshold shown on approval cards: ₹25,000 | confirmation: EXP-1019 submitted for ₹25,000. See it on your dashboard or open the expense. | EXP-1019 submitted for ₹25,000 — Approved. | ✔ live threshold is ₹25,000 | ✔ amount == threshold (₹25,000) follows the non-above-threshold branch (EXP-1019) | ✔ persisted record: non-pending status (Approved), policy note auto-approved/within threshold",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-001-step4-equal-threshold.png",
+      "screenshots/20260924T093500/EF-REG-001-step4-equal-detail.png"
+     ]
+    },
+    {
+     "n": 5,
+     "description": "Submit a synthetic expense below the live policy threshold without attaching a receipt.",
+     "expected": "The missing receipt forces the approval route despite the below-threshold amount; the persisted record shows the correct status and routing and does not contain a receipt path.",
+     "result": "Passed",
+     "actual": "confirmation: EXP-1020 submitted for ₹9,000. See it on your dashboard or open the expense. | EXP-1020 submitted for ₹9,000 — Pending Approval. | ✔ EXP-1020: below-threshold ₹9,000 without receipt forces approval route | ✔ persisted record: Pending Approval, no receipt path shown | detail: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1020 EFREG001-NoReceipt-EFQA-20260924T1130 Pending Approval Amount ₹9,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt No receipt attached Policy No receipt attached — manager approval required STATUS ✓ Submitted ✓ Policy validation ● Manager approval ○ Finance processing ",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-001-step5-no-receipt.png",
+      "screenshots/20260924T093500/EF-REG-001-step5-no-receipt-detail.png"
+     ]
+    }
+   ],
+   "executionId": "6d97fdbb-0014-0e00-5511-0b4a2a5ea3dd",
+   "testCaseLogId": "973937e3-4c82-7300-9034-0b4a2a5ea416",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-001-step1-below-threshold.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step1-below-threshold.png",
+      "ObjectId": "35ff82e2-604e-455a-8a71-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-001-step2-above-threshold.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step2-above-threshold.png",
+      "ObjectId": "5622027a-b630-40c5-8a72-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-001-step3-list-after-refresh.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step3-list-after-refresh.png",
+      "ObjectId": "8bdb037c-d996-4daf-8a73-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-001-step3-detail-low.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step3-detail-low.png",
+      "ObjectId": "8bdb037c-d996-4daf-8a73-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-001-step3-detail-high.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step3-detail-high.png",
+      "ObjectId": "8bdb037c-d996-4daf-8a73-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-REG-001-step4-equal-threshold.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step4-equal-threshold.png",
+      "ObjectId": "2710f716-fd44-4e2c-8a74-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-REG-001-step4-equal-detail.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step4-equal-detail.png",
+      "ObjectId": "2710f716-fd44-4e2c-8a74-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-REG-001-step5-no-receipt.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step5-no-receipt.png",
+      "ObjectId": "9efccf4e-aa0d-4e94-8a75-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-REG-001-step5-no-receipt-detail.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-001-step5-no-receipt-detail.png",
+      "ObjectId": "9efccf4e-aa0d-4e94-8a75-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/6d97fdbb-0014-0e00-5511-0b4a2a5ea3dd"
+  },
+  {
+   "stableId": "EF-REG-002",
+   "testCaseKey": "EXPENSEFLOW:14",
+   "testCaseId": "40993be1-abc3-0d00-7417-0b4a287dd48e",
+   "name": "EF-REG-002 - Connected Data Fabric mapping preserves choice values and dates",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Create or retrieve synthetic connected records using supported ExpenseFlow flows.",
+     "expected": "Records are readable by the app with the intended category, status, date, and receipt values.",
+     "result": "Passed",
+     "actual": "✔ EXP-1017 detail shows \"Travel\" | ✔ EXP-1017 detail shows \"Approved\" | ✔ EXP-1017 detail shows \"24 Sep 2026\" | ✔ EXP-1017 detail shows \"qa-receipt.pdf\" | ✔ EXP-1018 detail shows \"Travel\" | ✔ EXP-1018 detail shows \"Pending Approval\" | ✔ EXP-1018 detail shows \"24 Sep 2026\" | ✔ EXP-1018 detail shows \"qa-receipt.pdf\" | ✔ EXP-1020 detail shows \"Travel\" | ✔ EXP-1020 detail shows \"Pending Approval\" | ✔ EXP-1020 detail shows \"24 Sep 2026\" | ✔ EXP-1020 detail shows \"No receipt attached\"",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1017.png",
+      "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1018.png",
+      "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1020.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Open the records in list and detail views.",
+     "expected": "Choice-set display values and null receipt behavior map consistently into the Expense model.",
+     "result": "Passed",
+     "actual": "✔ 25 list rows on page 1 map to choice-set display values and formatted dates | ✔ null receipt renders \"No receipt attached\" (no error, no \"null\")",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-002-step2-list.png",
+      "screenshots/20260924T093500/EF-REG-002-step2-detail-null-receipt.png"
+     ]
+    }
+   ],
+   "executionId": "3ced9cca-0114-0e00-42fb-0b4a2a5ec28f",
+   "testCaseLogId": "e7c7d031-4d82-7300-ed9e-0b4a2a5ec2c9",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1017.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-002-step1-detail-EXP-1017.png",
+      "ObjectId": "e96d6c7f-f44f-4762-68f1-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1018.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-002-step1-detail-EXP-1018.png",
+      "ObjectId": "e96d6c7f-f44f-4762-68f1-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1020.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-002-step1-detail-EXP-1020.png",
+      "ObjectId": "e96d6c7f-f44f-4762-68f1-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-002-step2-list.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-002-step2-list.png",
+      "ObjectId": "c5bd0421-84ac-49b5-68f2-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-002-step2-detail-null-receipt.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-002-step2-detail-null-receipt.png",
+      "ObjectId": "c5bd0421-84ac-49b5-68f2-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/3ced9cca-0114-0e00-42fb-0b4a2a5ec28f"
+  },
+  {
+   "stableId": "EF-REG-003",
+   "testCaseKey": "EXPENSEFLOW:15",
+   "testCaseId": "cd3726ea-aec3-0d00-6cb5-0b4a287de73f",
+   "name": "EF-REG-003 - Connected list pagination and aggregate totals remain complete",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Create or use the approved synthetic dataset exceeding one UI page.",
+     "expected": "Connected list retrieval exposes all matching records through paging or aggregate-aware service behavior.",
+     "result": "Passed",
+     "actual": "list header: 51 records; footer: Showing 1–25 of 51 | Data Fabric independent aggregate (uip df): total=56, non-draft=55 (₹615428), drafts=1 | ✔ dataset exceeds one UI page (51 > 25) | DF employee-scoped count (Rahul Mehta): 51 | ✔ UI total (51) equals Data Fabric employee-scoped count (51) — all matching records exposed, none truncated at page size 100/25",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-003-step1-list-page1.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Navigate the employee list and Finance page across result boundaries.",
+     "expected": "Visible rows, page controls, and aggregate values remain consistent with the full dataset.",
+     "result": "Passed",
+     "actual": "✔ last page footer consistent: Showing 51–51 of 51  | ✔ Next disabled on last page | Finance summary: Expenses 55 ₹6,15,428 submitted across the company Pending 39 ₹4,37,113 in flight This month ₹3.4L 20 expenses in Sep 2026 NEEDS ATTENTION Blocked or waiting 39 records EMPLOYEE EXPENSE AMOUNT WAITING | ✔ Finance \"Expenses\" card equals Data Fabric aggregate (55, ₹6,15,428) | Finance attention footer: Showing 1–25 of 39 | ✔ Finance attention paging crosses page boundary",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-003-step2-list-last-page.png",
+      "screenshots/20260924T093500/EF-REG-003-step2-finance.png"
+     ]
+    }
+   ],
+   "executionId": "a121ff4e-0214-0e00-a9f1-0b4a2a5edd25",
+   "testCaseLogId": "1a42ca76-4e82-7300-9cbc-0b4a2a5edd41",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-003-step1-list-page1.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-003-step1-list-page1.png",
+      "ObjectId": "0df6246e-06c4-4796-8aad-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-003-step2-list-last-page.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-003-step2-list-last-page.png",
+      "ObjectId": "03356aeb-65c3-49fc-8aae-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-003-step2-finance.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-003-step2-finance.png",
+      "ObjectId": "03356aeb-65c3-49fc-8aae-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/a121ff4e-0214-0e00-a9f1-0b4a2a5edd25"
+  },
+  {
+   "stableId": "EF-REG-004",
+   "testCaseKey": "EXPENSEFLOW:16",
+   "testCaseId": "e5c31c71-bcc3-0d00-fbe2-0b4a287df7fc",
+   "name": "EF-REG-004 - Connected receipt upload and authorized receipt access",
+   "classification": "Restricted",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Attach the synthetic receipt to a valid connected expense and submit.",
+     "expected": "Submission succeeds and the created record retains a receipt path/name.",
+     "result": "Passed",
+     "actual": "confirmation: EXP-1022 submitted for ₹1,250. See it on your dashboard or open the expense. | EXP-1022 submitted for ₹1,250 — Approved. | ✔ submission succeeded (EXP-1022) | ✔ created record retains receipt name qa-receipt.pdf",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-004-step1-submitted.png",
+      "screenshots/20260924T093500/EF-REG-004-step1-detail-receipt.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Open the created expense detail and use its receipt link.",
+     "expected": "The receipt opens through authorized bucket access without exposing a raw storage secret.",
+     "result": "Passed",
+     "actual": "✔ receipt chip is an interactive control | receipt opened in new tab: https://crpabetaporch0eusstg.blob.core.windows.net/orchestrator-932c00cc-8cb5-4d47-b8f2-d7dd94d6fe8a/BlobFilePersistence/a72bcdc2-778e-432c- (query string withheld from record) | ✔ receipt opened over https via storage host (authorized read URI), not a local path | ✔ URL carries no raw storage secret/key terms",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-004-step2-receipt-tab.png",
+      "screenshots/20260924T093500/EF-REG-004-step2-detail-after-open.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Submit connected expenses using synthetic receipt names with spaces, #, parentheses, and a browser path prefix.",
+     "expected": "Each record stores a sanitized receipt path/name that remains associated with the record and opens through authorized bucket access; no raw local path or invalid storage path is exposed.",
+     "result": "Restricted",
+     "actual": "submitted with \"QA receipt #1 (copy).pdf\" → EXP-1023 | stored/displayed receipt name: QA-receipt-1-copy-.pdf | ✔ stored name is sanitized (no spaces, #, parentheses, or local path) | ✔ sanitized receipt opens through authorized bucket access | RESTRICTED: the \"browser path prefix\" variant (C:\fakepath...) cannot be produced by browser automation: the File object exposes only the bare name, so the prefix-stripping branch was not exercised. Spaces, #, and parentheses were exercised and verified.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-004-step3-sanitized-detail.png"
+     ]
+    }
+   ],
+   "executionId": "a9d7d08d-0314-0e00-de0e-0b4a2a5eee2c",
+   "testCaseLogId": "fe80dcf8-4f82-7300-2f7e-0b4a2a5eee62",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-004-step1-submitted.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-004-step1-submitted.png",
+      "ObjectId": "acb17c42-39c4-407a-8aaf-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-004-step1-detail-receipt.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-004-step1-detail-receipt.png",
+      "ObjectId": "acb17c42-39c4-407a-8aaf-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-004-step2-receipt-tab.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-004-step2-receipt-tab.png",
+      "ObjectId": "262e2bab-578d-4eb6-8ab0-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-004-step2-detail-after-open.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-004-step2-detail-after-open.png",
+      "ObjectId": "262e2bab-578d-4eb6-8ab0-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-004-step3-sanitized-detail.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-004-step3-sanitized-detail.png",
+      "ObjectId": "712c8794-69f1-4bef-8ab1-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/a9d7d08d-0314-0e00-de0e-0b4a2a5eee2c"
+  },
+  {
+   "stableId": "EF-REG-005",
+   "testCaseKey": "EXPENSEFLOW:17",
+   "testCaseId": "098c30f1-cfc3-0d00-a298-0b4a287e0aa4",
+   "name": "EF-REG-005 - Connected Action Center approval completes before Data Fabric decision",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open the connected Approval queue and locate EFREG005-Approve.",
+     "expected": "The card identifies its Action Center task and exposes an optional comments field with decision actions.",
+     "result": "Passed",
+     "actual": "✔ card for EXP-1024 (EFREG005-Approve) present exactly once | card: EXP-1024 Rahul Mehta Pending Approval EFREG005-Approve-EFQA-20260924T1300 Amount ₹26,001 Policy threshold ₹25,000 Date 24 Sep 2026 Receipt qa-receipt.pdf Action Center Task #101647429 Above ₹25,000 policy threshold Comments Open expense Reject Request rework A | ✔ card identifies its Action Center task (Task #101647429) | ✔ optional comments field and decision actions present",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-005-step1-card.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Approve the expense with the synthetic comment.",
+     "expected": "Action Center task completion succeeds first, then Data Fabric status/decision metadata updates and the row leaves the queue.",
+     "result": "Passed",
+     "actual": "✔ success feedback: \"EXP-1024 is now Approved.\" | ✔ decided row left the queue | write requests in order: POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST /testcloud_team/TAM/orchestrator_/tasks/GenericTasks/CompleteTask -> POST /EntityService/entity/{id}/update/4CB5E05D-05B8-F111-A6A9-6045BDDBB45C -> POST /testcloud_team/TAM/datafabric_/api/EntityService/entity/{id}/query -> POST /testcloud_team/TAM/datafabric_/api/EntityService/entity/{id}/query -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-005-step2-approved.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Refresh and inspect the expense detail.",
+     "expected": "Final status, decision timestamp, decider, and comment are persisted consistently.",
+     "result": "Passed",
+     "actual": "✔ detail status Approved | ✔ decision comment persisted on detail | Data Fabric record: {\"Status\":4,\"DecidedBy\":\"Neha Kulkarni\",\"DecidedAt\":\"2026-09-24T10:48:45.247+00:00\",\"Comments\":\"QA approve comment EFQA-20260924T1300\",\"ApprovalTaskId\":\"101647429\"} | ✔ DF record has decider, decision timestamp, and comment (independent uip df read)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-005-step3-detail.png"
+     ]
+    }
+   ],
+   "executionId": "8ca10f43-0414-0e00-bc47-0b4a2a5f0383",
+   "testCaseLogId": "cf4d798d-5082-7300-c655-0b4a2a5f039d",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-005-step1-card.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-005-step1-card.png",
+      "ObjectId": "f48af458-1715-48f5-a074-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-005-step2-approved.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-005-step2-approved.png",
+      "ObjectId": "0951d901-67f5-46f8-a075-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-005-step3-detail.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-005-step3-detail.png",
+      "ObjectId": "0984532e-c772-4dd8-a076-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/8ca10f43-0414-0e00-bc47-0b4a2a5f0383"
+  },
+  {
+   "stableId": "EF-REG-006",
+   "testCaseKey": "EXPENSEFLOW:18",
+   "testCaseId": "9be03113-f8c3-0d00-f704-0b4a287e4c3d",
+   "name": "EF-REG-006 - Connected reject and rework decisions preserve comments and state",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Reject EFREG006-Reject with its synthetic comment.",
+     "expected": "Task and record reflect Rejected status and the saved comment.",
+     "result": "Passed",
+     "actual": "✔ EXP-1025 is now Rejected (toast) | DF: {\"Status\":5,\"Comments\":\"QA reject comment EFQA-20260924T1300\"} | ✔ record saved the reject comment",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-006-step1-rejected.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Request rework for EFREG006-Rework with its synthetic comment.",
+     "expected": "Task and record reflect Reworked status and the saved comment.",
+     "result": "Passed",
+     "actual": "✔ EXP-1026 is now Needs Rework (toast) | DF: {\"Status\":6,\"Comments\":\"QA rework comment EFQA-20260924T1300\"} | ✔ record saved the rework comment",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-006-step2-reworked.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Refresh queue and inspect both details.",
+     "expected": "Neither decided item remains in the active queue and each retains its correct audit data.",
+     "result": "Passed",
+     "actual": "✔ neither decided item remains in the active queue after refresh | ✔ EXP-1025 detail retains Rejected + comment | ✔ EXP-1026 detail retains Needs Rework + comment",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-006-step3-queue-after.png",
+      "screenshots/20260924T093500/EF-REG-006-step3-detail-Reject.png",
+      "screenshots/20260924T093500/EF-REG-006-step3-detail-Rework.png"
+     ]
+    },
+    {
+     "n": 4,
+     "description": "Submit a connected decision with a whitespace-only comment and inspect the decision request and resulting record.",
+     "expected": "Whitespace-only comment content is omitted from the update payload; the decision status is persisted correctly without storing meaningless whitespace audit text, and the controls remain usable.",
+     "result": "Passed",
+     "actual": "write requests inspected: 13; requests containing a Comments field: 1 | ✔ whitespace-only comment is not sent in any request payload | DF: {\"Status\":4} | ✔ record does not store meaningless whitespace comment (Comments=undefined) | ✔ controls usable; decided item left queue",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-006-step4-blank-comment.png"
+     ]
+    }
+   ],
+   "executionId": "b131f1b8-0514-0e00-2e0a-0b4a2a5f1ca7",
+   "testCaseLogId": "012c620a-5182-7300-eebc-0b4a2a5f1cdc",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-006-step1-rejected.png",
+     "status": "uploaded",
+     "error": "uip tm attachment upload --project-key EXPENSEFLOW --object-id e0b5ade3-c4dc-435a-68 -> no json:  ",
+     "note": "uploaded on retry"
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-006-step2-reworked.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-006-step2-reworked.png",
+      "ObjectId": "9ce7b0d4-1c71-433b-68f4-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-006-step3-queue-after.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-006-step3-queue-after.png",
+      "ObjectId": "637b4d84-6108-4c50-68f5-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-006-step3-detail-Reject.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-006-step3-detail-Reject.png",
+      "ObjectId": "637b4d84-6108-4c50-68f5-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-006-step3-detail-Rework.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-006-step3-detail-Rework.png",
+      "ObjectId": "637b4d84-6108-4c50-68f5-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-REG-006-step4-blank-comment.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-006-step4-blank-comment.png",
+      "ObjectId": "81349ad9-6f40-4e4d-68f6-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/b131f1b8-0514-0e00-2e0a-0b4a2a5f1ca7"
+  },
+  {
+   "stableId": "EF-REG-007",
+   "testCaseKey": "EXPENSEFLOW:19",
+   "testCaseId": "2b652f27-01c4-0d00-c9ef-0b4a287e6357",
+   "name": "EF-REG-007 - Connected decision failure leaves source record unmodified",
+   "classification": "Restricted",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Initiate a decision through the approved safe failure condition.",
+     "expected": "A friendly decision error is shown and the typed comment remains available for retry.",
+     "result": "Passed",
+     "actual": "✔ friendly decision error shown | ✔ typed comment remains available for retry | ✔ decision controls usable again",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-007-step1-decision-error.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Re-read the associated Data Fabric record and Action Center task.",
+     "expected": "No decision status, decider, timestamp, or comment was written to the record when task completion failed.",
+     "result": "Restricted",
+     "actual": "DF record after failed decision: {\"Status\":3,\"ApprovalTaskId\":\"101647442\"} | ✔ no decider, timestamp, or comment written to the Data Fabric record | ✔ card still in queue with its Action Center task id (task not completed) | RESTRICTED: the failure was injected by the app switch ?demo=fail-decide, which throws before any UiPath call; it proves no write occurs and the UI recovers, but it does not exercise a real Action Center task-completion failure (the ordering guarantee \"task first, record second\"). Action Center task state was inferred from the queue card (task still open), not read from Action Center itself.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-007-step2-still-pending.png"
+     ]
+    }
+   ],
+   "executionId": "da7b6ea2-0614-0e00-230d-0b4a2a5f4159",
+   "testCaseLogId": "2512f204-5282-7300-3419-0b4a2a5f418f",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-007-step1-decision-error.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-007-step1-decision-error.png",
+      "ObjectId": "67aea85f-79d1-467e-01c0-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-007-step2-still-pending.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-007-step2-still-pending.png",
+      "ObjectId": "fb4b41be-6844-4f87-01c1-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/da7b6ea2-0614-0e00-230d-0b4a2a5f4159"
+  },
+  {
+   "stableId": "EF-REG-008",
+   "testCaseKey": "EXPENSEFLOW:20",
+   "testCaseId": "96217cbb-0bc4-0d00-9955-0b4a287e8383",
+   "name": "EF-REG-008 - Connected Finance attention classification covers all unsettled reasons",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Seed or locate the five synthetic records in connected Data Fabric.",
+     "expected": "All records are retrievable through Finance's unsettled query path.",
+     "result": "Passed",
+     "actual": "✔ EFREG008-PolicyReview-203800 retrievable in Data Fabric (Status=2, receipt=yes) | ✔ EFREG008-PendingApproval-203800 retrievable in Data Fabric (Status=3, receipt=yes) | ✔ EFREG008-Reworked-203800 retrievable in Data Fabric (Status=6, receipt=yes) | ✔ EFREG008-MissingReceipt-203800 retrievable in Data Fabric (Status=1, receipt=none) | ✔ EFREG008-SubmittedWithReceipt-203800 retrievable in Data Fabric (Status=1, receipt=yes) | ✔ Finance unsettled query path loads",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-008-step1-finance.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Open Finance and inspect the attention list.",
+     "expected": "Each first four record appears once with the correct attention reason; the control is excluded.",
+     "result": "Passed",
+     "actual": "attention footer: Showing 1–25 of 43 | ✔ EFREG008-PolicyReview-203800 listed once with reason \"Policy Review\" → \"QA-20260923T203800 ₹82,000 Policy Review\" | ✔ EFREG008-PendingApproval-203800 listed once with reason \"Pending Approval\" → \"20260923T203800 ₹37,550 Pending Approval\" | ✔ EFREG008-Reworked-203800 listed once with reason \"Needs Rework\" → \"EFQA-20260923T203800 ₹5,900 Needs Rework\" | ✔ EFREG008-MissingReceipt-203800 listed once with reason \"Missing Receipt\" → \"A-20260923T203800 ₹2,500 Missing Receipt\" | ✔ EFREG008-SubmittedWithReceipt-203800 (submitted-with-receipt control) is excluded from attention | attention rows scanned across pages: 43",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-008-step2-attention-list.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Open each attention row.",
+     "expected": "Each row navigates to the matching expense detail.",
+     "result": "Passed",
+     "actual": "✔ attention row for PolicyReview located | ✔ PolicyReview row navigated to its own detail (/expenses/EFREG008-PolicyReview-203800) | ✔ attention row for PendingApproval located | ✔ PendingApproval row navigated to its own detail (/expenses/EFREG008-PendingApproval-203800) | ✔ attention row for Reworked located | ✔ Reworked row navigated to its own detail (/expenses/EFREG008-Reworked-203800) | ✔ attention row for MissingReceipt located | ✔ MissingReceipt row navigated to its own detail (/expenses/EFREG008-MissingReceipt-203800)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-008-step3-detail-PolicyReview.png",
+      "screenshots/20260924T093500/EF-REG-008-step3-detail-PendingApproval.png",
+      "screenshots/20260924T093500/EF-REG-008-step3-detail-Reworked.png",
+      "screenshots/20260924T093500/EF-REG-008-step3-detail-MissingReceipt.png"
+     ]
+    }
+   ],
+   "executionId": "7087bb11-0714-0e00-598d-0b4a2a5f4f3e",
+   "testCaseLogId": "b3f8856f-5382-7300-b299-0b4a2a5f4f73",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-008-step1-finance.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-008-step1-finance.png",
+      "ObjectId": "13863c21-e574-4571-68f7-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-008-step2-attention-list.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-008-step2-attention-list.png",
+      "ObjectId": "956ff624-04ac-4ed3-68f8-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-008-step3-detail-PolicyReview.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-008-step3-detail-PolicyReview.png",
+      "ObjectId": "f45ac96d-72e0-4858-68f9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-008-step3-detail-PendingApproval.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-008-step3-detail-PendingApproval.png",
+      "ObjectId": "f45ac96d-72e0-4858-68f9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-008-step3-detail-Reworked.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-008-step3-detail-Reworked.png",
+      "ObjectId": "f45ac96d-72e0-4858-68f9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-008-step3-detail-MissingReceipt.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-008-step3-detail-MissingReceipt.png",
+      "ObjectId": "f45ac96d-72e0-4858-68f9-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/7087bb11-0714-0e00-598d-0b4a2a5f4f3e"
+  },
+  {
+   "stableId": "EF-REG-009",
+   "testCaseKey": "EXPENSEFLOW:21",
+   "testCaseId": "5a588dac-16c4-0d00-43b2-0b4a287ea394",
+   "name": "EF-REG-009 - Connected service errors expose retryable user feedback",
+   "classification": "Restricted",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Trigger the approved safe connected read or write failure condition.",
+     "expected": "The app presents a friendly error state or inline form error with a retry path; no raw provider exception is shown.",
+     "result": "Passed",
+     "actual": "✔ friendly inline form error shown with retry guidance | ✔ no raw provider exception | ✔ no record written during the failed attempt (0 records in Data Fabric) | failure injected with the app-documented rehearsed switch ?demo=fail-submit against the connected runtime (no real provider outage was created)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-009-step1-write-failure.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Restore the normal condition and use Retry or re-submit.",
+     "expected": "The page or operation recovers without requiring a full app reset and without duplicate writes.",
+     "result": "Restricted",
+     "actual": "✔ after removing the switch, re-submitting succeeds without an app reset: EXP-1031 submitted for ₹3,300. See it on your dashboard or open the expense. | EXP-1031 su | ✔ exactly one record after recovery (no duplicate writes): 1 | RESTRICTED: a genuine connected READ failure could not be triggered safely (simulateError is mock-only, and network/credential fault injection was not attempted); only the write-failure path was exercised through the app-documented demo switch.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-009-step2-recovered.png"
+     ]
+    }
+   ],
+   "executionId": "28a0f5d4-0814-0e00-b4af-0b4a2a5f6389",
+   "testCaseLogId": "c995c286-5482-7300-af9a-0b4a2a5f63c7",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-009-step1-write-failure.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-009-step1-write-failure.png",
+      "ObjectId": "951a6de9-cd78-4853-68fa-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-009-step2-recovered.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-009-step2-recovered.png",
+      "ObjectId": "ec48f3d0-4311-4a3d-68fb-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/28a0f5d4-0814-0e00-b4af-0b4a2a5f6389"
+  },
+  {
+   "stableId": "EF-REG-010",
+   "testCaseKey": "EXPENSEFLOW:22",
+   "testCaseId": "bf8c0f39-19c4-0d00-5849-0b4a287eb763",
+   "name": "EF-REG-010 - Connected receipt access failures are contained and recoverable",
+   "classification": "Failed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open the synthetic expense detail and attempt receipt access under the approved safe failure condition.",
+     "expected": "The detail page remains usable and receipt access failure is handled without leaking implementation details.",
+     "result": "Failed",
+     "actual": "✔ detail renders with an interactive receipt chip for a record whose bucket object was never uploaded | after opening the unavailable receipt: alert=\"ExpenseFlow could not open the receipt from UiPath: BlobFileInfo does not exist.\"; new tab opened=false | ✔ detail page remains usable | ✔ the failure is surfaced (inline alert or blob 404 tab) rather than silently ignored | failure condition: natural (bucket object absent for the seeded fixture); no fault injection, no credential or network manipulation | ✘ no implementation details (storage host, signature, stack, provider type names such as BlobFileInfo) leaked in the page",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-010-step1-receipt-failure.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Restore normal authorized access and open the receipt again.",
+     "expected": "Receipt access succeeds through the configured bucket path.",
+     "result": "Restricted",
+     "actual": "✔ receipt with an existing bucket object opens through authorized bucket access | RESTRICTED: the step is about restoring access after a failure induced on the SAME receipt; the induced failure was a missing object on a different fixture, so \"restore then reopen\" was shown as a successful open of a healthy receipt, not recovery of the failed one.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-010-step2-receipt-tab.png",
+      "screenshots/20260924T093500/EF-REG-010-step2-detail-normal.png"
+     ]
+    }
+   ],
+   "executionId": "6579cd78-0914-0e00-af2f-0b4a2a5f7035",
+   "testCaseLogId": "790332a6-5582-7300-4061-0b4a2a5f706d",
+   "tmResult": "Failed",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 1,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-010-step1-receipt-failure.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-010-step1-receipt-failure.png",
+      "ObjectId": "d020c9c9-f816-4b18-68fc-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-010-step2-receipt-tab.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-010-step2-receipt-tab.png",
+      "ObjectId": "0b3c5ede-59e1-47e6-68fd-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-010-step2-detail-normal.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-010-step2-detail-normal.png",
+      "ObjectId": "0b3c5ede-59e1-47e6-68fd-08df19d7ace6",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/6579cd78-0914-0e00-af2f-0b4a2a5f7035"
+  },
+  {
+   "stableId": "EF-REG-011",
+   "testCaseKey": "EXPENSEFLOW:23",
+   "testCaseId": "97c8e14d-30c4-0d00-4aaf-0b4a287ee79a",
+   "name": "EF-REG-011 - Locale-stable currency, compact amount, and date formatting",
+   "classification": "Restricted",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Render full and compact financial values on Dashboard, detail, and Finance views.",
+     "expected": "Indian grouping is used; 840000 renders ₹8.4L and 12000000 renders ₹1.2Cr.",
+     "result": "Passed",
+     "actual": "✔ Dashboard shows Indian-grouped full values (₹1,28,88,250, ₹1,28,56,450, ₹1,20,00,000, ₹8,40,000) | ✔ 840000 renders ₹8.4L in Finance \"This month\" tile | ✔ Finance full totals use Indian grouping: ₹10,24,450 ₹9,78,500 ₹8 ₹8,40,000 ₹82,000 ₹37,550 | ✔ 12000000 renders ₹1.2Cr in Finance \"This month\" tile | ✔ Detail EXP-1001 shows ₹12,450",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-011-step1-dashboard-full.png",
+      "screenshots/20260924T093500/EF-REG-011-step1-finance-8.4L.png",
+      "screenshots/20260924T093500/EF-REG-011-step1-finance-1.2Cr.png",
+      "screenshots/20260924T093500/EF-REG-011-step1-detail-full.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Render date-only and timestamp-derived values under an alternate timezone.",
+     "expected": "2026-08-18 displays 18 Aug 2026 without a previous-day shift; invalid date text remains unchanged.",
+     "result": "Restricted",
+     "actual": "browser tz/locale: Pacific/Honolulu / en-US | ✔ EXP-1001 date-only 2026-08-18 displays \"18 Aug 2026\" under Pacific/Honolulu (no previous-day shift) | ✔ timestamp-derived decision date (2026-08-19T11:40+05:30) shows 19 Aug 2026 (calendar date from ISO string, not shifted to 18 Aug) | ✔ Indian grouping retained under en-US locale | ✔ list dates unshifted: 18 Aug / 17 Aug | RESTRICTED: the \"invalid date text remains unchanged\" sub-check cannot be produced through the UI (dates come from typed <input type=date> or seeded data); it was verified only by the format unit test (npm test: \"an unparseable date is returned as-is rather than as NaN undefined\" — 32/32 pass), not by manual UI observation.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-011-step2-detail-honolulu.png",
+      "screenshots/20260924T093500/EF-REG-011-step2-list-honolulu.png"
+     ]
+    }
+   ],
+   "executionId": "e1915076-3813-0e00-04f6-0b4a2a533539",
+   "testCaseLogId": "b048f2f6-557e-7300-4b57-0b4a2a53356c",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-011-step1-dashboard-full.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-011-step1-dashboard-full.png",
+      "ObjectId": "e11cf13d-0a43-4fe4-8a9a-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-011-step1-finance-8.4L.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-011-step1-finance-8.4L.png",
+      "ObjectId": "e11cf13d-0a43-4fe4-8a9a-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-011-step1-finance-1.2Cr.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-011-step1-finance-1.2Cr.png",
+      "ObjectId": "e11cf13d-0a43-4fe4-8a9a-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-011-step1-detail-full.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-011-step1-detail-full.png",
+      "ObjectId": "e11cf13d-0a43-4fe4-8a9a-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-011-step2-detail-honolulu.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-011-step2-detail-honolulu.png",
+      "ObjectId": "5d0b553a-67de-4484-8a9b-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-011-step2-list-honolulu.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-011-step2-list-honolulu.png",
+      "ObjectId": "5d0b553a-67de-4484-8a9b-08df1a19787e",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/e1915076-3813-0e00-04f6-0b4a2a533539"
+  },
+  {
+   "stableId": "EF-REG-012",
+   "testCaseKey": "EXPENSEFLOW:24",
+   "testCaseId": "c2c00bc1-45c4-0d00-3b5a-0b4a287f38f3",
+   "name": "EF-REG-012 - Runtime configuration, OAuth callback, and startup failure recovery",
+   "classification": "Failed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Start with valid connected configuration.",
+     "expected": "OAuth/runtime completes, schema and choice sets warm, and application routes render.",
+     "result": "Passed",
+     "actual": "navigation chain (main frame, query keys only): localhost:5173/ -> localhost:5173/ -> localhost:5173/ -> localhost:5173/?code&state&iss -> localhost:5173/?code&state&iss -> localhost:5173/?iss -> localhost:5173/ | ✔ OAuth round trip completed: callback with code/state reached the app and the session is authenticated | ✔ runtime ready: dashboard rendered with connected records (schema and choice sets warm: categories/statuses mapped) | ✔ no startup failure splash | ✔ My Expenses route renders | ✔ Approvals route renders | ✔ Finance route renders",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-012-step1-routes-render.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Start with the isolated invalid or missing-resource configuration.",
+     "expected": "Could not connect to UiPath splash and Reload action appear instead of partial application rendering.",
+     "result": "Blocked",
+     "actual": "BLOCKED: no isolated invalid or missing-resource configuration is available; producing one would require editing the deployed runtime configuration (config.generated.ts / UiPath resources) or breaking tenant resources, which was not attempted.",
+     "evidence": []
+    },
+    {
+     "n": 3,
+     "description": "Simulate the controlled OAuth callback with both OAuth and non-OAuth query keys.",
+     "expected": "OAuth keys are removed after completion while mock and demo switches remain.",
+     "result": "Failed",
+     "actual": "chain: localhost:5173/ -> localhost:5173/ -> localhost:5173/expenses?demo&foo -> localhost:5173/expenses?demo&foo -> localhost:5173/?code&state&iss -> localhost:5173/?code&state&iss -> localhost:5173/?iss -> localhost:5173/ | final URL after real OAuth completion: /(no query) | ✔ OAuth keys (code/state/session_state/iss) removed after completion | ✘ non-OAuth keys demo=fail and foo=bar remain after the callback (observed: dropped — the OAuth redirect returns to the app root, so the original path and query were lost)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-012-step3-after-oauth.png"
+     ]
+    }
+   ],
+   "executionId": "c2b7f0bc-0b14-0e00-e49d-0b4a2a5f7e0e",
+   "testCaseLogId": "afba0a40-5882-7300-4f13-0b4a2a5f7e44",
+   "tmResult": "Failed",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 1,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-012-step1-routes-render.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-012-step1-routes-render.png",
+      "ObjectId": "7c2c05ee-2364-4ca6-0c87-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-012-step3-after-oauth.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-012-step3-after-oauth.png",
+      "ObjectId": "9c9e61a9-f400-4d1e-0c89-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/c2b7f0bc-0b14-0e00-e49d-0b4a2a5f7e0e"
+  },
+  {
+   "stableId": "EF-REG-013",
+   "testCaseKey": "EXPENSEFLOW:25",
+   "testCaseId": "df95a197-57c4-0d00-400b-0b4a287f79d0",
+   "name": "EF-REG-013 - Authorization characterization for approvals and Finance",
+   "classification": "Blocked",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Authenticate as least-privilege employee and open /approvals and /finance.",
+     "expected": "The employee does not gain successful approval or Finance actions merely by entering a route.",
+     "result": "Blocked",
+     "actual": "single authenticated identity in this environment (jeet.doshi); the app header shows the persona label \"Rahul Mehta / Manager\" on /approvals and \"Finance\" on /finance with no role check | BLOCKED: a least-privilege employee identity and a separate authorized manager/Finance identity are not available in this environment; only one authenticated user exists, so the negative authorization check (deny without mutation) cannot be performed truthfully.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-013-step1-approvals-as-current-user.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Attempt a decision on EFREG013-pending, then authenticate as authorized manager or Finance identity and repeat.",
+     "expected": "Unauthorized attempt is unavailable or denied without mutation; authorized identity receives required queue/data and decisions.",
+     "result": "Blocked",
+     "actual": "BLOCKED: no second identity to attempt or compare decisions on EFREG013-pending; no decision was attempted to avoid mutating state without an authorization contrast.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-013-step2-finance-as-current-user.png"
+     ]
+    }
+   ],
+   "executionId": "237b66db-0c14-0e00-bbd5-0b4a2a5f8bb2",
+   "testCaseLogId": "ec850661-5982-7300-7f41-0b4a2a5f8bcd",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-013-step1-approvals-as-current-user.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-013-step1-approvals-as-current-user.png",
+      "ObjectId": "325cec87-9f86-4e1f-a077-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-013-step2-finance-as-current-user.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-013-step2-finance-as-current-user.png",
+      "ObjectId": "9734f158-d659-43a3-a078-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/237b66db-0c14-0e00-bbd5-0b4a2a5f8bb2"
+  },
+  {
+   "stableId": "EF-REG-014",
+   "testCaseKey": "EXPENSEFLOW:26",
+   "testCaseId": "0f8efbc7-60c4-0d00-af46-0b4a287fa633",
+   "name": "EF-REG-014 - Pagination clamps after result-set reduction",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open My Expenses and navigate to page 2.",
+     "expected": "Footer indicates page 2 and displays rows 26 and later.",
+     "result": "Passed",
+     "actual": "✔ page 2 footer \"Showing 26–50 of 59\", Page 2 indicated, rows start at 26",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-014-step1-page2.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Apply Status, Category, or date filtering that yields fewer than 25 records.",
+     "expected": "Table automatically renders valid page-1 results and footer indicates Page 1 of 1.",
+     "result": "Passed",
+     "actual": "✔ Status=Rejected from page 2 → page 1 results, footer \"Showing 1–2 of 2\", 2 rows | ✔ Category=Meals → valid page 1: Showing 1–7 of 7 | ✔ date filter From 2026-09-24 → valid page 1: Showing 1–25 of 25",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-014-step2-status-clamp.png",
+      "screenshots/20260924T093500/EF-REG-014-step2-date-clamp.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Repeat the reduction from the Finance attention table.",
+     "expected": "Finance pagination clamps to a valid page with correct disabled boundaries.",
+     "result": "Passed",
+     "actual": "Finance attention initially: Showing 1–25 of 43 | ✔ attention set exceeds one page (43 rows) | ✔ Finance attention on last page 2: Showing 26–43 of 43  (Next disabled) | reduced the attention set from a second tab by approving 18 retained synthetic EFREG003-Pending fixtures (Data-Fabric-only, no Action Center task) | after Refresh on the same tab: Showing 1–25 of 25 | ✔ Finance pagination clamped to a valid page 1 after reduction (Showing 1–25 of 25, 25 rows, no phantom page) | ✔ pager boundaries valid (no navigable page 2)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-014-step3-finance-page2.png",
+      "screenshots/20260924T093500/EF-REG-014-step3-finance-clamped.png"
+     ]
+    }
+   ],
+   "executionId": "4cb10781-0d14-0e00-c89d-0b4a2a5f9a39",
+   "testCaseLogId": "f49c5fec-5a82-7300-39ee-0b4a2a5f9a6f",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-014-step1-page2.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-014-step1-page2.png",
+      "ObjectId": "1c6b23af-5668-4eea-01c2-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-014-step2-status-clamp.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-014-step2-status-clamp.png",
+      "ObjectId": "445465f2-86d8-4cca-01c3-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-014-step2-date-clamp.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-014-step2-date-clamp.png",
+      "ObjectId": "445465f2-86d8-4cca-01c3-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-014-step3-finance-page2.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-014-step3-finance-page2.png",
+      "ObjectId": "d03d1490-0f51-40d7-01c4-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-014-step3-finance-clamped.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-014-step3-finance-clamped.png",
+      "ObjectId": "d03d1490-0f51-40d7-01c4-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/4cb10781-0d14-0e00-c89d-0b4a2a5f9a39"
+  },
+  {
+   "stableId": "EF-REG-015",
+   "testCaseKey": "EXPENSEFLOW:77",
+   "testCaseId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797",
+   "name": "EF-REG-015 - Finance month-end bounds include actual last days for 28, 29, and 30-day months",
+   "classification": "Restricted",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Seed unique non-Draft records on 2026-02-28, 2028-02-29, and 2026-04-30, plus a next-day control record for each selected month.",
+     "expected": "The isolated dataset contains the planned last-day and outside-range records with recorded expected counts and totals.",
+     "result": "Restricted",
+     "actual": "Finance month tile before seeding: This month ₹5.4L 28 expenses in Sep 2026 | ✔ Finance in this tenant derives its month from the latest submitted record (no date-range selector exists in the UI); the active month is Sep 2026 | seeded record dated 2026-09-30 (last day of a 30-day month): EXP-1032 submitted for ₹1,111. See it on your dashboard or open the expense. | EXP-1032 su | ✔ boundary record dated 2026-09-30 created | RESTRICTED: only the 30-day-month boundary (2026-09-30) could be seeded: 2026-02-28, 2028-02-29, 2026-04-30 and the next-day controls would make older months non-latest in a shared tenant, and the app has no month selector, so the planned Feb/Feb-leap/Apr datasets cannot be queried.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-015-step1-seeded.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Open Finance and select the date range for February 2026, then repeat for February 2028 and April 2026.",
+     "expected": "Each query completes without a Data Fabric 400 or invalid-date error, and the selected range is shown correctly.",
+     "result": "Restricted",
+     "actual": "✔ Finance loads for the 30-day month (Sep 2026) with no Data Fabric 400 / invalid-date / error text | month tile: This month ₹5.4L 29 expenses in Sep 2026 | RESTRICTED: the app offers no date-range selector, so February 2026 / 2028 / April 2026 could not be selected; only the latest month (Sep 2026, 30 days) was queried.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-015-step2-finance-sep.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Inspect the February 2026 and leap-year February 2028 results.",
+     "expected": "The 28th and 29th day records are included exactly once, the next-day controls are excluded, and no stale month rows remain.",
+     "result": "Blocked",
+     "actual": "BLOCKED: February 2026 and leap-year February 2028 cannot be queried: Finance has no month selector and always uses the latest month with data; older months are not reachable without deleting or dating-out newer shared records.",
+     "evidence": []
+    },
+    {
+     "n": 4,
+     "description": "Inspect the April 2026 results and compare the displayed aggregate count and total with the precomputed values.",
+     "expected": "The April 30th record is included, April 31st is never queried, and the Finance count and total equal the expected boundary-inclusive values.",
+     "result": "Restricted",
+     "actual": "Finance month tile now: This month ₹5.4L 29 expenses in Sep 2026; DF record: {\"ExpenseCode\":\"EXP-1032\",\"ExpenseDate\":\"2026-09-30\",\"Amount\":1111} | ✔ the 2026-09-30 record exists in Data Fabric with the correct date | ✔ the 30-day month is queried through its actual last day (Sep 2026 tile renders; the previous hard-coded -31 bound would have caused an invalid-date 400) | RESTRICTED: April 2026 (30-day) was not the latest month, so its aggregate could not be compared; the equivalent 30-day boundary was verified for Sep 2026 only. Count/total precomputed comparison for the whole month was not performed.",
+     "evidence": []
+    },
+    {
+     "n": 5,
+     "description": "Refresh Finance and switch among the three month ranges again.",
+     "expected": "Boundary records remain stable after refresh and range changes; no off-by-one, duplicate, timezone-shifted, or stale aggregate appears.",
+     "result": "Restricted",
+     "actual": "✔ Finance stable after refresh (Sep 2026 tile): This month ₹5.4L 29 expenses in Sep 2026 | RESTRICTED: switching among three month ranges is not possible (no range control).",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-015-step5-finance-refresh.png"
+     ]
+    }
+   ],
+   "executionId": "54b93d09-0e14-0e00-5968-0b4a2a5fad01",
+   "testCaseLogId": "286ecab1-5b82-7300-235e-0b4a2a5fad67",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-015-step1-seeded.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-015-step1-seeded.png",
+      "ObjectId": "15082791-c1de-42c0-8a76-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-015-step2-finance-sep.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-015-step2-finance-sep.png",
+      "ObjectId": "c62aef6d-a33a-48a2-8a77-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-REG-015-step5-finance-refresh.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-015-step5-finance-refresh.png",
+      "ObjectId": "091414fc-7331-4d5e-8a7a-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/54b93d09-0e14-0e00-5968-0b4a2a5fad01"
+  },
+  {
+   "stableId": "EF-REG-017",
+   "testCaseKey": "EXPENSEFLOW:78",
+   "testCaseId": "da9b2d60-cded-0d00-8a99-0b4a2a2bfbb1",
+   "name": "EF-REG-017 - Live policy change between display and submit uses current threshold",
+   "classification": "Blocked",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Record the original policy threshold, load New Expense while the threshold is 25000, and leave the form open without reloading.",
+     "expected": "The form displays the initial policy context and the original asset value is recorded for later restoration.",
+     "result": "Blocked",
+     "actual": "live policy threshold read from the app: Policy threshold ₹25,000 | BLOCKED: the case requires changing the shared Orchestrator asset ExpenseFlow_PolicyThreshold from 25000 to 30000 while a form is open, then restoring it. That is a mutation of shared tenant configuration and needs explicit authorization plus an isolated restoration window; neither was available.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-017-step1-threshold-25000.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Change the live policy asset to 30000 from the authorized test context without reloading the open form.",
+     "expected": "The asset read succeeds and the open form still represents the earlier display state while the live value is now 30000.",
+     "result": "Blocked",
+     "actual": "BLOCKED: depends on step 1 (asset change not authorized).",
+     "evidence": []
+    },
+    {
+     "n": 3,
+     "description": "Submit EFREG017-LivePolicy with amount 27500 from the already-open form.",
+     "expected": "The submit path evaluates the live 30000 threshold rather than the cached 25000 value; the user-facing decision/routing is correct for 27500 versus 30000.",
+     "result": "Blocked",
+     "actual": "BLOCKED: depends on step 2 (no live threshold change). Unit coverage exists (npm test: \"a submit sees an Asset that changed after the page loaded\" passes) but is not a manual UI verification.",
+     "evidence": []
+    },
+    {
+     "n": 4,
+     "description": "Refresh the expense and inspect its persisted status, policy note, and any approval task link.",
+     "expected": "The persisted record and policy note reflect the live 30000 decision, no stale 25000 decision is recorded, and no duplicate record or task is created.",
+     "result": "Blocked",
+     "actual": "BLOCKED: depends on step 3.",
+     "evidence": []
+    },
+    {
+     "n": 5,
+     "description": "Restore the original threshold and refresh the app once more.",
+     "expected": "The original policy value is restored and the synthetic record remains a single intact audit object.",
+     "result": "Blocked",
+     "actual": "BLOCKED: nothing to restore because the threshold was not changed.",
+     "evidence": []
+    }
+   ],
+   "executionId": "ee14a5ba-0f14-0e00-2e2b-0b4a2a5fbc59",
+   "testCaseLogId": "607e72a0-5c82-7300-80ed-0b4a2a5fbc74",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-017-step1-threshold-25000.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-017-step1-threshold-25000.png",
+      "ObjectId": "65e47958-5b0b-4519-8a7b-08df19d74366",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/ee14a5ba-0f14-0e00-2e2b-0b4a2a5fbc59"
+  },
+  {
+   "stableId": "EF-REG-018",
+   "testCaseKey": "EXPENSEFLOW:79",
+   "testCaseId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd",
+   "name": "EF-REG-018 - URL switches persist across navigation and disable cleanly after removal",
+   "classification": "Failed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open the verified local app with ?mock=1, record the URL, and navigate through Dashboard, Expenses, New Expense, Approvals, and Finance using the visible sidebar links.",
+     "expected": "The mock=1 switch remains present after each client-side navigation and every screen renders from the mock service without an OAuth or connected-mode dependency.",
+     "result": "Passed",
+     "actual": "start URL http://localhost:5173/?mock=1 | ✔ Dashboard: /?mock=1 keeps mock=1 | ✔ Dashboard: renders from mock service, no OAuth | ✔ My Expenses: /expenses?mock=1 keeps mock=1 | ✔ My Expenses: renders from mock service, no OAuth | ✔ New Expense: /expenses/new?mock=1 keeps mock=1 | ✔ New Expense: renders from mock service, no OAuth | ✔ Approvals: /approvals?mock=1 keeps mock=1 | ✔ Approvals: renders from mock service, no OAuth | ✔ Finance: /finance?mock=1 keeps mock=1 | ✔ Finance: renders from mock service, no OAuth",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-018-step1-finance-last.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "From the mock tab, open New Expense and return to Expenses using in-app navigation while recording the browser Back stack before and after.",
+     "expected": "The two-segment route is reached by clicking, the switch is preserved, and navigation does not create an extra duplicate history entry for the same transition.",
+     "result": "Passed",
+     "actual": "history.length before=8, after New Expense=9, after return to Expenses=10; URLs http://localhost:5173/expenses/new?mock=1 → http://localhost:5173/expenses?mock=1 | ✔ two-segment route reached by click with mock=1 preserved | ✔ each transition adds exactly one history entry (no duplicate)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-018-step2-expenses-after-return.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Open a fresh tab with ?mock=1&demo=fail, submit the valid synthetic form once, then submit again after the one-shot failure is consumed.",
+     "expected": "The first submit shows the translated recoverable failure and preserves form data; the failure is consumed and the retry succeeds without a false success on the first attempt.",
+     "result": "Failed",
+     "actual": "✔ first submit: translated recoverable failure, no false success | ✔ form data preserved | URL at second submit: http://localhost:5173/expenses/new?mock=1&demo=fail | ✘ second submit succeeds (one-shot failure consumed)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-018-step3-first-submit.png",
+      "screenshots/20260924T093500/EF-REG-018-step3-second-submit.png"
+     ]
+    },
+    {
+     "n": 4,
+     "description": "Open Dashboard or Finance with ?mock=1&simulateError=1, navigate to another screen, and inspect the read state.",
+     "expected": "The simulated read failure remains active across client-side navigation, shows the translated error/retry state without a raw exception, and does not create a connected request.",
+     "result": "Passed",
+     "actual": "✔ Dashboard shows translated read error, no raw exception | ✔ failure persists after in-app navigation: http://localhost:5173/finance?mock=1&simulateError=1",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-018-step4-finance-error.png"
+     ]
+    },
+    {
+     "n": 5,
+     "description": "Remove the failure switch, hard-load the resulting normal mock URL, and navigate once more through the app.",
+     "expected": "The simulated failure and demo switch are no longer active after hard load; normal mock data renders, the URL contains only the intended remaining query state, and history remains coherent.",
+     "result": "Passed",
+     "actual": "✔ hard-load URL: http://localhost:5173/?mock=1 | ✔ normal mock data renders, no error state | ✔ after navigating: http://localhost:5173/?mock=1",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-018-step5-normal.png"
+     ]
+    }
+   ],
+   "executionId": "5bab3371-3b13-0e00-7033-0b4a2a53511a",
+   "testCaseLogId": "44fd3fd3-597e-7300-fbbf-0b4a2a53513c",
+   "tmResult": "Failed",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 1,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-018-step1-finance-last.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-018-step1-finance-last.png",
+      "ObjectId": "fadfb0cf-6ae1-4cb0-54b8-08df1a221ad5",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-018-step2-expenses-after-return.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-018-step2-expenses-after-return.png",
+      "ObjectId": "d90ced42-38a2-40d9-54b9-08df1a221ad5",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-018-step3-first-submit.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-018-step3-first-submit.png",
+      "ObjectId": "5f7d746a-b805-4001-54ba-08df1a221ad5",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-018-step3-second-submit.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-018-step3-second-submit.png",
+      "ObjectId": "5f7d746a-b805-4001-54ba-08df1a221ad5",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-REG-018-step4-finance-error.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-018-step4-finance-error.png",
+      "ObjectId": "c51f6f3f-2e06-4854-54bb-08df1a221ad5",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-REG-018-step5-normal.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-018-step5-normal.png",
+      "ObjectId": "caae7954-de34-4a3d-54bc-08df1a221ad5",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/5bab3371-3b13-0e00-7033-0b4a2a53511a"
+  },
+  {
+   "stableId": "EF-REG-022",
+   "testCaseKey": "EXPENSEFLOW:80",
+   "testCaseId": "62a9b958-cfed-0d00-e06f-0b4a2a2c3211",
+   "name": "EF-REG-022 - Over-threshold submission creates one linked approval task",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Record the live policy threshold and intended Orchestrator folder, then prepare the unique EFREG022-ApprovalLink expense with amount 35000.",
+     "expected": "The amount is confirmed above the live threshold, the intended folder/task facts are recorded, and the isolated scope has no prior matching record or task.",
+     "result": "Passed",
+     "actual": "live policy threshold (from approval cards): ₹25,000; intended Orchestrator folder: Shared (01a3eae4-d43c-4009-9342-969b1262b1e1) | ✔ amount 35000 is above the live threshold 25000 | ✔ no prior matching Data Fabric record for EFREG022-ApprovalLink-EFQA-20260924T1400",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-022-step1-queue-threshold.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Submit EFREG022-ApprovalLink in connected mode and wait for the submission result.",
+     "expected": "Exactly one Data Fabric expense record is created and the user-facing result states that manager approval is required; no duplicate submit is issued.",
+     "result": "Passed",
+     "actual": "result: EXP-1029 submitted for ₹35,000. See it on your dashboard or open the expense. | EXP-1029 submitted for ₹35,000 — Pending Approval. | ✔ user-facing result states approval is required (Pending Approval) | ✔ exactly one Data Fabric record created (1) = EXP-1029",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-022-step2-submitted.png"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Inspect Action Center tasks in the intended folder and open the task linked to the new expense.",
+     "expected": "Exactly one task exists in the intended folder; title, priority, payload, amount, expense code, employee/decision facts, and approval reason match the submitted record without secrets.",
+     "result": "Passed",
+     "actual": "Action Center tasks in folder Shared whose title contains EXP-1029: 1 | ✔ exactly one task exists for the expense | task 101647500: {\"Title\":\"Approve EXP-1029 — Rahul Mehta — ₹35,000\",\"Priority\":\"Medium\",\"Status\":\"Unassigned\",\"Type\":\"ExternalTask\",\"Folder\":\"Shared\",\"Amount\":35000,\"ExpenseCode\":\"EXP-1029\",\"PolicyThreshold\":25000,\"ReceiptPath\":\"receipts/EXP-1029-qa-receipt.pdf\"} | ✔ task title/payload match the submitted record (code, amount, description) | ✔ task is in the intended folder (Shared) with priority Medium (35000 < 2x threshold) | ✔ payload contains no secrets",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-022-step3-approval-card-task.png",
+      "screenshots/20260924T093500/EF-REG-022-step3-action-center.png"
+     ]
+    },
+    {
+     "n": 4,
+     "description": "Refresh the expense and inspect the persisted ApprovalTaskId and approval link/detail affordance.",
+     "expected": "ApprovalTaskId is persisted as text, matches the single Action Center task id, and the record remains navigable with consistent PendingApproval/task-link data.",
+     "result": "Passed",
+     "actual": "✔ ApprovalTaskId persisted as text and equals the Action Center task id (101647500) | ✔ detail shows PendingApproval with Action Center wait affordance",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-022-step4-detail.png"
+     ]
+    },
+    {
+     "n": 5,
+     "description": "Revisit the expense detail, refresh again, and compare the record/task counts and identifiers.",
+     "expected": "No additional record or task is created; the original record and task identifiers remain stable and the linked approval state is idempotent.",
+     "result": "Passed",
+     "actual": "✔ record count 1; ExpenseCode and ApprovalTaskId unchanged after revisit/refresh | ✔ task count still 1",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-022-step5-detail-after-refresh.png"
+     ]
+    }
+   ],
+   "executionId": "12b4a353-1014-0e00-5347-0b4a2a5fc8b7",
+   "testCaseLogId": "1153de10-5d82-7300-5b85-0b4a2a5fc8fb",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-022-step1-queue-threshold.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-022-step1-queue-threshold.png",
+      "ObjectId": "8c47b0db-18ee-4667-0c8a-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-022-step2-submitted.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-022-step2-submitted.png",
+      "ObjectId": "77874fd4-f2ea-42f6-0c8b-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-022-step3-approval-card-task.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-022-step3-approval-card-task.png",
+      "ObjectId": "65e815be-9b50-4ac5-0c8c-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-022-step3-action-center.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-022-step3-action-center.png",
+      "ObjectId": "65e815be-9b50-4ac5-0c8c-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-REG-022-step4-detail.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-022-step4-detail.png",
+      "ObjectId": "3060fba3-4586-4165-0c8d-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-REG-022-step5-detail-after-refresh.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-022-step5-detail-after-refresh.png",
+      "ObjectId": "8cccd1be-bdca-4f03-0c8e-08df19cef660",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/12b4a353-1014-0e00-5347-0b4a2a5fc8b7"
+  },
+  {
+   "stableId": "EF-REG-023",
+   "testCaseKey": "EXPENSEFLOW:81",
+   "testCaseId": "7749b02c-d0ed-0d00-f060-0b4a2a2c5417",
+   "name": "EF-REG-023 - External task completion conflict prevents duplicate app decision",
+   "classification": "Passed",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Open the isolated pending-approval expense EFREG023-ExternalComplete and record its Data Fabric fields, task id, and current Action Center task state.",
+     "expected": "The expense is PendingApproval, the task link is present, and the original record/task snapshot is captured before the race.",
+     "result": "Passed",
+     "actual": "✔ approval card for EXP-1030 open in the app (this page is intentionally not refreshed before the race) | snapshot before race: {\"code\":\"EXP-1030\",\"Status\":3,\"ApprovalTaskId\":\"101647510\",\"taskStatus\":\"Unassigned\",\"taskAction\":null} | ✔ expense is PendingApproval with a linked open task",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-023-step1-before-race.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Complete the linked Action Center task externally with the approved decision and comment Completed externally for regression.",
+     "expected": "The Action Center task reaches its completed state and the external decision is recorded once.",
+     "result": "Passed",
+     "actual": "uip tasks complete -> Success | task after external completion: {\"Status\":\"Completed\",\"Action\":\"Approve\",\"CompletedTime\":\"2026-09-24T10:54:48.7650757Z\"} | ✔ Action Center task is Completed with action Approve (external decision recorded once)",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-023-step2-task-after-external-completion.json"
+     ]
+    },
+    {
+     "n": 3,
+     "description": "Without refreshing the app state first, submit the same decision from the app approval screen.",
+     "expected": "The app returns the specific already-completed-task conflict message; it does not show a false success or raw exception.",
+     "result": "Passed",
+     "actual": "✔ app returns the specific already-completed-task conflict message | ✔ no false success toast | ✔ no raw exception | message: pdf Action Center Task #101647510 Above ₹25,000 policy threshold Comments ExpenseFlow could not record the approve decision in Action Center: This Action is already completed by the same user Open exp",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-023-step3-conflict-message.png"
+     ]
+    },
+    {
+     "n": 4,
+     "description": "Read the expense record and related task after the conflict.",
+     "expected": "The Data Fabric record has no second decision mutation or duplicate comment, the task remains completed, and no second task is created.",
+     "result": "Passed",
+     "actual": "after conflict: {\"records\":1,\"Status\":3,\"tasks\":1,\"taskStatus\":\"Completed\"} | ✔ Data Fabric record has no second decision mutation or duplicate comment | ✔ task remains completed; no second task created",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-023-step4-record-and-task-count.json"
+     ]
+    },
+    {
+     "n": 5,
+     "description": "Refresh the approval/detail route and repeat the observation without submitting again.",
+     "expected": "The completed-task conflict remains accurately represented, no duplicate decision/task appears, and the original record/task identifiers remain stable.",
+     "result": "Passed",
+     "actual": "after refresh the card is still listed in the queue | detail after refresh: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1030 EFREG023-ExternalComplete-EFQA-20260924T1400 Pending Approval Amount ₹35,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt qa-receipt.pdf Policy Abov | ✔ no duplicate decision/task; original record and task identifiers stable | ✔ known limitation observed: the record stays PendingApproval in Data Fabric because the external completion did not update it (app does not reconcile) — reported for the analyst, not asserted as expected",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-023-step5-queue-after-refresh.png",
+      "screenshots/20260924T093500/EF-REG-023-step5-detail-after-refresh.png"
+     ]
+    }
+   ],
+   "executionId": "1bf1ff18-1214-0e00-dc5f-0b4a2a5fdc73",
+   "testCaseLogId": "b1dda2c7-6482-7300-4574-0b4a2a5fdc8e",
+   "tmResult": "Passed",
+   "tmStats": {
+    "Passed": 1,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-023-step1-before-race.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-023-step1-before-race.png",
+      "ObjectId": "4b787853-acfc-4d4a-01c5-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 2,
+     "file": "screenshots/20260924T093500/EF-REG-023-step2-task-after-external-completion.json",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-023-step2-task-after-external-completion.json",
+      "ObjectId": "609cdfca-4aaa-416e-01c6-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 3,
+     "file": "screenshots/20260924T093500/EF-REG-023-step3-conflict-message.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-023-step3-conflict-message.png",
+      "ObjectId": "467fbcf2-c1d1-42cd-01c7-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 4,
+     "file": "screenshots/20260924T093500/EF-REG-023-step4-record-and-task-count.json",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-023-step4-record-and-task-count.json",
+      "ObjectId": "a4af0616-cf65-4baf-01c8-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-REG-023-step5-queue-after-refresh.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-023-step5-queue-after-refresh.png",
+      "ObjectId": "969aecdb-5c03-43b4-01c9-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    },
+    {
+     "step": 5,
+     "file": "screenshots/20260924T093500/EF-REG-023-step5-detail-after-refresh.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-023-step5-detail-after-refresh.png",
+      "ObjectId": "969aecdb-5c03-43b4-01c9-08df1a26c3bd",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/1bf1ff18-1214-0e00-dc5f-0b4a2a5fdc73"
+  },
+  {
+   "stableId": "EF-REG-024",
+   "testCaseKey": "EXPENSEFLOW:82",
+   "testCaseId": "477359b3-d1ed-0d00-78be-0b4a2a2c71ca",
+   "name": "EF-REG-024 - Empty Finance dataset renders zero aggregates and no-data state",
+   "classification": "Blocked",
+   "steps": [
+    {
+     "n": 1,
+     "description": "Prepare the isolated connected scope with no non-Draft ExpenseFlow_Expense records for the selected month and record the expected zero aggregates.",
+     "expected": "The selected scope contains no aggregate-eligible records; any Draft-only control is explicitly identified and excluded from expected Finance results.",
+     "result": "Blocked",
+     "actual": "Finance currently shows: Expenses 64 ₹8,19,854 submitted across the company Pending 24 ₹4,81,827 in flight This month ₹5.4L 29 expenses in Sep 2026 NEEDS ATTENTION Blocked or waiting 25 records E | BLOCKED: the Finance view aggregates the whole shared ExpenseFlow_Expense entity (dozens of non-Draft records from earlier QA runs); an empty non-Draft scope would require deleting or re-dating shared records, which needs explicit authorization. No isolated empty tenant scope exists.",
+     "evidence": [
+      "screenshots/20260924T093500/EF-REG-024-step1-finance-not-empty.png"
+     ]
+    },
+    {
+     "n": 2,
+     "description": "Open Finance for the empty month and wait for the initial data load to complete.",
+     "expected": "Finance renders zero count and zero total without NaN, undefined, stale values, a raw exception, or a Data Fabric 400.",
+     "result": "Blocked",
+     "actual": "BLOCKED: depends on step 1 (empty scope unavailable).",
+     "evidence": []
+    },
+    {
+     "n": 3,
+     "description": "Inspect the month summary and date-range controls for the empty result.",
+     "expected": "The month presentation is the documented null/no-data state rather than an invented date, and the date range remains valid without issuing an invalid query.",
+     "result": "Blocked",
+     "actual": "BLOCKED: depends on step 1.",
+     "evidence": []
+    },
+    {
+     "n": 4,
+     "description": "Inspect the needs-attention queue, table body, and pager.",
+     "expected": "The attention area shows its intentional empty state, Draft-only data is not classified as attention, and the table/pager do not display phantom rows or invalid navigation.",
+     "result": "Blocked",
+     "actual": "BLOCKED: depends on step 1.",
+     "evidence": []
+    },
+    {
+     "n": 5,
+     "description": "Refresh Finance, change the date range, and navigate away and back.",
+     "expected": "Zero aggregates, the no-data presentation, and the empty attention state remain stable; no rows or totals from a prior dataset reappear.",
+     "result": "Blocked",
+     "actual": "BLOCKED: depends on step 1.",
+     "evidence": []
+    }
+   ],
+   "executionId": "817bf195-1614-0e00-82fd-0b4a2a5fedd4",
+   "testCaseLogId": "d1c41831-7182-7300-89ef-0b4a2a5fee0e",
+   "tmResult": "Restricted",
+   "tmStats": {
+    "Passed": 0,
+    "Failed": 0,
+    "None": 0,
+    "Status": "Finished"
+   },
+   "attachments": [
+    {
+     "step": 1,
+     "file": "screenshots/20260924T093500/EF-REG-024-step1-finance-not-empty.png",
+     "status": "uploaded",
+     "resp": {
+      "FileName": "EF-REG-024-step1-finance-not-empty.png",
+      "ObjectId": "85854e50-a200-426c-a079-08df19cd16a8",
+      "ObjectType": "testStepLog"
+     }
+    }
+   ],
+   "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/817bf195-1614-0e00-82fd-0b4a2a5fedd4"
+  }
+ ]
+}

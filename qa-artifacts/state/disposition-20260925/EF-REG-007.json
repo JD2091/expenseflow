@@ -1,0 +1,4 @@
+[
+  {"testStepId":"47bd814f-6e7a-0e00-b6c2-0b4a287e6a5a","result":"Restricted","comment":"BLOCKED: No connected failure action was attempted. The hosted build is not bound to the isolated task/entity scope, and no supported isolated provider-failure target was available without shared mutation.","hasError":false,"actionType":"Blocked/UnsupportedFailureTarget","hasAttachment":false,"clipboardData":""},
+  {"testStepId":"4d89bd3e-6f7a-0e00-9e12-0b4a287e6c4e","result":"Restricted","comment":"BLOCKED: Record/task preservation could not be exercised because the safe failure target was unavailable and the hosted build isolation gate failed. No decision mutation was attempted.","hasError":false,"actionType":"Blocked/NotExecuted","hasAttachment":false,"clipboardData":""}
+]

@@ -1,0 +1,64 @@
+{
+ "stableId": "EF-SMOKE-009",
+ "testCaseId": "bc5a20e6-93c3-0d00-ff15-0b4a287d8105",
+ "executionId": "acf0c20e-3513-0e00-5691-0b4a2a530075",
+ "testCaseLogId": "5cda53f1-527e-7300-0757-0b4a2a5300ad",
+ "result": "Passed",
+ "stepLogCount": 3,
+ "stepResults": [
+  "Passed",
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-SMOKE-009-step1-summary.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-009-step1-summary.png",
+    "ObjectId": "ef9d4619-94c4-48cb-0c71-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-009-step2-attention.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-009-step2-attention.png",
+    "ObjectId": "1b8e730c-330e-48b2-0c72-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-SMOKE-009-step3-click-nav.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-009-step3-click-nav.png",
+    "ObjectId": "0ed28290-0f49-4551-0c73-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-SMOKE-009-step3-keyboard-nav.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-009-step3-keyboard-nav.png",
+    "ObjectId": "0ed28290-0f49-4551-0c73-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/acf0c20e-3513-0e00-5691-0b4a2a530075",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

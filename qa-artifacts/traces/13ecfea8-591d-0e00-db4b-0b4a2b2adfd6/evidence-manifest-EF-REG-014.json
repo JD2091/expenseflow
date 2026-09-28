@@ -1,0 +1,70 @@
+{
+  "executionId": "13ecfea8-591d-0e00-db4b-0b4a2b2adfd6",
+  "projectKey": "EXPENSEFLOW",
+  "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "testSetKey": "EXPENSEFLOW:2",
+  "testCaseKey": "EXPENSEFLOW:26",
+  "testCaseId": "0f8efbc7-60c4-0d00-af46-0b4a287fa633",
+  "testCaseName": "EF-REG-014 - Pagination clamps after result-set reduction",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "traceId": "0f8efbc7-60c4-0d00-af46-0b4a287fa633-20260925T121200",
+  "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-full-trace.json",
+  "executionTraceManifestRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-execution-traces.json",
+  "capturedAt": "2026-09-25T12:12:00+05:30",
+  "freshFixture": {
+    "source": "connected staging",
+    "myExpensesRecordCount": 66,
+    "financeAttentionRecordCount": 29,
+    "filterUsed": "Status=Rejected",
+    "mutationPerformed": false
+  },
+  "steps": [
+    {
+      "stepNumber": 1,
+      "stepId": "c8eb76b0-a17a-0e00-2c20-0b4a287fb989",
+      "expectedResult": "Footer indicates page 2 and displays rows 26 and later.",
+      "actualResult": "My Expenses showed Showing 26–50 of 66, Page 2 of 3, with 25 rows after the semantic Next-page action.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-step01-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh screenshot evidence is embedded in the finalized per-step trace; no standalone PNG was generated."
+    },
+    {
+      "stepNumber": 2,
+      "stepId": "c32f3560-a27a-0e00-70d8-0b4a287fbcf7",
+      "expectedResult": "Table automatically renders valid page-1 results and footer indicates Page 1 of 1.",
+      "actualResult": "Status=Rejected reduced the connected list to two rows and clamped the table to Showing 1–2 of 2 on page 1 without changing records.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-step02-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh filter and clamp evidence is embedded in the finalized per-step trace; no standalone PNG was generated."
+    },
+    {
+      "stepNumber": 3,
+      "stepId": "ea7b8a78-a37a-0e00-548f-0b4a287fc014",
+      "expectedResult": "Finance pagination clamps to a valid page with correct disabled boundaries.",
+      "actualResult": "Finance showed 29 attention records: page 1 Showing 1–25 of 29 and page 2 Showing 26–29 of 29 with Next disabled. The reduction-after-page-2 branch was restricted because safely reducing the connected dataset would require mutating existing approval records.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-step03-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh Finance boundary evidence is embedded in the finalized per-step trace; data-reduction mutation was intentionally not performed."
+    }
+  ],
+  "caseOutcome": "Passed with restricted connected reduction coverage",
+  "evidenceLimitations": [
+    "No standalone PNG screenshots were generated; fresh screenshots are embedded in finalized trace artifacts.",
+    "The Finance result-set reduction after reaching page 2 was not performed because it would require mutating existing approval records."
+  ],
+  "publication": {
+    "testCaseLogId": null,
+    "stepAttachmentReferences": [],
+    "status": "pending"
+  }
+}

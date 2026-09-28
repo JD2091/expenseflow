@@ -1,0 +1,29 @@
+[
+  {
+    "testStepId": "f62a8bc8-647a-0e00-405d-0b4a287e1b31",
+    "result": "Restricted",
+    "comment": "Observed: the connected Approval queue rendered 23 cards waiting on Neha Kulkarni. The required EFREG005-Approve synthetic record and its Action Center task were absent from the complete rendered queue; no pager or alternate queue scope was available. BLOCKED: the case prerequisite was unavailable in this environment, so no unrelated approval was opened or mutated.",
+    "hasError": false,
+    "actionType": "Navigate/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "3b1f5c5d-667a-0e00-35c1-0b4a287e1e40",
+    "result": "Restricted",
+    "comment": "BLOCKED: EFREG005-Approve and its Action Center task were not present in the connected Approval queue, so the required approval action could not be exercised without mutating an unrelated synthetic record. No approval, comment, or Data Fabric decision write was attempted.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "c3f5dd3f-687a-0e00-58a8-0b4a287e2070",
+    "result": "Restricted",
+    "comment": "BLOCKED: because the EFREG005-Approve prerequisite was absent and step 2 could not execute, refresh/detail persistence verification was not run. No final status, decision timestamp, decider, or comment is claimed for EFREG005-Approve.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

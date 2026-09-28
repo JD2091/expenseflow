@@ -1,0 +1,24 @@
+{
+ "id": "EF-REG-010",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:15:25.743Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Failed",
+   "actual": "✔ detail renders with an interactive receipt chip for a record whose bucket object was never uploaded | after opening the unavailable receipt: alert=\"ExpenseFlow could not open the receipt from UiPath: BlobFileInfo does not exist.\"; new tab opened=false | ✔ detail page remains usable | ✔ the failure is surfaced (inline alert or blob 404 tab) rather than silently ignored | failure condition: natural (bucket object absent for the seeded fixture); no fault injection, no credential or network manipulation | ✘ no implementation details (storage host, signature, stack, provider type names such as BlobFileInfo) leaked in the page",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-010-step1-receipt-failure.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Restricted",
+   "actual": "✔ receipt with an existing bucket object opens through authorized bucket access | RESTRICTED: the step is about restoring access after a failure induced on the SAME receipt; the induced failure was a missing object on a different fixture, so \"restore then reopen\" was shown as a successful open of a healthy receipt, not recovery of the failed one.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-010-step2-receipt-tab.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-010-step2-detail-normal.png"
+   ]
+  }
+ ]
+}

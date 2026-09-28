@@ -1,0 +1,59 @@
+{
+  "executionId": "13ecfea8-591d-0e00-db4b-0b4a2b2adfd6",
+  "projectKey": "EXPENSEFLOW",
+  "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "testSetKey": "EXPENSEFLOW:2",
+  "testCaseKey": "EXPENSEFLOW:19",
+  "testCaseId": "2b652f27-01c4-0d00-c9ef-0b4a287e6357",
+  "testCaseName": "EF-REG-007 - Connected decision failure leaves source record unmodified",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "traceId": "2b652f27-01c4-0d00-c9ef-0b4a287e6357-20260925T115000",
+  "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-007-full-trace.json",
+  "executionTraceManifestRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-007-execution-traces.json",
+  "capturedAt": "2026-09-25T11:50:00+05:30",
+  "freshFixture": {
+    "recordId": "EXP-1028",
+    "syntheticIdentifier": "EFREG007-DecisionFail-EFQA-20260924T1300",
+    "actionCenterTask": "101647442",
+    "failureSwitch": "?demo=fail-decide",
+    "syntheticComment": "QA decision failure EFQA-20260925T1150"
+  },
+  "steps": [
+    {
+      "stepNumber": 1,
+      "stepId": "47bd814f-6e7a-0e00-b6c2-0b4a287e6a5a",
+      "expectedResult": "A friendly decision error is shown and the typed comment remains available for retry.",
+      "actualResult": "The approved fail-decide route showed the friendly no-write error, retained the synthetic comment, and left the decision controls usable.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-007-step01-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh screenshot evidence is embedded in the finalized per-step trace."
+    },
+    {
+      "stepNumber": 2,
+      "stepId": "4d89bd3e-6f7a-0e00-9e12-0b4a287e6c4e",
+      "expectedResult": "No decision status, decider, timestamp, or comment was written to the record when task completion failed.",
+      "actualResult": "EXP-1028 remained Pending Approval, showed Manager approval / Waiting on a manager in Action Center, and displayed no decider or decision timestamp. The app hook proves no-write recovery, but it throws before a real Action Center task-completion failure.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-007-step02-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh detail verification captured; real task-completion failure and independent Action Center read were not available."
+    }
+  ],
+  "caseOutcome": "Passed with restricted real-task failure coverage",
+  "evidenceLimitations": [
+    "The approved ?demo=fail-decide hook fails before any UiPath call.",
+    "The real Action Center task-completion failure ordering guarantee was not independently exercised.",
+    "No standalone PNG screenshots were generated; screenshots are embedded in the finalized trace artifacts."
+  ],
+  "publication": {
+    "testCaseLogId": null,
+    "stepAttachmentReferences": [],
+    "status": "pending"
+  }
+}

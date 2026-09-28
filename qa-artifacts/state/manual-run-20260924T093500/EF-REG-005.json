@@ -1,0 +1,31 @@
+{
+ "id": "EF-REG-005",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:48:56.949Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ card for EXP-1024 (EFREG005-Approve) present exactly once | card: EXP-1024 Rahul Mehta Pending Approval EFREG005-Approve-EFQA-20260924T1300 Amount ₹26,001 Policy threshold ₹25,000 Date 24 Sep 2026 Receipt qa-receipt.pdf Action Center Task #101647429 Above ₹25,000 policy threshold Comments Open expense Reject Request rework A | ✔ card identifies its Action Center task (Task #101647429) | ✔ optional comments field and decision actions present",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-005-step1-card.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ success feedback: \"EXP-1024 is now Approved.\" | ✔ decided row left the queue | write requests in order: POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST /testcloud_team/TAM/orchestrator_/tasks/GenericTasks/CompleteTask -> POST /EntityService/entity/{id}/update/4CB5E05D-05B8-F111-A6A9-6045BDDBB45C -> POST /testcloud_team/TAM/datafabric_/api/EntityService/entity/{id}/query -> POST /testcloud_team/TAM/datafabric_/api/EntityService/entity/{id}/query -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-005-step2-approved.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ detail status Approved | ✔ decision comment persisted on detail | Data Fabric record: {\"Status\":4,\"DecidedBy\":\"Neha Kulkarni\",\"DecidedAt\":\"2026-09-24T10:48:45.247+00:00\",\"Comments\":\"QA approve comment EFQA-20260924T1300\",\"ApprovalTaskId\":\"101647429\"} | ✔ DF record has decider, decision timestamp, and comment (independent uip df read)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-005-step3-detail.png"
+   ]
+  }
+ ]
+}

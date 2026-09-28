@@ -1,0 +1,149 @@
+{
+  "traceId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797-20260924T122300",
+  "metadata": {
+    "kind": "testmanager",
+    "source": "autonomousExecution",
+    "testcaseId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797",
+    "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+    "orgId": "testcloud_team",
+    "tenantId": "TAM",
+    "testStepId": "f80b429e-17c4-0e00-b112-0b4a2a2bd9e9"
+  },
+  "Prompt": {
+    "Prompt": "EF-REG-015 - Finance month-end bounds include actual last days for 28, 29, and 30-day months",
+    "PromptId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797",
+    "Action": "None",
+    "EnableLoopExecution": false
+  },
+  "Iterations": [
+    {
+      "LoopIteration": 0,
+      "Actions": [
+        {
+          "ActionType": "KeyPress",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open ExpenseFlow app",
+              "method_type": "key_press",
+              "parameters": {
+                "keys": "[d(ctrl)]l[u(ctrl)]"
+              },
+              "id": null
+            },
+            "ActionId": "765c2bdc-b9f6-4324-bcd9-69308587032b"
+          }
+        },
+        {
+          "ActionType": "TextType",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open ExpenseFlow app",
+              "method_type": "text_type",
+              "parameters": {
+                "value": "http://localhost:5173"
+              },
+              "id": null
+            },
+            "ActionId": "765c2bdc-b9f6-4324-bcd9-69308587032b"
+          }
+        },
+        {
+          "ActionType": "KeyPress",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open ExpenseFlow app",
+              "method_type": "key_press",
+              "parameters": {
+                "keys": "[k(enter)]"
+              },
+              "id": null
+            },
+            "ActionId": "765c2bdc-b9f6-4324-bcd9-69308587032b"
+          }
+        },
+        {
+          "ActionType": "Wait",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open ExpenseFlow app",
+              "method_type": "wait",
+              "parameters": {
+                "duration": 3000
+              },
+              "id": null
+            },
+            "ActionId": "765c2bdc-b9f6-4324-bcd9-69308587032b"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 1,
+      "Actions": [
+        {
+          "ActionType": "Extract",
+          "IsSuccessful": false,
+          "InputAction": {
+            "Action": {
+              "description": "Inspect ExpenseFlow page",
+              "method_type": "extract",
+              "parameters": {
+                "description": "Current ExpenseFlow page accessibility tree, including visible headings, links, buttons, form fields, alerts, and current route"
+              },
+              "id": null
+            },
+            "ActionId": "60e0c3f7-6ccb-492b-b292-41511e1810c2"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 2,
+      "Actions": [
+        {
+          "ActionType": "ExecuteJs",
+          "IsSuccessful": false,
+          "InputAction": {
+            "Action": {
+              "description": "Probe ExpenseFlow DOM",
+              "method_type": "execute_js",
+              "parameters": {
+                "script": "return {url: location.href, title: document.title, readyState: document.readyState, text: (document.body && document.body.innerText || '').slice(0,5000), inputs: Array.from(document.querySelectorAll('input,select,textarea,button,a')).slice(0,80).map((e,i)=>({i,tag:e.tagName,text:(e.innerText||e.value||e.getAttribute('aria-label')||'').slice(0,120),type:e.getAttribute('type'),name:e.getAttribute('name'),id:e.id,href:e.getAttribute('href'),disabled:e.disabled}))};"
+              },
+              "id": null
+            },
+            "ActionId": "5636a6f5-4c77-49dd-a0cf-1f6ff95b4685"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 3,
+      "Actions": [
+        {
+          "ActionType": "Open",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Bring ExpenseFlow browser forward",
+              "method_type": "open",
+              "parameters": {
+                "reason": "attach"
+              },
+              "id": null
+            },
+            "ActionId": "56edf0e6-0466-40de-b9a9-63295f836716"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    }
+  ]
+}

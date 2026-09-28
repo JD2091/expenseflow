@@ -1,0 +1,72 @@
+[
+ {
+  "testStepId": "6518c3c6-26c4-0e00-9b5a-0b4a2a2c342a",
+  "result": "Passed",
+  "comment": "Expected: The amount is confirmed above the live threshold, the intended folder/task facts are recorded, and the isolated scope has no prior matching record or task.\nActual: live policy threshold (from approval cards): ₹25,000; intended Orchestrator folder: Shared (01a3eae4-d43c-4009-9342-969b1262b1e1) | ✔ amount 35000 is above the live threshold 25000 | ✔ no prior matching Data Fabric record for EFREG022-ApprovalLink-EFQA-20260924T1400",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "8c47b0db-18ee-4667-0c8a-08df19cef660",
+  "orderNo": 0,
+  "testCaseLogId": "1153de10-5d82-7300-5b85-0b4a2a5fc8fb",
+  "description": "Record the live policy threshold and intended Orchestrator folder, then prepare the unique EFREG022-ApprovalLink expense with amount 35000.",
+  "expectedResult": "The amount is confirmed above the live threshold, the intended folder/task facts are recorded, and the isolated scope has no prior matching record or task."
+ },
+ {
+  "testStepId": "5790454b-27c4-0e00-7c72-0b4a2a2c3511",
+  "result": "Passed",
+  "comment": "Expected: Exactly one Data Fabric expense record is created and the user-facing result states that manager approval is required; no duplicate submit is issued.\nActual: result: EXP-1029 submitted for ₹35,000. See it on your dashboard or open the expense. | EXP-1029 submitted for ₹35,000 — Pending Approval. | ✔ user-facing result states approval is required (Pending Approval) | ✔ exactly one Data Fabric record created (1) = EXP-1029",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "77874fd4-f2ea-42f6-0c8b-08df19cef660",
+  "orderNo": 1,
+  "testCaseLogId": "1153de10-5d82-7300-5b85-0b4a2a5fc8fb",
+  "description": "Submit EFREG022-ApprovalLink in connected mode and wait for the submission result.",
+  "expectedResult": "Exactly one Data Fabric expense record is created and the user-facing result states that manager approval is required; no duplicate submit is issued."
+ },
+ {
+  "testStepId": "25a4d568-28c4-0e00-3346-0b4a2a2c35fe",
+  "result": "Passed",
+  "comment": "Expected: Exactly one task exists in the intended folder; title, priority, payload, amount, expense code, employee/decision facts, and approval reason match the submitted record without secrets.\nActual: Action Center tasks in folder Shared whose title contains EXP-1029: 1 | ✔ exactly one task exists for the expense | task 101647500: {\"Title\":\"Approve EXP-1029 — Rahul Mehta — ₹35,000\",\"Priority\":\"Medium\",\"Status\":\"Unassigned\",\"Type\":\"ExternalTask\",\"Folder\":\"Shared\",\"Amount\":35000,\"ExpenseCode\":\"EXP-1029\",\"PolicyThreshold\":25000,\"ReceiptPath\":\"receipts/EXP-1029-qa-receipt.pdf\"} | ✔ task title/payload match the submitted record (code, amount, description) | ✔ task is in the intended folder (Shared) with priority Medium (35000 < 2x threshold) | ✔ payload contains no secrets",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "65e815be-9b50-4ac5-0c8c-08df19cef660",
+  "orderNo": 2,
+  "testCaseLogId": "1153de10-5d82-7300-5b85-0b4a2a5fc8fb",
+  "description": "Inspect Action Center tasks in the intended folder and open the task linked to the new expense.",
+  "expectedResult": "Exactly one task exists in the intended folder; title, priority, payload, amount, expense code, employee/decision facts, and approval reason match the submitted record without secrets."
+ },
+ {
+  "testStepId": "dc7d1e93-29c4-0e00-a55e-0b4a2a2c36e4",
+  "result": "Passed",
+  "comment": "Expected: ApprovalTaskId is persisted as text, matches the single Action Center task id, and the record remains navigable with consistent PendingApproval/task-link data.\nActual: ✔ ApprovalTaskId persisted as text and equals the Action Center task id (101647500) | ✔ detail shows PendingApproval with Action Center wait affordance",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "3060fba3-4586-4165-0c8d-08df19cef660",
+  "orderNo": 3,
+  "testCaseLogId": "1153de10-5d82-7300-5b85-0b4a2a5fc8fb",
+  "description": "Refresh the expense and inspect the persisted ApprovalTaskId and approval link/detail affordance.",
+  "expectedResult": "ApprovalTaskId is persisted as text, matches the single Action Center task id, and the record remains navigable with consistent PendingApproval/task-link data."
+ },
+ {
+  "testStepId": "33de6264-2ac4-0e00-c03c-0b4a2a2c37b8",
+  "result": "Passed",
+  "comment": "Expected: No additional record or task is created; the original record and task identifiers remain stable and the linked approval state is idempotent.\nActual: ✔ record count 1; ExpenseCode and ApprovalTaskId unchanged after revisit/refresh | ✔ task count still 1",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "8cccd1be-bdca-4f03-0c8e-08df19cef660",
+  "orderNo": 4,
+  "testCaseLogId": "1153de10-5d82-7300-5b85-0b4a2a5fc8fb",
+  "description": "Revisit the expense detail, refresh again, and compare the record/task counts and identifiers.",
+  "expectedResult": "No additional record or task is created; the original record and task identifiers remain stable and the linked approval state is idempotent."
+ }
+]

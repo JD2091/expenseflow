@@ -1,0 +1,82 @@
+{
+ "stableId": "EF-REG-006",
+ "testCaseId": "9be03113-f8c3-0d00-f704-0b4a287e4c3d",
+ "executionId": "b131f1b8-0514-0e00-2e0a-0b4a2a5f1ca7",
+ "testCaseLogId": "012c620a-5182-7300-eebc-0b4a2a5f1cdc",
+ "result": "Passed",
+ "stepLogCount": 4,
+ "stepResults": [
+  "Passed",
+  "Passed",
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-REG-006-step1-rejected.png",
+   "status": "uploaded",
+   "error": "uip tm attachment upload --project-key EXPENSEFLOW --object-id e0b5ade3-c4dc-435a-68 -> no json:  ",
+   "note": "uploaded on retry"
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-REG-006-step2-reworked.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-006-step2-reworked.png",
+    "ObjectId": "9ce7b0d4-1c71-433b-68f4-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-REG-006-step3-queue-after.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-006-step3-queue-after.png",
+    "ObjectId": "637b4d84-6108-4c50-68f5-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-REG-006-step3-detail-Reject.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-006-step3-detail-Reject.png",
+    "ObjectId": "637b4d84-6108-4c50-68f5-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-REG-006-step3-detail-Rework.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-006-step3-detail-Rework.png",
+    "ObjectId": "637b4d84-6108-4c50-68f5-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 4,
+   "file": "screenshots/20260924T093500/EF-REG-006-step4-blank-comment.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-006-step4-blank-comment.png",
+    "ObjectId": "81349ad9-6f40-4e4d-68f6-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/b131f1b8-0514-0e00-2e0a-0b4a2a5f1ca7",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

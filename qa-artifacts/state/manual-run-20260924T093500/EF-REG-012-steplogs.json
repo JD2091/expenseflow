@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "6a29c3eb-947a-0e00-2776-0b4a287f5177",
+  "result": "Passed",
+  "comment": "Expected: OAuth/runtime completes, schema and choice sets warm, and application routes render.\nActual: navigation chain (main frame, query keys only): localhost:5173/ -> localhost:5173/ -> localhost:5173/ -> localhost:5173/?code&state&iss -> localhost:5173/?code&state&iss -> localhost:5173/?iss -> localhost:5173/ | ✔ OAuth round trip completed: callback with code/state reached the app and the session is authenticated | ✔ runtime ready: dashboard rendered with connected records (schema and choice sets warm: categories/statuses mapped) | ✔ no startup failure splash | ✔ My Expenses route renders | ✔ Approvals route renders | ✔ Finance route renders",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "7c2c05ee-2364-4ca6-0c87-08df19cef660",
+  "orderNo": 0,
+  "testCaseLogId": "afba0a40-5882-7300-4f13-0b4a2a5f7e44",
+  "description": "Start with valid connected configuration.",
+  "expectedResult": "OAuth/runtime completes, schema and choice sets warm, and application routes render."
+ },
+ {
+  "testStepId": "152b73ce-997a-0e00-d411-0b4a287f5971",
+  "result": "Restricted",
+  "comment": "Expected: Could not connect to UiPath splash and Reload action appear instead of partial application rendering.\nActual: BLOCKED: no isolated invalid or missing-resource configuration is available; producing one would require editing the deployed runtime configuration (config.generated.ts / UiPath resources) or breaking tenant resources, which was not attempted.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "72fe4286-8471-4d34-0c88-08df19cef660",
+  "orderNo": 1,
+  "testCaseLogId": "afba0a40-5882-7300-4f13-0b4a2a5f7e44",
+  "description": "Start with the isolated invalid or missing-resource configuration.",
+  "expectedResult": "Could not connect to UiPath splash and Reload action appear instead of partial application rendering."
+ },
+ {
+  "testStepId": "2f4161e3-9b7a-0e00-5710-0b4a287f5e04",
+  "result": "Failed",
+  "comment": "Expected: OAuth keys are removed after completion while mock and demo switches remain.\nActual: chain: localhost:5173/ -> localhost:5173/ -> localhost:5173/expenses?demo&foo -> localhost:5173/expenses?demo&foo -> localhost:5173/?code&state&iss -> localhost:5173/?code&state&iss -> localhost:5173/?iss -> localhost:5173/ | final URL after real OAuth completion: /(no query) | ✔ OAuth keys (code/state/session_state/iss) removed after completion | ✘ non-OAuth keys demo=fail and foo=bar remain after the callback (observed: dropped — the OAuth redirect returns to the app root, so the original path and query were lost)",
+  "hasError": true,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "9c9e61a9-f400-4d1e-0c89-08df19cef660",
+  "orderNo": 2,
+  "testCaseLogId": "afba0a40-5882-7300-4f13-0b4a2a5f7e44",
+  "description": "Simulate the controlled OAuth callback with both OAuth and non-OAuth query keys.",
+  "expectedResult": "OAuth keys are removed after completion while mock and demo switches remain."
+ }
+]

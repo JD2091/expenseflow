@@ -1,0 +1,31 @@
+{
+ "id": "EF-SMOKE-001",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:24:35.573Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ URL stayed on http://localhost:5173/?mock=1 (no OAuth redirect) | ✔ Dashboard greeting rendered",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-001-step1-dashboard.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ Submitted ₹48,250 / 4 expenses | ✔ Approved ₹31,800 / 2 expenses | ✔ Pending ₹16,450 / 2 expenses",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-001-step2-kpi-cards.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ Recent expense rows render | ✔ Drafts EXP-1003/EXP-1004 listed as Draft | ✔ New Expense action visible | ✔ View all action visible | ✔ KPI total still excludes draft amounts (₹18,500 + ₹2,500)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-001-step3-recent-expenses.png"
+   ]
+  }
+ ]
+}

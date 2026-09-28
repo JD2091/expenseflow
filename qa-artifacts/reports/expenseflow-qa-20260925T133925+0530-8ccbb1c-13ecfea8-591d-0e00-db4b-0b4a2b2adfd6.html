@@ -1,0 +1,536 @@
+<!doctype html><html><head><meta charset="utf-8"><title>ExpenseFlow QA 13ecfea8-591d-0e00-db4b-0b4a2b2adfd6</title><style>body{font-family:Segoe UI,Arial,sans-serif;margin:32px;color:#1f2937;line-height:1.4}h1,h2,h3{color:#0f3d5e}.meta{background:#f3f7fa;padding:16px;border-left:4px solid #0b78a0}.cards{display:flex;gap:12px;flex-wrap:wrap}.card{padding:12px 18px;border-radius:8px;background:#eef2f7}.pass{color:#087f5b}.fail{color:#b42318}.restricted{color:#8a5a00}.none{color:#5b6470}table{border-collapse:collapse;width:100%;margin:12px 0 24px}th,td{border:1px solid #d0d7de;padding:7px;vertical-align:top;text-align:left}th{background:#eaf1f5}.small{font-size:.9em;color:#52606d}pre{white-space:pre-wrap;background:#f7f7f7;padding:12px;border-radius:6px}.pill{font-weight:600}.limit{background:#fff8e1;padding:10px;border-left:4px solid #d99b00}</style></head><body><h1>ExpenseFlow QA — Change Regression Execution</h1><p>Generated: 2026-09-25T08:09:25.544Z</p><div class="meta"><p><b>Environment:</b> Local<br><b>Application:</b> <a href="https://testcloud-team.staging.uipath.host/expenseflow">https://testcloud-team.staging.uipath.host/expenseflow</a><br><b>Repository:</b> <a href="https://github.com/JD2091/expenseflow">JD2091/expenseflow</a><br><b>Baseline SHA:</b> <code>null</code><br><b>Current SHA:</b> <code>8ccbb1c11d36088a36900e737ea0951854a72b65</code><br><b>Project / test set:</b> EXPENSEFLOW / EXPENSEFLOW:2<br><b>Execution:</b> <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">13ecfea8-591d-0e00-db4b-0b4a2b2adfd6</a></p></div><h2>Reconciled totals</h2><div class="cards"><div class="card pass">Case Passed: 9</div><div class="card fail">Case Failed: 1</div><div class="card none">Case None: 10</div><div class="card pass">Step Passed: 20</div><div class="card fail">Step Failed: 1</div><div class="card restricted">Step Restricted: 47</div><div class="card">Attachments: 42/68</div></div><p>Execution status: <b>Finished</b>. 47 steps were published as Restricted because approved fixtures, identities, isolated datasets, safe fault targets, or authorized configuration were unavailable; these are not product failures.</p><h2>Change impact and risk areas</h2><p>This continuation exercised policy routing, Data Fabric mapping/pagination, receipt access, Action Center sequencing/conflict recovery, Finance attention, runtime/OAuth switches, locale formatting, authorization, month-end bounds, and empty Finance behavior. No commit range or pull request was analyzed in this continuation.</p><h3>Affected files</h3><ul><li><code>scripts/format.test.ts</code></li><li><code>src/App.tsx</code></li><li><code>src/components/AppLayout.tsx</code></li><li><code>src/components/ErrorState.tsx</code></li><li><code>src/components/ExpenseTable.tsx</code></li><li><code>src/components/NewExpenseForm.tsx</code></li><li><code>src/components/ReceiptLink.tsx</code></li><li><code>src/components/Sidebar.tsx</code></li><li><code>src/components/TablePager.tsx</code></li><li><code>src/hooks/useAuth.tsx</code></li><li><code>src/hooks/useExpenses.tsx</code></li><li><code>src/hooks/useFinance.tsx</code></li><li><code>src/lib/format.ts</code></li><li><code>src/models/expense.ts</code></li><li><code>src/models/status.ts</code></li><li><code>src/pages/ApprovalPage.tsx</code></li><li><code>src/pages/DashboardPage.tsx</code></li><li><code>src/pages/ExpenseDetailPage.tsx</code></li><li><code>src/pages/ExpenseListPage.tsx</code></li><li><code>src/pages/FinancePage.tsx</code></li><li><code>src/services/demoFailure.ts</code></li><li><code>src/services/expenseService.ts</code></li><li><code>src/services/uipath/approvals.ts</code></li><li><code>src/services/uipath/choiceSets.ts</code></li><li><code>src/services/uipath/client.ts</code></li><li><code>src/services/uipath/config.ts</code></li><li><code>src/services/uipath/entityClient.ts</code></li><li><code>src/services/uipath/errors.ts</code></li><li><code>src/services/uipath/folders.ts</code></li><li><code>src/services/uipath/mappers.ts</code></li><li><code>src/services/uipath/policy.ts</code></li><li><code>src/services/uipath/receipts.ts</code></li><li><code>src/services/uipath/runtime.tsx</code></li><li><code>src/services/uipath/schema.ts</code></li><li><code>vite.config.ts</code></li></ul><h2>Case summary</h2><table><tr><th>Stable ID</th><th>Result</th><th>Steps P/F/R/N</th><th>Attachments</th><th>Case log</th></tr><tr><td>EF-REG-001</td><td class="pill">PASS</td><td>1/0/4/0</td><td>5/5</td><td><code>9f08895b-f3bc-7300-2037-0b4a2b2ae017</code></td></tr><tr><td>EF-REG-002</td><td class="pill">PASS</td><td>2/0/0/0</td><td>2/2</td><td><code>725245c9-f4bc-7300-11fb-0b4a2b2ae03a</code></td></tr><tr><td>EF-REG-003</td><td class="pill">PASS</td><td>2/0/0/0</td><td>2/2</td><td><code>697e96c3-f5bc-7300-2607-0b4a2b2ae05e</code></td></tr><tr><td>EF-REG-004</td><td class="pill">PASS</td><td>2/0/1/0</td><td>3/3</td><td><code>7654ad14-f6bc-7300-ce19-0b4a2b2ae08c</code></td></tr><tr><td>EF-REG-005</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/3/0</td><td>1/3</td><td><code>e1229e71-f7bc-7300-5d64-0b4a2b2ae0af</code></td></tr><tr><td>EF-REG-006</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/4/0</td><td>2/4</td><td><code>9b404937-f8bc-7300-3775-0b4a2b2ae0d2</code></td></tr><tr><td>EF-REG-007</td><td class="pill">PASS</td><td>1/0/1/0</td><td>2/2</td><td><code>2820b224-f9bc-7300-6f3f-0b4a2b2ae0fa</code></td></tr><tr><td>EF-REG-008</td><td class="pill">PASS</td><td>2/0/1/0</td><td>3/3</td><td><code>150ef759-fabc-7300-a14b-0b4a2b2ae11c</code></td></tr><tr><td>EF-REG-009</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/2/0</td><td>2/2</td><td><code>89a010ad-fbbc-7300-002c-0b4a2b2ae13f</code></td></tr><tr><td>EF-REG-010</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/2/0</td><td>0/2</td><td><code>abc7cf93-fcbc-7300-28b0-0b4a2b2ae164</code></td></tr><tr><td>EF-REG-011</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/2/0</td><td>2/2</td><td><code>15bee759-fdbc-7300-9298-0b4a2b2ae186</code></td></tr><tr><td>EF-REG-012</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/3/0</td><td>0/3</td><td><code>a7975289-febc-7300-cd68-0b4a2b2ae1a8</code></td></tr><tr><td>EF-REG-013</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/2/0</td><td>0/2</td><td><code>ea724388-ffbc-7300-7a16-0b4a2b2ae1cb</code></td></tr><tr><td>EF-REG-014</td><td class="pill">PASS</td><td>2/0/1/0</td><td>3/3</td><td><code>a8a9a459-00bd-7300-57a0-0b4a2b2ae1ee</code></td></tr><tr><td>EF-REG-015</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/5/0</td><td>0/5</td><td><code>b234d275-01bd-7300-0348-0b4a2b2ae21b</code></td></tr><tr><td>EF-REG-017</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/5/0</td><td>0/5</td><td><code>32f5a4f0-02bd-7300-ecdf-0b4a2b2ae23c</code></td></tr><tr><td>EF-REG-018</td><td class="pill">FAIL</td><td>4/1/0/0</td><td>5/5</td><td><code>6ecb2de4-03bd-7300-ca13-0b4a2b2ae25e</code></td></tr><tr><td>EF-REG-022</td><td class="pill">PASS</td><td>2/0/3/0</td><td>5/5</td><td><code>096abcd7-04bd-7300-6871-0b4a2b2ae282</code></td></tr><tr><td>EF-REG-023</td><td class="pill">PASS</td><td>2/0/3/0</td><td>5/5</td><td><code>878ca4d4-05bd-7300-454e-0b4a2b2ae2a6</code></td></tr><tr><td>EF-REG-024</td><td class="pill">NOT RUN/RESTRICTED</td><td>0/0/5/0</td><td>0/5</td><td><code>95af9181-06bd-7300-aa2b-0b4a2b2ae2c9</code></td></tr></table><p class="small">A Test Manager case result of None with Restricted steps is reported as blocked/restricted coverage, not as a product failure.</p><h2>Detailed step results</h2><h3>EF-REG-001 — PASS</h3><p><b>EF-REG-001 - Connected submission applies policy threshold routing</b><br>Key: <code>EXPENSEFLOW:13</code>; case log: <code>9f08895b-f3bc-7300-2037-0b4a2b2ae017</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-001
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify connected submission reads the policy threshold and persists the correct status/routing decision.
+
+Synthetic data:
+- Below threshold: EFREG001-Low; Travel; 24000; 2026-08-22.
+- Above threshold: EFREG001-High; Travel; 25001; 2026-08-22.
+- Boundary: an expense amount exactly equal to the live ExpenseFlow_PolicyThreshold value.
+- Missing receipt: a below-threshold expense submitted without a receipt.
+
+Negative checks:
+- A boundary value is not misclassified due to client rounding.
+- The strict amount &gt; threshold rule is preserved: equality is not treated as above threshold.
+- A missing receipt routes to approval even when the amount is below the policy threshold.
+- Policy threshold read failure produces an honest warning rather than a false routing claim.
+
+Affected components/files:
+- src/components/NewExpenseForm.tsx
+- src/services/expenseService.ts
+- src/services/uipath/policy.ts
+- src/hooks/useExpenses.tsx
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/NewExpenseForm.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/expenseService.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/policy.ts</pre></details><p>Affected files: <code>src/components/NewExpenseForm.tsx</code>, <code>src/services/expenseService.ts</code>, <code>src/services/uipath/policy.ts</code>, <code>src/hooks/useExpenses.tsx</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>A connected Data Fabric record is created with the below-threshold outcome defined by the policy service.</td><td>Observed: connected submission created EXP-1033 for EFREG001-Low at INR 24,000 on 2026-08-22. The record persisted as Pending Approval because this run intentionally did not attach a receipt, so the below-threshold routing cannot be isolated from the missing-receipt rule.</td><td class="pill">RESTRICTED</td><td>TM attachment <code>testStepLog:351e59c6-49bd-46b2-097b-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>2</td><td>The policy warning/routing behavior indicates manager approval is required and the record reflects the above-threshold path.</td><td>Observed: connected submission created EXP-1034 for EFREG001-High at INR 25,001 on 2026-08-22. The record persisted as Pending Approval; approval-required behavior was observed, but the missing receipt is an additional approval trigger in this run.</td><td class="pill">RESTRICTED</td><td>TM attachment <code>testStepLog:d4e7119f-b78a-4921-097c-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>3</td><td>Amounts, status, and persisted policy notes/routing agree with the current threshold.</td><td>Observed: after navigating to My expenses and paging to page 2, EXP-1033 was present at INR 24,000 Pending Approval and EXP-1034 was present at INR 25,001 Pending Approval. Both records were readable, but persisted policy-note attribution was not isolated because both submissions lacked receipts.</td><td class="pill">RESTRICTED</td><td>TM attachment <code>testStepLog:38cbfdf0-1397-4f41-097d-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>4</td><td>The exact-equality expense follows the non-above-threshold branch; it is not routed as above-threshold solely due to rounding, and the persisted status and policy note agree with the strict amount &gt; threshold rule.</td><td>Observed: exact-threshold submission created EXP-1035 at INR 25,000 and the persisted list status was Pending Approval. The amount equality was exercised, but the missing receipt prevents isolating the strict threshold branch from receipt-driven approval routing.</td><td class="pill">RESTRICTED</td><td>TM attachment <code>testStepLog:e4211352-97be-406b-097e-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>5</td><td>The missing receipt forces the approval route despite the below-threshold amount; the persisted record shows the correct status and routing and does not contain a receipt path.</td><td>Observed: below-threshold synthetic expense EFREG001-NoReceipt-20260925T1046 created EXP-1036 at INR 9,000 with no receipt selected. The persisted My expenses row showed Pending Approval, matching the expected missing-receipt approval route.</td><td class="pill">PASS</td><td>TM attachment <code>testStepLog:e368caed-fc18-41ef-097f-08df1a31d8f8;HasAttachment=true</code></td></tr></table><h3>EF-REG-002 — PASS</h3><p><b>EF-REG-002 - Connected Data Fabric mapping preserves choice values and dates</b><br>Key: <code>EXPENSEFLOW:14</code>; case log: <code>725245c9-f4bc-7300-11fb-0b4a2b2ae03a</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-002
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify Data Fabric entity round-trip mapping correctly translates choice fields, dates, and nullable data.
+
+Synthetic data:
+- EFREG002-Accommodation; category Accommodation; status Submitted; date 2026-08-18.
+- EFREG002-NoReceipt; category Office; null receipt path.
+
+Negative checks:
+- Unknown or missing choice values do not crash the UI.
+- A null receipt maps to an absent receipt affordance rather than an invalid URL.
+
+Affected components/files:
+- src/services/uipath/mappers.ts
+- src/services/uipath/entityClient.ts
+- src/services/uipath/choiceSets.ts
+- src/models/expense.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/mappers.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/entityClient.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/choiceSets.ts</pre></details><p>Affected files: <code>src/services/uipath/mappers.ts</code>, <code>src/services/uipath/entityClient.ts</code>, <code>src/services/uipath/choiceSets.ts</code>, <code>src/models/expense.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>Records are readable by the app with the intended category, status, date, and receipt values.</td><td>Observed: connected fixture EFREG002-Accommodation-EFQA-20260923T1235 (EF2-1235-A) rendered in detail with status Submitted, category Accommodation, date 18 Aug 2026, receipt accommodation-receipt.pdf, policy text 'Synthetic mapping fixture with receipt path', and expected status progression.</td><td class="pill">PASS</td><td>TM attachment <code>testStepLog:80551677-b4d9-4c5b-696a-08df19d7ace6;HasAttachment=true</code></td></tr><tr><td>2</td><td>Choice-set display values and null receipt behavior map consistently into the Expense model.</td><td>Observed: connected list mapping preserved choice display values and formatted dates; null-receipt fixture EFREG002-NoReceipt-EFQA-20260923T1235 (EF2-1235-N) rendered in detail with status Submitted, category Office, date 18 Aug 2026, Receipt 'No receipt attached', and no raw null or invalid receipt path.</td><td class="pill">PASS</td><td>TM attachment <code>testStepLog:34e51522-098f-47b0-696b-08df19d7ace6;HasAttachment=true</code></td></tr></table><h3>EF-REG-003 — PASS</h3><p><b>EF-REG-003 - Connected list pagination and aggregate totals remain complete</b><br>Key: <code>EXPENSEFLOW:15</code>; case log: <code>697e96c3-f5bc-7300-2607-0b4a2b2ae05e</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-003
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify connected list retrieval and Finance aggregates remain correct beyond a single page of Data Fabric records.
+
+Synthetic data:
+- At least 26 synthetic employee expenses spanning Submitted, Approved, PendingApproval, and Draft statuses.
+
+Negative checks:
+- Client-side totals are not calculated from only the first server page.
+- Filtering from a later page clamps the page index instead of showing a false empty state.
+
+Affected components/files:
+- src/services/uipath/entityClient.ts
+- src/hooks/useExpenses.tsx
+- src/hooks/useFinance.tsx
+- src/components/TablePager.tsx
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/entityClient.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/hooks/useFinance.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/TablePager.tsx</pre></details><p>Affected files: <code>src/services/uipath/entityClient.ts</code>, <code>src/hooks/useExpenses.tsx</code>, <code>src/hooks/useFinance.tsx</code>, <code>src/components/TablePager.tsx</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>Connected list retrieval exposes all matching records through paging or aggregate-aware service behavior.</td><td>Observed: connected My Expenses loaded 64 records with 25 rows shown on page 1 of 3. The dataset exceeded one UI page and the list was reachable through the connected runtime.</td><td class="pill">PASS</td><td>TM attachment <code>testStepLog:e25a5ad5-536d-465e-0d02-08df19cef660;HasAttachment=true</code></td></tr><tr><td>2</td><td>Visible rows, page controls, and aggregate values remain consistent with the full dataset.</td><td>Observed: My Expenses traversed Showing 1-25 of 64, 26-50 of 64, and 51-64 of 64; the last page was Page 3 of 3 with Next disabled. Finance then rendered Expenses 68 / INR 9,02,855 submitted, Pending 28 / INR 5,64,828 in flight, This month INR 5.4L for 29 September 2026 expenses, and a Needs Attention queue of 29 records on page 1 of 2.</td><td class="pill">PASS</td><td>TM attachment <code>testStepLog:268b34fe-44e3-4688-0d03-08df19cef660;HasAttachment=true</code></td></tr></table><h3>EF-REG-004 — PASS</h3><p><b>EF-REG-004 - Connected receipt upload and authorized receipt access</b><br>Key: <code>EXPENSEFLOW:16</code>; case log: <code>7654ad14-f6bc-7300-ce19-0b4a2b2ae08c</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-004
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify a synthetic receipt is uploaded, persisted, and accessed through the configured storage bucket.
+
+Synthetic data:
+- Synthetic file efreg004-receipt.pdf.
+- Expense EFREG004-Receipt; Travel; 1250; 2026-08-22.
+- Receipt-name variants containing spaces, #, parentheses, and browser path prefixes.
+
+Negative checks:
+- Unsupported or missing receipt input does not create a broken record path.
+- Receipt access failure is presented as a recoverable user-facing error.
+- Unsafe receipt names are sanitized for storage while remaining associated with the created record and openable through authorized access.
+
+Affected components/files:
+- src/components/NewExpenseForm.tsx
+- src/components/ReceiptLink.tsx
+- src/services/uipath/receipts.ts
+- src/services/expenseService.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/NewExpenseForm.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/ReceiptLink.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/receipts.ts</pre></details><p>Affected files: <code>src/components/NewExpenseForm.tsx</code>, <code>src/components/ReceiptLink.tsx</code>, <code>src/services/uipath/receipts.ts</code>, <code>src/services/expenseService.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>Submission succeeds and the created record retains a receipt path/name.</td><td>Observed: submitted the fresh connected synthetic expense EFREG004-Receipt with category Travel, amount ₹1,250, date 22 Aug 2026, and receipt fixture efreg004-receipt.pdf. The application confirmed EXP-1037 submitted for ₹1,250, and the created detail retained the receipt name efreg004-receipt.pdf.</td><td class="pill">PASS</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-004-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:1c8060ff-5a8d-49c1-8b1c-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>2</td><td>The receipt opens through authorized bucket access without exposing a raw storage secret.</td><td>Observed: EXP-1037 detail displayed the receipt control efreg004-receipt.pdf with tooltip identifying the ExpenseFlow_Receipts bucket. Opening it produced an application/pdf response over the authorized staging blob host with no raw storage secret recorded; the signed query string was withheld from evidence.</td><td class="pill">PASS</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-004-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:68d36c61-ae4f-4ac3-8b1d-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>3</td><td>Each record stores a sanitized receipt path/name that remains associated with the record and opens through authorized bucket access; no raw local path or invalid storage path is exposed.</td><td>Observed: submitted a fresh variant using receipt filename EFREG004 receipt #1 (copy).pdf with spaces, #, and parentheses. The application confirmed EXP-1038 submitted for ₹1,251; detail stored/displayed the sanitized name EFREG004-receipt-1-copy-.pdf with no spaces, #, parentheses, or local path, and the sanitized receipt opened through the authorized ExpenseFlow_Receipts blob route. Restricted: the browser path prefix branch (for example C:\fakepath\) could not be isolated because the native file input exposed only the bare File.name to the browser automation; no product failure is inferred.</td><td class="pill">RESTRICTED</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-004-step03-trace.json">local trace</a>; TM attachment <code>testStepLog:522d8af5-606b-40ae-8b1e-08df1a19787e;HasAttachment=true</code></td></tr></table><h3>EF-REG-005 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-005 - Connected Action Center approval completes before Data Fabric decision</b><br>Key: <code>EXPENSEFLOW:17</code>; case log: <code>e1229e71-f7bc-7300-5d64-0b4a2b2ae0af</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-005
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify decision sequencing completes the Action Center task before mutating the Data Fabric record.
+
+Synthetic data:
+- Pending synthetic expense EFREG005-Approve with Action Center task ID.
+- Decision comment: Approved for regression.
+
+Negative checks:
+- If task completion fails, the Data Fabric record remains untouched.
+- A successful decision is not duplicated on retry/refresh.
+
+Affected components/files:
+- src/pages/ApprovalPage.tsx
+- src/services/expenseService.ts
+- src/services/uipath/approvals.ts
+- src/services/uipath/entityClient.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/ApprovalPage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/expenseService.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/approvals.ts</pre></details><p>Affected files: <code>src/pages/ApprovalPage.tsx</code>, <code>src/services/expenseService.ts</code>, <code>src/services/uipath/approvals.ts</code>, <code>src/services/uipath/entityClient.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The card identifies its Action Center task and exposes an optional comments field with decision actions.</td><td>Observed: the connected Approval queue rendered 23 cards waiting on Neha Kulkarni. The required EFREG005-Approve synthetic record and its Action Center task were absent from the complete rendered queue; no pager or alternate queue scope was available. BLOCKED: the case prerequisite was unavailable in this environment, so no unrelated approval was opened or mutated.</td><td class="pill">RESTRICTED</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-005-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:d357518d-a356-4c07-025a-08df1a26c3bd;HasAttachment=true</code></td></tr><tr><td>2</td><td>Action Center task completion succeeds first, then Data Fabric status/decision metadata updates and the row leaves the queue.</td><td>BLOCKED: EFREG005-Approve and its Action Center task were not present in the connected Approval queue, so the required approval action could not be exercised without mutating an unrelated synthetic record. No approval, comment, or Data Fabric decision write was attempted.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>3</td><td>Final status, decision timestamp, decider, and comment are persisted consistently.</td><td>BLOCKED: because the EFREG005-Approve prerequisite was absent and step 2 could not execute, refresh/detail persistence verification was not run. No final status, decision timestamp, decider, or comment is claimed for EFREG005-Approve.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h3>EF-REG-006 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-006 - Connected reject and rework decisions preserve comments and state</b><br>Key: <code>EXPENSEFLOW:18</code>; case log: <code>9b404937-f8bc-7300-3775-0b4a2b2ae0d2</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-006
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify connected Reject and Request rework flows persist their distinct statuses and comments.
+
+Synthetic data:
+- EFREG006-Reject with comment Duplicate claim.
+- EFREG006-Rework with comment Please upload a clearer receipt.
+- Whitespace-only comment input for a decision that does not provide meaningful audit text.
+
+Negative checks:
+- Decision failures keep typed comments and re-enable action controls.
+- Reject and Rework do not collapse into the same status.
+- Whitespace-only comments are omitted from the update payload rather than persisted as meaningless audit data.
+
+Affected components/files:
+- src/pages/ApprovalPage.tsx
+- src/services/expenseService.ts
+- src/services/uipath/approvals.ts
+- src/models/status.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/ApprovalPage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/approvals.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/models/status.ts</pre></details><p>Affected files: <code>src/pages/ApprovalPage.tsx</code>, <code>src/services/expenseService.ts</code>, <code>src/services/uipath/approvals.ts</code>, <code>src/models/status.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>Task and record reflect Rejected status and the saved comment.</td><td>Observed: the connected Approval queue loaded 23 approval cards waiting on Neha Kulkarni. The required EFREG006-Reject, EFREG006-Rework, and EFREG006-Blank synthetic fixtures were absent from the complete rendered queue; no pager or alternate queue scope was available. BLOCKED: the EF-REG-006 decision fixtures were unavailable in this environment, so no unrelated approval was opened or mutated.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-006-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:952fec60-59b7-4de7-0267-08df1a26c3bd;HasAttachment=true</code></td></tr><tr><td>2</td><td>Task and record reflect Reworked status and the saved comment.</td><td>Observed: a read-only DOM search confirmed EFREG006-Reject, EFREG006-Rework, and EFREG006-Blank were absent from the approvals route. No alternate fixture was substituted. BLOCKED: the reject, rework, and blank-comment decision paths could not be exercised without mutating an unrelated record.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-006-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:eb2aba4d-cc3e-433c-0268-08df1a26c3bd;HasAttachment=true</code></td></tr><tr><td>3</td><td>Neither decided item remains in the active queue and each retains its correct audit data.</td><td>BLOCKED: EFREG006-Reject and EFREG006-Rework fixtures were unavailable, so the reject/rework action controls, comment persistence, and failure-recovery behavior were not executed. No approval or comment write was attempted.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>4</td><td>Whitespace-only comment content is omitted from the update payload; the decision status is persisted correctly without storing meaningless whitespace audit text, and the controls remain usable.</td><td>BLOCKED: EFREG006-Blank was unavailable, so whitespace-only comment omission and final status persistence could not be verified. No final decision, comment, or Data Fabric write is claimed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h3>EF-REG-007 — PASS</h3><p><b>EF-REG-007 - Connected decision failure leaves source record unmodified</b><br>Key: <code>EXPENSEFLOW:19</code>; case log: <code>2820b224-f9bc-7300-6f3f-0b4a2b2ae0fa</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-007
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify a safe decision failure does not create cross-system inconsistency.
+
+Synthetic data:
+- Synthetic pending expense EFREG007-DecisionFailure with captured initial record state.
+
+Negative checks:
+- No artificial task/record orphan is manufactured.
+- Failure is classified as BLOCKED when no safe failure hook is available, not as a product defect.
+
+Affected components/files:
+- src/pages/ApprovalPage.tsx
+- src/services/expenseService.ts
+- src/services/uipath/errors.ts
+- src/services/uipath/approvals.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/ApprovalPage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/expenseService.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/errors.ts</pre></details><p>Affected files: <code>src/pages/ApprovalPage.tsx</code>, <code>src/services/expenseService.ts</code>, <code>src/services/uipath/errors.ts</code>, <code>src/services/uipath/approvals.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>A friendly decision error is shown and the typed comment remains available for retry.</td><td>Observed on the approved safe failure route /approvals?demo=fail-decide: target EXP-1028 / EFREG007-DecisionFail-EFQA-20260924T1300 remained visible with its Action Center task #101647442. After entering the synthetic comment QA decision failure EFQA-20260925T1150 and invoking Reject, the app showed the friendly message 'The decision could not be recorded. The Action Center task is untouched and the expense is unchanged. Try again.' The comment remained available in the card textarea and decision controls remained usable.</td><td class="pill">PASS</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-007-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:22d407f5-79b3-425f-6970-08df19d7ace6;HasAttachment=true</code></td></tr><tr><td>2</td><td>No decision status, decider, timestamp, or comment was written to the record when task completion failed.</td><td>Observed: the failed decision left EXP-1028 at Pending Approval with 'Manager approval' and 'Waiting on a manager in Action Center.' The detail page displayed the same friendly no-write message, and no decider or decision timestamp was present. Restricted: the approved ?demo=fail-decide hook throws before any UiPath call, so it proves UI recovery and no-write behavior but does not exercise a real Action Center task-completion failure or independently read Action Center task state.</td><td class="pill">RESTRICTED</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-007-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:30a40ea3-af96-4840-6971-08df19d7ace6;HasAttachment=true</code></td></tr></table><h3>EF-REG-008 — PASS</h3><p><b>EF-REG-008 - Connected Finance attention classification covers all unsettled reasons</b><br>Key: <code>EXPENSEFLOW:20</code>; case log: <code>150ef759-fabc-7300-a14b-0b4a2b2ae11c</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-008
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify Finance classifies connected unsettled records into Policy Review, Pending Approval, Needs Rework, and Missing Receipt.
+
+Synthetic data:
+- EFREG008-PolicyReview.
+- EFREG008-PendingApproval.
+- EFREG008-Reworked.
+- EFREG008-MissingReceipt Submitted with null receipt.
+- EFREG008-SubmittedWithReceipt control.
+
+Negative checks:
+- Missing Receipt is derived from null receipt data, not stored as a status.
+- A Submitted record with a receipt is not incorrectly listed.
+
+Affected components/files:
+- src/pages/FinancePage.tsx
+- src/hooks/useFinance.tsx
+- src/services/uipath/entityClient.ts
+- src/models/status.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/FinancePage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/hooks/useFinance.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/entityClient.ts</pre></details><p>Affected files: <code>src/pages/FinancePage.tsx</code>, <code>src/hooks/useFinance.tsx</code>, <code>src/services/uipath/entityClient.ts</code>, <code>src/models/status.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>All records are retrievable through Finance's unsettled query path.</td><td>Observed: Finance's connected unsettled attention query returned the four EFREG008 records EFREG008-PolicyReview-203800 (Policy Review, ₹82,000), EFREG008-PendingApproval-203800 (Pending Approval, ₹37,550), EFREG008-Reworked-203800 (Needs Rework, ₹5,900), and EFREG008-MissingReceipt-203800 (Missing Receipt, ₹2,500), each once across the two-page queue. The expected SubmittedWithReceipt control record was not visible in the connected attention list, so complete five-record retrieval could not be isolated in this environment; this is recorded as a limitation, not a product failure.</td><td class="pill">RESTRICTED</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-008-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:69a92a38-360e-4578-8b16-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>2</td><td>Each first four record appears once with the correct attention reason; the control is excluded.</td><td>Observed: Finance page 1 showed each of the first four EFREG008 records once with the correct attention reasons: Policy Review, Pending Approval, Needs Rework, and Missing Receipt. The SubmittedWithReceipt control was absent from the attention list, matching the expected exclusion condition.</td><td class="pill">PASS</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-008-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:c08b2487-4c0e-4501-8b17-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>3</td><td>Each row navigates to the matching expense detail.</td><td>Observed: each attention row navigated to the matching expense detail. PolicyReview opened /expenseflow/expenses/EFREG008-PolicyReview-203800 with Policy Review and ₹82,000; PendingApproval opened /expenseflow/expenses/EFREG008-PendingApproval-203800 with Pending Approval and ₹37,550; Reworked opened /expenseflow/expenses/EFREG008-Reworked-203800 with Needs Rework and ₹5,900; MissingReceipt opened /expenseflow/expenses/EFREG008-MissingReceipt-203800 with the matching identifier, ₹2,500, overall status Submitted, and No receipt attached. The queue reason for that row was Missing Receipt.</td><td class="pill">PASS</td><td><a href="../../../../../../AppData/Roaming/UiPath Assistant/traces/f97355bd-7990-4189-99ef-826a15be4fb8/EF-REG-008-step03-trace.json">local trace</a>; TM attachment <code>testStepLog:b089193b-5b7f-4554-8b18-08df1a19787e;HasAttachment=true</code></td></tr></table><h3>EF-REG-009 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-009 - Connected service errors expose retryable user feedback</b><br>Key: <code>EXPENSEFLOW:21</code>; case log: <code>89a010ad-fbbc-7300-002c-0b4a2b2ae13f</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-009
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify connected runtime/service failures are normalized into user-facing recovery states.
+
+Synthetic data:
+- Safe failure target EFREG009-Recovery.
+
+Negative checks:
+- No credentials, tokens, request headers, or raw stack traces are displayed.
+- Unsafe fault injection is not attempted; unavailable capability is BLOCKED.
+
+Affected components/files:
+- src/components/ErrorState.tsx
+- src/services/uipath/errors.ts
+- src/hooks/useExpenses.tsx
+- src/hooks/useFinance.tsx
+- src/components/NewExpenseForm.tsx
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/ErrorState.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/errors.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/hooks/useExpenses.tsx</pre></details><p>Affected files: <code>src/components/ErrorState.tsx</code>, <code>src/services/uipath/errors.ts</code>, <code>src/hooks/useExpenses.tsx</code>, <code>src/hooks/useFinance.tsx</code>, <code>src/components/NewExpenseForm.tsx</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The app presents a friendly error state or inline form error with a retry path; no raw provider exception is shown.</td><td>Observed: the connected Approval queue contained 24 cards, but the approved safe target EFREG009-Recovery was absent. The repository-approved ?demo=fail-decide hook is available only as a controlled pre-write demo route and cannot prove a real connected provider failure for the missing target. Restricted: no unrelated approval or unsafe fault injection was used.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-009-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:04e3d7e3-d20b-4875-9766-08df1a33073e;HasAttachment=true</code></td></tr><tr><td>2</td><td>The page or operation recovers without requiring a full app reset and without duplicate writes.</td><td>BLOCKED: because EFREG009-Recovery was absent and no safe connected fault target was available, normal-condition restoration and Retry/re-submit recovery were not executed. No unrelated record was retried or changed.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-009-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:f915c26b-63ee-400f-9767-08df1a33073e;HasAttachment=true</code></td></tr></table><h3>EF-REG-010 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-010 - Connected receipt access failures are contained and recoverable</b><br>Key: <code>EXPENSEFLOW:22</code>; case log: <code>abc7cf93-fcbc-7300-28b0-0b4a2b2ae164</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-010
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify receipt retrieval failures do not break expense detail or expose internal storage information.
+
+Synthetic data:
+- Synthetic expense EFREG010-ReceiptAccess with receipt path metadata.
+
+Negative checks:
+- No raw signed URL, credential, or storage token is rendered.
+- The expense record is not modified by a receipt read failure.
+
+Affected components/files:
+- src/components/ReceiptLink.tsx
+- src/services/uipath/receipts.ts
+- src/pages/ExpenseDetailPage.tsx
+- src/services/uipath/errors.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/ReceiptLink.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/receipts.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/ExpenseDetailPage.tsx</pre></details><p>Affected files: <code>src/components/ReceiptLink.tsx</code>, <code>src/services/uipath/receipts.ts</code>, <code>src/pages/ExpenseDetailPage.tsx</code>, <code>src/services/uipath/errors.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The detail page remains usable and receipt access failure is handled without leaking implementation details.</td><td>RESTRICTED: The approved synthetic EFREG010-ReceiptAccess fixture and a controlled receipt-provider failure target were not available in connected Local staging. No unrelated expense was opened or modified, so receipt failure handling was not exercised.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>2</td><td>Receipt access succeeds through the configured bucket path.</td><td>RESTRICTED: Because EFREG010-ReceiptAccess and a safe restored-access target were unavailable, normal authorized receipt retrieval was not executed. No unrelated receipt or expense record was accessed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h3>EF-REG-011 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-011 - Locale-stable currency, compact amount, and date formatting</b><br>Key: <code>EXPENSEFLOW:23</code>; case log: <code>15bee759-fdbc-7300-9298-0b4a2b2ae186</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-011
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify financial and date values remain correct across locale and timezone differences.
+
+Synthetic data:
+- Amounts 48250, 4825000, 840000, and 12000000.
+- Dates 2026-08-18, 2026-01-01, 2026-08-18T23:45:00+05:30, and invalid value not-a-date.
+
+Negative checks:
+- No locale-default US grouping appears for lakh-scale amounts.
+- No new Date(YYYY-MM-DD) timezone shift or NaN undefined date output appears.
+
+Affected components/files:
+- src/lib/format.ts
+- src/pages/DashboardPage.tsx
+- src/pages/ExpenseDetailPage.tsx
+- src/pages/FinancePage.tsx
+- scripts/format.test.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/lib/format.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/FinancePage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/scripts/format.test.ts</pre></details><p>Affected files: <code>src/lib/format.ts</code>, <code>src/pages/DashboardPage.tsx</code>, <code>src/pages/ExpenseDetailPage.tsx</code>, <code>src/pages/FinancePage.tsx</code>, <code>scripts/format.test.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>Indian grouping is used; 840000 renders ₹8.4L and 12000000 renders ₹1.2Cr.</td><td>Observed: Fresh connected Dashboard and Finance views used Indian digit grouping for full values, and Finance displayed the current compact tile as ₹5.4L. The connected Finance dataset did not contain the canonical ₹8,40,000 and ₹1,20,00,000 fixtures needed to directly observe ₹8.4L and ₹1.2Cr in this run. An existing connected detail also rendered full Indian-grouped amounts such as ₹35,000 and ₹25,000. Restricted: exact canonical compact-value fixtures were unavailable; no records were created or changed to force them.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-011-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:8951d7ed-acb7-4f45-975c-08df1a33073e;HasAttachment=true</code></td></tr><tr><td>2</td><td>2026-08-18 displays 18 Aug 2026 without a previous-day shift; invalid date text remains unchanged.</td><td>Observed: Existing connected fixture EF2-1235-N displayed the date-only value 18 Aug 2026, matching the expected calendar date. The browser runtime was en-IN / Asia/Calcutta; an alternate timezone west of UTC was not safely configurable in the current runtime, and invalid date text cannot be supplied through the connected read-only UI. Restricted: alternate-timezone and invalid-date UI branches were not exercised; no data was changed.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-011-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:4490bbdb-edfc-4bed-975d-08df1a33073e;HasAttachment=true</code></td></tr></table><h3>EF-REG-012 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-012 - Runtime configuration, OAuth callback, and startup failure recovery</b><br>Key: <code>EXPENSEFLOW:24</code>; case log: <code>a7975289-febc-7300-cd68-0b4a2b2ae1a8</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-012
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify connected runtime starts only after valid configuration/schema warm-up and preserves non-OAuth query switches through callback cleanup.
+
+Synthetic data:
+- Valid resource configuration.
+- Missing entity or folder configuration.
+- Callback query containing code, state, session_state, iss, mock=1, and demo=fail.
+
+Negative checks:
+- Service calls do not run before runtime clients are registered and warmed.
+- Callback cleanup does not replace the full query and lose mock/demo switches.
+
+Affected components/files:
+- src/hooks/useAuth.tsx
+- src/services/uipath/runtime.tsx
+- src/services/uipath/config.ts
+- src/services/uipath/client.ts
+- src/services/uipath/schema.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/hooks/useAuth.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/runtime.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/schema.ts</pre></details><p>Affected files: <code>src/hooks/useAuth.tsx</code>, <code>src/services/uipath/runtime.tsx</code>, <code>src/services/uipath/config.ts</code>, <code>src/services/uipath/client.ts</code>, <code>src/services/uipath/schema.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>OAuth/runtime completes, schema and choice sets warm, and application routes render.</td><td>RESTRICTED: The valid connected startup route was not independently executed in this publication because the paired isolated invalid/missing-resource configuration was unavailable. No startup or runtime behavior is claimed from this restricted result.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>2</td><td>Could not connect to UiPath splash and Reload action appear instead of partial application rendering.</td><td>RESTRICTED: The isolated invalid or missing-resource configuration required to verify the Could not connect to UiPath and Reload state was not available. No shared runtime configuration was changed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>3</td><td>OAuth keys are removed after completion while mock and demo switches remain.</td><td>RESTRICTED: The controlled OAuth callback scenario with preserved non-OAuth query switches was not executed because the isolated callback/runtime setup was unavailable. No callback query or connected data was mutated.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h3>EF-REG-013 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-013 - Authorization characterization for approvals and Finance</b><br>Key: <code>EXPENSEFLOW:25</code>; case log: <code>ea724388-ffbc-7300-7a16-0b4a2b2ae1cb</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-013
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Determine whether least-privilege identities can access or act through approvals and Finance routes.
+
+Synthetic data:
+- Pending approval expense EFREG013-pending.
+- Finance attention expense EFREG013-finance.
+
+Negative checks:
+- Route visibility alone is not authorization.
+- Unauthorized action does not update Action Center or Data Fabric.
+
+Affected components/files:
+- src/App.tsx
+- src/pages/ApprovalPage.tsx
+- src/pages/FinancePage.tsx
+- src/hooks/useAuth.tsx
+- src/services/uipath/errors.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/App.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/ApprovalPage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/FinancePage.tsx</pre></details><p>Affected files: <code>src/App.tsx</code>, <code>src/pages/ApprovalPage.tsx</code>, <code>src/pages/FinancePage.tsx</code>, <code>src/hooks/useAuth.tsx</code>, <code>src/services/uipath/errors.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The employee does not gain successful approval or Finance actions merely by entering a route.</td><td>RESTRICTED: A separate least-privilege employee identity was not available for the Local staging run. Route visibility and authorization behavior were not inferred, and no authorization-sensitive action was attempted.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>2</td><td>Unauthorized attempt is unavailable or denied without mutation; authorized identity receives required queue/data and decisions.</td><td>RESTRICTED: The required least-privilege identity, EFREG013-pending fixture, and authorized comparison identity were unavailable together. No unauthorized or authorized decision was attempted on an unrelated record.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h3>EF-REG-014 — PASS</h3><p><b>EF-REG-014 - Pagination clamps after result-set reduction</b><br>Key: <code>EXPENSEFLOW:26</code>; case log: <code>a8a9a459-00bd-7300-57a0-0b4a2b2ae1ee</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-014
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify client pagination clamps to page 1 when sorting or filtering reduces a result set below the current page.
+
+Synthetic data:
+- At least 26 employee expenses.
+- A filter value narrowing the output to 1 through 3 records.
+
+Negative checks:
+- No blank table body appears while matching records exist.
+- No page number exceeds total pages and Previous/Next disable at boundaries.
+
+Affected components/files:
+- src/components/TablePager.tsx
+- src/components/ExpenseTable.tsx
+- src/pages/FinancePage.tsx
+- src/pages/ExpenseListPage.tsx
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/TablePager.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/ExpenseTable.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/FinancePage.tsx</pre></details><p>Affected files: <code>src/components/TablePager.tsx</code>, <code>src/components/ExpenseTable.tsx</code>, <code>src/pages/FinancePage.tsx</code>, <code>src/pages/ExpenseListPage.tsx</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>Footer indicates page 2 and displays rows 26 and later.</td><td>Observed: Connected My Expenses loaded 66 records. Initial footer showed Showing 1–25 of 66, Page 1 of 3, with Next enabled. After the semantic Next-page action, the footer showed Showing 26–50 of 66, Page 2 of 3, 25 rows, and the first visible row was EFREG001-High-EFQA-20260924T1030 / EXP-1007.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:0292e815-1752-4fe7-9759-08df1a33073e;HasAttachment=true</code></td></tr><tr><td>2</td><td>Table automatically renders valid page-1 results and footer indicates Page 1 of 1.</td><td>Observed: While the connected My Expenses list was on page 2, the non-destructive Status=Rejected filter reduced the result set to two rows and automatically clamped the table to Showing 1–2 of 2. The two visible rows were rejected synthetic records and no data was modified.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:629070e2-7428-4db4-975a-08df1a33073e;HasAttachment=true</code></td></tr><tr><td>3</td><td>Finance pagination clamps to a valid page with correct disabled boundaries.</td><td>Observed: Connected Finance loaded 29 attention records. Page 1 showed Showing 1–25 of 29, Page 1 of 2, with Next enabled. Page 2 showed Showing 26–29 of 29, Page 2 of 2, four rows, Previous enabled, and Next disabled. The required reduction after page 2 could not be exercised safely because it would require approving or otherwise mutating existing approval records; no unrelated records were changed.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-014-step03-trace.json">local trace</a>; TM attachment <code>testStepLog:3fdeb98f-31aa-46f4-975b-08df1a33073e;HasAttachment=true</code></td></tr></table><h3>EF-REG-015 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-015 - Finance month-end bounds include actual last days for 28, 29, and 30-day months</b><br>Key: <code>EXPENSEFLOW:77</code>; case log: <code>b234d275-01bd-7300-0348-0b4a2b2ae21b</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-015
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify Finance date-range bounds use the actual last day for 28-day, leap-year 29-day, and 30-day months, and that server-side counts and totals include boundary records exactly once.
+
+Preconditions:
+- Connected staging runtime is healthy and the Finance route is authorized.
+- ExpenseFlow_Expense schema, Status/Category choice sets, and Finance query permissions are available.
+- Use an isolated synthetic data scope with a unique run identifier.
+
+Synthetic data:
+- Non-Draft Finance records on 2026-02-28, 2028-02-29, and 2026-04-30 with known amounts and statuses.
+- A 2026-05-31 control record and a next-day record outside each selected month.
+- Expected counts and totals are calculated before opening Finance.
+
+Negative checks:
+- Selecting February, including the leap-year February control, and a 30-day month never generates an invalid 31st-day query or a Data Fabric 400.
+- A record on the actual last day is included exactly once, while the next-day record is excluded.
+- Displayed count and total match the expected boundary-inclusive dataset rather than an off-by-one or timezone-shifted range.
+- No stale data from the previous month remains after changing the date range.
+
+Affected components/files:
+- src/services/uipath/entityClient.ts
+- src/hooks/useFinance.tsx
+- src/pages/FinancePage.tsx
+- src/lib/format.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/entityClient.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/hooks/useFinance.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/FinancePage.tsx</pre></details><p>Affected files: <code>src/services/uipath/entityClient.ts</code>, <code>src/hooks/useFinance.tsx</code>, <code>src/pages/FinancePage.tsx</code>, <code>src/lib/format.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The isolated dataset contains the planned last-day and outside-range records with recorded expected counts and totals.</td><td>RESTRICTED: The isolated month-end synthetic data scope for 2026-02-28, 2028-02-29, 2026-04-30, and next-day controls was unavailable. No shared Finance data was seeded or changed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>2</td><td>Each query completes without a Data Fabric 400 or invalid-date error, and the selected range is shown correctly.</td><td>RESTRICTED: The required isolated boundary dataset was unavailable, so the three month-range queries were not executed against unrelated Finance records.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>3</td><td>The 28th and 29th day records are included exactly once, the next-day controls are excluded, and no stale month rows remain.</td><td>RESTRICTED: February 2026 and leap-year February 2028 boundary verification was dependent on the unavailable isolated dataset; no inclusion or exclusion result is claimed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>4</td><td>The April 30th record is included, April 31st is never queried, and the Finance count and total equal the expected boundary-inclusive values.</td><td>RESTRICTED: April 2026 boundary aggregation could not be verified without the approved isolated dataset. No shared Finance aggregate was treated as equivalent evidence.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>5</td><td>Boundary records remain stable after refresh and range changes; no off-by-one, duplicate, timezone-shifted, or stale aggregate appears.</td><td>RESTRICTED: Refresh and range-change stability was not run because the required isolated month-end records were unavailable and unrelated data could not be substituted safely.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h3>EF-REG-017 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-017 - Live policy change between display and submit uses current threshold</b><br>Key: <code>EXPENSEFLOW:78</code>; case log: <code>32f5a4f0-02bd-7300-ecdf-0b4a2b2ae23c</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-017
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify a submission evaluates the live policy asset at submit time even when the form was loaded while an older threshold was displayed.
+
+Preconditions:
+- Connected staging runtime is healthy and the policy asset is writable by the authorized test operator.
+- Use an isolated threshold change window and record the original asset value for restoration.
+- Use a unique synthetic expense and do not reuse a prior task or expense code.
+
+Synthetic data:
+- Initial policy threshold: 25000.
+- Updated live policy threshold: 30000.
+- Synthetic expense amount: 27500, between the old and new thresholds.
+- Unique description: EFREG017-LivePolicy.
+
+Negative checks:
+- The submit path does not trust a threshold cached when the form first loaded.
+- The expense is not incorrectly routed using the old 25000 threshold after the asset changes to 30000.
+- The persisted policy note/decision and displayed result agree with the live value used at submit time.
+- Refresh or retry does not create a duplicate record or approval task.
+
+Affected components/files:
+- src/components/NewExpenseForm.tsx
+- src/services/expenseService.ts
+- src/services/uipath/policy.ts
+- src/hooks/useExpenses.tsx
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/NewExpenseForm.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/expenseService.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/policy.ts</pre></details><p>Affected files: <code>src/components/NewExpenseForm.tsx</code>, <code>src/services/expenseService.ts</code>, <code>src/services/uipath/policy.ts</code>, <code>src/hooks/useExpenses.tsx</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The form displays the initial policy context and the original asset value is recorded for later restoration.</td><td>RESTRICTED: The authorized isolated policy-asset context required to record and verify the original threshold was unavailable. No shared policy value was read as a substitute and no asset was changed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>2</td><td>The asset read succeeds and the open form still represents the earlier display state while the live value is now 30000.</td><td>RESTRICTED: Authorized mutation of the live policy asset from 25000 to 30000 was not available. No policy asset or shared configuration was modified.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>3</td><td>The submit path evaluates the live 30000 threshold rather than the cached 25000 value; the user-facing decision/routing is correct for 27500 versus 30000.</td><td>RESTRICTED: The live-threshold submission could not be exercised without the authorized isolated policy change window and synthetic EFREG017-LivePolicy record. No expense was submitted.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>4</td><td>The persisted record and policy note reflect the live 30000 decision, no stale 25000 decision is recorded, and no duplicate record or task is created.</td><td>RESTRICTED: No persisted policy decision or approval task was inspected because the protected policy mutation and synthetic submission were unavailable. No duplicate record or task was created by this run.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>5</td><td>The original policy value is restored and the synthetic record remains a single intact audit object.</td><td>RESTRICTED: The original threshold could not be restored because no authorized policy mutation was performed. Shared policy state was left unchanged.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h3>EF-REG-018 — FAIL</h3><p><b>EF-REG-018 - URL switches persist across navigation and disable cleanly after removal</b><br>Key: <code>EXPENSEFLOW:79</code>; case log: <code>6ecb2de4-03bd-7300-ca13-0b4a2b2ae25e</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-018
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify mock, demo-failure, and simulated-read-error URL switches remain stable across client-side navigation, do not create extra browser history, and are disabled after removal and a hard reload.
+
+Preconditions:
+- Local ExpenseFlow app is reachable at the verified local URL and runs in mock mode.
+- Use a clean browser tab with navigation history recorded before each variant.
+- The browser supports inspecting the current URL and Back behavior without reloading two-segment routes directly.
+
+Synthetic data:
+- Query variants: ?mock=1, ?mock=1&amp;demo=fail, and ?mock=1&amp;simulateError=1.
+- Dashboard, Expenses, New Expense, Approvals, and Finance routes.
+- A successful mock submission and a one-shot submit failure for the recovery checks.
+
+Negative checks:
+- URL switches survive sidebar/client-side navigation and are not silently dropped.
+- Client-side navigation does not add an extra Back history entry for the same route transition.
+- Removing a switch and hard-loading the resulting URL disables the prior behavior; stale query state is not retained in application memory.
+- A one-shot demo failure is consumed once and does not poison later normal submissions.
+- Two-segment routes are reached by clicking in the app; direct reload of /expenses/new or /expenses/:code is not used as a valid path.
+
+Affected components/files:
+- src/App.tsx
+- src/components/AppLayout.tsx
+- src/components/Sidebar.tsx
+- src/hooks/useAuth.tsx
+- src/services/demoFailure.ts
+- vite.config.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/App.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/AppLayout.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/hooks/useAuth.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/demoFailure.ts</pre></details><p>Affected files: <code>src/App.tsx</code>, <code>src/components/AppLayout.tsx</code>, <code>src/components/Sidebar.tsx</code>, <code>src/hooks/useAuth.tsx</code>, <code>src/services/demoFailure.ts</code>, <code>vite.config.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The mock=1 switch remains present after each client-side navigation and every screen renders from the mock service without an OAuth or connected-mode dependency.</td><td>Observed: Loaded https://testcloud-team.staging.uipath.host/expenseflow/?mock=1 and verified Dashboard, My Expenses, New Expense, Approvals, and Finance rendered from the mock service. The mock=1 switch remained present across the observed routes, and no OAuth callback keys were present.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:1101e96f-c0de-42b5-8b2e-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>2</td><td>The two-segment route is reached by clicking, the switch is preserved, and navigation does not create an extra duplicate history entry for the same transition.</td><td>Observed: From /expenseflow/finance?mock=1, in-app navigation reached /expenseflow/expenses/new?mock=1 and returned to /expenseflow/expenses?mock=1. The mock switch remained present, the two-segment route rendered, and browser history advanced by one entry per transition without a duplicate same-route entry.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-018-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:e2cad0f9-4441-4895-8b2f-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>3</td><td>The first submit shows the translated recoverable failure and preserves form data; the failure is consumed and the retry succeeds without a false success on the first attempt.</td><td>Observed: In a fresh mock tab at /expenseflow/expenses/new?mock=1&amp;demo=fail, the first synthetic submit (EFREG018-Mock-Retry, Travel, 3300) showed the translated recoverable failure and preserved the description, amount, and date. Retrying with the same URL showed the same failure again; no success state or created-record confirmation appeared. The approved source implementation reads the demo flag on every call, so the failure remains armed until the demo query parameter is removed. Expected one-shot consumption and retry success were not observed.</td><td class="pill">FAIL</td><td>TM attachment <code>testStepLog:503dd4a2-285d-4159-8b30-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>4</td><td>The simulated read failure remains active across client-side navigation, shows the translated error/retry state without a raw exception, and does not create a connected request.</td><td>Observed: Loaded /expenseflow/?mock=1&amp;simulateError=1 and navigated to /expenseflow/finance?mock=1&amp;simulateError=1. The translated read-failure state showed 'Something went wrong', 'Could not reach the expense service', and 'Try again'; the simulated-error switch persisted and no raw exception, stack trace, token, credential, or secret terms were exposed.</td><td class="pill">PASS</td><td>TM attachment <code>testStepLog:bb697c2c-ae6f-4708-8b31-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>5</td><td>The simulated failure and demo switch are no longer active after hard load; normal mock data renders, the URL contains only the intended remaining query state, and history remains coherent.</td><td>Observed: Hard-loaded /expenseflow/?mock=1 after removing the demo and simulateError switches, then navigated to /expenseflow/finance?mock=1. Normal mock aggregates and five attention rows rendered; demo and simulateError were absent from the URL, no error panel was present, and the mock state remained healthy after navigation.</td><td class="pill">PASS</td><td>TM attachment <code>testStepLog:099fcfa5-db6e-4a2a-8b32-08df1a19787e;HasAttachment=true</code></td></tr></table><h3>EF-REG-022 — PASS</h3><p><b>EF-REG-022 - Over-threshold submission creates one linked approval task</b><br>Key: <code>EXPENSEFLOW:80</code>; case log: <code>096abcd7-04bd-7300-6871-0b4a2b2ae282</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-022
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify an over-threshold submission creates exactly one approval task in the intended folder and preserves an auditable link between the Action Center task and the Data Fabric expense record.
+
+Preconditions:
+- Connected staging runtime is healthy and the authorized employee can submit expenses.
+- The live policy threshold, intended Orchestrator folder, Action Center task type, and ExpenseFlow_Expense schema are recorded.
+- No prior EFREG022-ApprovalLink expense, approval task, or task link exists in the isolated synthetic scope.
+
+Synthetic data:
+- Unique description: EFREG022-ApprovalLink.
+- Connected expense amount: 35000, confirmed above the live policy threshold immediately before submit.
+- Category: Travel; date: 2026-09-24; no receipt unless the configured policy requires one.
+- Expected task title, priority, folder, and decision facts are recorded before execution.
+
+Negative checks:
+- Exactly one Action Center task is created in the intended folder for the submitted record.
+- Task title/payload/priority carry the expense code, amount, employee/decision facts, and approval reason without exposing credentials or raw tokens.
+- ApprovalTaskId is persisted as text on the expense record and remains navigable/inspectable after refresh.
+- Refresh, retry, or revisiting the detail route does not create a duplicate record or approval task.
+- A task-creation failure does not result in a falsely linked or partially claimed approval state.
+
+Affected components/files:
+- src/components/NewExpenseForm.tsx
+- src/services/expenseService.ts
+- src/services/uipath/approvals.ts
+- src/services/uipath/folders.ts
+- src/services/uipath/entityClient.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/components/NewExpenseForm.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/expenseService.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/approvals.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/folders.ts</pre></details><p>Affected files: <code>src/components/NewExpenseForm.tsx</code>, <code>src/services/expenseService.ts</code>, <code>src/services/uipath/approvals.ts</code>, <code>src/services/uipath/folders.ts</code>, <code>src/services/uipath/entityClient.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The amount is confirmed above the live threshold, the intended folder/task facts are recorded, and the isolated scope has no prior matching record or task.</td><td>Observed: the live policy threshold was ₹25,000, and the existing queue showed a different prior EFREG022-ApprovalLink record/task. A fresh timestamped description was prepared at ₹35,000; the exact pre-submit absence check for the new description and the intended Action Center folder/task facts were not directly available. Restricted: no existing record was reused or mutated.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-022-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:588c1b79-48d0-4524-0996-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>2</td><td>Exactly one Data Fabric expense record is created and the user-facing result states that manager approval is required; no duplicate submit is issued.</td><td>Observed: the fresh synthetic expense EFREG022-ApprovalLink-EFQA-20260925T1245 was submitted once for ₹35,000. The form reset and displayed the confirmation EXP-1039 submitted for ₹35,000; no duplicate submit was issued.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-022-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:04b0415c-be4b-4f53-0997-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>3</td><td>Exactly one task exists in the intended folder; title, priority, payload, amount, expense code, employee/decision facts, and approval reason match the submitted record without secrets.</td><td>Observed: the approvals queue displayed exactly one fresh EXP-1039 card with ₹35,000, threshold ₹25,000, date 25 Sep 2026, no receipt, the manager-approval reason, and one visible linked task #101661275. Restricted: Action Center task-form inspection required an unresolved organization-unit/folder id, and the cross-folder read-only lookup failed; priority and hidden task payload fields were not claimed.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-022-step03-trace.json">local trace</a>; TM attachment <code>testStepLog:f503d7d1-b862-4614-0998-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>4</td><td>ApprovalTaskId is persisted as text, matches the single Action Center task id, and the record remains navigable with consistent PendingApproval/task-link data.</td><td>Observed: the fresh detail route for EXP-1039 showed Pending Approval, ₹35,000, Submitted and Policy validation completed, Manager approval active, Finance processing pending, and Waiting on a manager in Action Center. Restricted: ApprovalTaskId was not rendered on the detail route, so its persisted text value was not independently verified.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-022-step04-trace.json">local trace</a>; TM attachment <code>testStepLog:28fa52a9-5435-49f4-0999-08df1a31d8f8;HasAttachment=true</code></td></tr><tr><td>5</td><td>No additional record or task is created; the original record and task identifiers remain stable and the linked approval state is idempotent.</td><td>Observed after refresh: exactly one EFREG022-ApprovalLink-EFQA-20260925T1245 card and one occurrence of task #101661275 remained in the approvals queue. Revisiting the detail showed the same EXP-1039 record still Pending Approval with no second decision or task; no duplicate submission was issued.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-022-step05-trace.json">local trace</a>; TM attachment <code>testStepLog:9cd4d55f-6102-4c7e-099a-08df1a31d8f8;HasAttachment=true</code></td></tr></table><h3>EF-REG-023 — PASS</h3><p><b>EF-REG-023 - External task completion conflict prevents duplicate app decision</b><br>Key: <code>EXPENSEFLOW:81</code>; case log: <code>878ca4d4-05bd-7300-454e-0b4a2b2ae2a6</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-023
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify the app handles an Action Center task completed externally before the same decision is submitted in the app, returning the specific completed-task conflict and leaving the Data Fabric expense unchanged.
+
+Preconditions:
+- Connected staging runtime is healthy and an authorized manager can access both the app and Action Center.
+- An isolated pending-approval expense and its Action Center task can be completed from a separate channel.
+- Capture the original Data Fabric record fields and task state before the race.
+
+Synthetic data:
+- Unique pending expense: EFREG023-ExternalComplete.
+- Action Center task linked to that expense.
+- External decision: Approve with comment Completed externally for regression.
+- App decision attempt: the same Approve action after the task is already completed.
+
+Negative checks:
+- The app shows the specific already-completed-task message rather than a generic success or raw service error.
+- The app does not mutate the Data Fabric record after the external completion conflict.
+- No duplicate Action Center task, decision, comment, or approval record is created.
+- Refresh and revisiting the approval/detail route do not convert the conflict into a false success.
+
+Affected components/files:
+- src/pages/ApprovalPage.tsx
+- src/services/expenseService.ts
+- src/services/uipath/approvals.ts
+- src/services/uipath/entityClient.ts
+- src/services/uipath/errors.ts
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/ApprovalPage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/expenseService.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/approvals.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/errors.ts</pre></details><p>Affected files: <code>src/pages/ApprovalPage.tsx</code>, <code>src/services/expenseService.ts</code>, <code>src/services/uipath/approvals.ts</code>, <code>src/services/uipath/entityClient.ts</code>, <code>src/services/uipath/errors.ts</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The expense is PendingApproval, the task link is present, and the original record/task snapshot is captured before the race.</td><td>Observed: the connected approvals card for EFREG023-ExternalComplete-EFQA-20260924T1400 showed EXP-1030 as Pending Approval with Task #101647510, amount ₹35,000, and the above-threshold reason. Canonical Action Center readback showed that task was already Completed with action Approve and comment Completed externally for regression. Restricted: a fresh pending-task snapshot before external completion was unavailable; no task was re-completed.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-023-step01-trace.json">local trace</a>; TM attachment <code>testStepLog:f0f045d1-5384-4c61-8b51-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>2</td><td>The Action Center task reaches its completed state and the external decision is recorded once.</td><td>BLOCKED: Action Center task #101647510 was already Completed with Approve and the approved external comment, so the external completion action was not repeated. Restricted: the fresh race setup could not be recreated without attempting a duplicate task completion.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-023-step02-trace.json">local trace</a>; TM attachment <code>testStepLog:6242be90-2ff3-46b0-8b52-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>3</td><td>The app returns the specific already-completed-task conflict message; it does not show a false success or raw exception.</td><td>Observed: submitting the app-side Approve action once for the dedicated EF-REG-023 card returned the specific conflict message that ExpenseFlow could not record the decision because the Action Center action was already completed by the same user. No false success or raw exception was shown.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-023-step03-trace.json">local trace</a>; TM attachment <code>testStepLog:aa469fa8-7f52-4585-8b53-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>4</td><td>The Data Fabric record has no second decision mutation or duplicate comment, the task remains completed, and no second task is created.</td><td>Observed: the EXP-1030 detail remained Pending Approval with the same ₹35,000 record and manager-approval state; no duplicate marker was present. Canonical task readback remained Completed with action Approve and comment Completed externally for regression, with no second task or second completion created.</td><td class="pill">PASS</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-023-step04-trace.json">local trace</a>; TM attachment <code>testStepLog:b9bac21d-b47e-461b-8b54-08df1a19787e;HasAttachment=true</code></td></tr><tr><td>5</td><td>The completed-task conflict remains accurately represented, no duplicate decision/task appears, and the original record/task identifiers remain stable.</td><td>Observed after refresh: exactly one EFREG023-ExternalComplete-EFQA-20260924T1400 card, one EXP-1030 occurrence, and one Task #101647510 occurrence remained. Restricted: the post-refresh page did not retain the transient conflict banner, so persistent conflict-message rendering after refresh was not independently verified; no duplicate decision or task was observed.</td><td class="pill">RESTRICTED</td><td><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-023-step05-trace.json">local trace</a>; TM attachment <code>testStepLog:6752dd3f-d914-4101-8b55-08df1a19787e;HasAttachment=true</code></td></tr></table><h3>EF-REG-024 — NOT RUN/RESTRICTED</h3><p><b>EF-REG-024 - Empty Finance dataset renders zero aggregates and no-data state</b><br>Key: <code>EXPENSEFLOW:82</code>; case log: <code>95af9181-06bd-7300-aa2b-0b4a2b2ae2c9</code>; <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p><details><summary>Objective, preconditions, synthetic data, negative checks, and source traceability</summary><pre>Stable ID: EF-REG-024
+Catalog: regression
+Approved source SHA: 571c2192d3d786a03eb7f57d89bec70998ef1d57
+
+Objective: Verify the Finance view behaves correctly when the connected dataset contains no non-Draft records: zero aggregates, an explicit no-data month presentation, no invalid date-range query, and an empty attention state.
+
+Preconditions:
+- Connected staging runtime is healthy and the Finance route is authorized.
+- Use an isolated synthetic tenant/data scope with no non-Draft ExpenseFlow_Expense records.
+- If a Draft control record is retained, its exclusion from Finance aggregates is recorded before execution.
+
+Synthetic data:
+- Zero Submitted, Approved, PendingApproval, PolicyReview, Rejected, and Reworked records in the selected month.
+- Optional Draft-only control record outside the aggregate population.
+- Selected month has no valid expense rows and expected count/total are both zero.
+
+Negative checks:
+- Finance displays zero count and zero total without NaN, undefined, stale values, or a false positive aggregate.
+- The month presentation is null/no-data or the documented empty equivalent rather than an invented date.
+- No invalid date-range query is issued for an empty dataset and no Data Fabric 400 is surfaced.
+- The needs-attention queue shows its intentional empty state and does not classify Draft-only data as attention.
+- Refresh, date-range changes, and navigation do not repopulate stale rows from a prior dataset.
+
+Affected components/files:
+- src/pages/FinancePage.tsx
+- src/hooks/useFinance.tsx
+- src/services/uipath/entityClient.ts
+- src/services/uipath/mappers.ts
+- src/components/TablePager.tsx
+
+Source traceability:
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/pages/FinancePage.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/hooks/useFinance.tsx
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/entityClient.ts
+- https://github.com/JD2091/expenseflow/blob/571c2192d3d786a03eb7f57d89bec70998ef1d57/src/services/uipath/mappers.ts</pre></details><p>Affected files: <code>src/pages/FinancePage.tsx</code>, <code>src/hooks/useFinance.tsx</code>, <code>src/services/uipath/entityClient.ts</code>, <code>src/services/uipath/mappers.ts</code>, <code>src/components/TablePager.tsx</code>; source SHA: <code>571c2192d3d786a03eb7f57d89bec70998ef1d57</code>.</p><table><tr><th>#</th><th>Expected</th><th>Actual</th><th>Result</th><th>Evidence</th></tr><tr><td>1</td><td>The selected scope contains no aggregate-eligible records; any Draft-only control is explicitly identified and excluded from expected Finance results.</td><td>RESTRICTED: An isolated Finance scope with no non-Draft ExpenseFlow_Expense records was unavailable. No connected records were deleted, reclassified, or otherwise changed to manufacture an empty dataset.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>2</td><td>Finance renders zero count and zero total without NaN, undefined, stale values, a raw exception, or a Data Fabric 400.</td><td>RESTRICTED: Finance initial-load behavior for an approved empty scope was not exercised because the isolated no-data dataset was unavailable; existing connected rows were not treated as empty-state evidence.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>3</td><td>The month presentation is the documented null/no-data state rather than an invented date, and the date range remains valid without issuing an invalid query.</td><td>RESTRICTED: Empty-month summary and date-range behavior could not be verified without the isolated Finance scope. No invalid query or empty-state claim is made.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>4</td><td>The attention area shows its intentional empty state, Draft-only data is not classified as attention, and the table/pager do not display phantom rows or invalid navigation.</td><td>RESTRICTED: The empty needs-attention queue and table/pager behavior were not exercised because the required isolated empty dataset was unavailable. No unrelated Finance records were filtered or changed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr><tr><td>5</td><td>Zero aggregates, the no-data presentation, and the empty attention state remain stable; no rows or totals from a prior dataset reappear.</td><td>RESTRICTED: Refresh, range-change, and navigation stability for an empty Finance dataset was not run without the isolated scope. No stale-data conclusion is claimed.</td><td class="pill">RESTRICTED</td><td><span class="small">not-captured: No Test Manager attachment and no local execution trace were verified for this step.</span></td></tr></table><h2>Failure analysis</h2><ul><li>Step <code>337e7d05-23c4-0e00-d931-0b4a2a2c222b</code> / log <code>503dd4a2-285d-4159-8b30-08df1a19787e</code>: Observed: In a fresh mock tab at /expenseflow/expenses/new?mock=1&amp;demo=fail, the first synthetic submit (EFREG018-Mock-Retry, Travel, 3300) showed the translated recoverable failure and preserved the description, amount, and date. Retrying with the same URL showed the same failure again; no success state or created-record confirmation appeared. The approved source implementation reads the demo flag on every call, so the failure remains armed until the demo query parameter is removed. Expected one-shot consumption and retry success were not observed.</li></ul><h2>Missing or failed evidence</h2><div class="limit"><ul><li><code>3b1f5c5d-667a-0e00-35c1-0b4a287e1e40</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>c3f5dd3f-687a-0e00-58a8-0b4a287e2070</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>7fb64d90-6d7a-0e00-8339-0b4a287e5886</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>07140bab-16c4-0e00-5f62-0b4a2a2bb406</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>2531f50a-7b7a-0e00-d7e7-0b4a287ebd87</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>f1f48af1-7d7a-0e00-8499-0b4a287ebff5</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>6a29c3eb-947a-0e00-2776-0b4a287f5177</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>152b73ce-997a-0e00-d411-0b4a287f5971</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>2f4161e3-9b7a-0e00-5710-0b4a287f5e04</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>73677f85-9f7a-0e00-4c15-0b4a287f86ac</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>aa28e2c5-a07a-0e00-eab4-0b4a287f897a</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>f80b429e-17c4-0e00-b112-0b4a2a2bd9e9</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>3171814b-18c4-0e00-63c4-0b4a2a2bdafe</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>c3232ec6-19c4-0e00-b256-0b4a2a2bdbf1</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>e0aa6f54-1ac4-0e00-f162-0b4a2a2bdcd5</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>bda566be-1bc4-0e00-1298-0b4a2a2bddd8</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>e0d17641-1cc4-0e00-8b69-0b4a2a2bfeac</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>a71f1102-1dc4-0e00-086f-0b4a2a2bffa1</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>23a091e0-1ec4-0e00-941f-0b4a2a2c00bb</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>266e9e92-1fc4-0e00-8791-0b4a2a2c01a3</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>533c9c22-20c4-0e00-292c-0b4a2a2c02aa</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>209bb1de-30c4-0e00-46c7-0b4a2a2c7567</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>9a161eaa-31c4-0e00-f09f-0b4a2a2c76c7</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>f6c7aa29-32c4-0e00-7e65-0b4a2a2c77ec</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>492160f6-33c4-0e00-42ff-0b4a2a2c792b</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li><li><code>36311f0e-34c4-0e00-a5d4-0b4a2a2c7a2a</code> — not-captured: No Test Manager attachment and no local execution trace were verified for this step.</li></ul></div><h2>Limitations and uncovered risks</h2><ul><li>47 steps were published as Restricted because approved fixtures, identities, isolated datasets, safe fault targets, or authorized configuration were unavailable; these are not product failures.</li><li>26 of 68 step logs have no Test Manager attachment flag; no evidence was fabricated for those steps.</li><li>30 local per-step execution-trace files were verified in the current execution trace directory; 12 additional attachments are confirmed by Test Manager but were not locally staged in this directory.</li><li>No standalone screenshot files were claimed in this manifest; screenshotRelativePath is null unless a file is independently verified. Trace attachments are the evidence source where present.</li><li>Synthetic staging records and tasks were retained for audit; no unrelated approval, policy, tenant, or shared data mutation was performed.</li><li>No commit range or pull request was analyzed in this continuation run. Case definitions carry approved source traceability to the source SHA listed per case.</li></ul><h2>Baseline decision</h2><p><b>Not advanced.</b> <code>lastSuccessfulBaselineSha</code> remains <code>null</code>.</p><p><a href="../traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/evidence-manifest.json">Machine-readable evidence manifest</a> · <a href="https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6">Test Manager execution</a></p></body></html>

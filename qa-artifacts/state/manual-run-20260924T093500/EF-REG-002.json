@@ -1,0 +1,26 @@
+{
+ "id": "EF-REG-002",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:44:10.959Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ EXP-1017 detail shows \"Travel\" | ✔ EXP-1017 detail shows \"Approved\" | ✔ EXP-1017 detail shows \"24 Sep 2026\" | ✔ EXP-1017 detail shows \"qa-receipt.pdf\" | ✔ EXP-1018 detail shows \"Travel\" | ✔ EXP-1018 detail shows \"Pending Approval\" | ✔ EXP-1018 detail shows \"24 Sep 2026\" | ✔ EXP-1018 detail shows \"qa-receipt.pdf\" | ✔ EXP-1020 detail shows \"Travel\" | ✔ EXP-1020 detail shows \"Pending Approval\" | ✔ EXP-1020 detail shows \"24 Sep 2026\" | ✔ EXP-1020 detail shows \"No receipt attached\"",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1017.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1018.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1020.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ 25 list rows on page 1 map to choice-set display values and formatted dates | ✔ null receipt renders \"No receipt attached\" (no error, no \"null\")",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-002-step2-list.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-002-step2-detail-null-receipt.png"
+   ]
+  }
+ ]
+}

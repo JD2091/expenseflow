@@ -1,0 +1,34 @@
+{
+ "id": "EF-SMOKE-003",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:35:38.979Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ New Expense form rendered at http://localhost:5173/expenses/new?mock=1",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-003-step1-form.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ success confirmation identifies EXP-1013: \"EXP-1013 submitted for ₹4,800. See it on your dashboard or open the expense. EXP-1013 submitted for ₹4,800 — Submitted.\"",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-003-step2-form-filled.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-003-step2-confirmation.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ confirmation exposes a link to the new expense | ✔ opened detail http://localhost:5173/expenses/EXP-1013?mock=1 | ✔ My Expenses lists EXP-1013 as Submitted | ✔ record count is now 7 | ✔ dashboard Submitted total now ₹53,050 / 5 expenses (48,250 + 4,800)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-003-step3-detail.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-003-step3-list.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-003-step3-dashboard.png"
+   ]
+  }
+ ]
+}

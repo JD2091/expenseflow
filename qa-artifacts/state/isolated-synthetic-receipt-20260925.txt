@@ -1,0 +1,6 @@
+ExpenseFlow QA synthetic receipt
+Environment: staging
+Fixture scope: ExpenseFlow-QA-Isolated-20260925
+Purpose: non-production regression evidence only
+Fixture family: EF-REG-005/006/010
+No production or personal financial data.

@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "e0d17641-1cc4-0e00-8b69-0b4a2a2bfeac",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The authorized isolated policy-asset context required to record and verify the original threshold was unavailable. No shared policy value was read as a substitute and no asset was changed.",
+    "hasError": false,
+    "actionType": "Restricted/AuthorizationUnavailable",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "a71f1102-1dc4-0e00-086f-0b4a2a2bffa1",
+    "result": "Restricted",
+    "comment": "RESTRICTED: Authorized mutation of the live policy asset from 25000 to 30000 was not available. No policy asset or shared configuration was modified.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "23a091e0-1ec4-0e00-941f-0b4a2a2c00bb",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The live-threshold submission could not be exercised without the authorized isolated policy change window and synthetic EFREG017-LivePolicy record. No expense was submitted.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "266e9e92-1fc4-0e00-8791-0b4a2a2c01a3",
+    "result": "Restricted",
+    "comment": "RESTRICTED: No persisted policy decision or approval task was inspected because the protected policy mutation and synthetic submission were unavailable. No duplicate record or task was created by this run.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "533c9c22-20c4-0e00-292c-0b4a2a2c02aa",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The original threshold could not be restored because no authorized policy mutation was performed. Shared policy state was left unchanged.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

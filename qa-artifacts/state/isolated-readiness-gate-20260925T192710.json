@@ -1,0 +1,93 @@
+{
+  "capturedAt": "2026-09-25T19:27:10.9316468+05:30",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "uipath": {
+    "baseUrl": "https://staging.uipath.com",
+    "organization": "testcloud_team",
+    "tenant": "TAM"
+  },
+  "isolatedScope": {
+    "folderPath": "ExpenseFlow-QA-Isolated-20260925",
+    "folderKey": "8a0e5b85-291c-4fd4-b53c-648950c57716",
+    "entityId": "e6990e77-cdb8-f111-a6a9-6045bddc9767",
+    "entityName": "ExpenseFlow_Expense",
+    "recordCount": 17,
+    "requiredFixtureCodeCount": 15,
+    "missingFixtureCodes": [],
+    "hasNextPage": false,
+    "statusAggregates": [
+      {"statusNumberId": 0, "count": 1, "sumAmount": 1},
+      {"statusNumberId": 1, "count": 1, "sumAmount": 48250},
+      {"statusNumberId": 3, "count": 4, "sumAmount": 107001},
+      {"statusNumberId": 4, "count": 11, "sumAmount": 17741550}
+    ],
+    "boundaryAggregates": [
+      {"label": "February 2026", "expectedCount": 1, "expectedTotal": 2800, "actualCount": 1, "actualTotal": 2800},
+      {"label": "Leap February 2028", "expectedCount": 1, "expectedTotal": 3000, "actualCount": 1, "actualTotal": 3000},
+      {"label": "April 2026", "expectedCount": 1, "expectedTotal": 3200, "actualCount": 1, "actualTotal": 3200}
+    ],
+    "bucket": {
+      "key": "936f8d11-5240-47b2-85d3-60f27ce38d16",
+      "fileCount": 16,
+      "continuationToken": "",
+      "missingRecordReceiptPaths": []
+    },
+    "policyAsset": {
+      "key": "e9f05dc0-4474-4226-96a1-102a6fada8a1",
+      "name": "ExpenseFlow_PolicyThreshold",
+      "restoredValue": 25000,
+      "foldersCount": 1
+    },
+    "actionCenter": {
+      "taskIds": [101664502, 101664529, 101664538, 101664542],
+      "listedTaskCount": 4,
+      "unexpectedTasks": [],
+      "allExpectedPending": true,
+      "allExpectedAssignedTo": "jeet.doshi@uipath.com"
+    }
+  },
+  "hostedBuildIsolationCheck": {
+    "passed": false,
+    "configuredLocalEntityId": "e6990e77-cdb8-f111-a6a9-6045bddc9767",
+    "observedSharedEntityId": "65e0d30d-79b6-f111-a6a9-6045bddc9767",
+    "observedSharedRecord": {
+      "id": "DB470F2F-E1B8-F111-A6A9-6045BDDBB45C",
+      "expenseCode": "EXP-1040",
+      "description": "EFREG017-LivePolicy",
+      "amount": 27500,
+      "statusNumberId": 3,
+      "policyNote": "No receipt attached — manager approval required",
+      "approvalTaskId": "101665521",
+      "receiptPath": null,
+      "expenseDate": "2026-09-25"
+    },
+    "observedSharedTask": {
+      "id": 101665521,
+      "status": "Unassigned",
+      "folderId": 816862,
+      "folderKey": "01a3eae4-d43c-4009-9342-969b1262b1e1"
+    },
+    "interpretation": "The deployed hosted build is not using the isolated folder/entity. EF-REG-017 was not a valid isolated connected run and its threshold branch was not exercised because the form had no receipt. Shared record and task are preserved; no retry, completion, or deletion was performed."
+  },
+  "executionGate": {
+    "isolatedFixturesReady": true,
+    "hostedBuildSafeForConnectedFixtureExecution": false,
+    "decision": "Do not execute connected write cases against the hosted build until the deployment is rebound to the isolated resources and a receipt can be attached.",
+    "caseDisposition": {
+      "EF-REG-005": "BLOCKED",
+      "EF-REG-006": "BLOCKED",
+      "EF-REG-007": "BLOCKED",
+      "EF-REG-009": "BLOCKED",
+      "EF-REG-010": "BLOCKED",
+      "EF-REG-011": "BLOCKED",
+      "EF-REG-012": "RESTRICTED",
+      "EF-REG-013": "RESTRICTED",
+      "EF-REG-015": "BLOCKED",
+      "EF-REG-017": "BLOCKED",
+      "EF-REG-024": "BLOCKED"
+    },
+    "sharedResourcesChangedByThisReadinessGate": false,
+    "historicalBaselinePreserved": true
+  }
+}

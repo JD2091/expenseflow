@@ -1,0 +1,72 @@
+[
+ {
+  "testStepId": "209bb1de-30c4-0e00-46c7-0b4a2a2c7567",
+  "result": "Restricted",
+  "comment": "Expected: The selected scope contains no aggregate-eligible records; any Draft-only control is explicitly identified and excluded from expected Finance results.\nActual: Finance currently shows: Expenses 64 ₹8,19,854 submitted across the company Pending 24 ₹4,81,827 in flight This month ₹5.4L 29 expenses in Sep 2026 NEEDS ATTENTION Blocked or waiting 25 records E | BLOCKED: the Finance view aggregates the whole shared ExpenseFlow_Expense entity (dozens of non-Draft records from earlier QA runs); an empty non-Draft scope would require deleting or re-dating shared records, which needs explicit authorization. No isolated empty tenant scope exists.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "85854e50-a200-426c-a079-08df19cd16a8",
+  "orderNo": 0,
+  "testCaseLogId": "d1c41831-7182-7300-89ef-0b4a2a5fee0e",
+  "description": "Prepare the isolated connected scope with no non-Draft ExpenseFlow_Expense records for the selected month and record the expected zero aggregates.",
+  "expectedResult": "The selected scope contains no aggregate-eligible records; any Draft-only control is explicitly identified and excluded from expected Finance results."
+ },
+ {
+  "testStepId": "9a161eaa-31c4-0e00-f09f-0b4a2a2c76c7",
+  "result": "Restricted",
+  "comment": "Expected: Finance renders zero count and zero total without NaN, undefined, stale values, a raw exception, or a Data Fabric 400.\nActual: BLOCKED: depends on step 1 (empty scope unavailable).",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "a2d3670c-1d39-40c4-a07a-08df19cd16a8",
+  "orderNo": 1,
+  "testCaseLogId": "d1c41831-7182-7300-89ef-0b4a2a5fee0e",
+  "description": "Open Finance for the empty month and wait for the initial data load to complete.",
+  "expectedResult": "Finance renders zero count and zero total without NaN, undefined, stale values, a raw exception, or a Data Fabric 400."
+ },
+ {
+  "testStepId": "f6c7aa29-32c4-0e00-7e65-0b4a2a2c77ec",
+  "result": "Restricted",
+  "comment": "Expected: The month presentation is the documented null/no-data state rather than an invented date, and the date range remains valid without issuing an invalid query.\nActual: BLOCKED: depends on step 1.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "ab929993-192f-4416-a07b-08df19cd16a8",
+  "orderNo": 2,
+  "testCaseLogId": "d1c41831-7182-7300-89ef-0b4a2a5fee0e",
+  "description": "Inspect the month summary and date-range controls for the empty result.",
+  "expectedResult": "The month presentation is the documented null/no-data state rather than an invented date, and the date range remains valid without issuing an invalid query."
+ },
+ {
+  "testStepId": "492160f6-33c4-0e00-42ff-0b4a2a2c792b",
+  "result": "Restricted",
+  "comment": "Expected: The attention area shows its intentional empty state, Draft-only data is not classified as attention, and the table/pager do not display phantom rows or invalid navigation.\nActual: BLOCKED: depends on step 1.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "a6d3617a-7da2-4d54-a07c-08df19cd16a8",
+  "orderNo": 3,
+  "testCaseLogId": "d1c41831-7182-7300-89ef-0b4a2a5fee0e",
+  "description": "Inspect the needs-attention queue, table body, and pager.",
+  "expectedResult": "The attention area shows its intentional empty state, Draft-only data is not classified as attention, and the table/pager do not display phantom rows or invalid navigation."
+ },
+ {
+  "testStepId": "36311f0e-34c4-0e00-a5d4-0b4a2a2c7a2a",
+  "result": "Restricted",
+  "comment": "Expected: Zero aggregates, the no-data presentation, and the empty attention state remain stable; no rows or totals from a prior dataset reappear.\nActual: BLOCKED: depends on step 1.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "f65eb588-48c6-4a69-a07d-08df19cd16a8",
+  "orderNo": 4,
+  "testCaseLogId": "d1c41831-7182-7300-89ef-0b4a2a5fee0e",
+  "description": "Refresh Finance, change the date range, and navigate away and back.",
+  "expectedResult": "Zero aggregates, the no-data presentation, and the empty attention state remain stable; no rows or totals from a prior dataset reappear."
+ }
+]

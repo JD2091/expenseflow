@@ -1,0 +1,32 @@
+{
+ "id": "EF-SMOKE-009",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:36:06.708Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ Expenses card 10 / ₹1,84,450 (company level) | ✔ Pending card 5 / ₹1,38,500 | ✔ This month ₹1.8L, 10 expenses in Aug 2026",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-009-step1-summary.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ EXP-1008 classified Policy Review | ✔ EXP-1009 classified Pending Approval | ✔ EXP-1007 classified Pending Approval | ✔ EXP-1011 classified Needs Rework | ✔ EXP-1006 classified Missing Receipt | ✔ 5 attention rows",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-009-step2-attention.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ click → http://localhost:5173/expenses/EXP-1008?mock=1 | ✔ keyboard Enter → http://localhost:5173/expenses/EXP-1009?mock=1 | keyboard Space → http://localhost:5173/expenses/EXP-1007?mock=1",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-009-step3-click-nav.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-009-step3-keyboard-nav.png"
+   ]
+  }
+ ]
+}

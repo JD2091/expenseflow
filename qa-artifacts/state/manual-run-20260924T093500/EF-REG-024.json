@@ -1,0 +1,39 @@
+{
+ "id": "EF-REG-024",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:15:42.388Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Blocked",
+   "actual": "Finance currently shows: Expenses 64 ₹8,19,854 submitted across the company Pending 24 ₹4,81,827 in flight This month ₹5.4L 29 expenses in Sep 2026 NEEDS ATTENTION Blocked or waiting 25 records E | BLOCKED: the Finance view aggregates the whole shared ExpenseFlow_Expense entity (dozens of non-Draft records from earlier QA runs); an empty non-Draft scope would require deleting or re-dating shared records, which needs explicit authorization. No isolated empty tenant scope exists.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-024-step1-finance-not-empty.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Blocked",
+   "actual": "BLOCKED: depends on step 1 (empty scope unavailable).",
+   "shots": []
+  },
+  {
+   "n": 3,
+   "result": "Blocked",
+   "actual": "BLOCKED: depends on step 1.",
+   "shots": []
+  },
+  {
+   "n": 4,
+   "result": "Blocked",
+   "actual": "BLOCKED: depends on step 1.",
+   "shots": []
+  },
+  {
+   "n": 5,
+   "result": "Blocked",
+   "actual": "BLOCKED: depends on step 1.",
+   "shots": []
+  }
+ ]
+}

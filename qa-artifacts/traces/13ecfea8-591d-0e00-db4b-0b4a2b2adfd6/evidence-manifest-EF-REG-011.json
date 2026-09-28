@@ -1,0 +1,61 @@
+{
+  "executionId": "13ecfea8-591d-0e00-db4b-0b4a2b2adfd6",
+  "projectKey": "EXPENSEFLOW",
+  "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "testSetKey": "EXPENSEFLOW:2",
+  "testCaseKey": "EXPENSEFLOW:23",
+  "testCaseId": "97c8e14d-30c4-0d00-4aaf-0b4a287ee79a",
+  "testCaseName": "EF-REG-011 - Locale-stable currency, compact amount, and date formatting",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "traceId": "97c8e14d-30c4-0d00-4aaf-0b4a287ee79a-20260925T122100",
+  "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-011-full-trace.json",
+  "executionTraceManifestRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-011-execution-traces.json",
+  "capturedAt": "2026-09-25T12:21:00+05:30",
+  "freshFixture": {
+    "source": "connected staging",
+    "observedDetailFixture": "EF2-1235-N",
+    "observedDate": "2026-08-18",
+    "runtimeLocale": "en-IN",
+    "runtimeTimeZone": "Asia/Calcutta",
+    "mutationPerformed": false
+  },
+  "steps": [
+    {
+      "stepNumber": 1,
+      "stepId": "b89e59de-8d7a-0e00-dbf0-0b4a287ef6b7",
+      "expectedResult": "Indian grouping is used; 840000 renders ₹8.4L and 12000000 renders ₹1.2Cr.",
+      "actualResult": "Indian grouping was observed on fresh connected Dashboard, Finance, and detail values; Finance displayed the current compact value ₹5.4L. The canonical ₹8.4L and ₹1.2Cr fixtures were absent from the connected dataset, so those exact outputs were not directly observed.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-011-step01-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh formatting screenshots are embedded in the finalized per-step trace; no standalone PNG was generated."
+    },
+    {
+      "stepNumber": 2,
+      "stepId": "d42fac0a-8e7a-0e00-567a-0b4a287efaab",
+      "expectedResult": "2026-08-18 displays 18 Aug 2026 without a previous-day shift; invalid date text remains unchanged.",
+      "actualResult": "Existing connected fixture EF2-1235-N displayed 18 Aug 2026. Runtime was en-IN / Asia/Calcutta; alternate-timezone behavior and invalid-date UI input were not safely exercisable.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-011-step02-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Fresh date verification is embedded in the finalized per-step trace; no standalone PNG was generated."
+    }
+  ],
+  "caseOutcome": "Restricted",
+  "evidenceLimitations": [
+    "Canonical ₹8.4L and ₹1.2Cr fixtures were not present in the connected dataset during this fresh run.",
+    "The browser runtime was en-IN / Asia/Calcutta; alternate timezone behavior was not independently exercised.",
+    "Invalid date text cannot be entered through the connected read-only UI.",
+    "No standalone PNG screenshots were generated; fresh screenshots are embedded in finalized trace artifacts."
+  ],
+  "publication": {
+    "testCaseLogId": null,
+    "stepAttachmentReferences": [],
+    "status": "pending"
+  }
+}

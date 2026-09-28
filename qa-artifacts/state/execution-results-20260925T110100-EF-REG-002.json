@@ -1,0 +1,20 @@
+[
+  {
+    "testStepId": "1baa6909-387a-0e00-82af-0b4a287ddbb5",
+    "result": "Passed",
+    "comment": "Observed: connected fixture EFREG002-Accommodation-EFQA-20260923T1235 (EF2-1235-A) rendered in detail with status Submitted, category Accommodation, date 18 Aug 2026, receipt accommodation-receipt.pdf, policy text 'Synthetic mapping fixture with receipt path', and expected status progression.",
+    "hasError": false,
+    "actionType": "Navigate/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "c7564130-397a-0e00-ff07-0b4a287dde47",
+    "result": "Passed",
+    "comment": "Observed: connected list mapping preserved choice display values and formatted dates; null-receipt fixture EFREG002-NoReceipt-EFQA-20260923T1235 (EF2-1235-N) rendered in detail with status Submitted, category Office, date 18 Aug 2026, Receipt 'No receipt attached', and no raw null or invalid receipt path.",
+    "hasError": false,
+    "actionType": "Navigate/Read/Paginate",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

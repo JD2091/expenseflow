@@ -1,0 +1,54 @@
+{
+ "stableId": "EF-REG-005",
+ "testCaseId": "098c30f1-cfc3-0d00-a298-0b4a287e0aa4",
+ "executionId": "8ca10f43-0414-0e00-bc47-0b4a2a5f0383",
+ "testCaseLogId": "cf4d798d-5082-7300-c655-0b4a2a5f039d",
+ "result": "Passed",
+ "stepLogCount": 3,
+ "stepResults": [
+  "Passed",
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-REG-005-step1-card.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-005-step1-card.png",
+    "ObjectId": "f48af458-1715-48f5-a074-08df19cd16a8",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-REG-005-step2-approved.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-005-step2-approved.png",
+    "ObjectId": "0951d901-67f5-46f8-a075-08df19cd16a8",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-REG-005-step3-detail.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-005-step3-detail.png",
+    "ObjectId": "0984532e-c772-4dd8-a076-08df19cd16a8",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/8ca10f43-0414-0e00-bc47-0b4a2a5f0383",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

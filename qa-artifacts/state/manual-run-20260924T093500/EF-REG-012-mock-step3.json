@@ -1,0 +1,15 @@
+{
+ "id": "EF-REG-012",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:39:54.505Z",
+ "steps": [
+  {
+   "n": 3,
+   "result": "Restricted",
+   "actual": "URL after load: /expenses?mock=1&demo=fail&code=QA-FAKE-CODE&state=QA-FAKE-STATE&foo=bar | ✔ mock, demo, and non-OAuth keys remain | RESTRICTED: in mock mode the OAuth completion path does not run (AuthProvider only strips code/state after completeOAuth in connected mode), so OAuth-key removal could not be observed without a connected OAuth callback.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-012-step3-oauth-keys.png"
+   ]
+  }
+ ]
+}

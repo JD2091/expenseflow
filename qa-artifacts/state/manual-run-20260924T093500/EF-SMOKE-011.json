@@ -1,0 +1,49 @@
+{
+ "id": "EF-SMOKE-011",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:36:27.460Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ Dashboard normal: KPI ₹48,250 + recent rows | ✔ Finance normal: aggregates + attention",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-011-step1-dashboard-normal.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-011-step1-finance-normal.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ translated read-failure message shown | ✔ retry affordance visible | ✔ no raw exception/stack | ✔ Finance also shows failure (simulate persists across in-app nav)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-011-step2-dashboard-error.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-011-step2-finance-error.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ no stale rows or aggregates shown on the failed screen | ✔ no token/credential terms exposed | console errors: none",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-011-step3-failed-screen-inspect.png"
+   ]
+  },
+  {
+   "n": 4,
+   "result": "Passed",
+   "actual": "✔ normal reads succeed after removing simulateError; seeded KPI + rows return",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-011-step4-recovered.png"
+   ]
+  },
+  {
+   "n": 5,
+   "result": "Passed",
+   "actual": "✔ Finance healthy | ✔ Dashboard healthy | ✔ after refresh: healthy, no stale error | ✔ no stale failure switch in URL: http://localhost:5173/?mock=1",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-011-step5-healthy-after-refresh.png"
+   ]
+  }
+ ]
+}

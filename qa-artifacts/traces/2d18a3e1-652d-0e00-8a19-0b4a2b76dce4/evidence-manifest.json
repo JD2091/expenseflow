@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": 1,
+  "immutable": true,
+  "generatedAt": "2026-09-25T20:04:09.360+05:30",
+  "runId": "expenseflow-qa-isolated-disposition-20260925T200409+0530",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "repositoryUrl": "https://github.com/JD2091/expenseflow",
+  "baselineSha": null,
+  "currentSha": "8ccbb1c11d36088a36900e737ea0951854a72b65",
+  "commitsAnalyzed": [],
+  "pullRequestsAnalyzed": [],
+  "approvedSourceSha": "571c2192d3d786a03eb7f57d89bec70998ef1d57",
+  "uipath": {
+    "baseUrl": "https://staging.uipath.com",
+    "organization": "testcloud_team",
+    "tenant": "TAM",
+    "folderPath": "ExpenseFlow-QA-Isolated-20260925",
+    "folderKey": "8a0e5b85-291c-4fd4-b53c-648950c57716",
+    "folderId": 1245402
+  },
+  "testManager": {
+    "projectName": "ExpenseFlow QA",
+    "projectKey": "EXPENSEFLOW",
+    "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+    "testSetKey": "EXPENSEFLOW:2",
+    "testSetId": "5c3301fd-4ec4-0400-57d9-0b4a2b76dcd4",
+    "executionId": "2d18a3e1-652d-0e00-8a19-0b4a2b76dce4",
+    "executionLink": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4",
+    "executionType": "Manual",
+    "status": "Finished",
+    "statistics": {
+      "caseLogs": 11,
+      "technicalCaseResults": {
+        "Passed": 0,
+        "Failed": 0,
+        "None": 11
+      },
+      "stepLogs": 35,
+      "technicalStepResults": {
+        "Restricted": 35
+      },
+      "qaCaseClassifications": {
+        "BLOCKED": 9,
+        "RESTRICTED": 2
+      },
+      "qaStepClassifications": {
+        "BLOCKED": 30,
+        "RESTRICTED": 5
+      },
+      "evidenceStatusCounts": {
+        "captured": 2,
+        "not-captured": 33,
+        "upload-failed": 0
+      },
+      "attachmentStepLogs": 2,
+      "attachmentUploadFailures": 0
+    }
+  },
+  "caseDispositions": [
+    {
+      "stableId": "EF-REG-005",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-006",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-007",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-009",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-010",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-011",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-012",
+      "qaClassification": "RESTRICTED"
+    },
+    {
+      "stableId": "EF-REG-013",
+      "qaClassification": "RESTRICTED"
+    },
+    {
+      "stableId": "EF-REG-015",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-017",
+      "qaClassification": "BLOCKED"
+    },
+    {
+      "stableId": "EF-REG-024",
+      "qaClassification": "BLOCKED"
+    }
+  ],
+  "changedFiles": [
+    "scripts/format.test.ts",
+    "src/App.tsx",
+    "src/components/AppLayout.tsx",
+    "src/components/ErrorState.tsx",
+    "src/components/ExpenseTable.tsx",
+    "src/components/NewExpenseForm.tsx",
+    "src/components/ReceiptLink.tsx",
+    "src/components/Sidebar.tsx",
+    "src/components/TablePager.tsx",
+    "src/hooks/useAuth.tsx",
+    "src/hooks/useExpenses.tsx",
+    "src/hooks/useFinance.tsx",
+    "src/lib/format.ts",
+    "src/models/expense.ts",
+    "src/models/status.ts",
+    "src/pages/ApprovalPage.tsx",
+    "src/pages/DashboardPage.tsx",
+    "src/pages/ExpenseDetailPage.tsx",
+    "src/pages/ExpenseListPage.tsx",
+    "src/pages/FinancePage.tsx",
+    "src/services/demoFailure.ts",
+    "src/services/expenseService.ts",
+    "src/services/uipath/approvals.ts",
+    "src/services/uipath/choiceSets.ts",
+    "src/services/uipath/client.ts",
+    "src/services/uipath/config.ts",
+    "src/services/uipath/entityClient.ts",
+    "src/services/uipath/errors.ts",
+    "src/services/uipath/folders.ts",
+    "src/services/uipath/mappers.ts",
+    "src/services/uipath/policy.ts",
+    "src/services/uipath/receipts.ts",
+    "src/services/uipath/runtime.tsx",
+    "src/services/uipath/schema.ts",
+    "vite.config.ts"
+  ],
+  "riskAreas": [
+    "Hosted deployment scope binding: local generated configuration names the isolated entity, but the hosted build wrote to the shared tenant-level entity.",
+    "Policy-threshold routing: EF-REG-017 did not exercise the live 30,000 threshold branch because no receipt was attached; the shared record followed the missing-receipt approval rule.",
+    "Action Center sequencing and decision persistence: connected approval/reject/rework paths were not executed after the isolation gate failed.",
+    "Receipt access and Finance/date-boundary UI: isolated fixtures are ready, but the hosted build was unsafe for connected UI reads.",
+    "OAuth/resource-failure configuration: no isolated invalid-resource configuration exists; shared runtime mutation is prohibited.",
+    "Authorization boundary: EF-REG-013 remains Restricted because identity/role/permission mutation is prohibited."
+  ],
+  "readback": {
+    "source": "state/disposition-20260925/final-platform-readback-20260925T200409+0530.json",
+    "assertions": {
+      "isolatedPolicyValue": "25000",
+      "isolatedRecordCount": 17,
+      "isolatedExp1040Matches": 0,
+      "isolatedTaskIds": [
+        {
+          "id": 101664502,
+          "status": "Pending",
+          "folderId": 1245402,
+          "type": "ExternalTask"
+        },
+        {
+          "id": 101664529,
+          "status": "Pending",
+          "folderId": 1245402,
+          "type": "ExternalTask"
+        },
+        {
+          "id": 101664538,
+          "status": "Pending",
+          "folderId": 1245402,
+          "type": "ExternalTask"
+        },
+        {
+          "id": 101664542,
+          "status": "Pending",
+          "folderId": 1245402,
+          "type": "ExternalTask"
+        }
+      ],
+      "sharedExp1040Matches": 1,
+      "sharedRecordId": "DB470F2F-E1B8-F111-A6A9-6045BDDBB45C",
+      "sharedTaskId": 101665521,
+      "sharedTaskStatus": "Unassigned",
+      "sharedTaskFolderId": 816862
+    },
+    "isolatedReadinessSource": "state/isolated-readiness-gate-20260925T192710.json",
+    "policyBaselineSource": "state/isolated-policy-runtime-baseline-20260925.json"
+  },
+  "sourceEvidence": [
+    {
+      "path": "state/disposition-20260925/testmanager-reconciliation.json",
+      "exists": true,
+      "bytes": 35860
+    },
+    {
+      "path": "state/isolated-readiness-gate-20260925T192710.json",
+      "exists": true,
+      "bytes": 3704
+    },
+    {
+      "path": "state/isolated-policy-runtime-baseline-20260925.json",
+      "exists": true,
+      "bytes": 2566
+    },
+    {
+      "path": "traces/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4/EF-REG-017-trace-map.json",
+      "exists": true,
+      "bytes": 419
+    },
+    {
+      "path": "traces/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4/EF-REG-017-execution-traces.json",
+      "exists": true,
+      "bytes": 712
+    },
+    {
+      "path": "traces/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4/EF-REG-017-step00-trace.json",
+      "exists": true,
+      "bytes": 1703123
+    },
+    {
+      "path": "traces/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4/EF-REG-017-step02-trace.json",
+      "exists": true,
+      "bytes": 389504
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-005.json",
+      "exists": true,
+      "bytes": 1179
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-006.json",
+      "exists": true,
+      "bytes": 1460
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-007.json",
+      "exists": true,
+      "bytes": 774
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-009.json",
+      "exists": true,
+      "bytes": 713
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-010.json",
+      "exists": true,
+      "bytes": 731
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-011.json",
+      "exists": true,
+      "bytes": 744
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-012.json",
+      "exists": true,
+      "bytes": 1265
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-013.json",
+      "exists": true,
+      "bytes": 807
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-015.json",
+      "exists": true,
+      "bytes": 1867
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-017.json",
+      "exists": true,
+      "bytes": 2311
+    },
+    {
+      "path": "state/disposition-20260925/EF-REG-024.json",
+      "exists": true,
+      "bytes": 1810
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-005.log",
+      "exists": true,
+      "bytes": 9491
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-006.log",
+      "exists": true,
+      "bytes": 10792
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-007.log",
+      "exists": true,
+      "bytes": 8214
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-009.log",
+      "exists": true,
+      "bytes": 8219
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-010.log",
+      "exists": true,
+      "bytes": 8157
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-011.log",
+      "exists": true,
+      "bytes": 8100
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-012.log",
+      "exists": true,
+      "bytes": 9703
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-013.log",
+      "exists": true,
+      "bytes": 8403
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-015.log",
+      "exists": true,
+      "bytes": 13041
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-017.log",
+      "exists": true,
+      "bytes": 14077
+    },
+    {
+      "path": "state/disposition-20260925/publish-EF-REG-024.log",
+      "exists": true,
+      "bytes": 13098
+    }
+  ],
+  "cases": [
+    {
+      "stableId": "EF-REG-005",
+      "testCaseKey": "EXPENSEFLOW:17",
+      "testCaseId": "098c30f1-cfc3-0d00-a298-0b4a287e0aa4",
+      "testCaseName": "EF-REG-005 - Connected Action Center approval completes before Data Fabric decision",
+      "testCaseLogId": "1f762045-160a-7400-5274-0b4a2b76dd01",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify approval completion updates the isolated Action Center task and Data Fabric record.",
+      "preconditions": "Isolated task 101664502 is pending and assigned; hosted build must be bound to the isolated folder/entity.",
+      "testData": "EFREG005-Approve; ₹27,501 synthetic approval fixture.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "f62a8bc8-647a-0e00-405d-0b4a287e1b31",
+          "stepLogId": "dbd997de-c96b-4a04-7ab6-08df1afbd072",
+          "expectedResult": "The card identifies its Action Center task and exposes an optional comments field with decision actions.",
+          "actualResult": "BLOCKED: The isolated fixtures and pending task are ready, but the deployed hosted build is not bound to the approved isolated folder/entity. Executing this connected approval would target shared scope. No UI action or task completion was performed.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "3b1f5c5d-667a-0e00-35c1-0b4a287e1e40",
+          "stepLogId": "4b965b82-9f9e-4d81-7ab7-08df1afbd072",
+          "expectedResult": "Action Center task completion succeeds first, then Data Fabric status/decision metadata updates and the row leaves the queue.",
+          "actualResult": "BLOCKED: Connected Action Center completion was not attempted because the hosted build isolation gate failed. The four approved isolated tasks remain pending and unchanged.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 3,
+          "orderNo": 2,
+          "testStepId": "c3f5dd3f-687a-0e00-58a8-0b4a287e2070",
+          "stepLogId": "caabc3fb-6ff6-449f-7ab8-08df1afbd072",
+          "expectedResult": "Final status, decision timestamp, decider, and comment are persisted consistently.",
+          "actualResult": "BLOCKED: Refresh/detail verification was not performed because the hosted build would read the shared entity rather than the approved isolated fixture scope. No additional record or task was created.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-006",
+      "testCaseKey": "EXPENSEFLOW:18",
+      "testCaseId": "9be03113-f8c3-0d00-f704-0b4a287e4c3d",
+      "testCaseName": "EF-REG-006 - Connected reject and rework decisions preserve comments and state",
+      "testCaseLogId": "9a75df51-170a-7400-78b3-0b4a2b76dd14",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify reject, rework, and blank-comment decisions preserve state and comments.",
+      "preconditions": "Isolated tasks 101664529/101664538/101664542 are pending; hosted build must use isolated scope.",
+      "testData": "EFREG006-Reject ₹26,000; EFREG006-Rework ₹26,500; EFREG006-Blank ₹27,000.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "45e0a1bb-697a-0e00-8b5f-0b4a287e53fe",
+          "stepLogId": "42bd18f8-b039-41d1-5dcc-08df1aff34f3",
+          "expectedResult": "Task and record reflect Rejected status and the saved comment.",
+          "actualResult": "BLOCKED: The approved reject fixture exists in the isolated entity/task scope, but the deployed hosted build is not bound to that scope. No connected decision was attempted.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "1cf8626f-6a7a-0e00-6c48-0b4a287e5670",
+          "stepLogId": "07bebdd8-ad61-4e59-5dcd-08df1aff34f3",
+          "expectedResult": "Task and record reflect Reworked status and the saved comment.",
+          "actualResult": "BLOCKED: The approved rework fixture exists in the isolated entity/task scope, but the deployed hosted build is not bound to that scope. No connected decision was attempted.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 3,
+          "orderNo": 2,
+          "testStepId": "7fb64d90-6d7a-0e00-8339-0b4a287e5886",
+          "stepLogId": "78ec33df-4abd-47b4-5dce-08df1aff34f3",
+          "expectedResult": "Neither decided item remains in the active queue and each retains its correct audit data.",
+          "actualResult": "BLOCKED: Queue/detail refresh was not performed because the hosted build would read shared scope rather than the isolated reject/rework fixtures. The four isolated tasks remain pending and unchanged.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 4,
+          "orderNo": 3,
+          "testStepId": "07140bab-16c4-0e00-5f62-0b4a2a2bb406",
+          "stepLogId": "3d26c639-c461-4c56-5dcf-08df1aff34f3",
+          "expectedResult": "Whitespace-only comment content is omitted from the update payload; the decision status is persisted correctly without storing meaningless whitespace audit text, and the controls remain usable.",
+          "actualResult": "BLOCKED: The whitespace-only comment path was not exercised because the connected decision would target the wrong shared scope. No task or record mutation was attempted.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-007",
+      "testCaseKey": "EXPENSEFLOW:19",
+      "testCaseId": "2b652f27-01c4-0d00-c9ef-0b4a287e6357",
+      "testCaseName": "EF-REG-007 - Connected decision failure leaves source record unmodified",
+      "testCaseLogId": "359782b0-180a-7400-62e4-0b4a2b76dd2c",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify a connected decision failure leaves the source record and task unchanged.",
+      "preconditions": "A supported isolated provider-failure target must exist; no shared mutation is authorized.",
+      "testData": "Synthetic isolated decision-failure fixture; no safe isolated provider target was available.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "47bd814f-6e7a-0e00-b6c2-0b4a287e6a5a",
+          "stepLogId": "1258aab3-22a6-4528-b268-08df1ae84bb8",
+          "expectedResult": "A friendly decision error is shown and the typed comment remains available for retry.",
+          "actualResult": "BLOCKED: No connected failure action was attempted. The hosted build is not bound to the isolated task/entity scope, and no supported isolated provider-failure target was available without shared mutation.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "4d89bd3e-6f7a-0e00-9e12-0b4a287e6c4e",
+          "stepLogId": "869f5260-b6b7-45c6-b269-08df1ae84bb8",
+          "expectedResult": "No decision status, decider, timestamp, or comment was written to the record when task completion failed.",
+          "actualResult": "BLOCKED: Record/task preservation could not be exercised because the safe failure target was unavailable and the hosted build isolation gate failed. No decision mutation was attempted.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-009",
+      "testCaseKey": "EXPENSEFLOW:21",
+      "testCaseId": "5a588dac-16c4-0d00-43b2-0b4a287ea394",
+      "testCaseName": "EF-REG-009 - Connected service errors expose retryable user feedback",
+      "testCaseLogId": "2b77b965-190a-7400-4034-0b4a2b76dd3f",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify connected error recovery/retry does not create a duplicate write.",
+      "preconditions": "Hosted build must be isolated and a controlled failure condition must be available.",
+      "testData": "Synthetic isolated recovery fixture; no safe isolated failure target was available.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "1e6cfbc6-737a-0e00-1577-0b4a287ea9ed",
+          "stepLogId": "acfe5490-2819-4e2a-b26c-08df1ae84bb8",
+          "expectedResult": "The app presents a friendly error state or inline form error with a retry path; no raw provider exception is shown.",
+          "actualResult": "BLOCKED: The approved safe connected error condition was not attempted because the hosted build is not bound to the isolated resources and no shared failure mutation is authorized.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "5e855ca4-757a-0e00-09b8-0b4a287eab38",
+          "stepLogId": "2d839c51-c475-48da-b26d-08df1ae84bb8",
+          "expectedResult": "The page or operation recovers without requiring a full app reset and without duplicate writes.",
+          "actualResult": "BLOCKED: Recovery/retry was not exercised because the controlled error branch could not be safely started in isolated scope. No duplicate write was introduced.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-010",
+      "testCaseKey": "EXPENSEFLOW:22",
+      "testCaseId": "bf8c0f39-19c4-0d00-5849-0b4a287eb763",
+      "testCaseName": "EF-REG-010 - Connected receipt access failures are contained and recoverable",
+      "testCaseLogId": "c9cc52f8-1a0a-7400-c39c-0b4a2b76dd51",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify receipt access failure and normal recovery behavior.",
+      "preconditions": "Isolated receipt objects and bucket are present; hosted build must use isolated entity/bucket.",
+      "testData": "Synthetic isolated receipt objects and receipt metadata.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "2531f50a-7b7a-0e00-d7e7-0b4a287ebd87",
+          "stepLogId": "b416b96d-3596-4ab6-b270-08df1ae84bb8",
+          "expectedResult": "The detail page remains usable and receipt access failure is handled without leaking implementation details.",
+          "actualResult": "BLOCKED: Isolated receipt objects are present, but the hosted build is not bound to the isolated entity/bucket scope. Receipt failure access was not attempted against shared data.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "f1f48af1-7d7a-0e00-8499-0b4a287ebff5",
+          "stepLogId": "7aef1039-cdde-40ba-b271-08df1ae84bb8",
+          "expectedResult": "Receipt access succeeds through the configured bucket path.",
+          "actualResult": "BLOCKED: Normal receipt recovery was not exercised because the deployed app scope does not match the approved isolated fixture scope. No receipt or record mutation was attempted.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-011",
+      "testCaseKey": "EXPENSEFLOW:23",
+      "testCaseId": "97c8e14d-30c4-0d00-4aaf-0b4a287ee79a",
+      "testCaseName": "EF-REG-011 - Locale-stable currency, compact amount, and date formatting",
+      "testCaseLogId": "240b5fd7-1b0a-7400-1e24-0b4a2b76dd65",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify amount, currency, date, and timestamp formatting across connected views.",
+      "preconditions": "Formatting/date fixtures are verified in the isolated entity; hosted build must use that entity.",
+      "testData": "Synthetic compact/full amount and date/time boundary fixtures.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "b89e59de-8d7a-0e00-dbf0-0b4a287ef6b7",
+          "stepLogId": "952de502-1da0-4cf3-b274-08df1ae84bb8",
+          "expectedResult": "Indian grouping is used; 840000 renders ₹8.4L and 12000000 renders ₹1.2Cr.",
+          "actualResult": "BLOCKED: Formatting fixtures are verified in the isolated entity, but the hosted build is not bound to that entity. Connected Dashboard/detail/Finance rendering was not exercised to avoid reading shared data.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "d42fac0a-8e7a-0e00-567a-0b4a287efaab",
+          "stepLogId": "2fb83dfa-d7c5-4ecf-b275-08df1ae84bb8",
+          "expectedResult": "2026-08-18 displays 18 Aug 2026 without a previous-day shift; invalid date text remains unchanged.",
+          "actualResult": "BLOCKED: Date/time rendering against the approved isolated fixture set was not exercised because the hosted build scope is shared. No additional data was written.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-012",
+      "testCaseKey": "EXPENSEFLOW:24",
+      "testCaseId": "c2c00bc1-45c4-0d00-3b5a-0b4a287f38f3",
+      "testCaseName": "EF-REG-012 - Runtime configuration, OAuth callback, and startup failure recovery",
+      "testCaseLogId": "d7816227-1c0a-7400-013b-0b4a2b76dd79",
+      "technicalResult": "None",
+      "qaClassification": "RESTRICTED",
+      "objective": "Verify invalid or missing OAuth/backend-resource configuration produces recoverable behavior.",
+      "preconditions": "An isolated invalid-resource configuration is required; shared runtime mutation is prohibited.",
+      "testData": "Read-only source/runtime switches only; no isolated invalid-resource configuration exists.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "6a29c3eb-947a-0e00-2776-0b4a287f5177",
+          "stepLogId": "316ac95f-4594-46ed-9850-08df1af91bd8",
+          "expectedResult": "OAuth/runtime completes, schema and choice sets warm, and application routes render.",
+          "actualResult": "RESTRICTED: Source/runtime inspection was completed read-only, but no connected UI execution was started because the hosted build is not isolated. Valid OAuth/runtime readiness was not re-claimed from the unrelated shared deployment.",
+          "technicalResult": "Restricted",
+          "qaClassification": "RESTRICTED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "152b73ce-997a-0e00-d411-0b4a287f5971",
+          "stepLogId": "fda2af45-7b1b-4b69-9851-08df1af91bd8",
+          "expectedResult": "Could not connect to UiPath splash and Reload action appear instead of partial application rendering.",
+          "actualResult": "RESTRICTED: The current source supports URL-scoped demo failure switches, but no isolated invalid or missing-resource OAuth/runtime configuration exists. Shared runtime mutation is prohibited, so the true invalid-resource branch was not executed.",
+          "technicalResult": "Restricted",
+          "qaClassification": "RESTRICTED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 3,
+          "orderNo": 2,
+          "testStepId": "2f4161e3-9b7a-0e00-5710-0b4a287f5e04",
+          "stepLogId": "8926145c-7cc6-422e-9852-08df1af91bd8",
+          "expectedResult": "OAuth keys are removed after completion while mock and demo switches remain.",
+          "actualResult": "RESTRICTED: OAuth callback source behavior was verified read-only and preserves non-OAuth mock/demo keys, but no live callback mutation or authentication flow was executed in this disposition run.",
+          "technicalResult": "Restricted",
+          "qaClassification": "RESTRICTED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-013",
+      "testCaseKey": "EXPENSEFLOW:25",
+      "testCaseId": "df95a197-57c4-0d00-400b-0b4a287f79d0",
+      "testCaseName": "EF-REG-013 - Authorization characterization for approvals and Finance",
+      "testCaseLogId": "175f738b-1d0a-7400-aa15-0b4a2b76dd96",
+      "technicalResult": "None",
+      "qaClassification": "RESTRICTED",
+      "objective": "Characterize least-privilege authorization behavior without changing identities or permissions.",
+      "preconditions": "No identity, role, permission, license, or membership provisioning is allowed.",
+      "testData": "Existing staging identity inventory only; no substitute identity was used.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "73677f85-9f7a-0e00-4c15-0b4a287f86ac",
+          "stepLogId": "6e0afe7e-aed2-442d-e763-08df1afa73e1",
+          "expectedResult": "The employee does not gain successful approval or Finance actions merely by entering a route.",
+          "actualResult": "RESTRICTED: The approved no-identity-provisioning boundary prevents creating or switching to a least-privilege employee identity. No authorization route was opened or mutated.",
+          "technicalResult": "Restricted",
+          "qaClassification": "RESTRICTED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "aa28e2c5-a07a-0e00-eab4-0b4a287f897a",
+          "stepLogId": "d08cde9c-ee2c-462f-e764-08df1afa73e1",
+          "expectedResult": "Unauthorized attempt is unavailable or denied without mutation; authorized identity receives required queue/data and decisions.",
+          "actualResult": "RESTRICTED: No unauthorized decision attempt or authorized-identity repeat was performed. Identity, role, permission, license, and membership mutation is prohibited; only read-only membership inventory was completed.",
+          "technicalResult": "Restricted",
+          "qaClassification": "RESTRICTED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-015",
+      "testCaseKey": "EXPENSEFLOW:77",
+      "testCaseId": "8e60c020-cced-0d00-ce37-0b4a2a2bd797",
+      "testCaseName": "EF-REG-015 - Finance month-end bounds include actual last days for 28, 29, and 30-day months",
+      "testCaseLogId": "a7ec643d-1e0a-7400-9e20-0b4a2b76ddac",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify month-end and leap-year Finance date boundaries and exclusions.",
+      "preconditions": "Fresh isolated server-side boundary matrix is verified; hosted build must use isolated scope.",
+      "testData": "2026-02-28 ₹2,800; 2028-02-29 ₹3,000; 2026-04-30 ₹3,200 plus next-day controls.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "f80b429e-17c4-0e00-b112-0b4a2a2bd9e9",
+          "stepLogId": "5b83872a-ff83-49b7-9855-08df1af91bd8",
+          "expectedResult": "The isolated dataset contains the planned last-day and outside-range records with recorded expected counts and totals.",
+          "actualResult": "BLOCKED: The isolated boundary records and expected aggregate matrix are verified, but no new UI seeding was performed in this run because the hosted build is not isolated. Existing isolated fixtures were retained.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "3171814b-18c4-0e00-63c4-0b4a2a2bdafe",
+          "stepLogId": "4d412ef1-d8ee-4572-9856-08df1af91bd8",
+          "expectedResult": "Each query completes without a Data Fabric 400 or invalid-date error, and the selected range is shown correctly.",
+          "actualResult": "BLOCKED: Finance range UI queries were not executed because the hosted deployment would query shared scope rather than the approved isolated boundary dataset. Fresh server-side isolated aggregates are preserved separately.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 3,
+          "orderNo": 2,
+          "testStepId": "c3232ec6-19c4-0e00-b256-0b4a2a2bdbf1",
+          "stepLogId": "b298731a-68de-475d-9857-08df1af91bd8",
+          "expectedResult": "The 28th and 29th day records are included exactly once, the next-day controls are excluded, and no stale month rows remain.",
+          "actualResult": "BLOCKED: February and leap-year boundary rendering was not exercised against the isolated dataset. No shared Finance read was used as a substitute.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 4,
+          "orderNo": 3,
+          "testStepId": "e0aa6f54-1ac4-0e00-f162-0b4a2a2bdcd5",
+          "stepLogId": "b0909fe8-9c77-4e00-9858-08df1af91bd8",
+          "expectedResult": "The April 30th record is included, April 31st is never queried, and the Finance count and total equal the expected boundary-inclusive values.",
+          "actualResult": "BLOCKED: April boundary rendering was not exercised against the isolated dataset. The fresh isolated server-side count/total is 1/3200, but this is not claimed as UI evidence.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 5,
+          "orderNo": 4,
+          "testStepId": "bda566be-1bc4-0e00-1298-0b4a2a2bddd8",
+          "stepLogId": "b9605494-eb49-4369-9859-08df1af91bd8",
+          "expectedResult": "Boundary records remain stable after refresh and range changes; no off-by-one, duplicate, timezone-shifted, or stale aggregate appears.",
+          "actualResult": "BLOCKED: Refresh/range-switch stability was not exercised because the hosted app scope mismatch makes the connected UI evidence unsafe. No duplicate or shared write was introduced.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "stableId": "EF-REG-017",
+      "testCaseKey": "EXPENSEFLOW:78",
+      "testCaseId": "da9b2d60-cded-0d00-8a99-0b4a2a2bfbb1",
+      "testCaseName": "EF-REG-017 - Live policy change between display and submit uses current threshold",
+      "testCaseLogId": "76a7de44-1f0a-7400-437c-0b4a2b76ddc1",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify a live policy change between display and submit uses the current threshold.",
+      "preconditions": "Isolated policy baseline 25,000; temporary 30,000 change; receipt required to isolate threshold branch; hosted build must use isolated scope.",
+      "testData": "EFREG017-LivePolicy; ₹27,500; isolated asset e9f05dc0-4474-4226-96a1-102a6fada8a1.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "e0d17641-1cc4-0e00-8b69-0b4a2a2bfeac",
+          "stepLogId": "e67936ad-ee5a-4d1a-5dc7-08df1aff34f3",
+          "expectedResult": "The form displays the initial policy context and the original asset value is recorded for later restoration.",
+          "actualResult": "RESTRICTED: Direct observation succeeded: the open form showed amount 27500 with the earlier ₹25,000 policy context, and the isolated asset baseline was read as 25000. The complete case is restricted because the hosted deployment later proved not to use the isolated entity.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": true,
+          "attachmentReference": "testStepLog:e67936ad-ee5a-4d1a-5dc7-08df1aff34f3;HasAttachment=true",
+          "traceRelativePath": "traces/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4/EF-REG-017-step00-trace.json",
+          "evidenceStatus": "captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "a71f1102-1dc4-0e00-086f-0b4a2a2bffa1",
+          "stepLogId": "8b7d969f-de26-4678-5dc8-08df1aff34f3",
+          "expectedResult": "The asset read succeeds and the open form still represents the earlier display state while the live value is now 30000.",
+          "actualResult": "RESTRICTED: The isolated policy asset was changed to 30000 and verified by UUID while the form remained open. The deployed app was not isolated, so this change cannot be accepted as a valid end-to-end connected case step.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": "Per-step trace was not present in the finalized trace map; publication log recorded this as partial coverage."
+        },
+        {
+          "stepNumber": 3,
+          "orderNo": 2,
+          "testStepId": "23a091e0-1ec4-0e00-941f-0b4a2a2c00bb",
+          "stepLogId": "04dd3778-3016-4f4c-5dc9-08df1aff34f3",
+          "expectedResult": "The submit path evaluates the live 30000 threshold rather than the cached 25000 value; the user-facing decision/routing is correct for 27500 versus 30000.",
+          "actualResult": "RESTRICTED: The UI displayed success for EXP-1040, but the isolated entity remained at 17 records. Fresh reconciliation found EXP-1040 in the tenant-level/shared entity with Amount 27500, Status PendingApproval, PolicyNote 'No receipt attached — manager approval required', and shared task 101665521. The 30000 threshold branch was not exercised because no receipt was attached.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": true,
+          "attachmentReference": "testStepLog:04dd3778-3016-4f4c-5dc9-08df1aff34f3;HasAttachment=true",
+          "traceRelativePath": "traces/2d18a3e1-652d-0e00-8a19-0b4a2b76dce4/EF-REG-017-step02-trace.json",
+          "evidenceStatus": "captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 4,
+          "orderNo": 3,
+          "testStepId": "266e9e92-1fc4-0e00-8791-0b4a2a2c01a3",
+          "stepLogId": "39ab8caf-968d-44cf-5dca-08df1aff34f3",
+          "expectedResult": "The persisted record and policy note reflect the live 30000 decision, no stale 25000 decision is recorded, and no duplicate record or task is created.",
+          "actualResult": "RESTRICTED: No browser refresh was performed after the isolation discrepancy. Read-only reconciliation verified the shared record/task only; the isolated record and duplicate check required by this step were not available.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": "Per-step trace was not present in the finalized trace map; publication log recorded this as partial coverage."
+        },
+        {
+          "stepNumber": 5,
+          "orderNo": 4,
+          "testStepId": "533c9c22-20c4-0e00-292c-0b4a2a2c02aa",
+          "stepLogId": "0b0c9311-a5b7-47f9-5dcb-08df1aff34f3",
+          "expectedResult": "The original policy value is restored and the synthetic record remains a single intact audit object.",
+          "actualResult": "RESTRICTED: The isolated policy asset was restored to 25000 and verified by UUID. The app refresh portion was not performed after the scope discrepancy; the shared EXP-1040 record and task were intentionally preserved as evidence and not deleted or completed.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": "Per-step trace was not present in the finalized trace map; publication log recorded this as partial coverage."
+        }
+      ],
+      "attachmentCount": 2
+    },
+    {
+      "stableId": "EF-REG-024",
+      "testCaseKey": "EXPENSEFLOW:82",
+      "testCaseId": "477359b3-d1ed-0d00-78be-0b4a2a2c71ca",
+      "testCaseName": "EF-REG-024 - Empty Finance dataset renders zero aggregates and no-data state",
+      "testCaseLogId": "112bda68-200a-7400-caa1-0b4a2b76ddd8",
+      "technicalResult": "None",
+      "qaClassification": "BLOCKED",
+      "objective": "Verify an empty Finance month renders zero aggregates and a stable no-data state.",
+      "preconditions": "Isolated scope contains only the intentional Draft control before non-Draft fixtures; hosted build must use isolated scope.",
+      "testData": "EFREG024-DraftControl-20260925 and empty non-Draft monthly dataset.",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "orderNo": 0,
+          "testStepId": "209bb1de-30c4-0e00-46c7-0b4a2a2c7567",
+          "stepLogId": "7933a62d-69aa-4760-cd13-08df1b045dac",
+          "expectedResult": "The selected scope contains no aggregate-eligible records; any Draft-only control is explicitly identified and excluded from expected Finance results.",
+          "actualResult": "BLOCKED: The Draft-only pre-seed checkpoint and later isolated fixture state are verified read-only, but the hosted build is not bound to the isolated Finance dataset. No dataset mutation was performed in this run.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 2,
+          "orderNo": 1,
+          "testStepId": "9a161eaa-31c4-0e00-f09f-0b4a2a2c76c7",
+          "stepLogId": "88783629-c0cc-4306-cd14-08df1b045dac",
+          "expectedResult": "Finance renders zero count and zero total without NaN, undefined, stale values, a raw exception, or a Data Fabric 400.",
+          "actualResult": "BLOCKED: Finance empty-month UI load was not executed because the hosted deployment would read shared scope instead of the approved isolated empty-state context. No shared Finance read was used as a substitute.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 3,
+          "orderNo": 2,
+          "testStepId": "f6c7aa29-32c4-0e00-7e65-0b4a2a2c77ec",
+          "stepLogId": "9b49008a-aeac-4b39-cd15-08df1b045dac",
+          "expectedResult": "The month presentation is the documented null/no-data state rather than an invented date, and the date range remains valid without issuing an invalid query.",
+          "actualResult": "BLOCKED: Empty-result month summary and date-range controls were not exercised against the isolated dataset. The preserved Draft-only checkpoint is not claimed as current UI evidence.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 4,
+          "orderNo": 3,
+          "testStepId": "492160f6-33c4-0e00-42ff-0b4a2a2c792b",
+          "stepLogId": "38498996-b861-461a-cd16-08df1b045dac",
+          "expectedResult": "The attention area shows its intentional empty state, Draft-only data is not classified as attention, and the table/pager do not display phantom rows or invalid navigation.",
+          "actualResult": "BLOCKED: Needs-attention and pager UI were not exercised because the hosted app scope mismatch makes the connected empty-state evidence unsafe.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        },
+        {
+          "stepNumber": 5,
+          "orderNo": 4,
+          "testStepId": "36311f0e-34c4-0e00-a5d4-0b4a2a2c7a2a",
+          "stepLogId": "81384ed1-584d-47a9-cd17-08df1b045dac",
+          "expectedResult": "Zero aggregates, the no-data presentation, and the empty attention state remain stable; no rows or totals from a prior dataset reappear.",
+          "actualResult": "BLOCKED: Refresh/range/navigation stability was not exercised against the isolated empty Finance scope. No shared data was changed.",
+          "technicalResult": "Restricted",
+          "qaClassification": "BLOCKED",
+          "hasError": false,
+          "actionType": "Manual",
+          "hasAttachment": false,
+          "attachmentReference": null,
+          "traceRelativePath": null,
+          "evidenceStatus": "not-captured",
+          "evidenceNote": null
+        }
+      ],
+      "attachmentCount": 0
+    }
+  ]
+}

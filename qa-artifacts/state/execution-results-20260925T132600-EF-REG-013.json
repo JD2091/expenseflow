@@ -1,0 +1,20 @@
+[
+  {
+    "testStepId": "73677f85-9f7a-0e00-4c15-0b4a287f86ac",
+    "result": "Restricted",
+    "comment": "RESTRICTED: A separate least-privilege employee identity was not available for the Local staging run. Route visibility and authorization behavior were not inferred, and no authorization-sensitive action was attempted.",
+    "hasError": false,
+    "actionType": "Restricted/IdentityUnavailable",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "aa28e2c5-a07a-0e00-eab4-0b4a287f897a",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The required least-privilege identity, EFREG013-pending fixture, and authorized comparison identity were unavailable together. No unauthorized or authorized decision was attempted on an unrelated record.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

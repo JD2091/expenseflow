@@ -1,0 +1,48 @@
+{
+ "id": "EF-REG-023",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:55:27.929Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ approval card for EXP-1030 open in the app (this page is intentionally not refreshed before the race) | snapshot before race: {\"code\":\"EXP-1030\",\"Status\":3,\"ApprovalTaskId\":\"101647510\",\"taskStatus\":\"Unassigned\",\"taskAction\":null} | ✔ expense is PendingApproval with a linked open task",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-023-step1-before-race.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "uip tasks complete -> Success | task after external completion: {\"Status\":\"Completed\",\"Action\":\"Approve\",\"CompletedTime\":\"2026-09-24T10:54:48.7650757Z\"} | ✔ Action Center task is Completed with action Approve (external decision recorded once)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-023-step2-task-after-external-completion.json"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ app returns the specific already-completed-task conflict message | ✔ no false success toast | ✔ no raw exception | message: pdf Action Center Task #101647510 Above ₹25,000 policy threshold Comments ExpenseFlow could not record the approve decision in Action Center: This Action is already completed by the same user Open exp",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-023-step3-conflict-message.png"
+   ]
+  },
+  {
+   "n": 4,
+   "result": "Passed",
+   "actual": "after conflict: {\"records\":1,\"Status\":3,\"tasks\":1,\"taskStatus\":\"Completed\"} | ✔ Data Fabric record has no second decision mutation or duplicate comment | ✔ task remains completed; no second task created",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-023-step4-record-and-task-count.json"
+   ]
+  },
+  {
+   "n": 5,
+   "result": "Passed",
+   "actual": "after refresh the card is still listed in the queue | detail after refresh: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1030 EFREG023-ExternalComplete-EFQA-20260924T1400 Pending Approval Amount ₹35,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt qa-receipt.pdf Policy Abov | ✔ no duplicate decision/task; original record and task identifiers stable | ✔ known limitation observed: the record stays PendingApproval in Data Fabric because the external completion did not update it (app does not reconcile) — reported for the analyst, not asserted as expected",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-023-step5-queue-after-refresh.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-023-step5-detail-after-refresh.png"
+   ]
+  }
+ ]
+}

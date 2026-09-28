@@ -1,0 +1,33 @@
+{
+ "id": "EF-REG-004",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:38:50.669Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "confirmation: EXP-1022 submitted for ₹1,250. See it on your dashboard or open the expense. | EXP-1022 submitted for ₹1,250 — Approved. | ✔ submission succeeded (EXP-1022) | ✔ created record retains receipt name qa-receipt.pdf",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-004-step1-submitted.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-004-step1-detail-receipt.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ receipt chip is an interactive control | receipt opened in new tab: https://crpabetaporch0eusstg.blob.core.windows.net/orchestrator-932c00cc-8cb5-4d47-b8f2-d7dd94d6fe8a/BlobFilePersistence/a72bcdc2-778e-432c- (query string withheld from record) | ✔ receipt opened over https via storage host (authorized read URI), not a local path | ✔ URL carries no raw storage secret/key terms",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-004-step2-receipt-tab.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-004-step2-detail-after-open.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Restricted",
+   "actual": "submitted with \"QA receipt #1 (copy).pdf\" → EXP-1023 | stored/displayed receipt name: QA-receipt-1-copy-.pdf | ✔ stored name is sanitized (no spaces, #, parentheses, or local path) | ✔ sanitized receipt opens through authorized bucket access | RESTRICTED: the \"browser path prefix\" variant (C:\fakepath...) cannot be produced by browser automation: the File object exposes only the bare name, so the prefix-stripping branch was not exercised. Spaces, #, and parentheses were exercised and verified.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-004-step3-sanitized-detail.png"
+   ]
+  }
+ ]
+}

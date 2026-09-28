@@ -1,0 +1,51 @@
+{
+ "id": "EF-REG-001",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:33:13.536Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "confirmation: EXP-1017 submitted for ₹12,000. See it on your dashboard or open the expense. | EXP-1017 submitted for ₹12,000 — Approved. | ✔ below-threshold (₹12,000, receipt attached) created EXP-1017 without approval requirement",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step1-below-threshold.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "confirmation: EXP-1018 submitted for ₹35,000. See it on your dashboard or open the expense. | EXP-1018 submitted for ₹35,000 — Pending Approval. | ✔ above-threshold (₹35,000) created EXP-1018; approval-required routing indicated",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step2-above-threshold.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ EXP-1017 (low) present in My Expenses after refresh | ✔ EXP-1018 (high) present in My Expenses after refresh | EXP-1017 detail: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1017 EFREG001-Low-EFQA-20260924T1130 Approved Amount ₹12,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt qa-receipt.pdf Policy Auto-approved under policy threshold STATUS ✓ Submitted ✓ Policy validation ✓ Manager approval ● Finance processing Submitted 24 Sep 2026 | ✔ EXP-1017 status/policy note consistent with threshold | EXP-1018 detail: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1018 EFREG001-High-EFQA-20260924T1130 Pending Approval Amount ₹35,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt qa-receipt.pdf Policy Above ₹25,000 policy threshold STATUS ✓ Submitted ✓ Policy validation ● Manager approval ○ Finance processing Waiting on a manager in Action Center. Submitted 24 Sep 2026 | ✔ EXP-1018 status/policy note consistent with threshold",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step3-list-after-refresh.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step3-detail-low.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step3-detail-high.png"
+   ]
+  },
+  {
+   "n": 4,
+   "result": "Passed",
+   "actual": "live policy threshold shown on approval cards: ₹25,000 | confirmation: EXP-1019 submitted for ₹25,000. See it on your dashboard or open the expense. | EXP-1019 submitted for ₹25,000 — Approved. | ✔ live threshold is ₹25,000 | ✔ amount == threshold (₹25,000) follows the non-above-threshold branch (EXP-1019) | ✔ persisted record: non-pending status (Approved), policy note auto-approved/within threshold",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step4-equal-threshold.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step4-equal-detail.png"
+   ]
+  },
+  {
+   "n": 5,
+   "result": "Passed",
+   "actual": "confirmation: EXP-1020 submitted for ₹9,000. See it on your dashboard or open the expense. | EXP-1020 submitted for ₹9,000 — Pending Approval. | ✔ EXP-1020: below-threshold ₹9,000 without receipt forces approval route | ✔ persisted record: Pending Approval, no receipt path shown | detail: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1020 EFREG001-NoReceipt-EFQA-20260924T1130 Pending Approval Amount ₹9,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt No receipt attached Policy No receipt attached — manager approval required STATUS ✓ Submitted ✓ Policy validation ● Manager approval ○ Finance processing ",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step5-no-receipt.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-001-step5-no-receipt-detail.png"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "f62a8bc8-647a-0e00-405d-0b4a287e1b31",
+  "result": "Passed",
+  "comment": "Expected: The card identifies its Action Center task and exposes an optional comments field with decision actions.\nActual: ✔ card for EXP-1024 (EFREG005-Approve) present exactly once | card: EXP-1024 Rahul Mehta Pending Approval EFREG005-Approve-EFQA-20260924T1300 Amount ₹26,001 Policy threshold ₹25,000 Date 24 Sep 2026 Receipt qa-receipt.pdf Action Center Task #101647429 Above ₹25,000 policy threshold Comments Open expense Reject Request rework A | ✔ card identifies its Action Center task (Task #101647429) | ✔ optional comments field and decision actions present",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "f48af458-1715-48f5-a074-08df19cd16a8",
+  "orderNo": 0,
+  "testCaseLogId": "cf4d798d-5082-7300-c655-0b4a2a5f039d",
+  "description": "Open the connected Approval queue and locate EFREG005-Approve.",
+  "expectedResult": "The card identifies its Action Center task and exposes an optional comments field with decision actions."
+ },
+ {
+  "testStepId": "3b1f5c5d-667a-0e00-35c1-0b4a287e1e40",
+  "result": "Passed",
+  "comment": "Expected: Action Center task completion succeeds first, then Data Fabric status/decision metadata updates and the row leaves the queue.\nActual: ✔ success feedback: \"EXP-1024 is now Approved.\" | ✔ decided row left the queue | write requests in order: POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST /testcloud_team/TAM/orchestrator_/tasks/GenericTasks/CompleteTask -> POST /EntityService/entity/{id}/update/4CB5E05D-05B8-F111-A6A9-6045BDDBB45C -> POST /testcloud_team/TAM/datafabric_/api/EntityService/entity/{id}/query -> POST /testcloud_team/TAM/datafabric_/api/EntityService/entity/{id}/query -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track -> POST //v2/track",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "0951d901-67f5-46f8-a075-08df19cd16a8",
+  "orderNo": 1,
+  "testCaseLogId": "cf4d798d-5082-7300-c655-0b4a2a5f039d",
+  "description": "Approve the expense with the synthetic comment.",
+  "expectedResult": "Action Center task completion succeeds first, then Data Fabric status/decision metadata updates and the row leaves the queue."
+ },
+ {
+  "testStepId": "c3f5dd3f-687a-0e00-58a8-0b4a287e2070",
+  "result": "Passed",
+  "comment": "Expected: Final status, decision timestamp, decider, and comment are persisted consistently.\nActual: ✔ detail status Approved | ✔ decision comment persisted on detail | Data Fabric record: {\"Status\":4,\"DecidedBy\":\"Neha Kulkarni\",\"DecidedAt\":\"2026-09-24T10:48:45.247+00:00\",\"Comments\":\"QA approve comment EFQA-20260924T1300\",\"ApprovalTaskId\":\"101647429\"} | ✔ DF record has decider, decision timestamp, and comment (independent uip df read)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "0984532e-c772-4dd8-a076-08df19cd16a8",
+  "orderNo": 2,
+  "testCaseLogId": "cf4d798d-5082-7300-c655-0b4a2a5f039d",
+  "description": "Refresh and inspect the expense detail.",
+  "expectedResult": "Final status, decision timestamp, decider, and comment are persisted consistently."
+ }
+]

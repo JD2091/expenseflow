@@ -1,0 +1,48 @@
+{
+ "id": "EF-REG-022",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:54:43.717Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "live policy threshold (from approval cards): ₹25,000; intended Orchestrator folder: Shared (01a3eae4-d43c-4009-9342-969b1262b1e1) | ✔ amount 35000 is above the live threshold 25000 | ✔ no prior matching Data Fabric record for EFREG022-ApprovalLink-EFQA-20260924T1400",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-022-step1-queue-threshold.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "result: EXP-1029 submitted for ₹35,000. See it on your dashboard or open the expense. | EXP-1029 submitted for ₹35,000 — Pending Approval. | ✔ user-facing result states approval is required (Pending Approval) | ✔ exactly one Data Fabric record created (1) = EXP-1029",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-022-step2-submitted.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "Action Center tasks in folder Shared whose title contains EXP-1029: 1 | ✔ exactly one task exists for the expense | task 101647500: {\"Title\":\"Approve EXP-1029 — Rahul Mehta — ₹35,000\",\"Priority\":\"Medium\",\"Status\":\"Unassigned\",\"Type\":\"ExternalTask\",\"Folder\":\"Shared\",\"Amount\":35000,\"ExpenseCode\":\"EXP-1029\",\"PolicyThreshold\":25000,\"ReceiptPath\":\"receipts/EXP-1029-qa-receipt.pdf\"} | ✔ task title/payload match the submitted record (code, amount, description) | ✔ task is in the intended folder (Shared) with priority Medium (35000 < 2x threshold) | ✔ payload contains no secrets",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-022-step3-approval-card-task.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-022-step3-action-center.png"
+   ]
+  },
+  {
+   "n": 4,
+   "result": "Passed",
+   "actual": "✔ ApprovalTaskId persisted as text and equals the Action Center task id (101647500) | ✔ detail shows PendingApproval with Action Center wait affordance",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-022-step4-detail.png"
+   ]
+  },
+  {
+   "n": 5,
+   "result": "Passed",
+   "actual": "✔ record count 1; ExpenseCode and ApprovalTaskId unchanged after revisit/refresh | ✔ task count still 1",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-022-step5-detail-after-refresh.png"
+   ]
+  }
+ ]
+}

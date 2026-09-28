@@ -1,0 +1,62 @@
+[
+  {
+    "ExpenseCode": "EFREG011-Amount48250-20260925",
+    "Employee": "EF QA Formatting Employee",
+    "Description": "EFREG011 canonical amount 48250 formatting fixture",
+    "Category": 0,
+    "Amount": 48250,
+    "ExpenseDate": "2026-08-18",
+    "Status": 4,
+    "ReceiptPath": "receipts/EFREG011-Amount48250-20260925-receipt.txt",
+    "PolicyNote": "EFREG011 canonical amount 48250",
+    "SubmittedAt": "2026-08-18T09:12:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG011-Amount4825000-20260925",
+    "Employee": "EF QA Formatting Employee",
+    "Description": "EFREG011 canonical amount 4825000 formatting fixture",
+    "Category": 0,
+    "Amount": 4825000,
+    "ExpenseDate": "2026-08-18",
+    "Status": 4,
+    "ReceiptPath": "receipts/EFREG011-Amount4825000-20260925-receipt.txt",
+    "PolicyNote": "EFREG011 canonical amount 4825000",
+    "SubmittedAt": "2026-08-18T09:13:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG011-Amount840000-20260925",
+    "Employee": "EF QA Formatting Employee",
+    "Description": "EFREG011 canonical amount 840000 formatting fixture",
+    "Category": 0,
+    "Amount": 840000,
+    "ExpenseDate": "2026-08-18",
+    "Status": 4,
+    "ReceiptPath": "receipts/EFREG011-Amount840000-20260925-receipt.txt",
+    "PolicyNote": "EFREG011 canonical amount 840000",
+    "SubmittedAt": "2026-08-18T09:14:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG011-Amount12000000-20260925",
+    "Employee": "EF QA Formatting Employee",
+    "Description": "EFREG011 canonical amount 12000000 formatting fixture",
+    "Category": 0,
+    "Amount": 12000000,
+    "ExpenseDate": "2026-08-18",
+    "Status": 4,
+    "ReceiptPath": "receipts/EFREG011-Amount12000000-20260925-receipt.txt",
+    "PolicyNote": "EFREG011 canonical amount 12000000",
+    "SubmittedAt": "2026-08-18T09:15:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG011-DateTimezone-20260925",
+    "Employee": "EF QA Formatting Employee",
+    "Description": "EFREG011 date-only and timezone-sensitive timestamp fixture",
+    "Category": 0,
+    "Amount": 10000,
+    "ExpenseDate": "2026-01-01",
+    "Status": 4,
+    "ReceiptPath": "receipts/EFREG011-DateTimezone-20260925-receipt.txt",
+    "PolicyNote": "EFREG011 SubmittedAt 2026-08-18T23:45:00+05:30; invalid date remains a non-write characterization",
+    "SubmittedAt": "2026-08-18T23:45:00+05:30"
+  }
+]

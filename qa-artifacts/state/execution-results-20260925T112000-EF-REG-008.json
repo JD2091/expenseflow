@@ -1,0 +1,29 @@
+[
+  {
+    "testStepId": "0974e52e-707a-0e00-41ab-0b4a287e8b06",
+    "result": "Restricted",
+    "comment": "Observed: Finance's connected unsettled attention query returned the four EFREG008 records EFREG008-PolicyReview-203800 (Policy Review, ₹82,000), EFREG008-PendingApproval-203800 (Pending Approval, ₹37,550), EFREG008-Reworked-203800 (Needs Rework, ₹5,900), and EFREG008-MissingReceipt-203800 (Missing Receipt, ₹2,500), each once across the two-page queue. The expected SubmittedWithReceipt control record was not visible in the connected attention list, so complete five-record retrieval could not be isolated in this environment; this is recorded as a limitation, not a product failure.",
+    "hasError": false,
+    "actionType": "Navigate/Read/Paginate",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "fa5b0d88-717a-0e00-ba18-0b4a287e8c6b",
+    "result": "Passed",
+    "comment": "Observed: Finance page 1 showed each of the first four EFREG008 records once with the correct attention reasons: Policy Review, Pending Approval, Needs Rework, and Missing Receipt. The SubmittedWithReceipt control was absent from the attention list, matching the expected exclusion condition.",
+    "hasError": false,
+    "actionType": "Navigate/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "43f5e293-727a-0e00-0790-0b4a287e9920",
+    "result": "Passed",
+    "comment": "Observed: each attention row navigated to the matching expense detail. PolicyReview opened /expenseflow/expenses/EFREG008-PolicyReview-203800 with Policy Review and ₹82,000; PendingApproval opened /expenseflow/expenses/EFREG008-PendingApproval-203800 with Pending Approval and ₹37,550; Reworked opened /expenseflow/expenses/EFREG008-Reworked-203800 with Needs Rework and ₹5,900; MissingReceipt opened /expenseflow/expenses/EFREG008-MissingReceipt-203800 with the matching identifier, ₹2,500, overall status Submitted, and No receipt attached. The queue reason for that row was Missing Receipt.",
+    "hasError": false,
+    "actionType": "Navigate/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

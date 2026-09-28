@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "61b2226a-1b7a-0e00-20d3-0b4a287d4cfc",
+  "result": "Passed",
+  "comment": "Expected: Detail page shows code, description, Submitted/Pending status, amount, category, date, employee, receipt, policy, and submitted timeline data.\nActual: ✔ opened via table row: http://localhost:5173/expenses/EXP-1007?mock=1 | ✔ detail shows \"EXP-1007\" | ✔ detail shows \"Customer conference travel\" | ✔ detail shows \"Pending Approval\" | ✔ detail shows \"₹11,650\" | ✔ detail shows \"Travel\" | ✔ detail shows \"12 Aug 2026\" | ✔ detail shows \"Rahul Mehta\" | ✔ detail shows \"mumbai-trip.pdf\" | ✔ detail shows \"Within the ₹25,000 threshold\" | ✔ detail shows \"Submitted 12 Aug 2026\"",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "0f64e529-1a36-47ab-8a66-08df19d74366",
+  "orderNo": 0,
+  "testCaseLogId": "111bc5f7-4f7e-7300-887c-0b4a2a52d713",
+  "description": "Open EXP-1007 from an expense table row or direct expense URL.",
+  "expectedResult": "Detail page shows code, description, Submitted/Pending status, amount, category, date, employee, receipt, policy, and submitted timeline data."
+ },
+ {
+  "testStepId": "45b5bee3-1c7a-0e00-6eb0-0b4a287d4e7a",
+  "result": "Passed",
+  "comment": "Expected: Receipt affordance is available and the back action returns to the list.\nActual: ✔ receipt affordance (mumbai-trip.pdf) visible | receipt element: SPAN(text) | ✔ Back to my expenses returned to list",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "515b8037-dd66-4554-8a67-08df19d74366",
+  "orderNo": 1,
+  "testCaseLogId": "111bc5f7-4f7e-7300-887c-0b4a2a52d713",
+  "description": "Use the receipt link and Back to my expenses action.",
+  "expectedResult": "Receipt affordance is available and the back action returns to the list."
+ }
+]

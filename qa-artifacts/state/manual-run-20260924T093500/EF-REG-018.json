@@ -1,0 +1,48 @@
+{
+ "id": "EF-REG-018",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:39:52.388Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "start URL http://localhost:5173/?mock=1 | ✔ Dashboard: /?mock=1 keeps mock=1 | ✔ Dashboard: renders from mock service, no OAuth | ✔ My Expenses: /expenses?mock=1 keeps mock=1 | ✔ My Expenses: renders from mock service, no OAuth | ✔ New Expense: /expenses/new?mock=1 keeps mock=1 | ✔ New Expense: renders from mock service, no OAuth | ✔ Approvals: /approvals?mock=1 keeps mock=1 | ✔ Approvals: renders from mock service, no OAuth | ✔ Finance: /finance?mock=1 keeps mock=1 | ✔ Finance: renders from mock service, no OAuth",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-018-step1-finance-last.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "history.length before=8, after New Expense=9, after return to Expenses=10; URLs http://localhost:5173/expenses/new?mock=1 → http://localhost:5173/expenses?mock=1 | ✔ two-segment route reached by click with mock=1 preserved | ✔ each transition adds exactly one history entry (no duplicate)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-018-step2-expenses-after-return.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Failed",
+   "actual": "✔ first submit: translated recoverable failure, no false success | ✔ form data preserved | URL at second submit: http://localhost:5173/expenses/new?mock=1&demo=fail | ✘ second submit succeeds (one-shot failure consumed)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-018-step3-first-submit.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-018-step3-second-submit.png"
+   ]
+  },
+  {
+   "n": 4,
+   "result": "Passed",
+   "actual": "✔ Dashboard shows translated read error, no raw exception | ✔ failure persists after in-app navigation: http://localhost:5173/finance?mock=1&simulateError=1",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-018-step4-finance-error.png"
+   ]
+  },
+  {
+   "n": 5,
+   "result": "Passed",
+   "actual": "✔ hard-load URL: http://localhost:5173/?mock=1 | ✔ normal mock data renders, no error state | ✔ after navigating: http://localhost:5173/?mock=1",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-018-step5-normal.png"
+   ]
+  }
+ ]
+}

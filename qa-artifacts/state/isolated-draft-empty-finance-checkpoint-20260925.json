@@ -1,0 +1,27 @@
+{
+  "checkpointType": "pre-non-draft-seeding",
+  "capturedAtLocal": "2026-09-25T16:35:32+05:30",
+  "environment": "Local",
+  "baseUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "uipathOrganization": "testcloud_team",
+  "uipathTenant": "TAM",
+  "folderPath": "ExpenseFlow-QA-Isolated-20260925",
+  "folderKey": "8a0e5b85-291c-4fd4-b53c-648950c57716",
+  "entityName": "ExpenseFlow_Expense",
+  "entityId": "e6990e77-cdb8-f111-a6a9-6045bddc9767",
+  "draftControl": {
+    "expenseCode": "EFREG024-DraftControl-20260925",
+    "recordId": "A8F19C5A-CEB8-F111-A6A9-6045BDDBB45C",
+    "statusNumberId": 0,
+    "statusLabel": "Draft",
+    "amount": 1,
+    "expenseDate": "2026-09-25",
+    "comments": "Synthetic isolated fixture for EF-REG-024"
+  },
+  "emptyFinanceAggregateBeforeNonDraftSeeding": {
+    "filter": "Status != Draft",
+    "total": 0,
+    "source": "Fresh server-side Data Fabric aggregate query captured before the first non-Draft fixture batch"
+  },
+  "subsequentDatasetNote": "This checkpoint is intentionally preserved as pre-seed evidence. The isolated entity was later populated with approved synthetic non-Draft fixtures for other regression cases; no shared Finance records were changed."
+}

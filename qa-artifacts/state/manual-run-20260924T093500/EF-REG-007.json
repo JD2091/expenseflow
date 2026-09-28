@@ -1,0 +1,23 @@
+{
+ "id": "EF-REG-007",
+ "run": "20260924T093500",
+ "at": "2026-09-24T10:50:26.183Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ friendly decision error shown | ✔ typed comment remains available for retry | ✔ decision controls usable again",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-007-step1-decision-error.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Restricted",
+   "actual": "DF record after failed decision: {\"Status\":3,\"ApprovalTaskId\":\"101647442\"} | ✔ no decider, timestamp, or comment written to the Data Fabric record | ✔ card still in queue with its Action Center task id (task not completed) | RESTRICTED: the failure was injected by the app switch ?demo=fail-decide, which throws before any UiPath call; it proves no write occurs and the UI recovers, but it does not exercise a real Action Center task-completion failure (the ordering guarantee \"task first, record second\"). Action Center task state was inferred from the queue card (task still open), not read from Action Center itself.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-007-step2-still-pending.png"
+   ]
+  }
+ ]
+}

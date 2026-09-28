@@ -1,0 +1,47 @@
+[
+  {
+    "testStepId": "2a310112-2bc4-0e00-a567-0b4a2a2c565a",
+    "result": "Restricted",
+    "comment": "Observed: the connected approvals card for EFREG023-ExternalComplete-EFQA-20260924T1400 showed EXP-1030 as Pending Approval with Task #101647510, amount ₹35,000, and the above-threshold reason. Canonical Action Center readback showed that task was already Completed with action Approve and comment Completed externally for regression. Restricted: a fresh pending-task snapshot before external completion was unavailable; no task was re-completed.",
+    "hasError": false,
+    "actionType": "Navigate/Read/TaskVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "f4b85804-2cc4-0e00-d2ce-0b4a2a2c575d",
+    "result": "Restricted",
+    "comment": "BLOCKED: Action Center task #101647510 was already Completed with Approve and the approved external comment, so the external completion action was not repeated. Restricted: the fresh race setup could not be recreated without attempting a duplicate task completion.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "329a9e2f-2dc4-0e00-5ccc-0b4a2a2c584a",
+    "result": "Passed",
+    "comment": "Observed: submitting the app-side Approve action once for the dedicated EF-REG-023 card returned the specific conflict message that ExpenseFlow could not record the decision because the Action Center action was already completed by the same user. No false success or raw exception was shown.",
+    "hasError": false,
+    "actionType": "Click/ConflictVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "e5b652e8-2ec4-0e00-145e-0b4a2a2c5947",
+    "result": "Passed",
+    "comment": "Observed: the EXP-1030 detail remained Pending Approval with the same ₹35,000 record and manager-approval state; no duplicate marker was present. Canonical task readback remained Completed with action Approve and comment Completed externally for regression, with no second task or second completion created.",
+    "hasError": false,
+    "actionType": "Navigate/Read/ConflictStateVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "eaa10136-2fc4-0e00-9468-0b4a2a2c5a46",
+    "result": "Restricted",
+    "comment": "Observed after refresh: exactly one EFREG023-ExternalComplete-EFQA-20260924T1400 card, one EXP-1030 occurrence, and one Task #101647510 occurrence remained. Restricted: the post-refresh page did not retain the transient conflict banner, so persistent conflict-message rendering after refresh was not independently verified; no duplicate decision or task was observed.",
+    "hasError": false,
+    "actionType": "Refresh/Read/Idempotency",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

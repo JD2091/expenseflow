@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "4a6f2ad2-327a-0e00-71b0-0b4a287d9706",
+  "result": "Passed",
+  "comment": "Expected: Each route renders its expected page title and active navigation state.\nActual: ✔ Dashboard: h1 \"Dashboard\", active nav \"Dashboard\" | ✔ My Expenses: h1 \"My expenses\", active nav \"My Expenses\" | ✔ New Expense: h1 \"New expense\", active nav \"New Expense\" | ✔ Approvals: h1 \"Manager approval\", active nav \"Approvals\" | ✔ Finance: h1 \"Finance overview\", active nav \"Finance\"",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "e3d79fd7-e6f0-451d-68d9-08df19d7ace6",
+  "orderNo": 0,
+  "testCaseLogId": "066f429f-537e-7300-0e17-0b4a2a530fe1",
+  "description": "Navigate to Dashboard, My Expenses, New Expense, Approvals, and Finance using visible app navigation.",
+  "expectedResult": "Each route renders its expected page title and active navigation state."
+ },
+ {
+  "testStepId": "b5388f8d-337a-0e00-825b-0b4a287d9904",
+  "result": "Passed",
+  "comment": "Expected: Interactive controls have discernible labels and feedback is exposed through appropriate status or alert semantics.\nActual: ✔ form controls all have accessible names | ✔ validation errors exposed via role=alert | ✔ table has an accessible name (aria-label/caption) | ✔ status/live regions present (toast region) | ✔ filter controls labelled",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "be4390d1-a089-4f52-68da-08df19d7ace6",
+  "orderNo": 1,
+  "testCaseLogId": "066f429f-537e-7300-0e17-0b4a2a530fe1",
+  "description": "Inspect form labels, table labels, status text, and toast/error live regions.",
+  "expectedResult": "Interactive controls have discernible labels and feedback is exposed through appropriate status or alert semantics."
+ },
+ {
+  "testStepId": "0958f934-347a-0e00-3eb8-0b4a287d9a6d",
+  "result": "Failed",
+  "comment": "Expected: Tables use their guarded overflow container; controls remain reachable without page-level horizontal breakage.\nActual: ✘ MyExpenses @375px: page scrollWidth 447 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW | ✘ Approvals @375px: page scrollWidth 449 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW | ✘ Finance @375px: page scrollWidth 448 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW",
+  "hasError": true,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "d3759332-b314-4094-68db-08df19d7ace6",
+  "orderNo": 2,
+  "testCaseLogId": "066f429f-537e-7300-0e17-0b4a2a530fe1",
+  "description": "Repeat representative list, approval, and Finance views at narrow width.",
+  "expectedResult": "Tables use their guarded overflow container; controls remain reachable without page-level horizontal breakage."
+ }
+]

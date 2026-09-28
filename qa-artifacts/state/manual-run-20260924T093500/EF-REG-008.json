@@ -1,0 +1,34 @@
+{
+ "id": "EF-REG-008",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:00:25.572Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ EFREG008-PolicyReview-203800 retrievable in Data Fabric (Status=2, receipt=yes) | ✔ EFREG008-PendingApproval-203800 retrievable in Data Fabric (Status=3, receipt=yes) | ✔ EFREG008-Reworked-203800 retrievable in Data Fabric (Status=6, receipt=yes) | ✔ EFREG008-MissingReceipt-203800 retrievable in Data Fabric (Status=1, receipt=none) | ✔ EFREG008-SubmittedWithReceipt-203800 retrievable in Data Fabric (Status=1, receipt=yes) | ✔ Finance unsettled query path loads",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-008-step1-finance.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "attention footer: Showing 1–25 of 43 | ✔ EFREG008-PolicyReview-203800 listed once with reason \"Policy Review\" → \"QA-20260923T203800 ₹82,000 Policy Review\" | ✔ EFREG008-PendingApproval-203800 listed once with reason \"Pending Approval\" → \"20260923T203800 ₹37,550 Pending Approval\" | ✔ EFREG008-Reworked-203800 listed once with reason \"Needs Rework\" → \"EFQA-20260923T203800 ₹5,900 Needs Rework\" | ✔ EFREG008-MissingReceipt-203800 listed once with reason \"Missing Receipt\" → \"A-20260923T203800 ₹2,500 Missing Receipt\" | ✔ EFREG008-SubmittedWithReceipt-203800 (submitted-with-receipt control) is excluded from attention | attention rows scanned across pages: 43",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-008-step2-attention-list.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ attention row for PolicyReview located | ✔ PolicyReview row navigated to its own detail (/expenses/EFREG008-PolicyReview-203800) | ✔ attention row for PendingApproval located | ✔ PendingApproval row navigated to its own detail (/expenses/EFREG008-PendingApproval-203800) | ✔ attention row for Reworked located | ✔ Reworked row navigated to its own detail (/expenses/EFREG008-Reworked-203800) | ✔ attention row for MissingReceipt located | ✔ MissingReceipt row navigated to its own detail (/expenses/EFREG008-MissingReceipt-203800)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-008-step3-detail-PolicyReview.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-008-step3-detail-PendingApproval.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-008-step3-detail-Reworked.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-008-step3-detail-MissingReceipt.png"
+   ]
+  }
+ ]
+}

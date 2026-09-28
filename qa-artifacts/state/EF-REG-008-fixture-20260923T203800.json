@@ -1,0 +1,62 @@
+[
+  {
+    "ExpenseCode": "EFREG008-PolicyReview-203800",
+    "Employee": "EFREG008 QA Employee",
+    "Description": "EFREG008-PolicyReview / EFQA-20260923T203800",
+    "Category": 0,
+    "Amount": 82000,
+    "ExpenseDate": "2026-08-19",
+    "Status": 2,
+    "ReceiptPath": "efreg008/EFQA-20260923T203800/policy-review.pdf",
+    "PolicyNote": "EFREG008 synthetic Policy Review fixture",
+    "SubmittedAt": "2026-08-19T10:05:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG008-PendingApproval-203800",
+    "Employee": "EFREG008 QA Employee",
+    "Description": "EFREG008-PendingApproval / EFQA-20260923T203800",
+    "Category": 0,
+    "Amount": 37550,
+    "ExpenseDate": "2026-08-13",
+    "Status": 3,
+    "ReceiptPath": "efreg008/EFQA-20260923T203800/pending-approval.pdf",
+    "PolicyNote": "EFREG008 synthetic Pending Approval fixture",
+    "SubmittedAt": "2026-08-13T19:45:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG008-Reworked-203800",
+    "Employee": "EFREG008 QA Employee",
+    "Description": "EFREG008-Reworked / EFQA-20260923T203800",
+    "Category": 3,
+    "Amount": 5900,
+    "ExpenseDate": "2026-08-10",
+    "Status": 6,
+    "ReceiptPath": "efreg008/EFQA-20260923T203800/reworked.pdf",
+    "PolicyNote": "EFREG008 synthetic Reworked fixture",
+    "SubmittedAt": "2026-08-10T13:25:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG008-MissingReceipt-203800",
+    "Employee": "EFREG008 QA Employee",
+    "Description": "EFREG008-MissingReceipt / EFQA-20260923T203800",
+    "Category": 3,
+    "Amount": 2500,
+    "ExpenseDate": "2026-08-14",
+    "Status": 1,
+    "ReceiptPath": null,
+    "PolicyNote": "EFREG008 synthetic Missing Receipt fixture",
+    "SubmittedAt": "2026-08-14T16:20:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG008-SubmittedWithReceipt-203800",
+    "Employee": "EFREG008 QA Employee",
+    "Description": "EFREG008-SubmittedWithReceipt / EFQA-20260923T203800",
+    "Category": 1,
+    "Amount": 6400,
+    "ExpenseDate": "2026-08-09",
+    "Status": 1,
+    "ReceiptPath": "efreg008/EFQA-20260923T203800/submitted-control.pdf",
+    "PolicyNote": "EFREG008 synthetic Submitted-with-receipt control",
+    "SubmittedAt": "2026-08-09T15:10:00+05:30"
+  }
+]

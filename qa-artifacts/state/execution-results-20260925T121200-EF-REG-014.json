@@ -1,0 +1,29 @@
+[
+  {
+    "testStepId": "c8eb76b0-a17a-0e00-2c20-0b4a287fb989",
+    "result": "Passed",
+    "comment": "Observed: Connected My Expenses loaded 66 records. Initial footer showed Showing 1–25 of 66, Page 1 of 3, with Next enabled. After the semantic Next-page action, the footer showed Showing 26–50 of 66, Page 2 of 3, 25 rows, and the first visible row was EFREG001-High-EFQA-20260924T1030 / EXP-1007.",
+    "hasError": false,
+    "actionType": "Navigate/Read/Paginate",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "c32f3560-a27a-0e00-70d8-0b4a287fbcf7",
+    "result": "Passed",
+    "comment": "Observed: While the connected My Expenses list was on page 2, the non-destructive Status=Rejected filter reduced the result set to two rows and automatically clamped the table to Showing 1–2 of 2. The two visible rows were rejected synthetic records and no data was modified.",
+    "hasError": false,
+    "actionType": "Filter/Read/PaginationClamp",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "ea7b8a78-a37a-0e00-548f-0b4a287fc014",
+    "result": "Restricted",
+    "comment": "Observed: Connected Finance loaded 29 attention records. Page 1 showed Showing 1–25 of 29, Page 1 of 2, with Next enabled. Page 2 showed Showing 26–29 of 29, Page 2 of 2, four rows, Previous enabled, and Next disabled. The required reduction after page 2 could not be exercised safely because it would require approving or otherwise mutating existing approval records; no unrelated records were changed.",
+    "hasError": false,
+    "actionType": "Navigate/Read/Paginate/RestrictedReduction",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

@@ -1,0 +1,43 @@
+{
+ "stableId": "EF-REG-009",
+ "testCaseId": "5a588dac-16c4-0d00-43b2-0b4a287ea394",
+ "executionId": "28a0f5d4-0814-0e00-b4af-0b4a2a5f6389",
+ "testCaseLogId": "c995c286-5482-7300-af9a-0b4a2a5f63c7",
+ "result": "Restricted",
+ "stepLogCount": 2,
+ "stepResults": [
+  "Passed",
+  "Restricted"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-REG-009-step1-write-failure.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-009-step1-write-failure.png",
+    "ObjectId": "951a6de9-cd78-4853-68fa-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-REG-009-step2-recovered.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-009-step2-recovered.png",
+    "ObjectId": "ec48f3d0-4311-4a3d-68fb-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 0,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/28a0f5d4-0814-0e00-b4af-0b4a2a5f6389",
+ "tmCaseLogResult": "Restricted",
+ "reconciled": true
+}

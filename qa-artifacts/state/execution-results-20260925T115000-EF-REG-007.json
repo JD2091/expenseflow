@@ -1,0 +1,20 @@
+[
+  {
+    "testStepId": "47bd814f-6e7a-0e00-b6c2-0b4a287e6a5a",
+    "result": "Passed",
+    "comment": "Observed on the approved safe failure route /approvals?demo=fail-decide: target EXP-1028 / EFREG007-DecisionFail-EFQA-20260924T1300 remained visible with its Action Center task #101647442. After entering the synthetic comment QA decision failure EFQA-20260925T1150 and invoking Reject, the app showed the friendly message 'The decision could not be recorded. The Action Center task is untouched and the expense is unchanged. Try again.' The comment remained available in the card textarea and decision controls remained usable.",
+    "hasError": false,
+    "actionType": "Navigate/Read/DecisionFailure",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "4d89bd3e-6f7a-0e00-9e12-0b4a287e6c4e",
+    "result": "Restricted",
+    "comment": "Observed: the failed decision left EXP-1028 at Pending Approval with 'Manager approval' and 'Waiting on a manager in Action Center.' The detail page displayed the same friendly no-write message, and no decider or decision timestamp was present. Restricted: the approved ?demo=fail-decide hook throws before any UiPath call, so it proves UI recovery and no-write behavior but does not exercise a real Action Center task-completion failure or independently read Action Center task state.",
+    "hasError": false,
+    "actionType": "Navigate/Read/NoWriteVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

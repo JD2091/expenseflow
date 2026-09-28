@@ -1,0 +1,191 @@
+{
+  "traceId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd-20260924T124500",
+  "metadata": {
+    "kind": "testmanager",
+    "source": "autonomousExecution",
+    "testcaseId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd",
+    "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+    "orgId": "testcloud_team",
+    "tenantId": "TAM",
+    "testStepId": "bde52cbd-21c4-0e00-fe32-0b4a2a2c2064"
+  },
+  "Prompt": {
+    "Prompt": "EF-REG-018 - URL switches persist across navigation and disable cleanly after removal",
+    "PromptId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd",
+    "Action": "None",
+    "EnableLoopExecution": false
+  },
+  "Iterations": [
+    {
+      "LoopIteration": 0,
+      "Actions": [
+        {
+          "ActionType": "KeyPress",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open mock ExpenseFlow",
+              "method_type": "key_press",
+              "parameters": {
+                "keys": "[d(ctrl)]l[u(ctrl)]"
+              },
+              "id": null
+            },
+            "ActionId": "032ecf8e-4947-4291-8e14-7bcdabeb0974"
+          }
+        },
+        {
+          "ActionType": "TextType",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open mock ExpenseFlow",
+              "method_type": "text_type",
+              "parameters": {
+                "value": "http://localhost:5173/?mock=1"
+              },
+              "id": null
+            },
+            "ActionId": "032ecf8e-4947-4291-8e14-7bcdabeb0974"
+          }
+        },
+        {
+          "ActionType": "KeyPress",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open mock ExpenseFlow",
+              "method_type": "key_press",
+              "parameters": {
+                "keys": "[k(enter)]"
+              },
+              "id": null
+            },
+            "ActionId": "032ecf8e-4947-4291-8e14-7bcdabeb0974"
+          }
+        },
+        {
+          "ActionType": "Wait",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Open mock ExpenseFlow",
+              "method_type": "wait",
+              "parameters": {
+                "duration": 3000
+              },
+              "id": null
+            },
+            "ActionId": "032ecf8e-4947-4291-8e14-7bcdabeb0974"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 1,
+      "Actions": [
+        {
+          "ActionType": "NavigateUrl",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Navigate mock test URL",
+              "method_type": "navigate_url",
+              "parameters": {
+                "url": "http://localhost:5173/?mock=1"
+              },
+              "id": null
+            },
+            "ActionId": "75ed749c-cdbd-425d-bcd5-e5d42e16ec5c"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 2,
+      "Actions": [
+        {
+          "ActionType": "Open",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Bring Chrome ExpenseFlow forward",
+              "method_type": "open",
+              "parameters": {
+                "reason": "attach"
+              },
+              "id": null
+            },
+            "ActionId": "69c06c05-96f1-4ff2-baa7-e5efdccc92d4"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 3,
+      "Actions": [
+        {
+          "ActionType": "Open",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Bring ExpenseFlow Chrome forward",
+              "method_type": "open",
+              "parameters": {
+                "reason": "attach"
+              },
+              "id": null
+            },
+            "ActionId": "71c34d38-b9bf-40e2-9e9d-2c39689b4ac7"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 4,
+      "Actions": [
+        {
+          "ActionType": "ExecuteJs",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Probe mock ExpenseFlow page",
+              "method_type": "execute_js",
+              "parameters": {
+                "script": "return {url: location.href, title: document.title, readyState: document.readyState, bodyText: (document.body && document.body.innerText || '').slice(0,4000), links: Array.from(document.querySelectorAll('a')).map(a=>({text:(a.innerText||'').trim(),href:a.href})).slice(0,30), buttons: Array.from(document.querySelectorAll('button')).map(b=>({text:(b.innerText||'').trim(),aria:b.getAttribute('aria-label'),disabled:b.disabled})).slice(0,30)};"
+              },
+              "id": null
+            },
+            "ActionId": "57482e87-7322-41f0-956b-dd2ea048894b"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 5,
+      "Actions": [
+        {
+          "ActionType": "ExecuteJs",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Inspect mock case state",
+              "method_type": "execute_js",
+              "parameters": {
+                "script": "return {url:location.href,title:document.title,readyState:document.readyState,text:(document.body?.innerText||'').slice(0,2500),links:Array.from(document.querySelectorAll('a')).map(a=>({text:(a.innerText||'').trim(),href:a.href})),buttons:Array.from(document.querySelectorAll('button')).map(b=>({text:(b.innerText||'').trim(),aria:b.getAttribute('aria-label'),disabled:b.disabled})).slice(0,20)};"
+              },
+              "id": null
+            },
+            "ActionId": "1090892e-7233-4c02-8033-c694bcc8f7fa"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    }
+  ]
+}

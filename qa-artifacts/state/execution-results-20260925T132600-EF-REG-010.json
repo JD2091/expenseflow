@@ -1,0 +1,20 @@
+[
+  {
+    "testStepId": "2531f50a-7b7a-0e00-d7e7-0b4a287ebd87",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The approved synthetic EFREG010-ReceiptAccess fixture and a controlled receipt-provider failure target were not available in connected Local staging. No unrelated expense was opened or modified, so receipt failure handling was not exercised.",
+    "hasError": false,
+    "actionType": "Restricted/PrerequisiteUnavailable",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "f1f48af1-7d7a-0e00-8499-0b4a287ebff5",
+    "result": "Restricted",
+    "comment": "RESTRICTED: Because EFREG010-ReceiptAccess and a safe restored-access target were unavailable, normal authorized receipt retrieval was not executed. No unrelated receipt or expense record was accessed.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "5419d7ed-1d7a-0e00-04fb-0b4a287d647d",
+  "result": "Passed",
+  "comment": "Expected: Expense not found state names the unknown code and offers Back to my expenses.\nActual: ✔ Expense not found state names EXP-9999 | ✔ Back to my expenses offered | body text length 312 (prior run observed empty root)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "03d0838a-621a-47ed-9c15-08df18b89302",
+  "orderNo": 0,
+  "testCaseLogId": "6c00fcff-507e-7300-3c6a-0b4a2a52e370",
+  "description": "Open /expenses/EXP-9999 directly.",
+  "expectedResult": "Expense not found state names the unknown code and offers Back to my expenses."
+ },
+ {
+  "testStepId": "8915586c-1e7a-0e00-0de0-0b4a287d6635",
+  "result": "Passed",
+  "comment": "Expected: Not Found page renders with a route back to the application.\nActual: ✔ Not Found page renders | ✔ route back to application offered | ✔ Back to dashboard works",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "b7fff040-7aa1-41a1-9c16-08df18b89302",
+  "orderNo": 1,
+  "testCaseLogId": "6c00fcff-507e-7300-3c6a-0b4a2a52e370",
+  "description": "Open an unknown application route directly.",
+  "expectedResult": "Not Found page renders with a route back to the application."
+ }
+]

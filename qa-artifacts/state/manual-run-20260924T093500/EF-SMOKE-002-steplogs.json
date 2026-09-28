@@ -1,0 +1,58 @@
+[
+ {
+  "testStepId": "d1ae1b3b-087a-0e00-1012-0b4a287ce555",
+  "result": "Passed",
+  "comment": "Expected: My Expenses loads with Rahul's expenses initially ordered newest first.\nActual: ✔ My Expenses opened: http://localhost:5173/expenses?mock=1 | ✔ first row is newest (EXP-1001, 18 Aug 2026); order EXP-1001,EXP-1002,EXP-1003,EXP-1004,EXP-1007,EXP-1005",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "83c8cf2b-dd68-4a1f-68d5-08df19d7ace6",
+  "orderNo": 0,
+  "testCaseLogId": "69b11b41-497e-7300-1d56-0b4a2a529412",
+  "description": "From Dashboard, select View all.",
+  "expectedResult": "My Expenses loads with Rahul's expenses initially ordered newest first."
+ },
+ {
+  "testStepId": "8c96ac5e-0b7a-0e00-8e2a-0b4a287ce6cc",
+  "result": "Passed",
+  "comment": "Expected: Draft returns EXP-1003 and EXP-1004; adding Office leaves EXP-1004 only.\nActual: ✔ Draft → EXP-1003,EXP-1004 | ✔ Draft+Office → EXP-1004",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "6669dae5-0791-44a0-68d6-08df19d7ace6",
+  "orderNo": 1,
+  "testCaseLogId": "69b11b41-497e-7300-1d56-0b4a2a529412",
+  "description": "Set Status to Draft, then Category to Office.",
+  "expectedResult": "Draft returns EXP-1003 and EXP-1004; adding Office leaves EXP-1004 only."
+ },
+ {
+  "testStepId": "91194eb4-0c7a-0e00-4381-0b4a287ce806",
+  "result": "Passed",
+  "comment": "Expected: An empty filtered state appears, then the full employee list returns after clearing.\nActual: ✔ no rows for 2027-01-01..2027-01-31 | main text after exclusion: L EXPENSES My expenses 0 records No expenses match these filters Widen the date range or clear a filter to see more. Clear filters | ✔ after Clear, full list of 6 returns",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "debb0921-d953-4921-68d7-08df19d7ace6",
+  "orderNo": 2,
+  "testCaseLogId": "69b11b41-497e-7300-1d56-0b4a2a529412",
+  "description": "Set a date range that excludes all rows, then select Clear filters.",
+  "expectedResult": "An empty filtered state appears, then the full employee list returns after clearing."
+ },
+ {
+  "testStepId": "7791f836-0e7a-0e00-7ec8-0b4a287ce938",
+  "result": "Passed",
+  "comment": "Expected: Sort directions and indicators are correct; pagination clamps to page 1 with visible results.\nActual: ✔ Expense toggles ascending → descending and reorders rows | ✔ Category toggles ascending → descending and reorders rows | ✔ Date toggles descending → ascending and reorders rows | ✔ Amount toggles descending → ascending and reorders rows | ✔ Status toggles ascending → descending and reorders rows | aria-sort: Expense:ascending/descending; Category:ascending/descending; Date:descending/ascending; Amount:descending/ascending; Status:ascending/descending | ✔ seeded list shows \"Showing 1–25 of 26\" | ✔ page 2 footer: Showing 26–26 of 26, Page 2 of 2 | ✔ filter to Drafts from page 2 clamps to page 1: footer \"Showing 1–2 of 2\", 2 visible rows, no pager (single page)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "45f0d489-1102-4136-68d8-08df19d7ace6",
+  "orderNo": 3,
+  "testCaseLogId": "69b11b41-497e-7300-1d56-0b4a2a529412",
+  "description": "Sort supported columns and filter page 2 down to fewer than 25 rows.",
+  "expectedResult": "Sort directions and indicators are correct; pagination clamps to page 1 with visible results."
+ }
+]

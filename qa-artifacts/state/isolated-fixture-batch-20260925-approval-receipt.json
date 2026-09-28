@@ -1,0 +1,62 @@
+[
+  {
+    "ExpenseCode": "EFREG005-Approve-20260925",
+    "Employee": "EF QA Approval Employee",
+    "Description": "EFREG005 connected approval fixture",
+    "Category": 0,
+    "Amount": 27501,
+    "ExpenseDate": "2026-09-25",
+    "Status": 3,
+    "ReceiptPath": "receipts/EFREG005-Approve-20260925-receipt.txt",
+    "PolicyNote": "Above the ₹25000 threshold — manager approval required",
+    "SubmittedAt": "2026-09-25T11:00:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG006-Reject-20260925",
+    "Employee": "EF QA Decision Employee",
+    "Description": "EFREG006 connected reject fixture",
+    "Category": 1,
+    "Amount": 26000,
+    "ExpenseDate": "2026-09-25",
+    "Status": 3,
+    "ReceiptPath": "receipts/EFREG006-Reject-20260925-receipt.txt",
+    "PolicyNote": "EFREG006 reject decision fixture",
+    "SubmittedAt": "2026-09-25T11:05:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG006-Rework-20260925",
+    "Employee": "EF QA Decision Employee",
+    "Description": "EFREG006 connected rework fixture",
+    "Category": 1,
+    "Amount": 26500,
+    "ExpenseDate": "2026-09-25",
+    "Status": 3,
+    "ReceiptPath": "receipts/EFREG006-Rework-20260925-receipt.txt",
+    "PolicyNote": "EFREG006 rework decision fixture",
+    "SubmittedAt": "2026-09-25T11:06:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG006-Blank-20260925",
+    "Employee": "EF QA Decision Employee",
+    "Description": "EFREG006 whitespace-comment fixture",
+    "Category": 1,
+    "Amount": 27000,
+    "ExpenseDate": "2026-09-25",
+    "Status": 3,
+    "ReceiptPath": "receipts/EFREG006-Blank-20260925-receipt.txt",
+    "PolicyNote": "EFREG006 blank-comment decision fixture",
+    "SubmittedAt": "2026-09-25T11:07:00+05:30"
+  },
+  {
+    "ExpenseCode": "EFREG010-ReceiptAccess-20260925",
+    "Employee": "EF QA Receipt Employee",
+    "Description": "EFREG010 connected receipt access fixture",
+    "Category": 2,
+    "Amount": 48250,
+    "ExpenseDate": "2026-09-25",
+    "Status": 1,
+    "ReceiptPath": "receipts/EFREG010-ReceiptAccess-20260925-receipt.txt",
+    "PolicyNote": "EFREG010 synthetic receipt access fixture",
+    "SubmittedAt": "2026-09-25T11:10:00+05:30"
+  }
+]

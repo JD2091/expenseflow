@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "1baa6909-387a-0e00-82af-0b4a287ddbb5",
+  "result": "Passed",
+  "comment": "Expected: Records are readable by the app with the intended category, status, date, and receipt values.\nActual: ✔ EXP-1017 detail shows \"Travel\" | ✔ EXP-1017 detail shows \"Approved\" | ✔ EXP-1017 detail shows \"24 Sep 2026\" | ✔ EXP-1017 detail shows \"qa-receipt.pdf\" | ✔ EXP-1018 detail shows \"Travel\" | ✔ EXP-1018 detail shows \"Pending Approval\" | ✔ EXP-1018 detail shows \"24 Sep 2026\" | ✔ EXP-1018 detail shows \"qa-receipt.pdf\" | ✔ EXP-1020 detail shows \"Travel\" | ✔ EXP-1020 detail shows \"Pending Approval\" | ✔ EXP-1020 detail shows \"24 Sep 2026\" | ✔ EXP-1020 detail shows \"No receipt attached\"",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "e96d6c7f-f44f-4762-68f1-08df19d7ace6",
+  "orderNo": 0,
+  "testCaseLogId": "e7c7d031-4d82-7300-ed9e-0b4a2a5ec2c9",
+  "description": "Create or retrieve synthetic connected records using supported ExpenseFlow flows.",
+  "expectedResult": "Records are readable by the app with the intended category, status, date, and receipt values."
+ },
+ {
+  "testStepId": "c7564130-397a-0e00-ff07-0b4a287dde47",
+  "result": "Passed",
+  "comment": "Expected: Choice-set display values and null receipt behavior map consistently into the Expense model.\nActual: ✔ 25 list rows on page 1 map to choice-set display values and formatted dates | ✔ null receipt renders \"No receipt attached\" (no error, no \"null\")",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "c5bd0421-84ac-49b5-68f2-08df19d7ace6",
+  "orderNo": 1,
+  "testCaseLogId": "e7c7d031-4d82-7300-ed9e-0b4a2a5ec2c9",
+  "description": "Open the records in list and detail views.",
+  "expectedResult": "Choice-set display values and null receipt behavior map consistently into the Expense model."
+ }
+]

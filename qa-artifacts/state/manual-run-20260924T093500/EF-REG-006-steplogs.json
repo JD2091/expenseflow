@@ -1,0 +1,58 @@
+[
+ {
+  "testStepId": "45e0a1bb-697a-0e00-8b5f-0b4a287e53fe",
+  "result": "Passed",
+  "comment": "Expected: Task and record reflect Rejected status and the saved comment.\nActual: ✔ EXP-1025 is now Rejected (toast) | DF: {\"Status\":5,\"Comments\":\"QA reject comment EFQA-20260924T1300\"} | ✔ record saved the reject comment",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "e0b5ade3-c4dc-435a-68f3-08df19d7ace6",
+  "orderNo": 0,
+  "testCaseLogId": "012c620a-5182-7300-eebc-0b4a2a5f1cdc",
+  "description": "Reject EFREG006-Reject with its synthetic comment.",
+  "expectedResult": "Task and record reflect Rejected status and the saved comment."
+ },
+ {
+  "testStepId": "1cf8626f-6a7a-0e00-6c48-0b4a287e5670",
+  "result": "Passed",
+  "comment": "Expected: Task and record reflect Reworked status and the saved comment.\nActual: ✔ EXP-1026 is now Needs Rework (toast) | DF: {\"Status\":6,\"Comments\":\"QA rework comment EFQA-20260924T1300\"} | ✔ record saved the rework comment",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "9ce7b0d4-1c71-433b-68f4-08df19d7ace6",
+  "orderNo": 1,
+  "testCaseLogId": "012c620a-5182-7300-eebc-0b4a2a5f1cdc",
+  "description": "Request rework for EFREG006-Rework with its synthetic comment.",
+  "expectedResult": "Task and record reflect Reworked status and the saved comment."
+ },
+ {
+  "testStepId": "7fb64d90-6d7a-0e00-8339-0b4a287e5886",
+  "result": "Passed",
+  "comment": "Expected: Neither decided item remains in the active queue and each retains its correct audit data.\nActual: ✔ neither decided item remains in the active queue after refresh | ✔ EXP-1025 detail retains Rejected + comment | ✔ EXP-1026 detail retains Needs Rework + comment",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "637b4d84-6108-4c50-68f5-08df19d7ace6",
+  "orderNo": 2,
+  "testCaseLogId": "012c620a-5182-7300-eebc-0b4a2a5f1cdc",
+  "description": "Refresh queue and inspect both details.",
+  "expectedResult": "Neither decided item remains in the active queue and each retains its correct audit data."
+ },
+ {
+  "testStepId": "07140bab-16c4-0e00-5f62-0b4a2a2bb406",
+  "result": "Passed",
+  "comment": "Expected: Whitespace-only comment content is omitted from the update payload; the decision status is persisted correctly without storing meaningless whitespace audit text, and the controls remain usable.\nActual: write requests inspected: 13; requests containing a Comments field: 1 | ✔ whitespace-only comment is not sent in any request payload | DF: {\"Status\":4} | ✔ record does not store meaningless whitespace comment (Comments=undefined) | ✔ controls usable; decided item left queue",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "81349ad9-6f40-4e4d-68f6-08df19d7ace6",
+  "orderNo": 3,
+  "testCaseLogId": "012c620a-5182-7300-eebc-0b4a2a5f1cdc",
+  "description": "Submit a connected decision with a whitespace-only comment and inspect the decision request and resulting record.",
+  "expectedResult": "Whitespace-only comment content is omitted from the update payload; the decision status is persisted correctly without storing meaningless whitespace audit text, and the controls remain usable."
+ }
+]

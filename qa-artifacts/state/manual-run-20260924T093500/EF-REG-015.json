@@ -1,0 +1,43 @@
+{
+ "id": "EF-REG-015",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:09:41.694Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Restricted",
+   "actual": "Finance month tile before seeding: This month ₹5.4L 28 expenses in Sep 2026 | ✔ Finance in this tenant derives its month from the latest submitted record (no date-range selector exists in the UI); the active month is Sep 2026 | seeded record dated 2026-09-30 (last day of a 30-day month): EXP-1032 submitted for ₹1,111. See it on your dashboard or open the expense. | EXP-1032 su | ✔ boundary record dated 2026-09-30 created | RESTRICTED: only the 30-day-month boundary (2026-09-30) could be seeded: 2026-02-28, 2028-02-29, 2026-04-30 and the next-day controls would make older months non-latest in a shared tenant, and the app has no month selector, so the planned Feb/Feb-leap/Apr datasets cannot be queried.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-015-step1-seeded.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Restricted",
+   "actual": "✔ Finance loads for the 30-day month (Sep 2026) with no Data Fabric 400 / invalid-date / error text | month tile: This month ₹5.4L 29 expenses in Sep 2026 | RESTRICTED: the app offers no date-range selector, so February 2026 / 2028 / April 2026 could not be selected; only the latest month (Sep 2026, 30 days) was queried.",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-015-step2-finance-sep.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Blocked",
+   "actual": "BLOCKED: February 2026 and leap-year February 2028 cannot be queried: Finance has no month selector and always uses the latest month with data; older months are not reachable without deleting or dating-out newer shared records.",
+   "shots": []
+  },
+  {
+   "n": 4,
+   "result": "Restricted",
+   "actual": "Finance month tile now: This month ₹5.4L 29 expenses in Sep 2026; DF record: {\"ExpenseCode\":\"EXP-1032\",\"ExpenseDate\":\"2026-09-30\",\"Amount\":1111} | ✔ the 2026-09-30 record exists in Data Fabric with the correct date | ✔ the 30-day month is queried through its actual last day (Sep 2026 tile renders; the previous hard-coded -31 bound would have caused an invalid-date 400) | RESTRICTED: April 2026 (30-day) was not the latest month, so its aggregate could not be compared; the equivalent 30-day boundary was verified for Sep 2026 only. Count/total precomputed comparison for the whole month was not performed.",
+   "shots": []
+  },
+  {
+   "n": 5,
+   "result": "Restricted",
+   "actual": "✔ Finance stable after refresh (Sep 2026 tile): This month ₹5.4L 29 expenses in Sep 2026 | RESTRICTED: switching among three month ranges is not possible (no range control).",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-015-step5-finance-refresh.png"
+   ]
+  }
+ ]
+}

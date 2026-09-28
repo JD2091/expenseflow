@@ -1,0 +1,4 @@
+[
+  {"testStepId":"b89e59de-8d7a-0e00-dbf0-0b4a287ef6b7","result":"Restricted","comment":"BLOCKED: Formatting fixtures are verified in the isolated entity, but the hosted build is not bound to that entity. Connected Dashboard/detail/Finance rendering was not exercised to avoid reading shared data.","hasError":false,"actionType":"Blocked/IsolationGate","hasAttachment":false,"clipboardData":""},
+  {"testStepId":"d42fac0a-8e7a-0e00-567a-0b4a287efaab","result":"Restricted","comment":"BLOCKED: Date/time rendering against the approved isolated fixture set was not exercised because the hosted build scope is shared. No additional data was written.","hasError":false,"actionType":"Blocked/NotExecuted","hasAttachment":false,"clipboardData":""}
+]

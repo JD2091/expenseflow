@@ -1,0 +1,29 @@
+{
+ "id": "EF-REG-012",
+ "run": "20260924T093500",
+ "at": "2026-09-24T11:10:08.026Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "navigation chain (main frame, query keys only): localhost:5173/ -> localhost:5173/ -> localhost:5173/ -> localhost:5173/?code&state&iss -> localhost:5173/?code&state&iss -> localhost:5173/?iss -> localhost:5173/ | ✔ OAuth round trip completed: callback with code/state reached the app and the session is authenticated | ✔ runtime ready: dashboard rendered with connected records (schema and choice sets warm: categories/statuses mapped) | ✔ no startup failure splash | ✔ My Expenses route renders | ✔ Approvals route renders | ✔ Finance route renders",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-012-step1-routes-render.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Blocked",
+   "actual": "BLOCKED: no isolated invalid or missing-resource configuration is available; producing one would require editing the deployed runtime configuration (config.generated.ts / UiPath resources) or breaking tenant resources, which was not attempted.",
+   "shots": []
+  },
+  {
+   "n": 3,
+   "result": "Failed",
+   "actual": "chain: localhost:5173/ -> localhost:5173/ -> localhost:5173/expenses?demo&foo -> localhost:5173/expenses?demo&foo -> localhost:5173/?code&state&iss -> localhost:5173/?code&state&iss -> localhost:5173/?iss -> localhost:5173/ | final URL after real OAuth completion: /(no query) | ✔ OAuth keys (code/state/session_state/iss) removed after completion | ✘ non-OAuth keys demo=fail and foo=bar remain after the callback (observed: dropped — the OAuth redirect returns to the app root, so the original path and query were lost)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-REG-012-step3-after-oauth.png"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "stableId": "EF-SMOKE-006",
+ "testCaseId": "e075752e-86c3-0d00-1830-0b4a287d45cc",
+ "executionId": "c1635629-3213-0e00-692e-0b4a2a52d6da",
+ "testCaseLogId": "111bc5f7-4f7e-7300-887c-0b4a2a52d713",
+ "result": "Passed",
+ "stepLogCount": 2,
+ "stepResults": [
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-SMOKE-006-step1-detail.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-006-step1-detail.png",
+    "ObjectId": "0f64e529-1a36-47ab-8a66-08df19d74366",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-006-step2-back-to-list.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-006-step2-back-to-list.png",
+    "ObjectId": "515b8037-dd66-4554-8a67-08df19d74366",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/c1635629-3213-0e00-692e-0b4a2a52d6da",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

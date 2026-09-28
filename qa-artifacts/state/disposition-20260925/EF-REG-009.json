@@ -1,0 +1,4 @@
+[
+  {"testStepId":"1e6cfbc6-737a-0e00-1577-0b4a287ea9ed","result":"Restricted","comment":"BLOCKED: The approved safe connected error condition was not attempted because the hosted build is not bound to the isolated resources and no shared failure mutation is authorized.","hasError":false,"actionType":"Blocked/IsolationGate","hasAttachment":false,"clipboardData":""},
+  {"testStepId":"5e855ca4-757a-0e00-09b8-0b4a287eab38","result":"Restricted","comment":"BLOCKED: Recovery/retry was not exercised because the controlled error branch could not be safely started in isolated scope. No duplicate write was introduced.","hasError":false,"actionType":"Blocked/NotExecuted","hasAttachment":false,"clipboardData":""}
+]

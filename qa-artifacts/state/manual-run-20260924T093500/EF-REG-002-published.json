@@ -1,0 +1,73 @@
+{
+ "stableId": "EF-REG-002",
+ "testCaseId": "40993be1-abc3-0d00-7417-0b4a287dd48e",
+ "executionId": "3ced9cca-0114-0e00-42fb-0b4a2a5ec28f",
+ "testCaseLogId": "e7c7d031-4d82-7300-ed9e-0b4a2a5ec2c9",
+ "result": "Passed",
+ "stepLogCount": 2,
+ "stepResults": [
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1017.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-002-step1-detail-EXP-1017.png",
+    "ObjectId": "e96d6c7f-f44f-4762-68f1-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1018.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-002-step1-detail-EXP-1018.png",
+    "ObjectId": "e96d6c7f-f44f-4762-68f1-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-REG-002-step1-detail-EXP-1020.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-002-step1-detail-EXP-1020.png",
+    "ObjectId": "e96d6c7f-f44f-4762-68f1-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-REG-002-step2-list.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-002-step2-list.png",
+    "ObjectId": "c5bd0421-84ac-49b5-68f2-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-REG-002-step2-detail-null-receipt.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-REG-002-step2-detail-null-receipt.png",
+    "ObjectId": "c5bd0421-84ac-49b5-68f2-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/3ced9cca-0114-0e00-42fb-0b4a2a5ec28f",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "testStepId": "b89e59de-8d7a-0e00-dbf0-0b4a287ef6b7",
+    "result": "Restricted",
+    "comment": "Observed: Fresh connected Dashboard and Finance views used Indian digit grouping for full values, and Finance displayed the current compact tile as ₹5.4L. The connected Finance dataset did not contain the canonical ₹8,40,000 and ₹1,20,00,000 fixtures needed to directly observe ₹8.4L and ₹1.2Cr in this run. An existing connected detail also rendered full Indian-grouped amounts such as ₹35,000 and ₹25,000. Restricted: exact canonical compact-value fixtures were unavailable; no records were created or changed to force them.",
+    "hasError": false,
+    "actionType": "Navigate/Read/FormatVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "d42fac0a-8e7a-0e00-567a-0b4a287efaab",
+    "result": "Restricted",
+    "comment": "Observed: Existing connected fixture EF2-1235-N displayed the date-only value 18 Aug 2026, matching the expected calendar date. The browser runtime was en-IN / Asia/Calcutta; an alternate timezone west of UTC was not safely configurable in the current runtime, and invalid date text cannot be supplied through the connected read-only UI. Restricted: alternate-timezone and invalid-date UI branches were not exercised; no data was changed.",
+    "hasError": false,
+    "actionType": "Navigate/Read/DateVerification",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

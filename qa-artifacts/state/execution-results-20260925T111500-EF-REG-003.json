@@ -1,0 +1,20 @@
+[
+  {
+    "testStepId": "ca0a7c36-3a7a-0e00-5b1c-0b4a287deca8",
+    "result": "Passed",
+    "comment": "Observed: connected My Expenses loaded 64 records with 25 rows shown on page 1 of 3. The dataset exceeded one UI page and the list was reachable through the connected runtime.",
+    "hasError": false,
+    "actionType": "Navigate/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "7c3029b1-3b7a-0e00-93d5-0b4a287dee1e",
+    "result": "Passed",
+    "comment": "Observed: My Expenses traversed Showing 1-25 of 64, 26-50 of 64, and 51-64 of 64; the last page was Page 3 of 3 with Next disabled. Finance then rendered Expenses 68 / INR 9,02,855 submitted, Pending 28 / INR 5,64,828 in flight, This month INR 5.4L for 29 September 2026 expenses, and a Needs Attention queue of 29 records on page 1 of 2.",
+    "hasError": false,
+    "actionType": "Paginate/Navigate/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

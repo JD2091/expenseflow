@@ -1,0 +1,83 @@
+{
+  "executionId": "13ecfea8-591d-0e00-db4b-0b4a2b2adfd6",
+  "projectKey": "EXPENSEFLOW",
+  "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "testSetKey": "EXPENSEFLOW:2",
+  "testCaseKey": "EXPENSEFLOW:16",
+  "testCaseId": "e5c31c71-bcc3-0d00-fbe2-0b4a287df7fc",
+  "testCaseName": "EF-REG-004 - Connected receipt upload and authorized receipt access",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "traceId": "e5c31c71-bcc3-0d00-fbe2-0b4a287df7fc-20260925T112300",
+  "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-004-full-trace.json",
+  "executionTraceManifestRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-004-execution-traces.json",
+  "capturedAt": "2026-09-25T11:23:00+05:30",
+  "freshRecords": [
+    {
+      "recordId": "EXP-1037",
+      "description": "EFREG004-Receipt",
+      "amount": "1250",
+      "date": "2026-08-22",
+      "receiptInputName": "efreg004-receipt.pdf",
+      "storedReceiptName": "efreg004-receipt.pdf",
+      "receiptAccess": "Authorized application/pdf blob response; signed query withheld"
+    },
+    {
+      "recordId": "EXP-1038",
+      "description": "EFREG004-Receipt-Variant",
+      "amount": "1251",
+      "date": "2026-08-23",
+      "receiptInputName": "EFREG004 receipt #1 (copy).pdf",
+      "storedReceiptName": "EFREG004-receipt-1-copy-.pdf",
+      "receiptAccess": "Authorized application/pdf blob response; signed query withheld"
+    }
+  ],
+  "steps": [
+    {
+      "stepNumber": 1,
+      "stepId": "d6b39ace-437a-0e00-ea12-0b4a287dfe4a",
+      "expectedResult": "Submission succeeds and the created record retains a receipt path/name.",
+      "actualResult": "EXP-1037 was submitted for ₹1,250 and the detail retained efreg004-receipt.pdf.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-004-step01-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Screenshot evidence is embedded in the finalized per-step trace; no standalone PNG was generated."
+    },
+    {
+      "stepNumber": 2,
+      "stepId": "dbcaba92-447a-0e00-238e-0b4a287dffd0",
+      "expectedResult": "The receipt opens through authorized bucket access without exposing a raw storage secret.",
+      "actualResult": "EXP-1037 receipt opened as application/pdf over the authorized staging blob host; query string was withheld from the record and no raw secret was exposed.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-004-step02-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Authorized PDF response verified programmatically without recording signed query parameters."
+    },
+    {
+      "stepNumber": 3,
+      "stepId": "2b2adea5-15c4-0e00-2b75-0b4a2a2ba623",
+      "expectedResult": "Each record stores a sanitized receipt path/name that remains associated with the record and opens through authorized bucket access; no raw local path or invalid storage path is exposed.",
+      "actualResult": "EXP-1038 stored/displayed EFREG004-receipt-1-copy-.pdf after input EFREG004 receipt #1 (copy).pdf; the sanitized receipt opened through the authorized blob route. The browser-path-prefix branch could not be isolated because automation exposed only the bare File.name.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-004-step03-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Spaces, #, and parentheses were exercised and sanitized; browser path prefix remained environment/automation-gated."
+    }
+  ],
+  "caseOutcome": "Passed",
+  "evidenceLimitations": [
+    "No standalone PNG screenshots were generated; screenshots are embedded in the finalized trace artifacts.",
+    "The browser path prefix branch could not be isolated because the native file input exposed only the bare File.name; sanitized-name and authorized-access behavior were directly verified."
+  ],
+  "publication": {
+    "testCaseLogId": null,
+    "stepAttachmentReferences": [],
+    "status": "pending"
+  }
+}

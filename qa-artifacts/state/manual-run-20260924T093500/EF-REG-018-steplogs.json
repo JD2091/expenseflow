@@ -1,0 +1,72 @@
+[
+ {
+  "testStepId": "bde52cbd-21c4-0e00-fe32-0b4a2a2c2064",
+  "result": "Passed",
+  "comment": "Expected: The mock=1 switch remains present after each client-side navigation and every screen renders from the mock service without an OAuth or connected-mode dependency.\nActual: start URL http://localhost:5173/?mock=1 | ✔ Dashboard: /?mock=1 keeps mock=1 | ✔ Dashboard: renders from mock service, no OAuth | ✔ My Expenses: /expenses?mock=1 keeps mock=1 | ✔ My Expenses: renders from mock service, no OAuth | ✔ New Expense: /expenses/new?mock=1 keeps mock=1 | ✔ New Expense: renders from mock service, no OAuth | ✔ Approvals: /approvals?mock=1 keeps mock=1 | ✔ Approvals: renders from mock service, no OAuth | ✔ Finance: /finance?mock=1 keeps mock=1 | ✔ Finance: renders from mock service, no OAuth",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "fadfb0cf-6ae1-4cb0-54b8-08df1a221ad5",
+  "orderNo": 0,
+  "testCaseLogId": "44fd3fd3-597e-7300-fbbf-0b4a2a53513c",
+  "description": "Open the verified local app with ?mock=1, record the URL, and navigate through Dashboard, Expenses, New Expense, Approvals, and Finance using the visible sidebar links.",
+  "expectedResult": "The mock=1 switch remains present after each client-side navigation and every screen renders from the mock service without an OAuth or connected-mode dependency."
+ },
+ {
+  "testStepId": "c714fd72-22c4-0e00-a394-0b4a2a2c215a",
+  "result": "Passed",
+  "comment": "Expected: The two-segment route is reached by clicking, the switch is preserved, and navigation does not create an extra duplicate history entry for the same transition.\nActual: history.length before=8, after New Expense=9, after return to Expenses=10; URLs http://localhost:5173/expenses/new?mock=1 → http://localhost:5173/expenses?mock=1 | ✔ two-segment route reached by click with mock=1 preserved | ✔ each transition adds exactly one history entry (no duplicate)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "d90ced42-38a2-40d9-54b9-08df1a221ad5",
+  "orderNo": 1,
+  "testCaseLogId": "44fd3fd3-597e-7300-fbbf-0b4a2a53513c",
+  "description": "From the mock tab, open New Expense and return to Expenses using in-app navigation while recording the browser Back stack before and after.",
+  "expectedResult": "The two-segment route is reached by clicking, the switch is preserved, and navigation does not create an extra duplicate history entry for the same transition."
+ },
+ {
+  "testStepId": "337e7d05-23c4-0e00-d931-0b4a2a2c222b",
+  "result": "Failed",
+  "comment": "Expected: The first submit shows the translated recoverable failure and preserves form data; the failure is consumed and the retry succeeds without a false success on the first attempt.\nActual: ✔ first submit: translated recoverable failure, no false success | ✔ form data preserved | URL at second submit: http://localhost:5173/expenses/new?mock=1&demo=fail | ✘ second submit succeeds (one-shot failure consumed)",
+  "hasError": true,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "5f7d746a-b805-4001-54ba-08df1a221ad5",
+  "orderNo": 2,
+  "testCaseLogId": "44fd3fd3-597e-7300-fbbf-0b4a2a53513c",
+  "description": "Open a fresh tab with ?mock=1&demo=fail, submit the valid synthetic form once, then submit again after the one-shot failure is consumed.",
+  "expectedResult": "The first submit shows the translated recoverable failure and preserves form data; the failure is consumed and the retry succeeds without a false success on the first attempt."
+ },
+ {
+  "testStepId": "1d8cf55b-24c4-0e00-12d6-0b4a2a2c230a",
+  "result": "Passed",
+  "comment": "Expected: The simulated read failure remains active across client-side navigation, shows the translated error/retry state without a raw exception, and does not create a connected request.\nActual: ✔ Dashboard shows translated read error, no raw exception | ✔ failure persists after in-app navigation: http://localhost:5173/finance?mock=1&simulateError=1",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "c51f6f3f-2e06-4854-54bb-08df1a221ad5",
+  "orderNo": 3,
+  "testCaseLogId": "44fd3fd3-597e-7300-fbbf-0b4a2a53513c",
+  "description": "Open Dashboard or Finance with ?mock=1&simulateError=1, navigate to another screen, and inspect the read state.",
+  "expectedResult": "The simulated read failure remains active across client-side navigation, shows the translated error/retry state without a raw exception, and does not create a connected request."
+ },
+ {
+  "testStepId": "a141a5ca-25c4-0e00-cba5-0b4a2a2c23d5",
+  "result": "Passed",
+  "comment": "Expected: The simulated failure and demo switch are no longer active after hard load; normal mock data renders, the URL contains only the intended remaining query state, and history remains coherent.\nActual: ✔ hard-load URL: http://localhost:5173/?mock=1 | ✔ normal mock data renders, no error state | ✔ after navigating: http://localhost:5173/?mock=1",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "caae7954-de34-4a3d-54bc-08df1a221ad5",
+  "orderNo": 4,
+  "testCaseLogId": "44fd3fd3-597e-7300-fbbf-0b4a2a53513c",
+  "description": "Remove the failure switch, hard-load the resulting normal mock URL, and navigate once more through the app.",
+  "expectedResult": "The simulated failure and demo switch are no longer active after hard load; normal mock data renders, the URL contains only the intended remaining query state, and history remains coherent."
+ }
+]

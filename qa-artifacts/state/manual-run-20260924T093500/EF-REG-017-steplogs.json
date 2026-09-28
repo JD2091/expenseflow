@@ -1,0 +1,72 @@
+[
+ {
+  "testStepId": "e0d17641-1cc4-0e00-8b69-0b4a2a2bfeac",
+  "result": "Restricted",
+  "comment": "Expected: The form displays the initial policy context and the original asset value is recorded for later restoration.\nActual: live policy threshold read from the app: Policy threshold ₹25,000 | BLOCKED: the case requires changing the shared Orchestrator asset ExpenseFlow_PolicyThreshold from 25000 to 30000 while a form is open, then restoring it. That is a mutation of shared tenant configuration and needs explicit authorization plus an isolated restoration window; neither was available.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "65e47958-5b0b-4519-8a7b-08df19d74366",
+  "orderNo": 0,
+  "testCaseLogId": "607e72a0-5c82-7300-80ed-0b4a2a5fbc74",
+  "description": "Record the original policy threshold, load New Expense while the threshold is 25000, and leave the form open without reloading.",
+  "expectedResult": "The form displays the initial policy context and the original asset value is recorded for later restoration."
+ },
+ {
+  "testStepId": "a71f1102-1dc4-0e00-086f-0b4a2a2bffa1",
+  "result": "Restricted",
+  "comment": "Expected: The asset read succeeds and the open form still represents the earlier display state while the live value is now 30000.\nActual: BLOCKED: depends on step 1 (asset change not authorized).",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "6d92ca82-2977-4b20-8a7c-08df19d74366",
+  "orderNo": 1,
+  "testCaseLogId": "607e72a0-5c82-7300-80ed-0b4a2a5fbc74",
+  "description": "Change the live policy asset to 30000 from the authorized test context without reloading the open form.",
+  "expectedResult": "The asset read succeeds and the open form still represents the earlier display state while the live value is now 30000."
+ },
+ {
+  "testStepId": "23a091e0-1ec4-0e00-941f-0b4a2a2c00bb",
+  "result": "Restricted",
+  "comment": "Expected: The submit path evaluates the live 30000 threshold rather than the cached 25000 value; the user-facing decision/routing is correct for 27500 versus 30000.\nActual: BLOCKED: depends on step 2 (no live threshold change). Unit coverage exists (npm test: \"a submit sees an Asset that changed after the page loaded\" passes) but is not a manual UI verification.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "6b6fdec2-a6ff-4fa7-8a7d-08df19d74366",
+  "orderNo": 2,
+  "testCaseLogId": "607e72a0-5c82-7300-80ed-0b4a2a5fbc74",
+  "description": "Submit EFREG017-LivePolicy with amount 27500 from the already-open form.",
+  "expectedResult": "The submit path evaluates the live 30000 threshold rather than the cached 25000 value; the user-facing decision/routing is correct for 27500 versus 30000."
+ },
+ {
+  "testStepId": "266e9e92-1fc4-0e00-8791-0b4a2a2c01a3",
+  "result": "Restricted",
+  "comment": "Expected: The persisted record and policy note reflect the live 30000 decision, no stale 25000 decision is recorded, and no duplicate record or task is created.\nActual: BLOCKED: depends on step 3.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "fb06555e-8bb6-4541-8a7e-08df19d74366",
+  "orderNo": 3,
+  "testCaseLogId": "607e72a0-5c82-7300-80ed-0b4a2a5fbc74",
+  "description": "Refresh the expense and inspect its persisted status, policy note, and any approval task link.",
+  "expectedResult": "The persisted record and policy note reflect the live 30000 decision, no stale 25000 decision is recorded, and no duplicate record or task is created."
+ },
+ {
+  "testStepId": "533c9c22-20c4-0e00-292c-0b4a2a2c02aa",
+  "result": "Restricted",
+  "comment": "Expected: The original policy value is restored and the synthetic record remains a single intact audit object.\nActual: BLOCKED: nothing to restore because the threshold was not changed.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": false,
+  "clipboardData": "",
+  "id": "5ecb5c52-0aa4-4a40-8a7f-08df19d74366",
+  "orderNo": 4,
+  "testCaseLogId": "607e72a0-5c82-7300-80ed-0b4a2a5fbc74",
+  "description": "Restore the original threshold and refresh the app once more.",
+  "expectedResult": "The original policy value is restored and the synthetic record remains a single intact audit object."
+ }
+]

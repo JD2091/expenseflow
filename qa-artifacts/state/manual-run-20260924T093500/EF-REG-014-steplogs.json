@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "c8eb76b0-a17a-0e00-2c20-0b4a287fb989",
+  "result": "Passed",
+  "comment": "Expected: Footer indicates page 2 and displays rows 26 and later.\nActual: ✔ page 2 footer \"Showing 26–50 of 59\", Page 2 indicated, rows start at 26",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "1c6b23af-5668-4eea-01c2-08df1a26c3bd",
+  "orderNo": 0,
+  "testCaseLogId": "f49c5fec-5a82-7300-39ee-0b4a2a5f9a6f",
+  "description": "Open My Expenses and navigate to page 2.",
+  "expectedResult": "Footer indicates page 2 and displays rows 26 and later."
+ },
+ {
+  "testStepId": "c32f3560-a27a-0e00-70d8-0b4a287fbcf7",
+  "result": "Passed",
+  "comment": "Expected: Table automatically renders valid page-1 results and footer indicates Page 1 of 1.\nActual: ✔ Status=Rejected from page 2 → page 1 results, footer \"Showing 1–2 of 2\", 2 rows | ✔ Category=Meals → valid page 1: Showing 1–7 of 7 | ✔ date filter From 2026-09-24 → valid page 1: Showing 1–25 of 25",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "445465f2-86d8-4cca-01c3-08df1a26c3bd",
+  "orderNo": 1,
+  "testCaseLogId": "f49c5fec-5a82-7300-39ee-0b4a2a5f9a6f",
+  "description": "Apply Status, Category, or date filtering that yields fewer than 25 records.",
+  "expectedResult": "Table automatically renders valid page-1 results and footer indicates Page 1 of 1."
+ },
+ {
+  "testStepId": "ea7b8a78-a37a-0e00-548f-0b4a287fc014",
+  "result": "Passed",
+  "comment": "Expected: Finance pagination clamps to a valid page with correct disabled boundaries.\nActual: Finance attention initially: Showing 1–25 of 43 | ✔ attention set exceeds one page (43 rows) | ✔ Finance attention on last page 2: Showing 26–43 of 43  (Next disabled) | reduced the attention set from a second tab by approving 18 retained synthetic EFREG003-Pending fixtures (Data-Fabric-only, no Action Center task) | after Refresh on the same tab: Showing 1–25 of 25 | ✔ Finance pagination clamped to a valid page 1 after reduction (Showing 1–25 of 25, 25 rows, no phantom page) | ✔ pager boundaries valid (no navigable page 2)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "d03d1490-0f51-40d7-01c4-08df1a26c3bd",
+  "orderNo": 2,
+  "testCaseLogId": "f49c5fec-5a82-7300-39ee-0b4a2a5f9a6f",
+  "description": "Repeat the reduction from the Finance attention table.",
+  "expectedResult": "Finance pagination clamps to a valid page with correct disabled boundaries."
+ }
+]

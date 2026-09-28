@@ -1,0 +1,96 @@
+{
+ "stableId": "EF-SMOKE-011",
+ "testCaseId": "1f8650f0-d2ed-0d00-64fc-0b4a2a2c8d01",
+ "executionId": "b4d16f2e-3713-0e00-ad28-0b4a2a53234d",
+ "testCaseLogId": "6e5674a6-547e-7300-79fb-0b4a2a532363",
+ "result": "Passed",
+ "stepLogCount": 5,
+ "stepResults": [
+  "Passed",
+  "Passed",
+  "Passed",
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-SMOKE-011-step1-dashboard-normal.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-011-step1-dashboard-normal.png",
+    "ObjectId": "5001a1a9-ae00-4995-0c74-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-SMOKE-011-step1-finance-normal.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-011-step1-finance-normal.png",
+    "ObjectId": "5001a1a9-ae00-4995-0c74-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-011-step2-dashboard-error.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-011-step2-dashboard-error.png",
+    "ObjectId": "51d3ae07-dc02-44e0-0c75-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-011-step2-finance-error.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-011-step2-finance-error.png",
+    "ObjectId": "51d3ae07-dc02-44e0-0c75-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-SMOKE-011-step3-failed-screen-inspect.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-011-step3-failed-screen-inspect.png",
+    "ObjectId": "435f5541-2824-4ae2-0c76-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 4,
+   "file": "screenshots/20260924T093500/EF-SMOKE-011-step4-recovered.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-011-step4-recovered.png",
+    "ObjectId": "19a33180-747c-42a1-0c77-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 5,
+   "file": "screenshots/20260924T093500/EF-SMOKE-011-step5-healthy-after-refresh.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-011-step5-healthy-after-refresh.png",
+    "ObjectId": "e83d522b-9480-4549-0c78-08df19cef660",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/b4d16f2e-3713-0e00-ad28-0b4a2a53234d",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

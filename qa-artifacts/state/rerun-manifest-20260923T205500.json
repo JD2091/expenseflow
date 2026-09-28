@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "runId": "expenseflow-qa-rerun-20260923T205500",
+  "generatedAt": "2026-09-23T15:25:06.098Z",
+  "project": {
+    "key": "EXPENSEFLOW",
+    "id": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+    "name": "ExpenseFlow QA",
+    "repository": "https://github.com/JD2091/expenseflow",
+    "branch": "main",
+    "previousApprovedSha": "571c2192d3d786a03eb7f57d89bec70998ef1d57",
+    "currentSha": "8300fa5ce4532daa873fb8cd5a73b660d866278b"
+  },
+  "environment": {
+    "type": "connected-staging",
+    "preferredUrl": "http://localhost:5173",
+    "verifiedUrls": [
+      "http://127.0.0.1:5173/",
+      "http://localhost:5173/finance"
+    ],
+    "organization": "testcloud_team",
+    "tenant": "TAM",
+    "baseUrl": "https://staging.uipath.com",
+    "folderPath": "Shared",
+    "folderKey": "01a3eae4-d43c-4009-9342-969b1262b1e1"
+  },
+  "scope": {
+    "previousExecutionId": "618057ff-ecc2-0d00-fa65-0b4a2881d4ef",
+    "previousBlockedCases": ["EF-REG-007", "EF-REG-008", "EF-REG-009", "EF-REG-010", "EF-REG-011", "EF-REG-012", "EF-REG-013"],
+    "rerunCases": ["EF-REG-008"],
+    "stillBlockedCases": ["EF-REG-007", "EF-REG-009", "EF-REG-010", "EF-REG-011", "EF-REG-012", "EF-REG-013"]
+  },
+  "executions": {
+    "published": [
+      {
+        "stableId": "EF-REG-008",
+        "executionId": "08f1f869-86cd-0d00-0f01-0b4a2980d487",
+        "testCaseLogId": "0dfc8735-47ef-6f00-bde8-0b4a2980d4bf",
+        "status": "Finished",
+        "testManagerResult": "Passed",
+        "testManagerStats": {"passed": 1, "failed": 0, "none": 0},
+        "executionLink": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/08f1f869-86cd-0d00-0f01-0b4a2980d487"
+      }
+    ]
+  },
+  "summary": {
+    "targetCases": 7,
+    "rerunCases": 1,
+    "fullyPassedCases": 0,
+    "restrictedPartialCases": 1,
+    "stillBlockedCases": 6,
+    "newProductFailures": 0,
+    "publishedStepResults": {"passed": 2, "failed": 0, "restricted": 1},
+    "retainedSyntheticRecords": 5
+  },
+  "cases": [
+    {
+      "stableId": "EF-REG-007",
+      "testCaseId": "2b652f27-01c4-0d00-c9ef-0b4a287e6357",
+      "name": "EF-REG-007 - Connected decision failure leaves source record unmodified",
+      "priorTestCaseLogId": "b9553946-53a1-6f00-c6f7-0b4a2881d58c",
+      "classification": "Blocked",
+      "testManagerResult": "Not rerun",
+      "reason": "No EFREG007 connected record or associated Action Center task was present in fresh server queries. The available demo=fail-decide switch is an app-layer rehearsal hook that throws before any UiPath call and does not prove a connected task-completion failure. No task corruption, orphan creation, or fault injection was attempted."
+    },
+    {
+      "stableId": "EF-REG-008",
+      "testCaseId": "96217cbb-0bc4-0d00-9955-0b4a287e8383",
+      "name": "EF-REG-008 - Connected Finance attention classification covers all unsettled reasons",
+      "priorTestCaseLogId": "a0b347eb-54a1-6f00-2b7e-0b4a2881d5a1",
+      "executionId": "08f1f869-86cd-0d00-0f01-0b4a2980d487",
+      "testCaseLogId": "0dfc8735-47ef-6f00-bde8-0b4a2980d4bf",
+      "classification": "Restricted (partial)",
+      "testManagerResult": "Passed",
+      "fixtureRunTag": "EFQA-20260923T203800",
+      "fixtureRecords": [
+        {"id": "D875A57F-72A7-4607-82B9-01A0CECF7D48", "code": "EFREG008-PolicyReview-203800", "statusNumberId": 2, "receiptPath": "present"},
+        {"id": "18D20D2E-A57F-40FD-A036-01A0CECF7D49", "code": "EFREG008-PendingApproval-203800", "statusNumberId": 3, "receiptPath": "present"},
+        {"id": "1FFB2CE8-1D1D-4436-93DA-01A0CECF7D4A", "code": "EFREG008-Reworked-203800", "statusNumberId": 6, "receiptPath": "present"},
+        {"id": "6CEB8AA6-ECD4-46E2-8DC5-01A0CECF7D4B", "code": "EFREG008-MissingReceipt-203800", "statusNumberId": 1, "receiptPath": "null"},
+        {"id": "B53B24BC-B725-4E3A-9131-01A0CECF7D4C", "code": "EFREG008-SubmittedWithReceipt-203800", "statusNumberId": 1, "receiptPath": "present"}
+      ],
+      "steps": [
+        {"orderNo": 0, "testStepId": "0974e52e-707a-0e00-41ab-0b4a287e8b06", "testStepLogId": "103282bf-519f-42f9-c89b-08df184ede01", "result": "Passed", "hasError": false, "hasAttachment": true, "comment": "Inserted five uniquely tagged synthetic records with 0 failures; fresh Finance-status query returned all five expected combinations.", "trace": "qa-artifacts/traces/EF-REG-008-20260923T203300-step-0974e52e-707a-0e00-41ab-0b4a287e8b06-execution-trace.json"},
+        {"orderNo": 1, "testStepId": "fa5b0d88-717a-0e00-ba18-0b4a287e8c6b", "testStepLogId": "497ebbc6-1754-48c2-c89c-08df184ede01", "result": "Passed", "hasError": false, "hasAttachment": true, "comment": "Connected Finance loaded and refreshed after the ExpenseDate fix; Policy Review, Pending Approval, Needs Rework, and Missing Receipt rendered, while the Submitted-with-receipt control was excluded.", "trace": "qa-artifacts/traces/EF-REG-008-20260923T203300-step-fa5b0d88-717a-0e00-ba18-0b4a287e8c6b-execution-trace.json"},
+        {"orderNo": 2, "testStepId": "43f5e293-727a-0e00-0790-0b4a287e9920", "testStepLogId": "ce665c45-f3d4-4eb3-c89d-08df184ede01", "result": "Restricted", "hasError": false, "hasAttachment": true, "comment": "Edge visual masking/COM transport failure and a fresh tab retaining ?mock=1 prevented trusted connected detail-route readback; no business mutation was performed.", "trace": "qa-artifacts/traces/EF-REG-008-20260923T203300-step-43f5e293-727a-0e00-0790-0b4a287e9920-execution-trace.json"}
+      ]
+    },
+    {
+      "stableId": "EF-REG-009",
+      "testCaseId": "5a588dac-16c4-0d00-43b2-0b4a287ea394",
+      "name": "EF-REG-009 - Connected service errors expose retryable user feedback",
+      "priorTestCaseLogId": "506f9c9f-55a1-6f00-ef47-0b4a2881d5b5",
+      "classification": "Blocked",
+      "testManagerResult": "Not rerun",
+      "reason": "No EFREG009 connected recovery fixture was present in a fresh server query. The available demo=fail-submit and demo=fail-decide switches bypass UiPath calls and therefore are not evidence of a connected read/write failure. Unsafe network denial, credential manipulation, request tampering, and deliberate service fault injection were not attempted."
+    },
+    {
+      "stableId": "EF-REG-010",
+      "testCaseId": "bf8c0f39-19c4-0d00-5849-0b4a287eb763",
+      "name": "EF-REG-010 - Connected receipt access failures are contained and recoverable",
+      "priorTestCaseLogId": "029ef2c0-56a1-6f00-b7e2-0b4a2881d5c9",
+      "classification": "Blocked",
+      "testManagerResult": "Not rerun",
+      "reason": "No approved safe connected receipt access-denied/unavailable fixture exists. Existing EF-REG-004 evidence covers authorized access only and was not repurposed as a failure fixture."
+    },
+    {
+      "stableId": "EF-REG-011",
+      "testCaseId": "97c8e14d-30c4-0d00-4aaf-0b4a287ee79a",
+      "name": "EF-REG-011 - Locale-stable currency, compact amount, and date formatting",
+      "priorTestCaseLogId": "a4a28446-57a1-6f00-59a7-0b4a2881d5dd",
+      "classification": "Blocked",
+      "testManagerResult": "Not rerun",
+      "reason": "The current browser/runtime remains Asia/Calcutta and is not configured with the required alternate locale and timezone west of UTC."
+    },
+    {
+      "stableId": "EF-REG-012",
+      "testCaseId": "c2c00bc1-45c4-0d00-3b5a-0b4a287f38f3",
+      "name": "EF-REG-012 - Runtime configuration, OAuth callback, and startup failure recovery",
+      "priorTestCaseLogId": "2b0bba0f-58a1-6f00-9527-0b4a2881d5f0",
+      "classification": "Blocked",
+      "testManagerResult": "Not rerun",
+      "reason": "No isolated invalid or missing-resource configuration was available. The valid connected startup path was not duplicated as evidence for an invalid path."
+    },
+    {
+      "stableId": "EF-REG-013",
+      "testCaseId": "df95a197-57c4-0d00-400b-0b4a287f79d0",
+      "name": "EF-REG-013 - Authorization characterization for approvals and Finance",
+      "priorTestCaseLogId": "abb0f974-59a1-6f00-f10d-0b4a2881d604",
+      "classification": "Blocked",
+      "testManagerResult": "Not rerun",
+      "reason": "No dedicated least-privilege employee identity and no separate authorized manager or Finance identity were established in staging; the current Jeet Doshi identity is authorized/admin."
+    }
+  ],
+  "productFailures": [
+    {"stableId": "EF-SMOKE-007", "status": "Existing from prior run", "summary": "Unknown expense route rendered an empty body/root instead of actionable not-found UI."},
+    {"stableId": "EF-SMOKE-010", "status": "Existing from prior run", "summary": "Narrow connected views had page-level horizontal overflow and off-viewport controls."},
+    {"stableId": "EF-REG-014", "status": "Resolved by current source change", "summary": "The prior Finance ExpenseDate failure was not reproduced after the month-end date-bound fix; this rerun verified the Finance query path through EF-REG-008."}
+  ],
+  "evidence": {
+    "resultsFile": "qa-artifacts/state/EF-REG-008-test-results-20260923T205100.json",
+    "fixtureFile": "qa-artifacts/state/EF-REG-008-fixture-20260923T203800.json",
+    "rawTrace": "qa-artifacts/traces/EF-REG-008-20260923T203300.json",
+    "traceManifest": "qa-artifacts/traces/EF-REG-008-20260923T203300-execution-traces.json",
+    "allPublishedStepAttachments": true,
+    "limitation": "The trace contains two setup/transport actions before the first checkpoint; the published step artifacts cover the three canonical steps, and the third is explicitly Restricted."
+  },
+  "baselineDecision": {
+    "lastSuccessfulBaselineSha": null,
+    "advanced": false,
+    "reason": "Baseline remains unadvanced because six target cases remain blocked, the rerun contains a restricted step, and prior confirmed product failures EF-SMOKE-007 and EF-SMOKE-010 remain open."
+  }
+}

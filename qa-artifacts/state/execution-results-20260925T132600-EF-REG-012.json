@@ -1,0 +1,29 @@
+[
+  {
+    "testStepId": "6a29c3eb-947a-0e00-2776-0b4a287f5177",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The valid connected startup route was not independently executed in this publication because the paired isolated invalid/missing-resource configuration was unavailable. No startup or runtime behavior is claimed from this restricted result.",
+    "hasError": false,
+    "actionType": "Restricted/PrerequisiteUnavailable",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "152b73ce-997a-0e00-d411-0b4a287f5971",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The isolated invalid or missing-resource configuration required to verify the Could not connect to UiPath and Reload state was not available. No shared runtime configuration was changed.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "2f4161e3-9b7a-0e00-5710-0b4a287f5e04",
+    "result": "Restricted",
+    "comment": "RESTRICTED: The controlled OAuth callback scenario with preserved non-OAuth query switches was not executed because the isolated callback/runtime setup was unavailable. No callback query or connected data was mutated.",
+    "hasError": false,
+    "actionType": "Blocked/NotExecuted",
+    "hasAttachment": false,
+    "clipboardData": ""
+  }
+]

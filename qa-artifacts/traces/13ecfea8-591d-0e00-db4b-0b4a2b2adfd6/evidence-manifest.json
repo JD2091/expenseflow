@@ -1,0 +1,63 @@
+{
+  "executionId": "13ecfea8-591d-0e00-db4b-0b4a2b2adfd6",
+  "projectKey": "EXPENSEFLOW",
+  "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "testSetKey": "EXPENSEFLOW:2",
+  "testCaseKey": "EXPENSEFLOW:8",
+  "testCaseId": "96217cbb-0bc4-0d00-9955-0b4a287e8383",
+  "testCaseName": "EF-REG-008 - Connected Finance attention classification covers all unsettled reasons",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "traceId": "96217cbb-0bc4-0d00-9955-0b4a287e8383-20260925T112000",
+  "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-008-full-trace.json",
+  "executionTraceManifestRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-008-execution-traces.json",
+  "capturedAt": "2026-09-25T11:20:00+05:30",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "stepId": "0974e52e-707a-0e00-41ab-0b4a287e8b06",
+      "expectedResult": "All records are retrievable through Finance's unsettled query path.",
+      "actualResult": "Four EFREG008 records were retrievable across the connected two-page attention query; the SubmittedWithReceipt control record was not visible.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-008-step01-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Screenshot evidence is embedded in the finalized per-step trace; no standalone screenshot file was generated."
+    },
+    {
+      "stepNumber": 2,
+      "stepId": "fa5b0d88-717a-0e00-ba18-0b4a287e8c6b",
+      "expectedResult": "Each first four record appears once with the correct attention reason; the control is excluded.",
+      "actualResult": "The four first records appeared once with Policy Review, Pending Approval, Needs Rework, and Missing Receipt; the SubmittedWithReceipt control was absent.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-008-step02-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Screenshot evidence is embedded in the finalized per-step trace; no standalone screenshot file was generated."
+    },
+    {
+      "stepNumber": 3,
+      "stepId": "43f5e293-727a-0e00-0790-0b4a287e9920",
+      "expectedResult": "Each row navigates to the matching expense detail.",
+      "actualResult": "All four rows navigated to matching detail routes and displayed the expected identifier and amount. PolicyReview displayed Policy Review, PendingApproval displayed Pending Approval, Reworked displayed Needs Rework, and MissingReceipt displayed overall status Submitted with No receipt attached; the queue reason for that row was Missing Receipt.",
+      "result": "Passed",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-ba18-0b4a2b2adfd6/EF-REG-008-step03-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Screenshot evidence is embedded in the finalized per-step trace; no standalone screenshot file was generated."
+    }
+  ],
+  "caseOutcome": "Passed",
+  "evidenceLimitations": [
+    "SubmittedWithReceipt control record was not visible in the connected Finance unsettled attention query.",
+    "No standalone PNG screenshots were generated; screenshots are embedded in the finalized trace artifacts."
+  ],
+  "publication": {
+    "testCaseLogId": null,
+    "stepAttachmentReferences": [],
+    "status": "pending"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "executionId": "13ecfea8-591d-0e00-db4b-0b4a2b2adfd6",
+  "projectKey": "EXPENSEFLOW",
+  "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+  "testSetKey": "EXPENSEFLOW:2",
+  "testCaseKey": "EXPENSEFLOW:17",
+  "testCaseId": "098c30f1-cfc3-0d00-a298-0b4a287e0aa4",
+  "testCaseName": "EF-REG-005 - Connected Action Center approval completes before Data Fabric decision",
+  "environment": "Local",
+  "applicationUrl": "https://testcloud-team.staging.uipath.host/expenseflow",
+  "traceId": "098c30f1-cfc3-0d00-a298-0b4a287e0aa4-20260925T114000",
+  "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-005-full-trace.json",
+  "executionTraceManifestRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-005-execution-traces.json",
+  "capturedAt": "2026-09-25T11:40:00+05:30",
+  "queueObservation": {
+    "queueLabel": "Approval queue",
+    "waitingCount": 23,
+    "targetRecord": "EFREG005-Approve",
+    "targetPresent": false,
+    "targetActionCenterTaskPresent": false,
+    "paginationPresent": false,
+    "unrelatedRecordsMutated": false
+  },
+  "steps": [
+    {
+      "stepNumber": 1,
+      "stepId": "f62a8bc8-647a-0e00-405d-0b4a287e1b31",
+      "expectedResult": "The card identifies its Action Center task and exposes an optional comments field with decision actions.",
+      "actualResult": "The full connected Approval queue rendered 23 cards, but EFREG005-Approve and its Action Center task were absent; no pager or alternate scope was available.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": "traces/13ecfea8-591d-0e00-db4b-0b4a2b2adfd6/EF-REG-005-step01-trace.json",
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "captured",
+      "evidenceNote": "Queue inspection trace captured; target absence is an environment/test-data prerequisite gap, not a product failure."
+    },
+    {
+      "stepNumber": 2,
+      "stepId": "3b1f5c5d-667a-0e00-35c1-0b4a287e1e40",
+      "expectedResult": "Action Center task completion succeeds first, then Data Fabric status/decision metadata updates and the row leaves the queue.",
+      "actualResult": "BLOCKED: the EFREG005-Approve record and task were absent, so no approval or comment write was attempted.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": null,
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "not-captured",
+      "evidenceNote": "Dependent step was not executable without the required isolated synthetic target; no unrelated approval was used."
+    },
+    {
+      "stepNumber": 3,
+      "stepId": "c3f5dd3f-687a-0e00-58a8-0b4a287e2070",
+      "expectedResult": "Final status, decision timestamp, decider, and comment are persisted consistently.",
+      "actualResult": "BLOCKED: step 2 could not execute because EFREG005-Approve was absent; no persistence result is claimed.",
+      "result": "Restricted",
+      "screenshotRelativePath": null,
+      "traceRelativePath": null,
+      "testManagerAttachmentReference": null,
+      "evidenceStatus": "not-captured",
+      "evidenceNote": "Dependent step was not executable; no final status, decider, timestamp, or comment was inferred."
+    }
+  ],
+  "caseOutcome": "Blocked by missing synthetic approval prerequisite",
+  "evidenceLimitations": [
+    "EFREG005-Approve was not present in the connected Approval queue.",
+    "No matching Action Center task was present.",
+    "The queue had no pagination or alternate visible scope.",
+    "No approval mutation was attempted on unrelated records.",
+    "Only step 1 has a captured trace; steps 2 and 3 were not executable."
+  ],
+  "publication": {
+    "testCaseLogId": null,
+    "stepAttachmentReferences": [],
+    "status": "pending"
+  }
+}

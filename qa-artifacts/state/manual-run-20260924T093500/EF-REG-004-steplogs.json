@@ -1,0 +1,44 @@
+[
+ {
+  "testStepId": "d6b39ace-437a-0e00-ea12-0b4a287dfe4a",
+  "result": "Passed",
+  "comment": "Expected: Submission succeeds and the created record retains a receipt path/name.\nActual: confirmation: EXP-1022 submitted for ₹1,250. See it on your dashboard or open the expense. | EXP-1022 submitted for ₹1,250 — Approved. | ✔ submission succeeded (EXP-1022) | ✔ created record retains receipt name qa-receipt.pdf",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "acb17c42-39c4-407a-8aaf-08df1a19787e",
+  "orderNo": 0,
+  "testCaseLogId": "fe80dcf8-4f82-7300-2f7e-0b4a2a5eee62",
+  "description": "Attach the synthetic receipt to a valid connected expense and submit.",
+  "expectedResult": "Submission succeeds and the created record retains a receipt path/name."
+ },
+ {
+  "testStepId": "dbcaba92-447a-0e00-238e-0b4a287dffd0",
+  "result": "Passed",
+  "comment": "Expected: The receipt opens through authorized bucket access without exposing a raw storage secret.\nActual: ✔ receipt chip is an interactive control | receipt opened in new tab: https://crpabetaporch0eusstg.blob.core.windows.net/orchestrator-932c00cc-8cb5-4d47-b8f2-d7dd94d6fe8a/BlobFilePersistence/a72bcdc2-778e-432c- (query string withheld from record) | ✔ receipt opened over https via storage host (authorized read URI), not a local path | ✔ URL carries no raw storage secret/key terms",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "262e2bab-578d-4eb6-8ab0-08df1a19787e",
+  "orderNo": 1,
+  "testCaseLogId": "fe80dcf8-4f82-7300-2f7e-0b4a2a5eee62",
+  "description": "Open the created expense detail and use its receipt link.",
+  "expectedResult": "The receipt opens through authorized bucket access without exposing a raw storage secret."
+ },
+ {
+  "testStepId": "2b2adea5-15c4-0e00-2b75-0b4a2a2ba623",
+  "result": "Restricted",
+  "comment": "Expected: Each record stores a sanitized receipt path/name that remains associated with the record and opens through authorized bucket access; no raw local path or invalid storage path is exposed.\nActual: submitted with \"QA receipt #1 (copy).pdf\" → EXP-1023 | stored/displayed receipt name: QA-receipt-1-copy-.pdf | ✔ stored name is sanitized (no spaces, #, parentheses, or local path) | ✔ sanitized receipt opens through authorized bucket access | RESTRICTED: the \"browser path prefix\" variant (C:\fakepath...) cannot be produced by browser automation: the File object exposes only the bare name, so the prefix-stripping branch was not exercised. Spaces, #, and parentheses were exercised and verified.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "712c8794-69f1-4bef-8ab1-08df1a19787e",
+  "orderNo": 2,
+  "testCaseLogId": "fe80dcf8-4f82-7300-2f7e-0b4a2a5eee62",
+  "description": "Submit connected expenses using synthetic receipt names with spaces, #, parentheses, and a browser path prefix.",
+  "expectedResult": "Each record stores a sanitized receipt path/name that remains associated with the record and opens through authorized bucket access; no raw local path or invalid storage path is exposed."
+ }
+]

@@ -1,0 +1,62 @@
+{
+  "traceId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd-20260924T124500",
+  "metadata": {
+    "kind": "testmanager",
+    "source": "autonomousExecution",
+    "testcaseId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd",
+    "projectId": "ec245f49-f3da-0200-9a6c-0b4a286e44f7",
+    "orgId": "testcloud_team",
+    "tenantId": "TAM",
+    "testStepId": "a141a5ca-25c4-0e00-cba5-0b4a2a2c23d5"
+  },
+  "Prompt": {
+    "Prompt": "EF-REG-018 - URL switches persist across navigation and disable cleanly after removal",
+    "PromptId": "6e923326-ceed-0d00-e3a1-0b4a2a2c1cdd",
+    "Action": "None",
+    "EnableLoopExecution": false
+  },
+  "Iterations": [
+    {
+      "LoopIteration": 0,
+      "Actions": [
+        {
+          "ActionType": "NavigateUrl",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Restore normal mock route",
+              "method_type": "navigate_url",
+              "parameters": {
+                "url": "http://localhost:5173/?mock=1"
+              },
+              "id": null
+            },
+            "ActionId": "e721f781-0453-46ac-a2e3-f2e9db49d29b"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    },
+    {
+      "LoopIteration": 1,
+      "Actions": [
+        {
+          "ActionType": "ExecuteJs",
+          "IsSuccessful": true,
+          "InputAction": {
+            "Action": {
+              "description": "Verify recovery state",
+              "method_type": "execute_js",
+              "parameters": {
+                "script": "return (() => { const text=document.body?.innerText||''; const params=new URLSearchParams(location.search); const links=Array.from(document.querySelectorAll('a')).map(a=>({text:(a.textContent||'').trim(),href:a.href})); const required=['Dashboard','My Expenses','New Expense','Approvals','Finance']; const seeded=['Mumbai Travel','Client Dinner','Hotel — Taj Santacruz','Office Supplies']; return {url:location.href,title:document.title,readyState:document.readyState,historyLength:history.length,query:{mock:params.get('mock'),demo:params.get('demo'),simulateError:params.get('simulateError')},hasSeededData:seeded.every(x=>text.includes(x)),seededPresent:seeded.filter(x=>text.includes(x)),hasReadError:/Something went wrong|Could not reach the expense service|Try again/i.test(text),hasRawException:/exception|stack trace|uncaught|TypeError|Error:/i.test(text),navigation:required.map(x=>({label:x,present:links.some(l=>l.text===x)})),bodyText:text.slice(0,4200)}; })()"
+              },
+              "id": null
+            },
+            "ActionId": "acf8b21e-52ca-4030-b18e-a4338052b967"
+          }
+        }
+      ],
+      "ImageBase64": ""
+    }
+  ]
+}

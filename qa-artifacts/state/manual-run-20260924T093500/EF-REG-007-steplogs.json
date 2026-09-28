@@ -1,0 +1,30 @@
+[
+ {
+  "testStepId": "47bd814f-6e7a-0e00-b6c2-0b4a287e6a5a",
+  "result": "Passed",
+  "comment": "Expected: A friendly decision error is shown and the typed comment remains available for retry.\nActual: ✔ friendly decision error shown | ✔ typed comment remains available for retry | ✔ decision controls usable again",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "67aea85f-79d1-467e-01c0-08df1a26c3bd",
+  "orderNo": 0,
+  "testCaseLogId": "2512f204-5282-7300-3419-0b4a2a5f418f",
+  "description": "Initiate a decision through the approved safe failure condition.",
+  "expectedResult": "A friendly decision error is shown and the typed comment remains available for retry."
+ },
+ {
+  "testStepId": "4d89bd3e-6f7a-0e00-9e12-0b4a287e6c4e",
+  "result": "Restricted",
+  "comment": "Expected: No decision status, decider, timestamp, or comment was written to the record when task completion failed.\nActual: DF record after failed decision: {\"Status\":3,\"ApprovalTaskId\":\"101647442\"} | ✔ no decider, timestamp, or comment written to the Data Fabric record | ✔ card still in queue with its Action Center task id (task not completed) | RESTRICTED: the failure was injected by the app switch ?demo=fail-decide, which throws before any UiPath call; it proves no write occurs and the UI recovers, but it does not exercise a real Action Center task-completion failure (the ordering guarantee \"task first, record second\"). Action Center task state was inferred from the queue card (task still open), not read from Action Center itself.",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "fb4b41be-6844-4f87-01c1-08df1a26c3bd",
+  "orderNo": 1,
+  "testCaseLogId": "2512f204-5282-7300-3419-0b4a2a5f418f",
+  "description": "Re-read the associated Data Fabric record and Action Center task.",
+  "expectedResult": "No decision status, decider, timestamp, or comment was written to the record when task completion failed."
+ }
+]

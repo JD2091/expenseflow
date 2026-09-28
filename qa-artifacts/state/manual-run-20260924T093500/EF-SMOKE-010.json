@@ -1,0 +1,38 @@
+{
+ "id": "EF-SMOKE-010",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:36:16.070Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ Dashboard: h1 \"Dashboard\", active nav \"Dashboard\" | ✔ My Expenses: h1 \"My expenses\", active nav \"My Expenses\" | ✔ New Expense: h1 \"New expense\", active nav \"New Expense\" | ✔ Approvals: h1 \"Manager approval\", active nav \"Approvals\" | ✔ Finance: h1 \"Finance overview\", active nav \"Finance\"",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step1-Dashboard.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step1-MyExpenses.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step1-NewExpense.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step1-Approvals.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step1-Finance.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ form controls all have accessible names | ✔ validation errors exposed via role=alert | ✔ table has an accessible name (aria-label/caption) | ✔ status/live regions present (toast region) | ✔ filter controls labelled",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step2-form-alert.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step2-list-a11y.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Failed",
+   "actual": "✘ MyExpenses @375px: page scrollWidth 447 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW | ✘ Approvals @375px: page scrollWidth 449 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW | ✘ Finance @375px: page scrollWidth 448 vs clientWidth 375 → PAGE-LEVEL HORIZONTAL OVERFLOW",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step3-MyExpenses-375.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step3-Approvals-375.png",
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-010-step3-Finance-375.png"
+   ]
+  }
+ ]
+}

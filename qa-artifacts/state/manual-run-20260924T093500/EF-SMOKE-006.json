@@ -1,0 +1,23 @@
+{
+ "id": "EF-SMOKE-006",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:35:48.436Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ opened via table row: http://localhost:5173/expenses/EXP-1007?mock=1 | ✔ detail shows \"EXP-1007\" | ✔ detail shows \"Customer conference travel\" | ✔ detail shows \"Pending Approval\" | ✔ detail shows \"₹11,650\" | ✔ detail shows \"Travel\" | ✔ detail shows \"12 Aug 2026\" | ✔ detail shows \"Rahul Mehta\" | ✔ detail shows \"mumbai-trip.pdf\" | ✔ detail shows \"Within the ₹25,000 threshold\" | ✔ detail shows \"Submitted 12 Aug 2026\"",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-006-step1-detail.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ receipt affordance (mumbai-trip.pdf) visible | receipt element: SPAN(text) | ✔ Back to my expenses returned to list",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-006-step2-back-to-list.png"
+   ]
+  }
+ ]
+}

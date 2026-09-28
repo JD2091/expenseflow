@@ -1,0 +1,105 @@
+{
+ "stableId": "EF-SMOKE-002",
+ "testCaseId": "0676fb3b-62c3-0d00-37cb-0b4a287cab8b",
+ "executionId": "8b628bc4-2d13-0e00-066e-0b4a2a5293fa",
+ "testCaseLogId": "69b11b41-497e-7300-1d56-0b4a2a529412",
+ "result": "Passed",
+ "stepLogCount": 4,
+ "stepResults": [
+  "Passed",
+  "Passed",
+  "Passed",
+  "Passed"
+ ],
+ "attachments": [
+  {
+   "step": 1,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step1-list-default.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step1-list-default.png",
+    "ObjectId": "83c8cf2b-dd68-4a1f-68d5-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step2-status-draft.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step2-status-draft.png",
+    "ObjectId": "6669dae5-0791-44a0-68d6-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 2,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step2-draft-office.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step2-draft-office.png",
+    "ObjectId": "6669dae5-0791-44a0-68d6-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step3-empty-state.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step3-empty-state.png",
+    "ObjectId": "debb0921-d953-4921-68d7-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 3,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step3-cleared.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step3-cleared.png",
+    "ObjectId": "debb0921-d953-4921-68d7-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 4,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step4-sorted.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step4-sorted.png",
+    "ObjectId": "45f0d489-1102-4136-68d8-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 4,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step4-page2.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step4-page2.png",
+    "ObjectId": "45f0d489-1102-4136-68d8-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  },
+  {
+   "step": 4,
+   "file": "screenshots/20260924T093500/EF-SMOKE-002-step4-clamped.png",
+   "status": "uploaded",
+   "resp": {
+    "FileName": "EF-SMOKE-002-step4-clamped.png",
+    "ObjectId": "45f0d489-1102-4136-68d8-08df19d7ace6",
+    "ObjectType": "testStepLog"
+   }
+  }
+ ],
+ "stats": {
+  "Passed": 1,
+  "Failed": 0,
+  "None": 0,
+  "Status": "Finished"
+ },
+ "link": "https://staging.uipath.com/testcloud_team/TAM/testmanager_/EXPENSEFLOW/testexecutions/8b628bc4-2d13-0e00-066e-0b4a2a5293fa",
+ "tmCaseLogResult": "Passed",
+ "reconciled": true
+}

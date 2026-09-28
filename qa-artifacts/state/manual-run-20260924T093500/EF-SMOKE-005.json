@@ -1,0 +1,31 @@
+{
+ "id": "EF-SMOKE-005",
+ "run": "20260924T093500",
+ "at": "2026-09-24T09:34:20.587Z",
+ "steps": [
+  {
+   "n": 1,
+   "result": "Passed",
+   "actual": "✔ friendly submission error shown | ✔ no raw exception text | ✔ no success state",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-005-step1-error.png"
+   ]
+  },
+  {
+   "n": 2,
+   "result": "Passed",
+   "actual": "✔ description preserved | ✔ amount preserved | ✔ Submit re-enabled | ✔ inline alert/toast error feedback present",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-005-step2-form-after-failure.png"
+   ]
+  },
+  {
+   "n": 3,
+   "result": "Passed",
+   "actual": "✔ submission succeeds normally (EXP-1013 confirmation)",
+   "shots": [
+    "C:/Users/jeet.doshi/Documents/Coded apps/expenseflow/expenseflow/qa-artifacts/screenshots/20260924T093500/EF-SMOKE-005-step3-success.png"
+   ]
+  }
+ ]
+}

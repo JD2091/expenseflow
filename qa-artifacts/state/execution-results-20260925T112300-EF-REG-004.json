@@ -1,0 +1,29 @@
+[
+  {
+    "testStepId": "d6b39ace-437a-0e00-ea12-0b4a287dfe4a",
+    "result": "Passed",
+    "comment": "Observed: submitted the fresh connected synthetic expense EFREG004-Receipt with category Travel, amount ₹1,250, date 22 Aug 2026, and receipt fixture efreg004-receipt.pdf. The application confirmed EXP-1037 submitted for ₹1,250, and the created detail retained the receipt name efreg004-receipt.pdf.",
+    "hasError": false,
+    "actionType": "Submit/Navigate/Read",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "dbcaba92-447a-0e00-238e-0b4a287dffd0",
+    "result": "Passed",
+    "comment": "Observed: EXP-1037 detail displayed the receipt control efreg004-receipt.pdf with tooltip identifying the ExpenseFlow_Receipts bucket. Opening it produced an application/pdf response over the authorized staging blob host with no raw storage secret recorded; the signed query string was withheld from evidence.",
+    "hasError": false,
+    "actionType": "Navigate/Read/ReceiptAccess",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "2b2adea5-15c4-0e00-2b75-0b4a2a2ba623",
+    "result": "Restricted",
+    "comment": "Observed: submitted a fresh variant using receipt filename EFREG004 receipt #1 (copy).pdf with spaces, #, and parentheses. The application confirmed EXP-1038 submitted for ₹1,251; detail stored/displayed the sanitized name EFREG004-receipt-1-copy-.pdf with no spaces, #, parentheses, or local path, and the sanitized receipt opened through the authorized ExpenseFlow_Receipts blob route. Restricted: the browser path prefix branch (for example C:\\fakepath\\) could not be isolated because the native file input exposed only the bare File.name to the browser automation; no product failure is inferred.",
+    "hasError": false,
+    "actionType": "Submit/Navigate/Read/ReceiptAccess",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]

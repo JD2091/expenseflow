@@ -1,0 +1,72 @@
+[
+ {
+  "testStepId": "2a310112-2bc4-0e00-a567-0b4a2a2c565a",
+  "result": "Passed",
+  "comment": "Expected: The expense is PendingApproval, the task link is present, and the original record/task snapshot is captured before the race.\nActual: ✔ approval card for EXP-1030 open in the app (this page is intentionally not refreshed before the race) | snapshot before race: {\"code\":\"EXP-1030\",\"Status\":3,\"ApprovalTaskId\":\"101647510\",\"taskStatus\":\"Unassigned\",\"taskAction\":null} | ✔ expense is PendingApproval with a linked open task",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "4b787853-acfc-4d4a-01c5-08df1a26c3bd",
+  "orderNo": 0,
+  "testCaseLogId": "b1dda2c7-6482-7300-4574-0b4a2a5fdc8e",
+  "description": "Open the isolated pending-approval expense EFREG023-ExternalComplete and record its Data Fabric fields, task id, and current Action Center task state.",
+  "expectedResult": "The expense is PendingApproval, the task link is present, and the original record/task snapshot is captured before the race."
+ },
+ {
+  "testStepId": "f4b85804-2cc4-0e00-d2ce-0b4a2a2c575d",
+  "result": "Passed",
+  "comment": "Expected: The Action Center task reaches its completed state and the external decision is recorded once.\nActual: uip tasks complete -> Success | task after external completion: {\"Status\":\"Completed\",\"Action\":\"Approve\",\"CompletedTime\":\"2026-09-24T10:54:48.7650757Z\"} | ✔ Action Center task is Completed with action Approve (external decision recorded once)",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "609cdfca-4aaa-416e-01c6-08df1a26c3bd",
+  "orderNo": 1,
+  "testCaseLogId": "b1dda2c7-6482-7300-4574-0b4a2a5fdc8e",
+  "description": "Complete the linked Action Center task externally with the approved decision and comment Completed externally for regression.",
+  "expectedResult": "The Action Center task reaches its completed state and the external decision is recorded once."
+ },
+ {
+  "testStepId": "329a9e2f-2dc4-0e00-5ccc-0b4a2a2c584a",
+  "result": "Passed",
+  "comment": "Expected: The app returns the specific already-completed-task conflict message; it does not show a false success or raw exception.\nActual: ✔ app returns the specific already-completed-task conflict message | ✔ no false success toast | ✔ no raw exception | message: pdf Action Center Task #101647510 Above ₹25,000 policy threshold Comments ExpenseFlow could not record the approve decision in Action Center: This Action is already completed by the same user Open exp",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "467fbcf2-c1d1-42cd-01c7-08df1a26c3bd",
+  "orderNo": 2,
+  "testCaseLogId": "b1dda2c7-6482-7300-4574-0b4a2a5fdc8e",
+  "description": "Without refreshing the app state first, submit the same decision from the app approval screen.",
+  "expectedResult": "The app returns the specific already-completed-task conflict message; it does not show a false success or raw exception."
+ },
+ {
+  "testStepId": "e5b652e8-2ec4-0e00-145e-0b4a2a2c5947",
+  "result": "Passed",
+  "comment": "Expected: The Data Fabric record has no second decision mutation or duplicate comment, the task remains completed, and no second task is created.\nActual: after conflict: {\"records\":1,\"Status\":3,\"tasks\":1,\"taskStatus\":\"Completed\"} | ✔ Data Fabric record has no second decision mutation or duplicate comment | ✔ task remains completed; no second task created",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "a4af0616-cf65-4baf-01c8-08df1a26c3bd",
+  "orderNo": 3,
+  "testCaseLogId": "b1dda2c7-6482-7300-4574-0b4a2a5fdc8e",
+  "description": "Read the expense record and related task after the conflict.",
+  "expectedResult": "The Data Fabric record has no second decision mutation or duplicate comment, the task remains completed, and no second task is created."
+ },
+ {
+  "testStepId": "eaa10136-2fc4-0e00-9468-0b4a2a2c5a46",
+  "result": "Passed",
+  "comment": "Expected: The completed-task conflict remains accurately represented, no duplicate decision/task appears, and the original record/task identifiers remain stable.\nActual: after refresh the card is still listed in the queue | detail after refresh: EXPENSE MANAGEMENT Expense detail RM Rahul Mehta Employee Back to my expenses EXPENSE EXP-1030 EFREG023-ExternalComplete-EFQA-20260924T1400 Pending Approval Amount ₹35,000 Category Travel Date 24 Sep 2026 Employee Rahul Mehta Receipt qa-receipt.pdf Policy Abov | ✔ no duplicate decision/task; original record and task identifiers stable | ✔ known limitation observed: the record stays PendingApproval in Data Fabric because the external completion did not update it (app does not reconcile) — reported for the analyst, not asserted as expected",
+  "hasError": false,
+  "actionType": "Manual",
+  "hasAttachment": true,
+  "clipboardData": "",
+  "id": "969aecdb-5c03-43b4-01c9-08df1a26c3bd",
+  "orderNo": 4,
+  "testCaseLogId": "b1dda2c7-6482-7300-4574-0b4a2a5fdc8e",
+  "description": "Refresh the approval/detail route and repeat the observation without submitting again.",
+  "expectedResult": "The completed-task conflict remains accurately represented, no duplicate decision/task appears, and the original record/task identifiers remain stable."
+ }
+]

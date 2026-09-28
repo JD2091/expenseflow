@@ -1,0 +1,4 @@
+[
+  {"testStepId":"73677f85-9f7a-0e00-4c15-0b4a287f86ac","result":"Restricted","comment":"RESTRICTED: The approved no-identity-provisioning boundary prevents creating or switching to a least-privilege employee identity. No authorization route was opened or mutated.","hasError":false,"actionType":"Restricted/IdentityProvisioningProhibited","hasAttachment":false,"clipboardData":""},
+  {"testStepId":"aa28e2c5-a07a-0e00-eab4-0b4a287f897a","result":"Restricted","comment":"RESTRICTED: No unauthorized decision attempt or authorized-identity repeat was performed. Identity, role, permission, license, and membership mutation is prohibited; only read-only membership inventory was completed.","hasError":false,"actionType":"Restricted/IdentityProvisioningProhibited","hasAttachment":false,"clipboardData":""}
+]

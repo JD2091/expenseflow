@@ -1,0 +1,29 @@
+[
+  {
+    "testStepId": "0974e52e-707a-0e00-41ab-0b4a287e8b06",
+    "result": "Passed",
+    "comment": "Observed: No EFREG008 records existed before setup. Inserted the uniquely tagged synthetic run EFQA-20260923T203800 into the tenant-level ExpenseFlow_Expense entity with 5 records and 0 failures. A fresh Data Fabric query through the Finance unsettled status set returned all 5 records with the expected PolicyReview, PendingApproval, Reworked, Submitted-with-null-receipt, and Submitted-with-receipt combinations. Synthetic records were retained for audit.",
+    "hasError": false,
+    "actionType": "Data setup and query",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "fa5b0d88-717a-0e00-ba18-0b4a287e8c6b",
+    "result": "Passed",
+    "comment": "Observed: Connected ExpenseFlow Finance loaded and refreshed successfully after the ExpenseDate query fix. The attention table rendered the EFREG008 Policy Review, Pending Approval, Needs Rework, and Missing Receipt classifications among the connected attention records. The EFREG008 Submitted-with-receipt control was not classified as attention; the fresh server query confirmed it remained Submitted with a non-null ReceiptPath while the four expected attention candidates were present.",
+    "hasError": false,
+    "actionType": "Navigate and inspect",
+    "hasAttachment": true,
+    "clipboardData": ""
+  },
+  {
+    "testStepId": "43f5e293-727a-0e00-0790-0b4a287e9920",
+    "result": "Restricted",
+    "comment": "Restricted: Attempted to open each of the four EFREG008 attention rows. The attached Edge window became visually masked and its browser COM/page transport was unavailable; a fresh tab also retained ?mock=1, so connected detail-route readback could not be trusted. No business mutation was performed and this evidence limitation is not classified as a product failure.",
+    "hasError": false,
+    "actionType": "Click and navigate",
+    "hasAttachment": true,
+    "clipboardData": ""
+  }
+]
